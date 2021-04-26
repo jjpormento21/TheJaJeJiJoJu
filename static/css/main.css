@@ -4,3 +4,13 @@
 #mainFooter{
     background-color: #d9d7d7;
 }
+
+.font1{
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+}
+
+.roundb{
+    border: 2px solid gray;
+    border-radius: 12px; 
+    padding: 8px, 32px, 8px, 32px;
+}
