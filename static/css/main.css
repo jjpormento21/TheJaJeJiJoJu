@@ -1,6 +1,6 @@
-.navbar{
-    height: 80px;
-}
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
 #mainFooter{
     background-color: #d9d7d7;
 }
@@ -9,6 +9,12 @@
     background-color: #FC8495;
     padding: 8px 32px 8px 32px;
     /* top, right, bottom, left */
-    border-radius: 20px;
+    border-radius: 24px;
     color: white;
+}
+
+.text-secondary-custom {
+    color: #595959;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    padding-top: 16px;
 }
