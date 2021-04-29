@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -42,10 +42,12 @@
     <hr style="background-color: #FC8495;">
   </div>
 
-  <footer id="mainFooter">
+  {% block body %} {% endblock %}
+
+  <footer id="mainFooter" class="mt-5">
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col-md-3">
           <h3 class="text-secondary-custom">Create Feedback</h3>
           <form action="#">
             <textarea name="feedback" id="feedback" cols="30" rows="3" class="form-control mb-2"
@@ -55,21 +57,23 @@
           </form>
         </div>
 
-        <div class="col text-center">
+        <div class="col-md-3 text-center">
           <h3 class="text-secondary-custom">Recents</h3>
         </div>
 
-        <div class="col">
+        <div class="col-md-3">
           <h3 class="text-secondary-custom text-center">Important Links</h3>
           <ul class="list-unstyled ml-3 text-secondary">
             <li>Home</li>
             <li>About Us</li>
             <li>Shop</li>
-            <li>Feedback Hub</li>
+            <a href="/nothing">
+              <li><li>Feedback Hub</li></li>
+            </a>
           </ul>
         </div>
 
-        <div class="col">
+        <div class="col-md-3">
           <h3 class="text-secondary-custom text-center">Contact Us</h3>
           <h5><i class="bi bi-geo-alt-fill"></i>
             <p class="d-inline text-secondary">
@@ -102,7 +106,6 @@
     crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
   <script src="{{ url_for('static', filename = 'js/main.js')}}"></script>
-  {% block body %} {% endblock %}
 </body>
 
 </html>

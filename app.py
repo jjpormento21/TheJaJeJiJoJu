@@ -10,5 +10,9 @@ def index():
 def about_us():
     return render_template('about_us.html')
 
+@app.errorhandler(404)
+def notFound(e):
+    return render_template('404.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

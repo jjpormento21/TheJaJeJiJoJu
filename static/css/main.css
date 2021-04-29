@@ -3,6 +3,14 @@
 
 #mainFooter{
     background-color: #d9d7d7;
+    /* position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: auto; */
+}
+
+#error_msg{
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
 }
 
 .btn-main{
