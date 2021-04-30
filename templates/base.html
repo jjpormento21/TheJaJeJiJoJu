@@ -47,7 +47,7 @@
   <footer id="mainFooter" class="mt-5">
     <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-3" id="createFeedback">
           <h3 class="text-secondary-custom">Create Feedback</h3>
           <form action="#">
             <textarea name="feedback" id="feedback" cols="30" rows="3" class="form-control mb-2"
@@ -57,52 +57,78 @@
           </form>
         </div>
 
-        <div class="col-md-3 text-center">
+        <div class="col-md-3 text-center" id="recents">
           <h3 class="text-secondary-custom">Recents</h3>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-2" id="importantLinks">
           <h3 class="text-secondary-custom text-center">Important Links</h3>
-          <ul class="list-unstyled ml-3 text-secondary">
+          <ul class="list-unstyled ml-2 text-secondary">
             <li>Home</li>
             <li>About Us</li>
             <li>Shop</li>
             <a href="/nothing">
-              <li><li>Feedback Hub</li></li>
+              <li>
+              <li>Feedback Hub</li>
+              </li>
             </a>
           </ul>
         </div>
 
-        <div class="col-md-3">
+        <div class="col-md-4" id="contactInfo">
           <h3 class="text-secondary-custom text-center">Contact Us</h3>
-          <h5><i class="bi bi-geo-alt-fill"></i>
-            <p class="d-inline text-secondary">
+          <div class="ml-5">
+            <i class="bi bi-geo-alt-fill footer-icon"></i>
+            <p class="d-inline text-secondary footer-info">
               Luna Street La Paz, Iloilo City
             </p>
-          </h5>
+          </div>
 
-          <h5><i class="bi bi-envelope-fill"></i>
-            <p class="d-inline text-secondary">
+          <div class="ml-5">
+            <i class="bi bi-envelope-fill footer-icon"></i>
+            <p class="d-inline text-secondary footer-info">
               jhazcosmetics@gmail.com
             </p>
-          </h5>
+          </div>
 
-          <h5><i class="bi bi-chat-dots-fill"></i>
-            <p class="d-inline text-secondary">
-              09123549326 Smart <br>
+          <div class="ml-5">
+            <i class="bi bi-telephone-fill footer-icon"></i>
+            <p class="d-inline text-secondary footer-info">
+              09123549326 Smart
+            </p>
+          </div>
+
+          <div class="ml-5">
+            <i class="bi bi-telephone-fill footer-icon"></i>
+            <p class="d-inline text-secondary footer-info">
               09611482547 Globe
             </p>
-          </h5>
+          </div>
 
-          <h6 class="text-secondary-custom">Follow Us!</h6>
+          <h6 class="text-secondary-custom text-center">Follow Us!</h6>
+          <div class="text-center">
+            <i class="footer-social-icons mr-4 bi bi-facebook" data-toggle="tooltip" data-placement="bottom"
+              title="Facebook"></i>
+            <i class="footer-social-icons mr-4 bi bi-instagram" data-toggle="tooltip" data-placement="bottom"
+            title="Instagram"></i>
+            <i class="footer-social-icons mr-4 bi bi-shop" data-toggle="tooltip" data-placement="bottom"
+            title="Shopee"></i>
+          </div>
         </div>
 
       </div>
+    </div>
+
+    <div id="footerCopyright">
+      &copy;2021 Miss Jhaz Beauty Cosmetics Inc.
     </div>
   </footer>
 
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
     crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
   <script src="{{ url_for('static', filename = 'js/main.js')}}"></script>
