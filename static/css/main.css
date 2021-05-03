@@ -1,28 +1,49 @@
-.navbar{
-    height: 80px;
-}
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+
+
+/* Footer Properties */
 #mainFooter{
     background-color: #d9d7d7;
 }
 
-.font1{
+.footer-icon{
+    font-size: 32px;
+}
+.footer-social-icons{
+    font-size: 40px;
+}
+
+.footer-info{
+    margin-left: 5px;
+    font-size: 20px;
+    line-height: 50%;
+}
+
+#footerCopyright{
+    background-color: #FC8495;
+    color: black;
+    padding: .5em 2em .5em 2em;
+    text-align: center;
+    font-size: 16px;
+}
+
+#error_msg{
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
 }
 
-.roundb{
-    border: 2px solid gray;
-    border-radius: 12px; 
-    padding: 32px, 72px, 32px, 72px;
-}
+/* Buttons */
 .btn-main{
     background-color: #FC8495;
     padding: 8px 32px 8px 32px;
     /* top, right, bottom, left */
-    border-radius: 20px;
+    border-radius: 24px;
     color: white;
 }
 
-.icon{
-    font-size: 80px;
-    color: #FC8495;
+/* Typography */
+.text-secondary-custom {
+    color: #595959;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    padding-top: 16px;
 }
