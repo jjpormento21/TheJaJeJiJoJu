@@ -39,6 +39,8 @@
     /* top, right, bottom, left */
     border-radius: 24px;
     color: white;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    font-size: 12px;
 }
 
 /* Typography */
@@ -46,4 +48,49 @@
     color: #595959;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     padding-top: 16px;
+}
+
+.icon {
+    font-size: 80px;
+    color: #FC8495;
+}
+
+.par {
+    font-size: 16px;
+    color: #595959;
+}
+
+.shop-category {
+    height: 500px;
+    width: 350px;
+    border-radius: 5%;
+}
+
+.font1 {
+    color: #595959;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+.roundb {
+    border: 2px solid #7f7f7f;
+    border-radius: 16px;
+    padding: 2px 5px 2px 5px;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    color:#7f7f7f;
+}
+
+.hero-img {
+    height: 350px;
+    width: 550px;
+}
+
+.btn-sub {
+    background-color: #Ffff;
+    border: 2px solid #7f7f7f;
+    padding: 8px 32px 8px 32px;
+    /* top, right, bottom, left */
+    border-radius: 24px;
+    color: #7f7f7f;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    font-size: 12px;
 }
