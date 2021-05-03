@@ -9,6 +9,14 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/shop')
+def shop():
+    return render_template('catalog.html')
+
+@app.route('/featured')
+def featuredProducts():
+    return render_template('featured.html')
+
 @app.route('/about-us')
 def about_us():
     return render_template('about_us.html')
