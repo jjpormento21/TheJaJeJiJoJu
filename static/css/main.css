@@ -1,6 +1,7 @@
 /* Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 /* Footer Properties */
 #mainFooter{
@@ -41,6 +42,7 @@
     color: white;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     font-size: 12px;
+    font-weight: 800;
 }
 
 /* Typography */
@@ -48,6 +50,7 @@
     color: #595959;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     padding-top: 16px;
+    font-weight: 800;
 }
 
 .icon {
@@ -67,6 +70,7 @@
 }
 
 .font1 {
+    font-weight: 800;
     color: #595959;
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
@@ -74,9 +78,10 @@
 .roundb {
     border: 2px solid #7f7f7f;
     border-radius: 16px;
-    padding: 2px 5px 2px 5px;
+    padding: 2px 8px 2px 8px;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     color:#7f7f7f;
+    font-weight: 800;
 }
 
 .hero-img {
@@ -92,5 +97,25 @@
     border-radius: 24px;
     color: #7f7f7f;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    font-size: 12px;
+}
+
+.boxb {
+    border: 3px solid #595959;
+    border-radius: 24px;
+}
+
+.feat-icon {
+    font-size: 20px;
+    color: #FC8495;
+}
+
+.smallb {
+    border: 2px solid #7f7f7f;
+    border-radius: 16px;
+    padding: 1px 4px 1px 4px;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    color:#7f7f7f;
+    font-weight: 400;
     font-size: 12px;
 }
