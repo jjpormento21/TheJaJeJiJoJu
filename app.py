@@ -21,7 +21,7 @@ def featuredProducts():
 def feedback():
     return render_template('feedbacks.html')
 
-@app.route('/about-us')
+@app.route('/about_us')
 def about_us():
     return render_template('about_us.html')
 
