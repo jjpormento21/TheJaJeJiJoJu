@@ -18,6 +18,8 @@ def featuredProducts():
     return render_template('featured.html')
 
 @app.route('/feedback_hub')
+def feedback():
+    return render_template('feedbacks.html')
 
 @app.route('/about-us')
 def about_us():
