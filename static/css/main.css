@@ -98,6 +98,7 @@
     color: #7f7f7f;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     font-size: 12px;
+    font-weight: 800;
 }
 
 .boxb {
@@ -118,4 +119,16 @@
     color:#7f7f7f;
     font-weight: 400;
     font-size: 12px;
+}
+
+.font2 {
+    font-weight: 800;
+    color: #FC8495;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+.font3 {
+    font-weight: 800;
+    color: #000;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
