@@ -17,39 +17,19 @@
     </div>
     <!-- Eyes -->
     <div class="row">
+        {% for product in eye_products %}
         <div class="col-md-4">
+            <img src="{{product.imageURL}}" alt="" class="card-img-top">
             <div class="card">
-                <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/EYES/Eyebrow%20promade/2n1%20eyebrow%20promade.jpg"
-                    alt="Eyebrow promenade" class="card-img-top">
                 <div class="card-body">
-                    <h5 class="card-title">Eyebrow Promenade</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                    <h5 class="card-title">{{ product.productName}}</h5>
+                    <p class="card-text">{{ product.productDescription }}</p>
+                    <h6 class="card-title">{{ product.price }}</h6>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/EYES/Maskara/maskara.jpg"
-                    alt="maskara" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Maskara</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="card">
-                <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/EYES/Eyeshadow/eye%20shadow%20palette3.jpg"
-                    alt="eye shadow palette" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Eye Shadow Palette</h5>
-                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
@@ -64,37 +44,50 @@
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ut dolor in eius, vitae totam!</p>
         </div>
     </div>
+
     <div class="row">
+        {% for product in lip_products %}
         <div class="col-md-4">
-            <div class="card mt-3">
-                <img src="" alt="" class="card-img-top">
+            <img src="{{product.imageURL}}" alt="" class="card-img-top">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Description of product goes here</p>
-                    <bitton class="btn btn-primary">Click here</bitton>
+                    <h5 class="card-title">{{ product.productName}}</h5>
+                    <p class="card-text">{{ product.productDescription }}</p>
+                    <h6 class="card-title">{{ product.price }}</h6>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
+        {% endfor %}
+    </div>
+</div>
+
+<!-- Skin -->
+<div class="container">
+    <!-- Category Title: Skin -->
+    <div class="row">
+        <div class="col-md-6">
+            <h4 class="font1" id="SLips">Skin</h4>
+        </div>
+        <div class="col-md-6">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ut dolor in eius, vitae totam!</p>
+        </div>
+    </div>
+
+    <div class="row">
+        {% for product in skin_products %}
         <div class="col-md-4">
-            <div class="card mt-3">
-                <img src="" alt="" class="card-img-top">
+            <img src="{{product.imageURL}}" alt="" class="card-img-top">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Description of product goes here</p>
-                    <bitton class="btn btn-primary">Click here</bitton>
+                    <h5 class="card-title">{{ product.productName}}</h5>
+                    <p class="card-text">{{ product.productDescription }}</p>
+                    <h6 class="card-title">{{ product.price }}</h6>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="card mt-3">
-                <img src="" alt="" class="card-img-top">
-                <div class="card-body">
-                    <h5 class="card-title">Product Name</h5>
-                    <p class="card-text">Description of product goes here</p>
-                    <bitton class="btn btn-primary">Click here</bitton>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
 
