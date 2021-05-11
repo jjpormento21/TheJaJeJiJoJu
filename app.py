@@ -1,17 +1,28 @@
 from flask import Flask, render_template, url_for, request, redirect
-
+from flask_pymongo import PyMongo
+from dotenv import load_dotenv
+load_dotenv()
+from bson.objectid import ObjectId
+import os
 app = Flask(__name__)
 
 #database stuff
+app.config['MONGO_URI'] = os.getenv('DEVELOPER')
+
+mongo = PyMongo(app)
+products = mongo.db.products
 
 #routes
 @app.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/shop')
+@app.route('/shop', methods=['GET'])
 def shop():
-    return render_template('catalog.html')
+    eye_products = products.find({'productCategory':'eyes'})
+    lip_products = products.find({'productCategory':'lips'})
+    skin_products = products.find({'productCategory':'skin'})
+    return render_template('catalog.html', eye_products=eye_products, lip_products = lip_products, skin_products=skin_products)
 
 @app.route('/featured')
 def featuredProducts():
