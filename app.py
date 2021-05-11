@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from bson.objectid import ObjectId
 import os
+from datetime import datetime
 app = Flask(__name__)
 
 #database stuff
@@ -12,6 +13,7 @@ app.config['MONGO_URI'] = os.getenv('DEVELOPER')
 mongo = PyMongo(app)
 products = mongo.db.products
 
+dateToday = datetime.now()
 #routes
 @app.route('/')
 def index():
@@ -22,7 +24,8 @@ def shop():
     eye_products = products.find({'productCategory':'eyes'})
     lip_products = products.find({'productCategory':'lips'})
     skin_products = products.find({'productCategory':'skin'})
-    return render_template('catalog.html', eye_products=eye_products, lip_products = lip_products, skin_products=skin_products)
+    return render_template('catalog.html', 
+    eye_products=eye_products, lip_products = lip_products, skin_products=skin_products)
 
 @app.route('/featured')
 def featuredProducts():
@@ -66,12 +69,18 @@ def addData():
                 'price': price,
                 'imageURL': imgURL,
                 'stockNumber': stockNumber,
-                'featured': isFeatured 
+                'featured': isFeatured,
+                'datePosted': dateToday 
             }
         )
-        return render_template('admin/add_data.html')
+        return redirect(url_for('dashboard'))
     else:
         return render_template('admin/add_data.html')
+
+@app.route('/admin/delete_data_all')
+def deleteAll():
+    products.delete_many({})
+    return redirect(url_for('dashboard'))
 
 if __name__ == "__main__":
     app.run(debug=True)
