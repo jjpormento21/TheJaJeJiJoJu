@@ -1,0 +1,18 @@
+{% extends 'admin/dashboard_template.html' %}
+
+{% block head %}
+<title>Welcome - TheDashboard</title>
+{% endblock %}
+
+{% block body%}
+<div class="container">
+    <div class="jumbotron mt-5">
+        <h1 class="display-4">Welcome to TheDashboard!</h1>
+        <p class="lead">This page will allow you to perform various database operations in a convenient and easy way.</p>
+        <hr class="my-4">
+        <p>What would you like to do for now?</p>
+        <a class="btn btn-success btn-lg" href="/admin/add_data" role="button">Add Data</a>
+        <a href="#" class="btn btn-danger btn-lg">Delete Entries</a>
+    </div>
+</div>
+{% endblock %}

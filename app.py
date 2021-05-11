@@ -40,5 +40,38 @@ def about_us():
 def notFound(e):
     return render_template('404.html')
 
+#Admin Page Routes
+@app.route('/admin/dashboard')
+def dashboard():
+    return render_template('admin/dashboard.html')
+
+@app.route('/admin/add_data', methods=['GET', 'POST'])
+def addData():
+    all_products = products.find()
+    if request.method == 'POST':
+        productName = request.form.get('productTitle')
+        productDescription = request.form.get('productDescription')
+        detailedDescr = request.form.get('detailedDescr')
+        productCategory = request.form.get('productCategory')
+        price = request.form.get('price')
+        imgURL = request.form.get('imgURL')
+        stockNumber = request.form.get('stockNumber')
+        isFeatured = request.form.get('customRadio')
+        products.insert_one(
+            {
+                'productName': productName,
+                'productDescription': productDescription,
+                'detailedDescription': detailedDescr,
+                'productCategory': productCategory,
+                'price': price,
+                'imageURL': imgURL,
+                'stockNumber': stockNumber,
+                'featured': isFeatured 
+            }
+        )
+        return render_template('admin/add_data.html')
+    else:
+        return render_template('admin/add_data.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

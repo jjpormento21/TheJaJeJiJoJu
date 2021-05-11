@@ -142,3 +142,11 @@
     margin-right: auto;
 
 }
+
+/* Admin Styles */
+#dashboard-footer{
+    background-color: #000;
+    padding: 1em;
+    color: #fff;
+    text-align: center;
+}
