@@ -65,9 +65,9 @@ def addData():
                 'productDescription': productDescription,
                 'detailedDescription': detailedDescr,
                 'productCategory': productCategory,
-                'price': price,
+                'price': float(price),
                 'imageURL': imgURL,
-                'stockNumber': stockNumber,
+                'stockNumber': float(stockNumber),
                 'featured': isFeatured,
                 'datePosted': dateToday 
             }
