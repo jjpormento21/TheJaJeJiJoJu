@@ -19,12 +19,12 @@
     <div class="row">
         {% for product in eye_products %}
         <div class="col-md-4">
-            <img src="{{product.imageURL}}" alt="" class="card-img-top">
+            <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.productName}}</h5>
-                    <p class="card-text">{{ product.productDescription }}</p>
-                    <h6 class="card-title">{{ product.price }}</h6>
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <p class="card-text">{{product.productDescription }}</p>
+                    <h6 class="card-title">Price: {{product.price }}</h6>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -48,12 +48,12 @@
     <div class="row">
         {% for product in lip_products %}
         <div class="col-md-4">
-            <img src="{{product.imageURL}}" alt="" class="card-img-top">
+            <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.productName}}</h5>
-                    <p class="card-text">{{ product.productDescription }}</p>
-                    <h6 class="card-title">{{ product.price }}</h6>
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <p class="card-text">{{product.productDescription }}</p>
+                    <h6 class="card-title">Price: {{product.price }}</h6>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -77,12 +77,12 @@
     <div class="row">
         {% for product in skin_products %}
         <div class="col-md-4">
-            <img src="{{product.imageURL}}" alt="" class="card-img-top">
+            <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ product.productName}}</h5>
-                    <p class="card-text">{{ product.productDescription }}</p>
-                    <h6 class="card-title">{{ product.price }}</h6>
+                    <h5 class="card-title">{{product.productName}}</h5>
+                    <p class="card-text">{{product.productDescription }}</p>
+                    <h6 class="card-title">Price: {{product.price }}</h6>
                     <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>

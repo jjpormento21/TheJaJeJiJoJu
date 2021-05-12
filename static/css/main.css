@@ -62,7 +62,7 @@
     font-size: 16px;
     color: #595959;
 }
-
+/* Components */
 .shop-category {
     height: 500px;
     width: 350px;
@@ -131,4 +131,8 @@
     font-weight: 800;
     color: #000;
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+.card-img-top{
+    background-color: #EF7C8C;
 }
