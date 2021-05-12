@@ -64,9 +64,10 @@
 }
 
 .shop-category {
-    height: 500px;
-    width: 350px;
+    height: 31.25rem;
+    width: 21.875rem;
     border-radius: 5%;
+    background-color: #E5E4E2;
 }
 
 .font1 {
@@ -87,6 +88,7 @@
 .hero-img {
     height: 350px;
     width: 550px;
+    background-color: #7f7f7f;
 }
 
 .btn-sub {
