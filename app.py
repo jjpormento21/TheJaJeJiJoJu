@@ -19,9 +19,9 @@ def index():
 
 @app.route('/shop', methods=['GET'])
 def shop():
-    eye_products = products.find({'productCategory':'eyes'})
-    lip_products = products.find({'productCategory':'lips'})
-    skin_products = products.find({'productCategory':'skin'})
+    eye_products = products.find({'productCategory':'Eyes'})
+    lip_products = products.find({'productCategory':'Lips'})
+    skin_products = products.find({'productCategory':'Skin'})
     return render_template('catalog.html', eye_products=eye_products, lip_products = lip_products, skin_products=skin_products)
 
 @app.route('/featured')
