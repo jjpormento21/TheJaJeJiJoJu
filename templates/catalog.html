@@ -19,20 +19,25 @@
             <h2 class="font1 mt-3" id="SEyes">Eyes</h2>
         </div>
         <div class="col-md-6">
-            <p class="par">Your beauty shows in your eyes so let’s get that glam. Try this out and you will love the way you look!</p>
+            <p class="par1">Your beauty shows in your eyes so let’s get that glam. 
+                <br>Try this out and you will love the way you look!</p>
         </div>
     </div>
+</div>
+
     <!-- Eyes -->
+<div class="container">
     <div class="row">
         {% for product in eye_products %}
         <div class="col-md-4">
-            <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.productName}}</h5>
-                    <p class="card-text">{{product.productDescription }}</p>
-                    <h6 class="card-title">Price: {{product.price }}</h6>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+            <div class="card mb-3 mt-3" style="border-style: none;">
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
+                    <h5 class="font1 card-title">{{product.productName}}</h5>
+                    <!-- <p class="card-text">{{product.productDescription }}</p> -->
+                    <h6 class="font4 card-title font-weight-bold text-right">PRICE:</h6>
+                    <h5 class="font1 card- text-right">₱{{product.price }}</h5>
+                    <a href="#" class="btn btn-main">View</a>
                 </div>
             </div>
         </div>
@@ -44,24 +49,28 @@
 <div class="container">
     <!-- Category Title: Lips -->
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mt-3 mb-2">
             <h2 class="font1" id="SLips">Lips</h2>
         </div>
         <div class="col-md-6">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ut dolor in eius, vitae totam!</p>
+            <p class="par1 mt-3 mb-3">Show of those luscious lips with our affordable lips cosmetic
+            <br> collection. We’ve got plenty of options for you to choose from.</p>
         </div>
     </div>
+</div>
 
+<div class="container">
     <div class="row">
         {% for product in lip_products %}
-        <div class="col-md-4">
-            <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">{{product.productName}}</h5>
-                    <p class="card-text">{{product.productDescription }}</p>
-                    <h6 class="card-title">Price: {{product.price }}</h6>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div class="col-md-4 mb-3">
+            <div class="card"style="border-style: none;">
+                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
+                    <h5 class=" font1 card-title">{{product.productName}}</h5>
+                   <!-- <p class="card-text">{{product.productDescription }}</p> --> 
+                    <h6 class="font4 card-title text-right">PRICE:</h6>
+                    <h5 class="font1 card-title text-right">₱{{product.price }}</h5>
+                    <a href="#" class="btn btn-main">View</a>
                 </div>
             </div>
         </div>
@@ -73,30 +82,32 @@
 <div class="container">
     <!-- Category Title: Skin -->
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-md-6 mt-3 mb-3">
             <h2 class="font1" id="SLips">Skin</h2>
         </div>
         <div class="col-md-6">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis ut dolor in eius, vitae totam!</p>
+            <p class="par1 mt-3 mb-3">Skin friendly products that will surely prompt the beauty out of you.
+                <br>Love yourself and adore your skin.</p>
         </div>
     </div>
+</div>
 
+<div class="container">
     <div class="row">
         {% for product in skin_products %}
         <div class="col-md-4">
-            <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
-            <div class="card">
-                <div class="card-body">
+            <div class="card"style="border-style: none;" >
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
                     <h5 class="card-title">{{product.productName}}</h5>
-                    <p class="card-text">{{product.productDescription }}</p>
-                    <h6 class="card-title">Price: {{product.price }}</h6>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <!--<p class="card-text">{{product.productDescription }}</p> -->
+                    <h6 class="font4 card-title text-right">PRICE:</h6>
+                    <h5 class=" font1 card-title text-right">₱{{product.price }}</h5>
+                    <a href="#" class="btn btn-main">View</a>
                 </div>
             </div>
         </div>
         {% endfor %}
     </div>
 </div>
-
-
 {% endblock %}
