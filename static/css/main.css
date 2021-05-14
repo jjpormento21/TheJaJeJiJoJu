@@ -62,7 +62,7 @@
     font-size: 16px;
     color: #595959;
 }
-
+/* Components */
 .shop-category {
     height: 500px;
     width: 350px;
@@ -140,5 +140,8 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
+}
 
+.card-img-top{
+    background-color: #EF7C8C;
 }
