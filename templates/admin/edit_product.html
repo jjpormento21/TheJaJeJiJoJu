@@ -1,34 +1,36 @@
 {% extends 'admin/dashboard_template.html' %}
 
 {% block head %}
-<title>Add Data - TheDashboard</title>
+<title>Edit Data - TheDashboard</title>
 {% endblock %}
 
 {% block body %}
 
 <div class="container mt-2 pt-2 mb-5">
-    <h1 class="display-4">Add a product</h1>
+    <h1 class="display-4">Edit data</h1>
     <hr>
-    <form action="/admin/add_data" method="POST" autocomplete="off">
+    <form action="/admin/edit_product/{{currentProduct._id}}" method="POST" autocomplete="off">
         <div class="form-group">
             <label for="productTitle">Product Title</label>
-            <input class="form-control" type="text" name="productTitle" id="productTitle" placeholder="Product Name">
+            <input class="form-control" type="text" name="productTitle" id="productTitle" placeholder="Product Name"
+                value="{{currentProduct.productName}}">
         </div>
         <div class="form-group">
             <label for="productDescription">Brief Description</label>
             <textarea class="form-control" cols="30" rows="5" type="text" name="productDescription"
-                id="productDescription" placeholder="Brief Description of product"></textarea>
+                id="productDescription"
+                placeholder="Brief Description of product">{{currentProduct.productDescription}}</textarea>
         </div>
         <div class="form-group">
             <label for="detailedDescr">Detailed Description</label>
             <textarea name="detailedDescr" id="detailedDescr" cols="30" rows="10" class="form-control"
-                placeholder="Long description here"></textarea>
+                placeholder="Long description here">{{currentProduct.detailedDescription}}</textarea>
         </div>
         <div class="form-group">
             <div class="form-row">
                 <div class="col">
                     <label for="productCategory">Category</label>
-                    <select class="form-control custom-select" id="productCategory" name="productCategory">
+                    <select class="form-control custom-select" id="productCategory" name="productCategory" value="{{currentProduct.productCategory}}">
                         <option value="not specified">-Select Category-</option>
                         <option value="Eyes">Eyes</option>
                         <option value="Lips">Lips</option>
@@ -37,7 +39,8 @@
                 </div>
                 <div class="col">
                     <label for="price">Price</label>
-                    <input type="number" name="price" id="price" class="form-control" placeholder="₱0.00" step="0.01">
+                    <input type="number" name="price" id="price" class="form-control" placeholder="₱0.00" step="0.001"
+                        value="{{currentProduct.price}}">
                 </div>
             </div>
         </div>
@@ -45,40 +48,37 @@
             <div class="form-row">
                 <div class="col-md-4">
                     <label for="imgURL">Image URL</label>
-                    <input type="url" name="imgURL" id="imgURL" 
-                    class="form-control" placeholder="https://www.yoururl.com.ph">
+                    <input type="url" name="imgURL" id="imgURL" class="form-control"
+                        placeholder="https://www.yoururl.com.ph" value="{{currentProduct.imageURL}}">
                 </div>
                 <div class="col-md-4">
                     <label>Number of Stocks</label>
-                    <input type="number" name="stockNumber" id="stockNumber" class="form-control" value="100">
+                    <input type="number" name="stockNumber" id="stockNumber" class="form-control"
+                        value="{{currentProduct.stockNumber}}">
                 </div>
                 <div class="col-md-4">
                     <label>Featured Product?</label>
                     <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio1" 
-                        name="customRadio" 
-                        class="custom-control-input" 
-                        value="True">
+                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input"
+                            value="True">
                         <label class="custom-control-label" for="customRadio1">Yes</label>
                     </div>
                     <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio2" 
-                        name="customRadio" 
-                        class="custom-control-input" 
-                        value="False">
+                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input"
+                            value="False">
                         <label class="custom-control-label" for="customRadio2">No</label>
                     </div>
                 </div>
             </div>
             <div class="form-row mt-2">
                 <div class="col">
-                    <a href="/admin/dashboard" class="btn btn-outline-primary btn-block">Cancel</a>
+                    <a href="/admin/view" class="btn btn-outline-primary btn-block">Cancel</a>
                 </div>
                 <div class="col">
                     <button type="reset" class="btn btn-outline-secondary btn-block">Clear Entries</button>
                 </div>
                 <div class="col">
-                    <button type="submit" class="btn btn-success btn-block">Add Product</button>
+                    <button type="submit" class="btn btn-success btn-block">Update Product</button>
                 </div>
             </div>
         </div>
