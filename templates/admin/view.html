@@ -16,6 +16,7 @@
           class="bi bi-trash"></i> Delete all</a>
     </div>
   </div>
+
   <div class="row">
     {% for product in products %}
     <div class="col-md-3">
@@ -24,16 +25,26 @@
         <div class="card-body">
           <h6 class="card-title">{{product.productName}}</h6>
           <h6 class="card-subtitle mb-2 text-muted">{{product.productCategory}}</h6>
-          <h6 class="card-subtitle mb-2"><i class="bi bi-tag-fill"></i>₱{{product.price}}</h6>
+          <h6 class="card-subtitle"><i class="bi bi-tag-fill"></i>₱{{product.price}}</h6>
+        </div>
+        <div class="collapse" id="A{{product._id}}">
+          <div class="card-body">
+            <hr>
+            {{product.productDescription}}
+            <hr>
+          </div>
         </div>
         <div class="card-footer bg-black-50">
           <a href="/admin/edit_product/{{product._id}}" class="btn btn-primary">Edit Info</a>
           <a href="/admin/delete_product/{{product._id}}" class="btn btn-outline-danger">Delete</a>
+          <a href="#A{{product._id}}" data-toggle="collapse" role="button" class="btn btn-info"><i
+              class="bi bi-arrow-down-circle"></i></a>
         </div>
       </div>
     </div>
     {% endfor %}
   </div>
+
   <!-- Alert Popup -->
   <div class="modal fade" id="deleteAlert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
@@ -54,5 +65,9 @@
       </div>
     </div>
   </div>
+</div>
+
+<div style="margin-bottom: 16em;">
+
 </div>
 {% endblock %}
