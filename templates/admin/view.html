@@ -25,7 +25,7 @@
         <div class="card-body">
           <h6 class="card-title">{{product.productName}}</h6>
           <h6 class="card-subtitle mb-2 text-muted">{{product.productCategory}}</h6>
-          <h6 class="card-subtitle"><i class="bi bi-tag-fill"></i>₱{{product.price}}</h6>
+          <h6 class="card-subtitle"><i class="bi bi-tag-fill"></i> ₱{{product.price}}</h6>
         </div>
         <div class="collapse" id="A{{product._id}}">
           <div class="card-body">
@@ -36,9 +36,33 @@
         </div>
         <div class="card-footer bg-black-50">
           <a href="/admin/edit_product/{{product._id}}" class="btn btn-primary">Edit Info</a>
-          <a href="/admin/delete_product/{{product._id}}" class="btn btn-outline-danger">Delete</a>
+          <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteOneAlert"
+            onclick="setPostToDelete('{{product._id}}')">
+            <i class="bi bi-trash"></i>
+          </button>
           <a href="#A{{product._id}}" data-toggle="collapse" role="button" class="btn btn-info"><i
               class="bi bi-arrow-down-circle"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Item Alert -->
+    <div class="modal fade" id="deleteOneAlert" tabindex="-1" aria-labelledby="deleteOneAlert" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Item</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Do you want to delete this item?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+            <a href="/admin/delete_product/{{product._id}}" class="btn btn-danger delete-post-btn">Delete</a>
+          </div>
         </div>
       </div>
     </div>
@@ -59,13 +83,14 @@
           Are you sure you want to delete all data? <strong>This cannot be undone!</strong>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn link" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
           <a href="/admin/delete_data_all" class="btn btn-danger">Delete All</a>
         </div>
       </div>
     </div>
   </div>
 </div>
+
 
 <div style="margin-bottom: 16em;">
 
