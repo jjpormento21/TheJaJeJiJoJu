@@ -94,6 +94,7 @@
 
 .font4{
     font-weight: 400;
+    font-size: 0.9rem;
     color: #FC8495;
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
@@ -157,4 +158,9 @@
     border-style: none;
     width: 100%;
     height: 18vw;
+}
+
+.cat-icon {
+    font-size: 23px;
+    color: #7f7f7f;
 }
