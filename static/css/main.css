@@ -77,6 +77,10 @@
     border-radius: 5%;
 }
 
+.shop-category:hover + .showcase-card{
+    display: block;
+}
+
 .font1 {
     font-weight: 800;
     color: #595959;
@@ -127,6 +131,19 @@
     font-weight: 800;
 }
 
+.showcase-card{
+    position: absolute;
+    top: 19em;
+    width: 20em;
+    height: 15em;
+    margin-left: 0.9em;
+    display: none;
+}
+
+.showcase-card:hover{
+    display: block;
+}
+
 .boxb {
     border: 3px solid #595959;
     border-radius: 24px;
@@ -166,4 +183,8 @@
 .cat-icon {
     font-size: 23px;
     color: #7f7f7f;
+}
+
+.br-custom{
+    border-radius: 2em;
 }
