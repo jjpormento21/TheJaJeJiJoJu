@@ -24,11 +24,12 @@
         <img src="{{product.imageURL}}" class="card-img-top" alt="{{product.productName}}" style="max-height: 18rem;">
         <div class="card-body">
           <h6 class="card-title">{{product.productName}}</h6>
-          <h6 class="card-subtitle mb-2 text-muted">{{product.productCategory}}</h6>
+          <h6 class="card-subtitle font-weight-light mb-2"><i class="bi bi-clock"></i> {{product.datePosted}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-bookmark-fill"></i> {{product.productCategory}}</h6>
           <h6 class="card-subtitle"><i class="bi bi-tag-fill"></i> ₱{{product.price}}</h6>
         </div>
         <div class="collapse" id="A{{product._id}}">
-          <div class="card-body">
+          <div class="card-body collapse-custom">
             <hr>
             {{product.productDescription}}
             <hr>
@@ -40,8 +41,8 @@
             onclick="setPostToDelete('{{product._id}}')">
             <i class="bi bi-trash"></i>
           </button>
-          <a href="#A{{product._id}}" data-toggle="collapse" role="button" class="btn btn-info"><i
-              class="bi bi-arrow-down-circle"></i></a>
+          <button class="btn btn-info" data-toggle="collapse" data-target="#A{{product._id}}"><i
+              class="bi bi-arrow-down-circle"></i></button>
         </div>
       </div>
     </div>
