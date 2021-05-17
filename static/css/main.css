@@ -75,6 +75,7 @@
     height: 500px;
     width: 350px;
     border-radius: 5%;
+    background-color: #d9d7d7;
 }
 
 .shop-category:hover + .showcase-card{
@@ -117,6 +118,7 @@
 .hero-img {
     height: 350px;
     width: 550px;
+    background-color: #d9d7d7;
 }
 
 .btn-sub {
