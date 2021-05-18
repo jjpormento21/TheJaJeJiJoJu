@@ -39,12 +39,30 @@
 /* Buttons */
 .btn-main{
     background-color: #FC8495;
-    padding: 8px 32px 8px 32px;
-    /* top, right, bottom, left */
+    padding: .5rem 1.5rem;
     border-radius: 24px;
     color: white;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    font-size: 12px;
+    font-size: .9rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-decoration: none;
+}
+
+.btn-main:hover{
+    text-decoration: none;
+    color: white;
+    background-color: hsl(352, 63%, 68%);
+}
+
+.btn-sub {
+    background-color: #Ffff;
+    border: 2px solid #7f7f7f;
+    padding: .5rem 1.5rem;
+    border-radius: 24px;
+    color: #7f7f7f;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    font-size: .9rem;
     font-weight: 800;
 }
 
@@ -52,7 +70,7 @@
 .text-secondary-custom {
     color: #595959;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    padding-top: 16px;
+    padding-top: 1rem;
     font-weight: 800;
 }
 
@@ -121,18 +139,6 @@
     background-color: #d9d7d7;
 }
 
-.btn-sub {
-    background-color: #Ffff;
-    border: 2px solid #7f7f7f;
-    padding: 8px 32px 8px 32px;
-    /* top, right, bottom, left */
-    border-radius: 24px;
-    color: #7f7f7f;
-    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    font-size: 12px;
-    font-weight: 800;
-}
-
 .showcase-card{
     position: absolute;
     top: 19em;
@@ -141,7 +147,6 @@
     margin-left: 0.9em;
     display: none;
 }
-
 .showcase-card:hover{
     display: block;
 }
