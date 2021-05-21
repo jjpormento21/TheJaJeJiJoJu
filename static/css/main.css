@@ -180,6 +180,18 @@
     margin-right: auto;
 }
 
+.img-size1 {
+    height: 70px;
+    border-radius: 100%;
+    width: 75px;
+}
+
+.img-size2 {
+    height: 100px;
+    border-radius: 100%;
+    width: 105px;
+}
+
 .card-img-top {
     border-radius: 2em 2em 0 0;
     border-style: none;
@@ -227,15 +239,14 @@
 
 .CEO {
     max-width: 90%;
-    max-height: 40%;
+    max-height: 90%;
     border-radius: 50%;
     border: 3px solid #b3afaf;
-    display: block; 
     padding: 2%;
 }
 
-.comment{
-    box-shadow: #595959;
+.comment {
+    box-shadow: 5px 5px 5px #b3afaf;
     border-radius: 24px;
 }
 
@@ -243,3 +254,8 @@
     text-align: center;
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
