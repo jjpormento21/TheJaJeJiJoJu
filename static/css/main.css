@@ -227,3 +227,12 @@
     padding: 2%;
 }
 
+.comment {
+    box-shadow: #595959;
+    border-radius: 24px;
+}
+
+.m-title {
+    text-align: center;
+}
+
