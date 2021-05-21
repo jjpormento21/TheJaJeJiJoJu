@@ -33,7 +33,12 @@
           <a class="nav-link" href="/about_us">About Us</a>
         </li>
         <li class="nav-item"><a href="/feedback_hub" class="nav-link">Feedback Hub</a></li>
-        <li class="nav-item"><a href="/cart-session" class="nav-link">[Cart]</a></li>
+        <li class="nav-item">
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            Cart
+          </button>
+        </li>
       </ul>
     </div>
   </nav>
@@ -43,6 +48,69 @@
   </div>
 
   {% block body %} {% endblock %}
+
+  <!-- Modal -->
+  <div class="modal fade cart" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="row">
+            <div class="col-md-6">
+              <h5>Items</h5>
+            </div>
+            <div class="col-md-2">
+              <h5>Price</h5>
+            </div>
+            <div class="col-md-4">
+              <h5>QTY</h5>
+            </div>
+          </div>
+
+          <div class="row cart-row mb-2">
+            <div class="col-md-6">
+              <img src="https://clf1.medpagetoday.net/media/images/87xxx/87355.jpg" alt="face mask"
+                class="cart-item-image">
+              <h6 class="cart-item-name">N95 Face Mask</h6>
+            </div>
+            <div class="col-md-2">
+              <h6 class="cart-item-price">$10.00</h6>
+            </div>
+            <div class="col-md-4">
+              <input class="cart-quantity-input" type="number" value="2" min="1">
+              <i class="bi bi-x-circle cart-delete text-danger"></i>
+            </div>
+          </div>
+
+          <div class="row cart-row mb-2">
+            <div class="col-md-6">
+              <img
+                src="https://static01.nyt.com/images/2019/03/14/business/14talc-sub/merlin_142367775_4cbbb73f-e9c9-40a5-a134-1a46725e9d3f-superJumbo.jpg"
+                alt="face mask" class="cart-item-image">
+              <h6 class="cart-item-name">Johnson's Baby Powder</h6>
+            </div>
+            <div class="col-md-2">
+              <h6 class="cart-item-price">$10.00</h6>
+            </div>
+            <div class="col-md-4">
+              <input class="cart-quantity-input" type="number" value="1" min="1">
+              <i class="bi bi-x-circle cart-delete text-danger"></i>
+            </div>
+          </div>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <footer id="mainFooter" class="mt-5">
     <div class="container pb-2">
@@ -64,11 +132,21 @@
         <div class="col-md-2" id="importantLinks">
           <h3 class="text-secondary-custom text-center">Important Links</h3>
           <ul class="list-unstyled ml-2 text-secondary">
-            <a href="/"><li>Home</li></a>
-            <a href="/shop"><li>Shop</li></a>
-            <a href="/featured"><li>Featured</li></a>
-            <a href="/about_us"><li>About Us</li></a>
-            <a href="/feedback_hub"><li>Feedback Hub</li></a>
+            <a href="/">
+              <li>Home</li>
+            </a>
+            <a href="/shop">
+              <li>Shop</li>
+            </a>
+            <a href="/featured">
+              <li>Featured</li>
+            </a>
+            <a href="/about_us">
+              <li>About Us</li>
+            </a>
+            <a href="/feedback_hub">
+              <li>Feedback Hub</li>
+            </a>
           </ul>
         </div>
 
@@ -107,9 +185,9 @@
             <i class="footer-social-icons mr-4 bi bi-facebook" data-toggle="tooltip" data-placement="bottom"
               title="Facebook"></i>
             <i class="footer-social-icons mr-4 bi bi-instagram" data-toggle="tooltip" data-placement="bottom"
-            title="Instagram"></i>
+              title="Instagram"></i>
             <i class="footer-social-icons mr-4 bi bi-shop" data-toggle="tooltip" data-placement="bottom"
-            title="Shopee"></i>
+              title="Shopee"></i>
           </div>
         </div>
 

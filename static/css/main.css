@@ -5,6 +5,7 @@
 
 :root{
     scroll-padding-top: 4rem;
+    --mt: .8em;
 }
 /* Footer Properties */
 #mainFooter{
@@ -258,4 +259,42 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
-  }
+}
+
+.cart{
+    left: 20em;
+}
+
+.cart-row{
+    display: flex;
+}
+
+.cart-item-image {
+    width: 80px;
+    height: 60px;
+    border-radius: 10px;
+}
+
+.cart-item-name{
+    display: inline;
+    position: absolute;
+    left: 6.6em;
+}
+
+.cart-delete{
+    font-size: 1.5rem;
+}
+
+.cart-quantity-input {
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    border: 1px solid #7f7f7f;
+    background-color: #fff;
+    color: #333;
+    padding: 0;
+    text-align: center;
+    font-size: 1rem;
+    margin-right: 1em;
+    margin-top: .3em;
+}
