@@ -192,6 +192,15 @@
     width: 105px;
 }
 
+.prod-size {
+    border-radius: 36px;
+    padding: 16px;
+    height: 340px;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .card-img-top {
     border-radius: 2em 2em 0 0;
     border-style: none;
@@ -274,4 +283,34 @@
     font-size: 60px;
     color: #595959;
     margin-left: 16rem;
+}
+
+input[type=number]{
+    width: 80px;
+    text-align: center;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    border-radius: 10px;
+    font-weight: 800;
+    color: #595959;
+} 
+
+.nav-logo {
+    max-width: 35%;
+    max-height: 50%;
+}
+
+.nav-icon {
+    font-size: 24px;
+    color: #595959;
+}
+
+.navbar-font{
+    font-weight: 800;
+    color:#FC8495 !important;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+    font-size: 16px;
+}
+
+.navbar-font:hover{
+    color: hsl(352, 73%, 58%) !important;
 }
