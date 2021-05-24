@@ -289,5 +289,7 @@ input[type=number]{
     width: 80px;
     text-align: center;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: 800;
+    color: #595959;
 } 
