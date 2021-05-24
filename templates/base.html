@@ -33,12 +33,6 @@
           <a class="nav-link" href="/about_us">About Us</a>
         </li>
         <li class="nav-item"><a href="/feedback_hub" class="nav-link">Feedback Hub</a></li>
-        <li class="nav-item">
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            Cart
-          </button>
-        </li>
       </ul>
     </div>
   </nav>
@@ -47,70 +41,54 @@
     <hr style="background-color: #FC8495;">
   </div>
 
-  {% block body %} {% endblock %}
-
-  <!-- Modal -->
-  <div class="modal fade cart" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Cart</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-        <div class="modal-body">
-          <div class="row">
-            <div class="col-md-6">
-              <h5>Items</h5>
-            </div>
-            <div class="col-md-2">
-              <h5>Price</h5>
-            </div>
-            <div class="col-md-4">
-              <h5>QTY</h5>
-            </div>
-          </div>
-
-          <div class="row cart-row mb-2">
-            <div class="col-md-6">
-              <img src="https://clf1.medpagetoday.net/media/images/87xxx/87355.jpg" alt="face mask"
-                class="cart-item-image">
-              <h6 class="cart-item-name">N95 Face Mask</h6>
-            </div>
-            <div class="col-md-2">
-              <h6 class="cart-item-price">$10.00</h6>
-            </div>
-            <div class="col-md-4">
-              <input class="cart-quantity-input" type="number" value="2" min="1">
-              <i class="bi bi-x-circle cart-delete text-danger"></i>
-            </div>
-          </div>
-
-          <div class="row cart-row mb-2">
-            <div class="col-md-6">
-              <img
-                src="https://static01.nyt.com/images/2019/03/14/business/14talc-sub/merlin_142367775_4cbbb73f-e9c9-40a5-a134-1a46725e9d3f-superJumbo.jpg"
-                alt="face mask" class="cart-item-image">
-              <h6 class="cart-item-name">Johnson's Baby Powder</h6>
-            </div>
-            <div class="col-md-2">
-              <h6 class="cart-item-price">$10.00</h6>
-            </div>
-            <div class="col-md-4">
-              <input class="cart-quantity-input" type="number" value="1" min="1">
-              <i class="bi bi-x-circle cart-delete text-danger"></i>
-            </div>
-          </div>
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
+  <div class="cart shadow-lg">
+    <h4 class="font1 mb-3">Recently added Items</h4>
+    <div class="row">
+      <div class="col-md-4">
+        <h6>Item</h6>
+      </div>
+      <div class="col-md-5">
+        <h6>Price</h6>
+      </div>
+      <div class="col-md-3">
+        <h6>Quantity</h6>
       </div>
     </div>
+    <hr class="mt-0 mb-1">
+
+    <div class="row cart-item-row">
+      <div class="col-md-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Sample_abc.jpg" alt="item"
+          class="cart-item-img">
+        </div>
+      <div class="col-md-5 ml-0">
+        <h6 class="cart-item-title font1">Item 1</h6>
+        <span class="cart-price"><i class="bi bi-tag-fill"></i> $10.00</span>
+      </div>
+      <div class="col-md-3">
+        <input type="number" name="cart-quantity" id="cartQuantity" min="1" max="99" value="1">
+        <a href="#" class="btn btn-outline-danger mt-3"><i class="bi bi-trash"></i></a>
+      </div>
+    </div>
+
+    <div class="row cart-item-row">
+      <div class="col-md-4">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Sample_abc.jpg" alt="item"
+          class="cart-item-img">
+        </div>
+      <div class="col-md-5 ml-0">
+        <h6 class="cart-item-title font1">Item 1</h6>
+        <span class="cart-price"><i class="bi bi-tag-fill"></i> $10.00</span>
+      </div>
+      <div class="col-md-3">
+        <input type="number" name="cart-quantity" id="cartQuantity" min="1" max="99" value="1">
+        <a href="#" class="btn btn-outline-danger mt-3"><i class="bi bi-trash"></i></a>
+      </div>
+    </div>
+
   </div>
+
+  {% block body %} {% endblock %}
 
   <footer id="mainFooter" class="mt-5">
     <div class="container pb-2">
