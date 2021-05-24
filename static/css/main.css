@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
+:root{
+    scroll-padding-top: 4rem;
+}
 /* Footer Properties */
 #mainFooter{
     background-color: #d9d7d7;
@@ -36,12 +39,30 @@
 /* Buttons */
 .btn-main{
     background-color: #FC8495;
-    padding: 8px 32px 8px 32px;
-    /* top, right, bottom, left */
+    padding: .5rem 1.5rem;
     border-radius: 24px;
     color: white;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    font-size: 12px;
+    font-size: .9rem;
+    font-weight: 800;
+    letter-spacing: .5px;
+    text-decoration: none;
+}
+
+.btn-main:hover{
+    text-decoration: none;
+    color: white;
+    background-color: hsl(352, 63%, 68%);
+}
+
+.btn-sub {
+    background-color: #Ffff;
+    border: 2px solid #7f7f7f;
+    padding: .5rem 1.5rem;
+    border-radius: 24px;
+    color: #7f7f7f;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    font-size: .9rem;
     font-weight: 800;
 }
 
@@ -49,7 +70,7 @@
 .text-secondary-custom {
     color: #595959;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    padding-top: 16px;
+    padding-top: 1rem;
     font-weight: 800;
 }
 
@@ -63,10 +84,20 @@
     color: #595959;
 }
 
+.par1{
+    font-size: 16px;
+    color: #000;
+}
+/* Components */
 .shop-category {
     height: 500px;
     width: 350px;
     border-radius: 5%;
+    background-color: #d9d7d7;
+}
+
+.shop-category:hover + .showcase-card{
+    display: block;
 }
 
 .font1 {
@@ -75,6 +106,24 @@
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
 
+.font2 {
+    font-weight: 800;
+    color: #FC8495;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+.font3 {
+    font-weight: 800;
+    color: #000;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+.font4{
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #FC8495;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
 .roundb {
     border: 2px solid #7f7f7f;
     border-radius: 16px;
@@ -87,18 +136,19 @@
 .hero-img {
     height: 350px;
     width: 550px;
+    background-color: #d9d7d7;
 }
 
-.btn-sub {
-    background-color: #Ffff;
-    border: 2px solid #7f7f7f;
-    padding: 8px 32px 8px 32px;
-    /* top, right, bottom, left */
-    border-radius: 24px;
-    color: #7f7f7f;
-    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    font-size: 12px;
-    font-weight: 800;
+.showcase-card{
+    position: absolute;
+    top: 19em;
+    width: 20em;
+    height: 15em;
+    margin-left: 0.9em;
+    display: none;
+}
+.showcase-card:hover{
+    display: block;
 }
 
 .boxb {
@@ -121,14 +171,91 @@
     font-size: 12px;
 }
 
-.font2 {
-    font-weight: 800;
-    color: #FC8495;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+.img-size {
+    border-radius: 36px;
+    padding: 16px;
+    height: 340px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.font3 {
-    font-weight: 800;
-    color: #000;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+.img-size1 {
+    height: 70px;
+    border-radius: 100%;
+    width: 75px;
 }
+
+.img-size2 {
+    height: 100px;
+    border-radius: 100%;
+    width: 105px;
+}
+
+.card-img-top {
+    border-radius: 2em 2em 0 0;
+    border-style: none;
+    width: 100%;
+    height: 18vw;
+}
+
+.cat-icon {
+    font-size: 23px;
+    color: #7f7f7f;
+}
+
+.br-custom{
+    border-radius: 2em;
+}
+
+
+/* Admin Styles */
+#dashboard-footer{
+    background-color: #000;
+    padding: 1em;
+    color: #fff;
+    text-align: center;
+}
+
+.collapse-custom{
+    padding: 0 1.25rem 0;
+}
+
+.title-logo {
+    max-width: 30%;
+    max-height: 100%;
+    display: block; 
+}
+
+.pic-logo {
+    max-width: 50%;
+    max-height: 100%;
+    border-radius: 50%;
+    border: 3px solid #b3afaf;
+    display: block; 
+    margin-left: 10rem;
+    padding: 2%;
+}
+
+.CEO {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 50%;
+    border: 3px solid #b3afaf;
+    padding: 2%;
+}
+
+.comment {
+    box-shadow: 5px 5px 5px #b3afaf;
+    border-radius: 24px;
+}
+
+.m-title {
+    text-align: center;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
