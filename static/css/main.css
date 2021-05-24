@@ -306,11 +306,11 @@ input[type=number]{
 
 .navbar-font{
     font-weight: 800;
-    color: #FC8495;
+    color:#FC8495 !important;
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
     font-size: 16px;
 }
 
 .navbar-font:hover{
-    color:#595959;
+    color: hsl(352, 73%, 58%) !important;
 }
