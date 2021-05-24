@@ -293,3 +293,24 @@ input[type=number]{
     font-weight: 800;
     color: #595959;
 } 
+
+.nav-logo {
+    max-width: 35%;
+    max-height: 50%;
+}
+
+.nav-icon {
+    font-size: 24px;
+    color: #595959;
+}
+
+.navbar-font{
+    font-weight: 800;
+    color:#FC8495 !important;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+    font-size: 16px;
+}
+
+.navbar-font:hover{
+    color: hsl(352, 73%, 58%) !important;
+}
