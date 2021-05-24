@@ -297,4 +297,20 @@
     font-size: 1rem;
     margin-right: 1em;
     margin-top: .3em;
+  }
+
+.rectangleb{
+    border-radius:24px ;
+}
+
+.review-icon {
+    font-size: 40px;
+    color: #595959;
+    margin-left: 12rem;
+}
+
+.quotation-icon {
+    font-size: 60px;
+    color: #595959;
+    margin-left: 16rem;
 }
