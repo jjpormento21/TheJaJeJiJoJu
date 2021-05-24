@@ -272,14 +272,15 @@
 
 .cart{
     background-color:#fff;
-    position: absolute;
+    position: fixed;
     right: 10em;
     width: 24em;
     height: auto;
     z-index: 1;
-    border: #7f7f7f solid 0.01rem;
+    border: #7f7f7f solid .5px;
     border-radius: .5em;
     padding: 1.5rem;
+    display: none;
 }
 
 .cart-item-img{
@@ -301,6 +302,10 @@
 .cart-item-row:hover{
     background-color: hsl(0, 7%, 97%);
     border-radius: 1em;
+}
+
+.cart-total-price{
+    margin-left: 3.5em;
 }
 
 
