@@ -36,6 +36,10 @@ def feedback():
 def about_us():
     return render_template('about_us.html')
 
+@app.route('/product-info')
+def product_info():
+    return render_template('product_info.html')
+
 @app.errorhandler(404)
 def notFound(e):
     return render_template('404.html')
