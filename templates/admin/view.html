@@ -1,0 +1,99 @@
+{% extends 'admin/dashboard_template.html' %}
+
+{% block head %}
+<title>View - TheDashboard</title>
+{% endblock %}
+
+{% block body %}
+<div class="container mt-3 mb-3">
+  <div class="dropdown mb-4 text-right">
+    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+      aria-haspopup="true" aria-expanded="false">
+      More Options
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+      <a class="dropdown-item text-danger" href="#deleteAlert" data-toggle="modal" role="button"><i
+          class="bi bi-trash"></i> Delete all</a>
+    </div>
+  </div>
+
+  <div class="row">
+    {% for product in products %}
+    <div class="col-md-3">
+      <div class="card" style="width: 16rem;">
+        <img src="{{product.imageURL}}" class="card-img-top" alt="{{product.productName}}" style="max-height: 18rem;">
+        <div class="card-body">
+          <h6 class="card-title">{{product.productName}}</h6>
+          <h6 class="card-subtitle font-weight-light mb-2"><i class="bi bi-clock"></i> {{product.datePosted}}</h6>
+          <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-bookmark-fill"></i> {{product.productCategory}}</h6>
+          <h6 class="card-subtitle"><i class="bi bi-tag-fill"></i> ₱{{product.price}}</h6>
+        </div>
+        <div class="collapse" id="A{{product._id}}">
+          <div class="card-body collapse-custom">
+            <hr>
+            {{product.productDescription}}
+            <hr>
+          </div>
+        </div>
+        <div class="card-footer bg-black-50">
+          <a href="/admin/edit_product/{{product._id}}" class="btn btn-primary">Edit Info</a>
+          <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteOneAlert"
+            onclick="setPostToDelete('{{product._id}}')">
+            <i class="bi bi-trash"></i>
+          </button>
+          <button class="btn btn-info" data-toggle="collapse" data-target="#A{{product._id}}"><i
+              class="bi bi-arrow-down-circle"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete Item Alert -->
+    <div class="modal fade" id="deleteOneAlert" tabindex="-1" aria-labelledby="deleteOneAlert" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Item</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            Do you want to delete this item?
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+            <a href="/admin/delete_product/{{product._id}}" class="btn btn-danger delete-post-btn">Delete</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <!-- Alert Popup -->
+  <div class="modal fade" id="deleteAlert" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Delete All Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to delete all data? <strong>This cannot be undone!</strong>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-link" data-dismiss="modal">Close</button>
+          <a href="/admin/delete_data_all" class="btn btn-danger">Delete All</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div style="margin-bottom: 16em;">
+
+</div>
+{% endblock %}
