@@ -11,7 +11,10 @@
             <a class="nav-link" href="#">Information</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Shipping & Payment</a>
+            <a class="nav-link" href="#">Shipping Options</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Payment</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#" tabindex="-1">Order Summary</a>
@@ -23,53 +26,53 @@
                 <!-- Step 1 -->
                 <section id="step1" hidden>
                     <div class="form-row">
-                        <div class="col">
+                        <div class="form-group col">
                             <label for="firstName">First Name</label>
                             <input type="text" class="form-control" name="firstName" id="firstName">
                         </div>
-                        <div class="col">
+                        <div class="form-group col">
                             <label for="lastName">Last Name</label>
                             <input type="text" class="form-control" name="lastName" id="lastName">
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col">
+                        <div class="form-group col">
                             <label for="email">Email Address</label>
                             <input type="email" name="email" id="email" class="form-control"
                                 placeholder="Email Address">
                         </div>
-                        <div class="col">
+                        <div class="form-group col">
                             <label for="username">Username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="Username"
                                 disabled>
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col">
+                        <div class="form-group col">
                             <label for="phone1">Phone Number</label>
                             <input type="tel" name="phone1" id="phone1" class="form-control" placeholder="+639911234567"
                                 required>
                         </div>
-                        <div class="col">
+                        <div class="form-group col">
                             <label for="phone2">Phone Number 2 (optional)</label>
                             <input type="tel" name="phone2" id="phone2" class="form-control"
                                 placeholder="+639911234567">
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-12">
+                        <div class="form-group col-md-12">
                             <label for="billingAdd">Billing Address</label>
                             <input type="text" name="billingAdd" id="billingAdd" class="form-control"
-                                placeholder="123 Osmeña St. Arevalo, Iloilo City">
+                                placeholder="Complete Address">
                         </div>
-                        <div class="col-md-12">
+                        <div class="form-group col-md-12">
                             <label for="shipAdd">Shipping Address</label>
                             <input type="text" name="shipAdd" id="shipAdd" class="form-control"
-                                placeholder="123 Osmeña St. Arevalo, Iloilo City">
+                                placeholder="Complete Address">
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col-md-3">
+                        <div class="form-group col-md-3">
                             <label for="region">Region</label>
                             <select name="region" id="region" class="custom-select">
                                 <option selected>Choose Region</option>
@@ -80,21 +83,21 @@
                                 <option value="Overseas">Overseas</option>
                             </select>
                         </div>
-                        <div class="col-md-3">
+                        <div class="form-group col-md-3">
                             <label for="province">Province</label>
                             <input type="text" class="form-control" placeholder="Iloilo" name="province" id="province">
                         </div>
-                        <div class="col-md-4">
+                        <div class="form-group col-md-4">
                             <label for="city">City/Municipality</label>
                             <input type="text" class="form-control" placeholder="Iloilo City" name="city" id="city">
                         </div>
-                        <div class="col-md-2">
+                        <div class="form-group col-md-2">
                             <label for="zipcode">ZIP Code</label>
                             <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="5000">
                         </div>
                     </div>
                     <div class="form-row mt-3">
-                        <div class="col-md-8">
+                        <div class="form-group col-md-8">
                             <div class="custom-control custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" id="customCheck1">
                                 <label class="custom-control-label" for="customCheck1">Shipping address is the same as
@@ -107,15 +110,15 @@
                                     time</label>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="form-group col-md-4">
                             <button class="btn btn-main mt-2 btn-block nextStep">Next</button>
                         </div>
                     </div>
                 </section>
                 <!-- Step 2 -->
-                <section id="step2">
+                <section id="step2" hidden>
                     <div class="form-row">
-                        <div class="col">
+                        <div class="form-group col">
                             <h4 class="font1">Shipping Address</h4>
                             <label for="shipAdd">Shipping Address</label>
                             <input type="text" name="shipAdd" id="shipAdd" class="form-control"
@@ -124,7 +127,7 @@
                         </div>
                     </div>
                     <div class="form-row">
-                        <div class="col">
+                        <div class="form-group col">
                             <h4 class="font1">Courier Services</h4>
                             <div class="card">
                                 <div class="card-body">
@@ -150,6 +153,10 @@
                             </div>
                         </div>
                     </div>
+                </section>
+                <!-- Step 3 -->
+                <section id="step3">
+                    
                 </section>
             </form>
         </div>
