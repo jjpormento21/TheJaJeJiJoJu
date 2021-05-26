@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Checkout | Miss Jhaz Cosmetics</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="font1">Check out your products!</h1>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Information</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Shipping & Payment</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1">Order Summary</a>
+        </li>
+    </ul>
+    <div class="row">
+        <div class="col-md-8">
+            <form action="#" method="post" class="mt-2" autocomplete="off">
+                <!-- Step 1 -->
+                <section id="step1">
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="firstName">First Name</label>
+                            <input type="text" class="form-control" name="firstName" id="firstName">
+                        </div>
+                        <div class="col">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" class="form-control" name="lastName" id="lastName">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="email">Email Address</label>
+                            <input type="email" name="email" id="email" class="form-control"
+                                placeholder="Email Address">
+                        </div>
+                        <div class="col">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Username"
+                                disabled>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <label for="phone1">Phone Number</label>
+                            <input type="tel" name="phone1" id="phone1" class="form-control" placeholder="+639911234567"
+                                required>
+                        </div>
+                        <div class="col">
+                            <label for="phone2">Phone Number 2 (optional)</label>
+                            <input type="tel" name="phone2" id="phone2" class="form-control"
+                                placeholder="+639911234567">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-12">
+                            <label for="billingAdd">Billing Address</label>
+                            <input type="text" name="billingAdd" id="billingAdd" class="form-control"
+                                placeholder="123 Osmeña St. Arevalo, Iloilo City">
+                        </div>
+                        <div class="col-md-12">
+                            <label for="shipAdd">Shipping Address</label>
+                            <input type="text" name="shipAdd" id="shipAdd" class="form-control"
+                                placeholder="123 Osmeña St. Arevalo, Iloilo City">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col-md-3">
+                            <label for="region">Region</label>
+                            <select name="region" id="region" class="custom-select">
+                                <option selected>Choose Region</option>
+                                <option value="Luzon">Luzon</option>
+                                <option value="NCR">NCR</option>
+                                <option value="Visayas">Visayas</option>
+                                <option value="Mindanao">Mindanao</option>
+                                <option value="Overseas">Overseas</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="province">Province</label>
+                            <input type="text" class="form-control" placeholder="Iloilo" name="province" id="province">
+                        </div>
+                        <div class="col-md-4">
+                            <label for="city">City/Municipality</label>
+                            <input type="text" class="form-control" placeholder="Iloilo City" name="city" id="city">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="zipcode">ZIP Code</label>
+                            <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="5000">
+                        </div>
+                    </div>
+                    <div class="form-row mt-3">
+                        <div class="col-md-8">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                <label class="custom-control-label" for="customCheck1">Shipping address is the same as
+                                    billing
+                                    address</label>
+                            </div>
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                <label class="custom-control-label" for="customCheck2">Save information for next
+                                    time</label>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-main mt-2 btn-block nextStep">Next</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Step 2 -->
+                <section id="step2">
+                    <div class="form-row">
+                        <div class="col">
+                            <h4 class="font1">Shipping Address</h4>
+                            <label for="shipAdd">Shipping Address</label>
+                            <input type="text" name="shipAdd" id="shipAdd" class="form-control"
+                                placeholder="123 Osmeña St. Arevalo, Iloilo City">
+                            <p>Please review your shipping address should there be any changes</p>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <h4 class="font1">Courier Services</h4>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title font1">Courier Options</h5>
+                                    <select class="custom-select">
+                                        <option selected>Shipping Options</option>
+                                        <option value="LBC">LBC</option>
+                                        <option value="NinjaVan Integrated">NinjaVan</option>
+                                        <option value="J&T Express">J&T Express</option>
+                                    </select>
+                                    <h5 class="card-subtitle mt-2">Shipping to: <span id="shipToRegion">NCR</span></h5>
+                                    <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: $0.00</h6>
+                                    <p class="card-text">Deliveries are to be expected to arrive in 3-5 days but may
+                                        vary
+                                        depending on your location. If you have encountered any
+                                        problems, don’t hesitate to contact us and we’ll gladly help.
+                                    </p>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button class="btn btn-sub">Previous</button>
+                                    <button class="btn btn-main">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </form>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg" class="card-img-top"
+                    alt="..." style="border-radius: 0;">
+                <div class="card-body">
+                    <h5 class="card-title">Cart</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

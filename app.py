@@ -12,6 +12,7 @@ app.config['MONGO_URI'] = os.getenv('DEVELOPER')
 mongo = PyMongo(app)
 products = mongo.db.products
 
+hello = 'hello world!'
 #routes
 @app.route('/')
 def index():
@@ -39,6 +40,14 @@ def about_us():
 @app.route('/product-info')
 def product_info():
     return render_template('product_info.html')
+
+@app.route('/checkout')
+def checkoutPage():
+    return render_template('checkout.html')
+
+@app.route('/checkout-confirm', methods=['POST'])
+def confirmCheckout():
+    pass
 
 @app.errorhandler(404)
 def notFound(e):
