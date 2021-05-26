@@ -156,7 +156,63 @@
                 </section>
                 <!-- Step 3 -->
                 <section id="step3">
-                    
+                    <div class="form-row">
+                        <div class="form-group col">
+                            <h4 class="font1">Payments</h4>
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title font1">Payment Methods</h5>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="creditCard" value="Credit Card" name="paymentMethod"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="creditCard">Credit Card</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="debitCard" value="Debit Card" name="paymentMethod"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="debitCard">Debit Card</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" id="COD" value="COD" name="paymentMethod"
+                                            class="custom-control-input">
+                                        <label class="custom-control-label" for="COD">Cash on Delivery</label>
+                                    </div>
+                                    <hr>
+                                    <section class="mt-3" id="payCard">
+                                        <div class="form-row">
+                                            <div class="form-group col">
+                                                <label for="cardName">Cardholder Name</label>
+                                                <input type="text" name="cardName" id="cardName" class="form-control">
+                                            </div>
+                                            <div class="form-group col">
+                                                <label for="cardNumber">Card Number</label>
+                                                <input type="text" name="cardNumber" id="cardNumber"
+                                                    class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-row">
+                                            <div class="form-group col">
+                                                <label for="expiryDate">Expiry Date</label>
+                                                <input type="month" class="form-control" name="expiryDate"
+                                                    id="expiryDate" min="2021-01-01" max="2035-01-01">
+                                            </div>
+                                            <div class="form-group col">
+                                                <label for="cvv">CVV</label>
+                                                <input type="password" name="cvv" id="cvv" class="form-control" maxlength="3">
+                                            </div>
+                                        </div>
+                                    </section>
+                                    <p class="card-text">You will receive a confirmation email along with your receipt
+                                        and tracking number. Please make payment on delivery.
+                                    </p>
+                                </div>
+                                <div class="card-footer text-right">
+                                    <button class="btn btn-sub">Previous</button>
+                                    <button class="btn btn-main" id="next2">Next</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </section>
             </form>
         </div>
