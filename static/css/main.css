@@ -314,3 +314,6 @@ input[type=number]{
 .navbar-font:hover{
     color: hsl(352, 73%, 58%) !important;
 }
+#payCard{
+    display: none;
+}

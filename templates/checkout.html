@@ -14,14 +14,22 @@
             <a class="nav-link" href="#">Shipping Options</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Payment</a>
+            <a class="nav-link" href="#">Payment</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Order Summary</a>
+            <a class="nav-link active" href="#" tabindex="-1">Order Summary</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#" tabindex="-1">Finish</a>
         </li>
     </ul>
     <div class="row">
         <div class="col-md-8">
+            <div class="alert alert-warning mt-2">
+                <strong><i class="bi bi-info-circle-fill"></i></strong>
+                Due to the implementation of community quarantine which limits transportation and mobility, delivery
+                schedules may get affected. Thank you for your patience and understanding.
+            </div>
             <form action="#" method="post" class="mt-2" autocomplete="off">
                 <!-- Step 1 -->
                 <section id="step1" hidden>
@@ -117,100 +125,155 @@
                 </section>
                 <!-- Step 2 -->
                 <section id="step2" hidden>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <h4 class="font1">Shipping Address</h4>
-                            <label for="shipAdd">Shipping Address</label>
+                    <h3 class="font1">Courier Services</h3>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="font1">Shipping Address</h5>
                             <input type="text" name="shipAdd" id="shipAdd" class="form-control"
                                 placeholder="123 Osmeña St. Arevalo, Iloilo City">
-                            <p>Please review your shipping address should there be any changes</p>
+                            <p>Please review your shipping address should there be any changes.</p>
+                            <h5 class="card-title font1">Courier Options</h5>
+                            <select class="custom-select">
+                                <option selected>Shipping Options</option>
+                                <option value="LBC">LBC</option>
+                                <option value="NinjaVan Integrated">NinjaVan</option>
+                                <option value="J&T Express">J&T Express</option>
+                            </select>
+                            <h5 class="card-subtitle mt-2">Shipping to: <span id="shipToRegion">NCR</span></h5>
+                            <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: $0.00</h6>
+                            <p class="card-text">Deliveries are expected to arrive in 3-5 days but may
+                                vary
+                                depending on your location. If you encounter any
+                                problems, don’t hesitate to contact us and we’ll gladly help.
+                            </p>
                         </div>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <h4 class="font1">Courier Services</h4>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title font1">Courier Options</h5>
-                                    <select class="custom-select">
-                                        <option selected>Shipping Options</option>
-                                        <option value="LBC">LBC</option>
-                                        <option value="NinjaVan Integrated">NinjaVan</option>
-                                        <option value="J&T Express">J&T Express</option>
-                                    </select>
-                                    <h5 class="card-subtitle mt-2">Shipping to: <span id="shipToRegion">NCR</span></h5>
-                                    <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: $0.00</h6>
-                                    <p class="card-text">Deliveries are to be expected to arrive in 3-5 days but may
-                                        vary
-                                        depending on your location. If you have encountered any
-                                        problems, don’t hesitate to contact us and we’ll gladly help.
-                                    </p>
-                                </div>
-                                <div class="card-footer text-right">
-                                    <button class="btn btn-sub">Previous</button>
-                                    <button class="btn btn-main" id="next2">Next</button>
-                                </div>
-                            </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-sub">Previous</button>
+                            <button class="btn btn-main" id="next2">Next</button>
                         </div>
                     </div>
                 </section>
                 <!-- Step 3 -->
-                <section id="step3">
-                    <div class="form-row">
-                        <div class="form-group col">
-                            <h4 class="font1">Payments</h4>
-                            <div class="card">
-                                <div class="card-body">
-                                    <h5 class="card-title font1">Payment Methods</h5>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="creditCard" value="Credit Card" name="paymentMethod"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="creditCard">Credit Card</label>
+                <section id="step3" hidden>
+                    <h4 class="font1">Payments</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title font1">Payment Methods</h5>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="creditCard" value="Credit Card" name="paymentMethod"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="creditCard">Credit Card</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="debitCard" value="Debit Card" name="paymentMethod"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="debitCard">Debit Card</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="COD" value="COD" name="paymentMethod"
+                                    class="custom-control-input">
+                                <label class="custom-control-label" for="COD">Cash on Delivery</label>
+                            </div>
+                            <hr>
+                            <section class="mt-3" id="payCard">
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="cardName">Cardholder Name</label>
+                                        <input type="text" name="cardName" id="cardName" class="form-control">
                                     </div>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="debitCard" value="Debit Card" name="paymentMethod"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="debitCard">Debit Card</label>
+                                    <div class="form-group col">
+                                        <label for="cardNumber">Card Number</label>
+                                        <input type="text" name="cardNumber" id="cardNumber" class="form-control">
                                     </div>
-                                    <div class="custom-control custom-radio">
-                                        <input type="radio" id="COD" value="COD" name="paymentMethod"
-                                            class="custom-control-input">
-                                        <label class="custom-control-label" for="COD">Cash on Delivery</label>
-                                    </div>
-                                    <hr>
-                                    <section class="mt-3" id="payCard">
-                                        <div class="form-row">
-                                            <div class="form-group col">
-                                                <label for="cardName">Cardholder Name</label>
-                                                <input type="text" name="cardName" id="cardName" class="form-control">
-                                            </div>
-                                            <div class="form-group col">
-                                                <label for="cardNumber">Card Number</label>
-                                                <input type="text" name="cardNumber" id="cardNumber"
-                                                    class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-row">
-                                            <div class="form-group col">
-                                                <label for="expiryDate">Expiry Date</label>
-                                                <input type="month" class="form-control" name="expiryDate"
-                                                    id="expiryDate" min="2021-01-01" max="2035-01-01">
-                                            </div>
-                                            <div class="form-group col">
-                                                <label for="cvv">CVV</label>
-                                                <input type="password" name="cvv" id="cvv" class="form-control" maxlength="3">
-                                            </div>
-                                        </div>
-                                    </section>
-                                    <p class="card-text">You will receive a confirmation email along with your receipt
-                                        and tracking number. Please make payment on delivery.
-                                    </p>
                                 </div>
-                                <div class="card-footer text-right">
-                                    <button class="btn btn-sub">Previous</button>
-                                    <button class="btn btn-main" id="next2">Next</button>
+                                <div class="form-row">
+                                    <div class="form-group col">
+                                        <label for="expiryDate">Expiry Date</label>
+                                        <input type="month" class="form-control" name="expiryDate" id="expiryDate"
+                                            min="2021-01-01" max="2035-01-01">
+                                    </div>
+                                    <div class="form-group col">
+                                        <label for="cvv">CVV</label>
+                                        <input type="password" name="cvv" id="cvv" class="form-control" maxlength="3">
+                                    </div>
+                                </div>
+                            </section>
+                            <p class="card-text">You will receive a confirmation email along with your receipt
+                                and tracking number. Please make payment on delivery.
+                            </p>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-sub">Previous</button>
+                            <button class="btn btn-main" id="next2">Next</button>
+                        </div>
+                    </div>
+                </section>
+                <!-- Step 4 -->
+                <section id="step4">
+                    <h4 class="font1">Delivery Details</h4>
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title font2">Receiver Information</h5>
+                            <h6 class="card-title"><i class="bi bi-person-fill"></i> Theodore Walter Galve</h6>
+                            <h6 class="card-title"><i class="bi bi-geo-alt-fill"></i> Sitio Poblacion, Sapal, San
+                                Lorenzo, Guimaras</h6>
+                            <h6 class="card-title"><i class="bi bi-telephone-fill"></i> 09911234567</h6>
+                            <h6 class="card-title"><i class="bi bi-envelope-fill"></i> theodorewaltergalve124@gamail.com
+                            </h6>
+                            <hr>
+                            <h5 class="card-title font2">Ordered Products</h5>
+                            <table class="table table-hover">
+                                <thead class="font1">
+                                    <tr>
+                                        <th scope="col">Products</th>
+                                        <th scope="col">Quantity</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="font2">Product 1</td>
+                                        <td>1</td>
+                                        <td>₱100</td>
+                                        <td>₱100</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font2">Product 2</td>
+                                        <td>2</td>
+                                        <td>₱50</td>
+                                        <td>₱100</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="font2">Shipping Fee</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>₱100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="text-right">
+                                <h6 class="card-title font2">Grand Total: <span id="grandTotal" class="text-muted">$100.00</span></h6>
+                            </div>
+                            <hr>
+                            <div class="row text-center">
+                                <div class="col">
+                                    <h5 class="card-title font2">Payment Method</h5>
+                                    <h6 class="card-subtitle">Cash on Delivery</h6>
+                                </div>
+                                <div class="col">
+                                    <h5 class="card-title font2">Courier</h5>
+                                    <h6 class="card-subtitle">LBC</h6>
+                                </div>
+                                <div class="col">
+                                    <h5 class="card-title font2">Shipping to</h5>
+                                    <h6 class="card-subtitle">NCR</h6>
                                 </div>
                             </div>
+                        </div>
+                        <div class="card-footer text-right">
+                            <button class="btn btn-sub">Previous</button>
+                            <button class="btn btn-main disabled" id="next2" type="submit" disabled>Place Order</button>
                         </div>
                     </div>
                 </section>
