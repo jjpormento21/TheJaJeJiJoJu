@@ -5,34 +5,36 @@
 
 {% block body %}
 <div class="container">
-    <h1 class="font1">Check out your products!</h1>
-    <ul class="nav nav-tabs">
-        <li class="nav-item">
-            <a class="nav-link" href="#">Information</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Shipping Options</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Payment</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link active" href="#" tabindex="-1">Order Summary</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#" tabindex="-1">Finish</a>
-        </li>
-    </ul>
+    <nav class="sticky-top bg-white mt-2 pt-2">
+        <h2 class="font1">Check out your products!</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item ">
+                <a class="nav-link tab-checkout" href="#">Information</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link tab-checkout" href="#">Shipping Options</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link tab-checkout" href="#">Payment</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link tab-checkout" href="#" tabindex="-1">Order Summary</a>
+            </li>
+            <li class="nav-item ">
+                <a class="nav-link tab-checkout" href="#" tabindex="-1">Finish</a>
+            </li>
+        </ul>
+    </nav>
     <div class="row">
         <div class="col-md-8">
-            <div class="alert alert-warning mt-2">
+            <div class="alert alert-warning mt-2" id="alertECQ">
                 <strong><i class="bi bi-info-circle-fill"></i></strong>
                 Due to the implementation of community quarantine which limits transportation and mobility, delivery
                 schedules may get affected. Thank you for your patience and understanding.
             </div>
             <form action="#" method="post" class="mt-2" autocomplete="off">
                 <!-- Step 1 -->
-                <section id="step1" hidden>
+                <section class="form-step">
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="firstName">First Name</label>
@@ -119,12 +121,12 @@
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                            <button class="btn btn-main mt-2 btn-block nextStep">Next</button>
+                            <a href="#alertECQ" class="btn btn-main mt-2 btn-block nextStep">Next</a>
                         </div>
                     </div>
                 </section>
                 <!-- Step 2 -->
-                <section id="step2" hidden>
+                <section class="form-step">
                     <h3 class="font1">Courier Services</h3>
                     <div class="card">
                         <div class="card-body">
@@ -141,20 +143,20 @@
                             </select>
                             <h5 class="card-subtitle mt-2">Shipping to: <span id="shipToRegion">NCR</span></h5>
                             <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: $0.00</h6>
-                            <p class="card-text">Deliveries are expected to arrive in 3-5 days but may
+                            <p class="card-text alert alert-info">Deliveries are expected to arrive in 3-5 days but may
                                 vary
                                 depending on your location. If you encounter any
                                 problems, don’t hesitate to contact us and we’ll gladly help.
                             </p>
                         </div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-sub">Previous</button>
-                            <button class="btn btn-main" id="next2">Next</button>
+                            <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
+                            <a href="#alertECQ" class="btn btn-main nextStep">Next</a>
                         </div>
                     </div>
                 </section>
                 <!-- Step 3 -->
-                <section id="step3" hidden>
+                <section class="form-step">
                     <h4 class="font1">Payments</h4>
                     <div class="card">
                         <div class="card-body">
@@ -203,13 +205,13 @@
                             </p>
                         </div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-sub">Previous</button>
-                            <button class="btn btn-main" id="next2">Next</button>
+                            <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
+                            <a href="#alertECQ" class="btn btn-main nextStep">Next</a>
                         </div>
                     </div>
                 </section>
                 <!-- Step 4 -->
-                <section id="step4">
+                <section class="form-step">
                     <h4 class="font1">Delivery Details</h4>
                     <div class="card">
                         <div class="card-body">
@@ -253,7 +255,8 @@
                                 </tbody>
                             </table>
                             <div class="text-right">
-                                <h6 class="card-title font2">Grand Total: <span id="grandTotal" class="text-muted">$100.00</span></h6>
+                                <h6 class="card-title font2">Grand Total: <span id="grandTotal"
+                                        class="text-muted">$100.00</span></h6>
                             </div>
                             <hr>
                             <div class="row text-center">
@@ -272,7 +275,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-right">
-                            <button class="btn btn-sub">Previous</button>
+                            <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
                             <button class="btn btn-main disabled" id="next2" type="submit" disabled>Place Order</button>
                         </div>
                     </div>
@@ -293,4 +296,5 @@
         </div>
     </div>
 </div>
+<script src="{{ url_for('static', filename = 'js/checkoutForm.js')}}"></script>
 {% endblock %}
