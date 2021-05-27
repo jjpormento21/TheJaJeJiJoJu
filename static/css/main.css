@@ -320,3 +320,12 @@ input[type=number]{
 .form-step{
     display: none;
 }
+#orderCompleteImg{
+    width: 100px;
+    height: 100px;
+}
+#trackNum{
+    background-color: hsl(0, 16%, 96%);
+    padding: 1rem;
+    border-radius: .25em;
+}

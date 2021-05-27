@@ -32,7 +32,7 @@
                 Due to the implementation of community quarantine which limits transportation and mobility, delivery
                 schedules may get affected. Thank you for your patience and understanding.
             </div>
-            <form action="#" method="post" class="mt-2" autocomplete="off">
+            <form action="{{ url_for('confirmCheckout') }}" method="POST" class="mt-2" autocomplete="off">
                 <!-- Step 1 -->
                 <section class="form-step">
                     <div class="form-row">
@@ -131,11 +131,10 @@
                     <div class="card">
                         <div class="card-body">
                             <h5 class="font1">Shipping Address</h5>
-                            <input type="text" name="shipAdd" id="shipAdd" class="form-control"
-                                placeholder="123 Osmeña St. Arevalo, Iloilo City">
+                            <input type="text" class="form-control" placeholder="123 Osmeña St. Arevalo, Iloilo City">
                             <p>Please review your shipping address should there be any changes.</p>
                             <h5 class="card-title font1">Courier Options</h5>
-                            <select class="custom-select">
+                            <select class="custom-select" name="courier">
                                 <option selected>Shipping Options</option>
                                 <option value="LBC">LBC</option>
                                 <option value="NinjaVan Integrated">NinjaVan</option>
@@ -276,7 +275,7 @@
                         </div>
                         <div class="card-footer text-right">
                             <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
-                            <button class="btn btn-main disabled" id="next2" type="submit" disabled>Place Order</button>
+                            <button class="btn btn-main" id="next2" type="submit">Place Order</button>
                         </div>
                     </div>
                 </section>
