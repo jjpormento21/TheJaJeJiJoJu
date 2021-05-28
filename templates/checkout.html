@@ -33,7 +33,7 @@
                 schedules may get affected. Thank you for your patience and understanding.
             </div>
             <form action="{{ url_for('confirmCheckout') }}" method="POST" class="mt-2" autocomplete="off">
-                <!-- Step 1 -->
+                <!-- Step 1 Basic Information -->
                 <section class="form-step">
                     <div class="form-row">
                         <div class="form-group col">
@@ -125,23 +125,20 @@
                         </div>
                     </div>
                 </section>
-                <!-- Step 2 -->
+                <!-- Step 2 Shipping -->
                 <section class="form-step">
                     <h3 class="font1">Courier Services</h3>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="font1">Shipping Address</h5>
-                            <input type="text" class="form-control" placeholder="123 Osmeña St. Arevalo, Iloilo City">
-                            <p>Please review your shipping address should there be any changes.</p>
                             <h5 class="card-title font1">Courier Options</h5>
-                            <select class="custom-select" name="courier">
+                            <select class="custom-select" name="courier" id="courier">
                                 <option selected>Shipping Options</option>
                                 <option value="LBC">LBC</option>
                                 <option value="NinjaVan Integrated">NinjaVan</option>
                                 <option value="J&T Express">J&T Express</option>
                             </select>
-                            <h5 class="card-subtitle mt-2">Shipping to: <span id="shipToRegion">NCR</span></h5>
-                            <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: $0.00</h6>
+                            <h5 class="card-subtitle mt-2">Shipping to: <span id="regionPreview"></span></h5>
+                            <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: ₱<span id="shipFeePreview"></span></h6>
                             <p class="card-text alert alert-info">Deliveries are expected to arrive in 3-5 days but may
                                 vary
                                 depending on your location. If you encounter any
@@ -154,7 +151,7 @@
                         </div>
                     </div>
                 </section>
-                <!-- Step 3 -->
+                <!-- Step 3 Payment -->
                 <section class="form-step">
                     <h4 class="font1">Payments</h4>
                     <div class="card">
@@ -184,18 +181,20 @@
                                     </div>
                                     <div class="form-group col">
                                         <label for="cardNumber">Card Number</label>
-                                        <input type="text" name="cardNumber" id="cardNumber" class="form-control">
+                                        <input type="text" name="cardNumber" id="cardNumber" class="form-control"
+                                            placeholder="1111-2222-3333-4444">
                                     </div>
                                 </div>
                                 <div class="form-row">
                                     <div class="form-group col">
                                         <label for="expiryDate">Expiry Date</label>
                                         <input type="month" class="form-control" name="expiryDate" id="expiryDate"
-                                            min="2021-01-01" max="2035-01-01">
+                                            min="2021-01-01" max="2035-01-01" placeholder="02/30">
                                     </div>
                                     <div class="form-group col">
                                         <label for="cvv">CVV</label>
-                                        <input type="password" name="cvv" id="cvv" class="form-control" maxlength="3">
+                                        <input type="password" name="cvv" id="cvv" class="form-control" maxlength="3"
+                                            placeholder="123">
                                     </div>
                                 </div>
                             </section>
@@ -205,22 +204,28 @@
                         </div>
                         <div class="card-footer text-right">
                             <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
-                            <a href="#alertECQ" class="btn btn-main nextStep">Next</a>
+                            <a href="#alertECQ" class="btn btn-main nextStep" id="step3">Next</a>
                         </div>
                     </div>
                 </section>
-                <!-- Step 4 -->
+                <!-- Step 4 Summary -->
                 <section class="form-step">
                     <h4 class="font1">Delivery Details</h4>
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title font2">Receiver Information</h5>
-                            <h6 class="card-title"><i class="bi bi-person-fill"></i> Theodore Walter Galve</h6>
-                            <h6 class="card-title"><i class="bi bi-geo-alt-fill"></i> Sitio Poblacion, Sapal, San
-                                Lorenzo, Guimaras</h6>
-                            <h6 class="card-title"><i class="bi bi-telephone-fill"></i> 09911234567</h6>
-                            <h6 class="card-title"><i class="bi bi-envelope-fill"></i> theodorewaltergalve124@gamail.com
-                            </h6>
+                            <h4 class="card-title font2">Receiver Information</h4>
+                            <h5 class="text-secondary"><i class="bi bi-person-fill"></i> Name</h5>
+                            <h6 class="card-title">Full Name: <span id="fullName"></span></h6>
+
+                            <h5 class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Address</i></h5>
+                            <h6 class="card-title">Billing Address: <span id="billingAddFull"></span></h6>
+                            <h6 class="card-title">Shipping Address: <span id="shippingAddFull"></span></h6>
+
+                            <h5 class="text-secondary"><i class="bi bi-telephone-fill"></i> Phone</i></h5>
+                            <h6 class="card-title"><span id="phoneNumber"></span></h6>
+
+                            <h5 class="text-secondary"><i class="bi bi-envelope-fill"></i> Email</i></h5>
+                            <h6 class="card-title"><span id="emailFull"></span></h6>
                             <hr>
                             <h5 class="card-title font2">Ordered Products</h5>
                             <table class="table table-hover">
@@ -249,7 +254,7 @@
                                         <td class="font2">Shipping Fee</td>
                                         <td></td>
                                         <td></td>
-                                        <td>₱100</td>
+                                        <td>₱<span id="shipFeeFinal"></span></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -261,15 +266,15 @@
                             <div class="row text-center">
                                 <div class="col">
                                     <h5 class="card-title font2">Payment Method</h5>
-                                    <h6 class="card-subtitle">Cash on Delivery</h6>
+                                    <h6 class="card-subtitle"><span id="paymethodFinal"></span></h6>
                                 </div>
                                 <div class="col">
                                     <h5 class="card-title font2">Courier</h5>
-                                    <h6 class="card-subtitle">LBC</h6>
+                                    <h6 class="card-subtitle"><span id="courierFinal"></span></h6>
                                 </div>
                                 <div class="col">
                                     <h5 class="card-title font2">Shipping to</h5>
-                                    <h6 class="card-subtitle">NCR</h6>
+                                    <h6 class="card-subtitle"><span id="regionFinal"></span></h6>
                                 </div>
                             </div>
                         </div>

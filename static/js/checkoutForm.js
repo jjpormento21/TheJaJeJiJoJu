@@ -19,9 +19,22 @@ debitInput.addEventListener('click', showCardPaymentMethod);
 var formSections = document.getElementsByClassName('form-step');
 formSections[0].style.display = 'block';
 
+// Payment Method events
+let radioButtons = document.getElementsByName('paymentMethod');
+for (const radioButton of radioButtons) {
+  radioButton.addEventListener('click', getPaymentMethod);
+}
+
+// Button Control events
 var checkoutNavbarList = document.getElementsByClassName('tab-checkout');
 let nextButtons = document.getElementsByClassName('nextStep');
 let prevButtons = document.getElementsByClassName('prevStep');
+
+//Other Variables
+let regionSelector = document.querySelector('#region');
+let courierSelector = document.querySelector('#courier');
+courierSelector.addEventListener('change', shippingFee);
+var paymentMethod;
 
 // Other tabs are disabled by default
 for (let i = 0; i < checkoutNavbarList.length; i++) {
@@ -35,12 +48,10 @@ for (let i = 0; i < checkoutNavbarList.length; i++) {
   }
 }
 
-for (let i = 0; i < nextButtons.length; i++) {
-  let nextButton = nextButtons[i];
+for (const nextButton of nextButtons) {
   nextButton.addEventListener('click', nextPaymentStep);
 }
-for (let i = 0; i < prevButtons.length; i++) {
-  let prevButton = prevButtons[i];
+for (const prevButton of prevButtons) {
   prevButton.addEventListener('click', prevPaymentStep);
 }
 
@@ -51,6 +62,7 @@ function nextPaymentStep() {
   checkoutNavbarList[stepCounter].classList.add('active', 'text-primary', 'font-weight-bold');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter - 1].style.display = 'none';
+  setSummaryInfo();
 }
 
 function prevPaymentStep() {
@@ -78,7 +90,50 @@ function sameAddress() {
 
 function hideCardPaymentMethod() {
   let cardPaymentSection = document.getElementById('payCard');
-  if (codInput.checked == true) {
-    cardPaymentSection.style.display = 'none';
+  cardPaymentSection.style.display = 'none';
+}
+
+function getPaymentMethod(e) {
+  let formValue = e.target.value;
+  paymentMethod = formValue;
+}
+
+function setSummaryInfo() {
+  // Select form elements
+  let firstName = document.querySelector('#firstName').value;
+  let lastName = document.querySelector('#lastName').value;
+  let billingAdd = document.querySelector('#billingAdd').value;
+  let shippingAdd = document.querySelector('#shipAdd').value;
+  let phone1 = document.querySelector('#phone1').value;
+  let email = document.querySelector('#email').value;
+  let shipTo = document.querySelector('#region').value;
+  let shipFee = document.querySelector('#shipFeePreview').innerHTML;
+  let courier = document.querySelector('#courier').value;
+  //set values
+  document.querySelector('#fullName').innerHTML = firstName + ' ' + lastName;
+  document.querySelector('#billingAddFull').innerHTML = billingAdd;
+  document.querySelector('#shippingAddFull').innerHTML = shippingAdd;
+  document.querySelector('#phoneNumber').innerHTML = phone1;
+  document.querySelector('#emailFull').innerHTML = email;
+  document.querySelector('#regionPreview').innerHTML = shipTo;
+  document.querySelector('#regionFinal').innerHTML = shipTo;
+  document.querySelector('#courierFinal').innerHTML = courier;
+  document.querySelector('#paymethodFinal').innerHTML = paymentMethod;
+  document.querySelector('#shipFeeFinal').innerHTML = shipFee;
+  console.log('success');
+}
+
+function shippingFee() {
+  console.log('shipfee function works');
+  let regionValue = regionSelector.value;
+  let shipFee = document.querySelector('#shipFeePreview');
+  if (regionValue == 'Visayas') {
+    shipFee.innerHTML = 70.00;
+  }
+  else if (regionValue == 'Choose Region' || regionValue == '') {
+    shipFee.innerHTML = 0.00;
+  }
+  else {
+    shipFee.innerHTML = 150.00;
   }
 }
