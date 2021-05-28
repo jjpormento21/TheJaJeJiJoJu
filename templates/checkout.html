@@ -48,20 +48,20 @@
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="email">Email Address</label>
-                            <input type="email" name="email" id="email" class="form-control"
+                            <input type="email" name="email" id="email" class="form-control step1field"
                                 placeholder="Email Address">
                         </div>
                         <div class="form-group col">
                             <label for="username">Username</label>
-                            <input type="text" name="username" id="username" class="form-control" placeholder="Username"
-                                disabled>
+                            <input type="text" name="username" id="username" class="form-control"
+                                placeholder="Username" disabled>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
                             <label for="phone1">Phone Number</label>
-                            <input type="tel" name="phone1" id="phone1" class="form-control" placeholder="+639911234567"
-                                required>
+                            <input type="tel" name="phone1" id="phone1" class="form-control step1field"
+                                placeholder="+639911234567" required>
                         </div>
                         <div class="form-group col">
                             <label for="phone2">Phone Number 2 (optional)</label>
@@ -72,12 +72,12 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="billingAdd">Billing Address</label>
-                            <input type="text" name="billingAdd" id="billingAdd" class="form-control"
+                            <input type="text" name="billingAdd" id="billingAdd" class="form-control step1field"
                                 placeholder="Complete Address">
                         </div>
                         <div class="form-group col-md-12">
                             <label for="shipAdd">Shipping Address</label>
-                            <input type="text" name="shipAdd" id="shipAdd" class="form-control"
+                            <input type="text" name="shipAdd" id="shipAdd" class="form-control step1field"
                                 placeholder="Complete Address">
                         </div>
                     </div>
@@ -95,15 +95,16 @@
                         </div>
                         <div class="form-group col-md-3">
                             <label for="province">Province</label>
-                            <input type="text" class="form-control" placeholder="Iloilo" name="province" id="province">
+                            <input type="text" class="form-control step1field" name="province" id="province">
                         </div>
                         <div class="form-group col-md-4">
                             <label for="city">City/Municipality</label>
-                            <input type="text" class="form-control" placeholder="Iloilo City" name="city" id="city">
+                            <input type="text" class="form-control step1field" name="city" id="city">
                         </div>
                         <div class="form-group col-md-2">
                             <label for="zipcode">ZIP Code</label>
-                            <input type="text" name="zipcode" id="zipcode" class="form-control" placeholder="5000">
+                            <input type="text" name="zipcode" id="zipcode" class="form-control step1field"
+                                placeholder="5000">
                         </div>
                     </div>
                     <div class="form-row mt-3 card-footer">
@@ -138,7 +139,8 @@
                                 <option value="J&T Express">J&T Express</option>
                             </select>
                             <h5 class="card-subtitle mt-2">Shipping to: <span id="regionPreview"></span></h5>
-                            <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: ₱<span id="shipFeePreview"></span></h6>
+                            <h6 class="card-subtitle mb-4 mt-2 text-muted">Shipping Fee: ₱<span
+                                    id="shipFeePreview"></span></h6>
                             <p class="card-text alert alert-info">Deliveries are expected to arrive in 3-5 days but may
                                 vary
                                 depending on your location. If you encounter any
@@ -215,17 +217,17 @@
                         <div class="card-body">
                             <h4 class="card-title font2">Receiver Information</h4>
                             <h5 class="text-secondary"><i class="bi bi-person-fill"></i> Name</h5>
-                            <h6 class="card-title">Full Name: <span id="fullName"></span></h6>
-
+                            <p class="card-title">Full Name: <span id="fullName"></span></p>
+                            <hr>
                             <h5 class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Address</i></h5>
-                            <h6 class="card-title">Billing Address: <span id="billingAddFull"></span></h6>
-                            <h6 class="card-title">Shipping Address: <span id="shippingAddFull"></span></h6>
-
+                            <p class="card-title">Billing Address: <span id="billingAddFull"></span></p>
+                            <p class="card-title">Shipping Address: <span id="shippingAddFull"></span></p>
+                            <hr>
                             <h5 class="text-secondary"><i class="bi bi-telephone-fill"></i> Phone</i></h5>
-                            <h6 class="card-title"><span id="phoneNumber"></span></h6>
-
+                            <p class="card-title"><span id="phoneNumber"></span></p>
+                            <hr>
                             <h5 class="text-secondary"><i class="bi bi-envelope-fill"></i> Email</i></h5>
-                            <h6 class="card-title"><span id="emailFull"></span></h6>
+                            <p class="card-title"><span id="emailFull"></span></p>
                             <hr>
                             <h5 class="card-title font2">Ordered Products</h5>
                             <table class="table table-hover">

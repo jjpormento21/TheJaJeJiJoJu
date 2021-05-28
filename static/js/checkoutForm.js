@@ -31,10 +31,11 @@ let nextButtons = document.getElementsByClassName('nextStep');
 let prevButtons = document.getElementsByClassName('prevStep');
 
 //Other Variables
-let regionSelector = document.querySelector('#region');
+let regionForm = document.querySelector('#region');
 let courierSelector = document.querySelector('#courier');
 courierSelector.addEventListener('change', shippingFee);
 var paymentMethod;
+
 
 // Other tabs are disabled by default
 for (let i = 0; i < checkoutNavbarList.length; i++) {
@@ -49,7 +50,7 @@ for (let i = 0; i < checkoutNavbarList.length; i++) {
 }
 
 for (const nextButton of nextButtons) {
-  nextButton.addEventListener('click', nextPaymentStep);
+  nextButton.addEventListener('click', validate);
 }
 for (const prevButton of prevButtons) {
   prevButton.addEventListener('click', prevPaymentStep);
@@ -98,15 +99,27 @@ function getPaymentMethod(e) {
   paymentMethod = formValue;
 }
 
+let firstNameInput = document.querySelector('#firstName');
+let lastNameInput = document.querySelector('#lastName');
+let billingAddInput = document.querySelector('#billingAdd');
+let shippingAddInput = document.querySelector('#shipAdd');
+let phone1Input = document.querySelector('#phone1');
+let emailInput = document.querySelector('#email');
+let regionInput = document.querySelector('#region');
+let provinceInput = document.querySelector('#province');
+let cityInput = document.querySelector('#city');
+
+
+
 function setSummaryInfo() {
   // Select form elements
-  let firstName = document.querySelector('#firstName').value;
-  let lastName = document.querySelector('#lastName').value;
-  let billingAdd = document.querySelector('#billingAdd').value;
-  let shippingAdd = document.querySelector('#shipAdd').value;
-  let phone1 = document.querySelector('#phone1').value;
-  let email = document.querySelector('#email').value;
-  let shipTo = document.querySelector('#region').value;
+  let firstName = firstNameInput.value;
+  let lastName = lastNameInput.value;
+  let billingAdd = billingAddInput.value;
+  let shippingAdd = shippingAddInput.value;
+  let phone1 = phone1Input.value;
+  let email = emailInput.value;
+  let region = regionInput.value;
   let shipFee = document.querySelector('#shipFeePreview').innerHTML;
   let courier = document.querySelector('#courier').value;
   //set values
@@ -115,8 +128,8 @@ function setSummaryInfo() {
   document.querySelector('#shippingAddFull').innerHTML = shippingAdd;
   document.querySelector('#phoneNumber').innerHTML = phone1;
   document.querySelector('#emailFull').innerHTML = email;
-  document.querySelector('#regionPreview').innerHTML = shipTo;
-  document.querySelector('#regionFinal').innerHTML = shipTo;
+  document.querySelector('#regionPreview').innerHTML = region;
+  document.querySelector('#regionFinal').innerHTML = region;
   document.querySelector('#courierFinal').innerHTML = courier;
   document.querySelector('#paymethodFinal').innerHTML = paymentMethod;
   document.querySelector('#shipFeeFinal').innerHTML = shipFee;
@@ -125,7 +138,7 @@ function setSummaryInfo() {
 
 function shippingFee() {
   console.log('shipfee function works');
-  let regionValue = regionSelector.value;
+  let regionValue = regionForm.value;
   let shipFee = document.querySelector('#shipFeePreview');
   if (regionValue == 'Visayas') {
     shipFee.innerHTML = 70.00;
@@ -135,5 +148,22 @@ function shippingFee() {
   }
   else {
     shipFee.innerHTML = 150.00;
+  }
+}
+
+function validate() {
+  let inputFields = document.getElementsByClassName('step1field');
+  let isValid = true;
+  for (const input of inputFields) {
+    if (input.value == ''){
+      isValid = false;
+      console.log('fields are empty');
+    }
+    else{
+      isValid = true;
+    }
+  }
+  if (isValid) {
+    nextPaymentStep();
   }
 }
