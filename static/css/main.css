@@ -74,19 +74,73 @@
     font-weight: 800;
 }
 
-.icon {
-    font-size: 80px;
-    color: #FC8495;
+/*This is the previous font1*/
+.text-primary-gray {
+    font-weight: 800;
+    color: #595959;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
 
-.par {
+/*This is the previous font2*/
+.text-primary-pink {
+    font-weight: 800;
+    color: #FC8495;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+/*This is the previous font3*/
+.text-primary-black {
+    font-weight: 800;
+    color: #000;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+/*This is the previous font4*/
+.text-light-pink{
+    font-weight: 400;
+    font-size: 0.9rem;
+    color: #FC8495;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+/*This is the previous par*/
+.text-small-gray {
     font-size: 16px;
     color: #595959;
 }
 
-.par1{
+/*This is the previous par1*/
+.text-small-black{
     font-size: 16px;
     color: #000;
+}
+
+/*Icons*/
+.homepage-icon {
+    font-size: 80px;
+    color: #FC8495;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: #FC8495;
+}
+
+.catalog-icon {
+    font-size: 23px;
+    color: #7f7f7f;
+}
+
+.message-icon {
+    font-size: 40px;
+    color: #595959;
+    margin-left: 12rem;
+}
+
+.quotation-icon {
+    font-size: 60px;
+    color: #595959;
+    margin-left: 16rem;
 }
 /* Components */
 .shop-category {
@@ -100,30 +154,6 @@
     display: block;
 }
 
-.font1 {
-    font-weight: 800;
-    color: #595959;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
-}
-
-.font2 {
-    font-weight: 800;
-    color: #FC8495;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
-}
-
-.font3 {
-    font-weight: 800;
-    color: #000;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
-}
-
-.font4{
-    font-weight: 400;
-    font-size: 0.9rem;
-    color: #FC8495;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
-}
 .roundb {
     border: 2px solid #7f7f7f;
     border-radius: 16px;
@@ -154,11 +184,6 @@
 .boxb {
     border: 3px solid #595959;
     border-radius: 24px;
-}
-
-.feat-icon {
-    font-size: 20px;
-    color: #FC8495;
 }
 
 .smallb {
@@ -208,15 +233,9 @@
     height: 18vw;
 }
 
-.cat-icon {
-    font-size: 23px;
-    color: #7f7f7f;
-}
-
 .br-custom{
     border-radius: 2em;
 }
-
 
 /* Admin Styles */
 #dashboard-footer{
@@ -273,18 +292,6 @@
     border-radius:24px ;
 }
 
-.review-icon {
-    font-size: 40px;
-    color: #595959;
-    margin-left: 12rem;
-}
-
-.quotation-icon {
-    font-size: 60px;
-    color: #595959;
-    margin-left: 16rem;
-}
-
 input[type=number]{
     width: 80px;
     text-align: center;
@@ -299,6 +306,7 @@ input[type=number]{
     max-height: 50%;
 }
 
+/*NavBar Properties*/
 .nav-icon {
     font-size: 24px;
     color: #595959;
