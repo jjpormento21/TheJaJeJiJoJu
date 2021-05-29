@@ -125,9 +125,10 @@
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
 .roundb {
+    display: inline-block;
     border: 2px solid #7f7f7f;
-    border-radius: 16px;
-    padding: 2px 8px 2px 8px;
+    border-radius: 2rem;
+    padding: .5rem 1.25rem;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     color:#7f7f7f;
     font-weight: 800;
@@ -336,3 +337,6 @@ span.text-danger{
 #requiredAlert{
     display: none;
 }
+.icon-container {
+    font-size: 2rem;
+  }
