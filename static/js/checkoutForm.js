@@ -136,7 +136,6 @@ function setSummaryInfo() {
   document.querySelector('#courierFinal').innerHTML = courier;
   document.querySelector('#paymethodFinal').innerHTML = paymentMethod;
   document.querySelector('#shipFeeFinal').innerHTML = shipFee;
-  console.log('success');
 }
 
 function shippingFee() {
