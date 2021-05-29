@@ -176,7 +176,6 @@ function validator(){
   validStatus = validate();
   console.log('validation: '+validStatus);
   if (validStatus){
-    requiredAlertBanner.remove();
     nextPaymentStep();
   }
 }
