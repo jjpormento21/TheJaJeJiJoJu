@@ -332,7 +332,7 @@ input[type=number]{
 }
 span.text-danger{
     font-weight: 800;
-    margin-left: 5px;
+    margin-left: 3px;
 }
 #requiredAlert{
     display: none;
