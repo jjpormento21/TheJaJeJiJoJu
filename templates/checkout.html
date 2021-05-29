@@ -31,37 +31,39 @@
                 <strong><i class="bi bi-info-circle-fill"></i></strong>
                 Due to the implementation of community quarantine which limits transportation and mobility, delivery
                 schedules may get affected. Thank you for your patience and understanding.
+                <hr class="mb-1">
+                <span class="text-danger">*</span>Required
             </div>
-            <form action="{{ url_for('confirmCheckout') }}" method="POST" class="mt-2" autocomplete="off">
+            <form action="{{url_for('confirmCheckout')}}" method="POST" id="checkoutForm" class="mt-2" autocomplete="off">
                 <!-- Step 1 Basic Information -->
                 <section class="form-step">
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="firstName">First Name</label>
-                            <input type="text" class="form-control" name="firstName" id="firstName">
+                            <label for="firstName">First Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control step1field" name="firstName" id="firstName">
                         </div>
                         <div class="form-group col">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" class="form-control" name="lastName" id="lastName">
+                            <label for="lastName">Last Name<span class="text-danger">*</span></label>
+                            <input type="text" class="form-control step1field" name="lastName" id="lastName">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="email">Email Address</label>
+                            <label for="email">Email Address<span class="text-danger">*</span></label>
                             <input type="email" name="email" id="email" class="form-control step1field"
                                 placeholder="Email Address">
                         </div>
                         <div class="form-group col">
                             <label for="username">Username</label>
-                            <input type="text" name="username" id="username" class="form-control"
-                                placeholder="Username" disabled>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Username"
+                                disabled>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col">
-                            <label for="phone1">Phone Number</label>
+                            <label for="phone1">Phone Number<span class="text-danger">*</span></label>
                             <input type="tel" name="phone1" id="phone1" class="form-control step1field"
-                                placeholder="+639911234567" required>
+                                placeholder="+639911234567">
                         </div>
                         <div class="form-group col">
                             <label for="phone2">Phone Number 2 (optional)</label>
@@ -71,19 +73,19 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-12">
-                            <label for="billingAdd">Billing Address</label>
+                            <label for="billingAdd">Billing Address<span class="text-danger">*</span></label>
                             <input type="text" name="billingAdd" id="billingAdd" class="form-control step1field"
                                 placeholder="Complete Address">
                         </div>
                         <div class="form-group col-md-12">
-                            <label for="shipAdd">Shipping Address</label>
+                            <label for="shipAdd">Shipping Address<span class="text-danger">*</span></label>
                             <input type="text" name="shipAdd" id="shipAdd" class="form-control step1field"
                                 placeholder="Complete Address">
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group col-md-3">
-                            <label for="region">Region</label>
+                            <label for="region">Region<span class="text-danger">*</span></label>
                             <select name="region" id="region" class="custom-select">
                                 <option selected>Choose Region</option>
                                 <option value="Luzon">Luzon</option>
@@ -94,18 +96,24 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="province">Province</label>
+                            <label for="province">Province<span class="text-danger">*</span></label>
                             <input type="text" class="form-control step1field" name="province" id="province">
                         </div>
                         <div class="form-group col-md-4">
-                            <label for="city">City/Municipality</label>
+                            <label for="city">City/Municipality<span class="text-danger">*</span></label>
                             <input type="text" class="form-control step1field" name="city" id="city">
                         </div>
                         <div class="form-group col-md-2">
-                            <label for="zipcode">ZIP Code</label>
+                            <label for="zipcode">ZIP Code<span class="text-danger">*</span></label>
                             <input type="text" name="zipcode" id="zipcode" class="form-control step1field"
-                                placeholder="5000">
+                                placeholder="5000" maxlength="4">
                         </div>
+                    </div>
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert" id="requiredAlert">
+                        Please fill out required fields.
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                     <div class="form-row mt-3 card-footer">
                         <div class="form-group col-md-8">
@@ -122,7 +130,7 @@
                             </div>
                         </div>
                         <div class="form-group col-md-4">
-                            <a href="#alertECQ" class="btn btn-main mt-2 btn-block nextStep">Next</a>
+                            <button class="btn btn-main mt-2 btn-block nextStep" type="button">Next</button>
                         </div>
                     </div>
                 </section>
@@ -148,8 +156,8 @@
                             </p>
                         </div>
                         <div class="card-footer text-right">
-                            <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
-                            <a href="#alertECQ" class="btn btn-main nextStep">Next</a>
+                            <button class="btn btn-sub prevStep" type="button">Previous</button>
+                            <button class="btn btn-main nextStep" type="button">Next</button>
                         </div>
                     </div>
                 </section>
@@ -205,8 +213,8 @@
                             </p>
                         </div>
                         <div class="card-footer text-right">
-                            <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
-                            <a href="#alertECQ" class="btn btn-main nextStep" id="step3">Next</a>
+                            <button class="btn btn-sub prevStep" type="button">Previous</button>
+                            <button class="btn btn-main nextStep" type="button">Next</button>
                         </div>
                     </div>
                 </section>
@@ -281,8 +289,8 @@
                             </div>
                         </div>
                         <div class="card-footer text-right">
-                            <a href="#alertECQ" class="btn btn-sub prevStep">Previous</a>
-                            <button class="btn btn-main" id="next2" type="submit">Place Order</button>
+                            <button class="btn btn-sub prevStep" type="button">Previous</button>
+                            <button class="btn btn-main" type="submit">Place Order</button>
                         </div>
                     </div>
                 </section>

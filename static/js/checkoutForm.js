@@ -31,11 +31,12 @@ let nextButtons = document.getElementsByClassName('nextStep');
 let prevButtons = document.getElementsByClassName('prevStep');
 
 //Other Variables
+let validStatus = false;
 let regionForm = document.querySelector('#region');
 let courierSelector = document.querySelector('#courier');
 courierSelector.addEventListener('change', shippingFee);
 var paymentMethod;
-
+var requiredAlertBanner = document.querySelector('#requiredAlert');
 
 // Other tabs are disabled by default
 for (let i = 0; i < checkoutNavbarList.length; i++) {
@@ -50,13 +51,14 @@ for (let i = 0; i < checkoutNavbarList.length; i++) {
 }
 
 for (const nextButton of nextButtons) {
-  nextButton.addEventListener('click', validate);
+  nextButton.addEventListener('click', validator);
 }
 for (const prevButton of prevButtons) {
   prevButton.addEventListener('click', prevPaymentStep);
 }
 
 function nextPaymentStep() {
+  console.log('next step');
   stepCounter += 1;
   checkoutNavbarList[stepCounter - 1].classList.remove('active', 'font-weight-bold');
   checkoutNavbarList[stepCounter - 1].classList.add('disabled', 'text-success');
@@ -64,6 +66,7 @@ function nextPaymentStep() {
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter - 1].style.display = 'none';
   setSummaryInfo();
+  scrollToAlert();
 }
 
 function prevPaymentStep() {
@@ -74,6 +77,7 @@ function prevPaymentStep() {
   checkoutNavbarList[stepCounter + 1].classList.add('disabled', 'text-primary');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter + 1].style.display = 'none';
+  scrollToAlert();
 }
 
 function showCardPaymentMethod() {
@@ -155,15 +159,29 @@ function validate() {
   let inputFields = document.getElementsByClassName('step1field');
   let isValid = true;
   for (const input of inputFields) {
-    if (input.value == ''){
+    if (input.value === '' || input.value === null){
       isValid = false;
-      console.log('fields are empty');
+      requiredAlertBanner.style.display = 'block';
+      console.log('invalid fields');
+      break;
     }
     else{
       isValid = true;
     }
   }
-  if (isValid) {
+  return isValid;
+}
+
+function validator(){
+  validStatus = validate();
+  console.log('validation: '+validStatus);
+  if (validStatus){
+    requiredAlertBanner.remove();
     nextPaymentStep();
   }
+}
+
+function scrollToAlert(){
+  let ecq_alert = document.querySelector('#alertECQ');
+  ecq_alert.scrollIntoView();
 }

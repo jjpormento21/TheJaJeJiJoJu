@@ -329,3 +329,10 @@ input[type=number]{
     padding: 1rem;
     border-radius: .25em;
 }
+span.text-danger{
+    font-weight: 800;
+    margin-left: 5px;
+}
+#requiredAlert{
+    display: none;
+}
