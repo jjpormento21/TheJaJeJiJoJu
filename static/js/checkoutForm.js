@@ -1,11 +1,13 @@
-// Input Fields: Checkout
 let mainNavbar = document.getElementById('mainNav');
 mainNavbar.classList.remove('sticky-top');
+
 var stepCounter = 0; //form step counter
 
+// Same address as billing
 let checkbox1 = document.getElementById('customCheck1');
 checkbox1.addEventListener('click', sameAddress);
 
+// Payment Method options
 let codInput = document.getElementById('COD');
 codInput.addEventListener('click', hideCardPaymentMethod);
 
@@ -30,9 +32,10 @@ var checkoutNavbarList = document.getElementsByClassName('tab-checkout');
 let nextButtons = document.getElementsByClassName('nextStep');
 let prevButtons = document.getElementsByClassName('prevStep');
 
-//Other Variables
-let validStatus = false;
+// Input Fields: Checkout
 let regionForm = document.querySelector('#region');
+let billingAddInput = document.querySelector('#billingAdd');
+//Other Variables
 let courierSelector = document.querySelector('#courier');
 courierSelector.addEventListener('change', shippingFee);
 var paymentMethod;
@@ -50,6 +53,7 @@ for (let i = 0; i < checkoutNavbarList.length; i++) {
   }
 }
 
+// Button Event Listeners
 for (const nextButton of nextButtons) {
   nextButton.addEventListener('click', validator);
 }
@@ -57,6 +61,7 @@ for (const prevButton of prevButtons) {
   prevButton.addEventListener('click', prevPaymentStep);
 }
 
+// Functions
 function nextPaymentStep() {
   stepCounter += 1;
   checkoutNavbarList[stepCounter - 1].classList.remove('active', 'font-weight-bold');
@@ -70,6 +75,7 @@ function nextPaymentStep() {
 
 function prevPaymentStep() {
   stepCounter -= 1;
+  checkoutNavbarList[stepCounter].classList.remove('text-success');
   checkoutNavbarList[stepCounter].classList.add('text-primary', 'active', 'font-weight-bold');
   checkoutNavbarList[stepCounter + 1].classList.remove('active', 'font-weight-bold');
   checkoutNavbarList[stepCounter + 1].classList.remove('text-success');
@@ -84,12 +90,9 @@ function showCardPaymentMethod() {
   cardPaymentSection.style.display = 'block';
 }
 function sameAddress() {
-  let billingAddInput = document.getElementById('billingAdd');
   let billingAddress = billingAddInput.value;
   let shippingAddInput = document.getElementById('shipAdd');
-  if (checkbox1.checked == true) {
-    shippingAddInput.value = billingAddress;
-  }
+  shippingAddInput.value = billingAddress;
 }
 
 function hideCardPaymentMethod() {
@@ -102,80 +105,75 @@ function getPaymentMethod(e) {
   paymentMethod = formValue;
 }
 
-let firstNameInput = document.querySelector('#firstName');
-let lastNameInput = document.querySelector('#lastName');
-let billingAddInput = document.querySelector('#billingAdd');
-let shippingAddInput = document.querySelector('#shipAdd');
-let phone1Input = document.querySelector('#phone1');
-let emailInput = document.querySelector('#email');
-let regionInput = document.querySelector('#region');
-let provinceInput = document.querySelector('#province');
-let cityInput = document.querySelector('#city');
-
-
-
 function setSummaryInfo() {
   // Select form elements
-  let firstName = firstNameInput.value;
-  let lastName = lastNameInput.value;
+  let firstName = document.querySelector('#firstName').value;
+  let lastName = document.querySelector('#lastName').value;
   let billingAdd = billingAddInput.value;
-  let shippingAdd = shippingAddInput.value;
-  let phone1 = phone1Input.value;
-  let email = emailInput.value;
-  let region = regionInput.value;
+  let shippingAdd = document.querySelector('#shipAdd').value;
+  let phone1 = document.querySelector('#phone1').value;
+  let phone2 = document.querySelector('#phone2').value;
+  let email = document.querySelector('#email').value;
+  let region = document.querySelector('#region').value;
   let shipFee = document.querySelector('#shipFeePreview').innerHTML;
   let courier = document.querySelector('#courier').value;
+  let city = document.querySelector('#city').value;
+  let province = document.querySelector('#province').value;
   //set values
   document.querySelector('#fullName').innerHTML = firstName + ' ' + lastName;
   document.querySelector('#billingAddFull').innerHTML = billingAdd;
   document.querySelector('#shippingAddFull').innerHTML = shippingAdd;
-  document.querySelector('#phoneNumber').innerHTML = phone1;
+  document.querySelector('#phoneNumber1').innerHTML = phone1;
+  let phone2Final = (phone2 == '') ? 'N/A' : phone2;
+  document.querySelector('#phoneNumber2').innerHTML = phone2Final;
   document.querySelector('#emailFull').innerHTML = email;
   document.querySelector('#regionPreview').innerHTML = region;
   document.querySelector('#regionFinal').innerHTML = region;
   document.querySelector('#courierFinal').innerHTML = courier;
   document.querySelector('#paymethodFinal').innerHTML = paymentMethod;
   document.querySelector('#shipFeeFinal').innerHTML = shipFee;
+  document.querySelector('#cityFinal').innerHTML = city;
+  document.querySelector('#provinceFinal').innerHTML = province;
 }
 
 function shippingFee() {
   let regionValue = regionForm.value;
-  let shipFee = document.querySelector('#shipFeePreview');
-  if (regionValue == 'Visayas') {
-    shipFee.innerHTML = 70.00;
+  let shipFeePreview = document.querySelector('#shipFeePreview');
+  function shipFee() {
+    return regionValue == 'Visayas' ? 70.00 :
+      regionValue == 'Choose Region' ? 0.00 :
+        regionValue == null ? 0.00 :
+          150.00;
   }
-  else if (regionValue == 'Choose Region' || regionValue == '') {
-    shipFee.innerHTML = 0.00;
-  }
-  else {
-    shipFee.innerHTML = 150.00;
-  }
+  shipFeePreview.innerHTML = shipFee();
 }
 
 function validate() {
   let inputFields = document.getElementsByClassName('step1field');
   let isValid = true;
   for (const input of inputFields) {
-    if (input.value === '' || input.value === null){
+    if (input.value === '' || input.value === null) {
       isValid = false;
       requiredAlertBanner.style.display = 'block';
       break;
     }
-    else{
+    else {
       isValid = true;
     }
   }
   return isValid;
 }
 
-function validator(){
+function validator() {
+  let validStatus = false;
   validStatus = validate();
-  if (validStatus){
+  if (validStatus) {
+    requiredAlertBanner.style.display = 'none';
     nextPaymentStep();
   }
 }
 
-function scrollToAlert(){
+function scrollToAlert() {
   let ecq_alert = document.querySelector('#alertECQ');
   ecq_alert.scrollIntoView();
 }
