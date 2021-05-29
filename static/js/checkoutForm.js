@@ -58,7 +58,6 @@ for (const prevButton of prevButtons) {
 }
 
 function nextPaymentStep() {
-  console.log('next step');
   stepCounter += 1;
   checkoutNavbarList[stepCounter - 1].classList.remove('active', 'font-weight-bold');
   checkoutNavbarList[stepCounter - 1].classList.add('disabled', 'text-success');
@@ -141,7 +140,6 @@ function setSummaryInfo() {
 }
 
 function shippingFee() {
-  console.log('shipfee function works');
   let regionValue = regionForm.value;
   let shipFee = document.querySelector('#shipFeePreview');
   if (regionValue == 'Visayas') {
@@ -162,7 +160,6 @@ function validate() {
     if (input.value === '' || input.value === null){
       isValid = false;
       requiredAlertBanner.style.display = 'block';
-      console.log('invalid fields');
       break;
     }
     else{
@@ -174,9 +171,7 @@ function validate() {
 
 function validator(){
   validStatus = validate();
-  console.log('validation: '+validStatus);
   if (validStatus){
-    requiredAlertBanner.remove();
     nextPaymentStep();
   }
 }
