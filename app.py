@@ -49,7 +49,7 @@ def checkoutPage():
 def checkoutTest():
     return render_template('checkout-confirm.html')
 
-@app.route('/checkout-confirm', methods=['GET','POST'])
+@app.route('/checkout/confirm', methods=['GET','POST'])
 def confirmCheckout():
     if request.method == 'POST':
         custFirstName = request.form.get('firstName')

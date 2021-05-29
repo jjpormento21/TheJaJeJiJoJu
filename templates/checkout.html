@@ -1,7 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
 <title>Checkout | Miss Jhaz Cosmetics</title>
-<script src="https://kit.fontawesome.com/01c223f7e0.js" crossorigin="anonymous"></script>
 {% endblock %}
 
 {% block body %}
@@ -254,7 +253,7 @@
                             <p class="card-text"><span id="emailFull"></span></p>
                             <hr>
                             <h5 class="card-title font2">Ordered Products</h5>
-                            <table class="table table-hover">
+                            <table class="table table-sm table-hover">
                                 <thead class="font1">
                                     <tr>
                                         <th scope="col">Products</th>
@@ -329,5 +328,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/01c223f7e0.js" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename = 'js/checkoutForm.js')}}"></script>
 {% endblock %}
