@@ -3,6 +3,21 @@ mainNavbar.classList.remove('sticky-top');
 
 var stepCounter = 0; //form step counter
 
+// function to prevent enter key from submitting
+$(document).ready(function () {
+  $(window).keydown(function (event) {
+    if ((event.keyCode == 13) && (stepCounter < 3)) {
+      console.log('enter key pressed. Data not submitted');
+      event.preventDefault();
+      validator();
+      return false;
+    }
+    else if ((event.keyCode == 13) && (stepCounter == 3))  {
+      document.querySelector('#checkoutForm').submit();
+    }
+  });
+});
+
 // Same address as billing
 let checkbox1 = document.getElementById('customCheck1');
 checkbox1.addEventListener('click', sameAddress);
