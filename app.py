@@ -84,7 +84,7 @@ def confirmCheckout():
                 'city': custCity,
                 'zipcode': int(zipcode),
                 'courier': courier,
-                'paymentMethod':payMethod,
+                'paymentMethod':payMethod
             }
         )
         return render_template('checkout-confirm.html')
