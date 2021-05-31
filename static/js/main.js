@@ -23,8 +23,6 @@ function closeCart(){
   let cart = document.getElementsByClassName('cart')[0];
   cart.style.display = 'none';
 }
-  $('[data-toggle="tooltip"]').tooltip()
-});
 
 let trackNum = document.getElementById('trackNum');
 
