@@ -7,7 +7,8 @@
 {% block body %}
 <div class="container">
     <h1>Customer Records</h1>
-    <label for="search">Search Records</label>
+    <a href="/admin/dashboard" class="btn btn-primary">Go Back</a>
+    <label for="search" class="d-block">Search Records</label>
     <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
 </div>
 <div class="container">
@@ -47,6 +48,6 @@
         </tbody>
     </table>
 </div>
-
+<div style="margin-top: 100px;"></div>
 
 {% endblock %}
