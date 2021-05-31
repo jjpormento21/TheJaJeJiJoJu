@@ -67,10 +67,6 @@ def confirmCheckout():
         zipcode = request.form.get('zipcode')
         courier = request.form.get('courier')
         payMethod = request.form.get('paymentMethod')
-        cardName = request.form.get('cardName')
-        cardNum = request.form.get('cardNumber')
-        expiryDate = request.form.get('expiryDate')
-        cvv = request.form.get('cvv')
         customerData.insert_one(
             {
                 'firstName': custFirstName,
@@ -86,11 +82,7 @@ def confirmCheckout():
                 'city': custCity,
                 'zipcode': int(zipcode),
                 'courier': courier,
-                'paymentMethod':payMethod,
-                'cardName': cardName,
-                'cardNum': cardNum,
-                'expiryDate': expiryDate,
-                'cvv': cvv
+                'paymentMethod':payMethod
             }
         )
         return render_template('checkout-confirm.html')
