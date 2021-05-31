@@ -116,7 +116,7 @@ def editProductData(oid):
                 'productCategory': productCategory,
                 'price': float(price),
                 'imageURL': imgURL,
-                'stockNumber': float(stockNumber),
+                'stockNumber': int(stockNumber),
                 'featured': isFeatured,
                 'datePosted': dateToday 
             }
