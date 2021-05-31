@@ -37,9 +37,10 @@ def feedback():
 def about_us():
     return render_template('about_us.html')
 
-@app.route('/product-info')
-def product_info():
-    return render_template('product_info.html')
+@app.route('/product/<oid>')
+def product_info(oid):
+    product = products.find_one_or_404({'_id': ObjectId(oid)})
+    return render_template('product_info.html', product = product)
 
 @app.route('/checkout')
 def checkoutPage():
