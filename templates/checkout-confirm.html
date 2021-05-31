@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Order Complete | Miss Jhaz Cosmetics</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <nav class="sticky-top bg-white mt-2 pt-2">
+        <h2 class="font1">Check out your products!</h2>
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link disabled text-success" href="#">Information</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled text-success" href="#">Shipping Options</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled text-success" href="#">Payment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link disabled text-success" href="#" tabindex="-1">Order Summary</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active text-success font-weight-bold" href="#" tabindex="-1"><i
+                        class="bi bi-check-circle-fill"></i> Finish</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="row">
+        <div class="col-md-8">
+            <div class="card mt-2">
+                <div class="card-body text-center">
+                    <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/png/51750044_291742211523589_5502564095062179840_n.png"
+                        alt="order-success" id="orderCompleteImg">
+                    <h2 class="card-title">Your order is complete!</h2>
+                    <p>We have sent your receipt to your email. Thank you for shopping with us.</p>
+                    <h4>Your tracking number is: </h4>
+                    <p class="display-4" id="trackNum"></p>
+                    <p class="card-subtitle">Please go to courier's site for the status of your parcel.</p>
+                </div>
+                <div class="card-footer">
+                    <a href="/" class="btn btn-main btn-block"><i class="bi bi-compass"></i> Explore more products</a>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg" class="card-img-top"
+                    alt="..." style="border-radius: 0;">
+                <div class="card-body">
+                    <h5 class="card-title">Cart</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                        card's content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    let mainNavbar = document.getElementById('mainNav');
+    mainNavbar.classList.remove('sticky-top');
+</script>
+{% endblock %}
