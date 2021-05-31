@@ -25,13 +25,27 @@
                 <div class="modal-body">
                   <form>
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label par1">Author:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <label for="author-name" class="col-form-label par1">Author:</label>
+                      <input type="text" class="form-control" id="author-name">
                     </div>
                     <div class="form-group">
-                      <label for="message-text" class="col-form-label par1">Feedback:</label>
-                      <textarea class="form-control" id="message-text"></textarea>
+                        <label for="select-product" class="col-form-label par1">Select Product:</label>
+                        <br>
+                        <select class="form-select form-control" aria-label="Default select example">
+                            <option selected>Open this select menu</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
                     </div>
+                    <div class="form-group">
+                      <label for="send-feedback" class="col-form-label par1">Feedback:</label>
+                      <textarea class="form-control" id="send-feedback"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-rating" class="col-form-label par1">Rating:</label>
+                        <input type="number" value="1" min="1" max="5" class="form-control" id="product-rating ">
+                      </div>
                   </form>
                 </div>
                 <div class="modal-footer">
@@ -56,7 +70,7 @@
                     shop is my go to shop for budget
                     friendly yet high quality products.
                     Though I wish they had more
-                    eyeshadow palette to choose from"</p>
+                    eyeshadow palette to choose from."</p>
                 <i class="bi bi-chat-square-quote-fill quotation-icon"></i>
             </div>
         </div>
@@ -119,7 +133,7 @@
                 <p class="card-text par1" style="margin-bottom: 4rem;">“I
                     just love your velvet clay blush. It’s
                     not sticky at all and it stays on my face
-                    all day!”</p>
+                    all day.”</p>
                 <i class="bi bi-chat-square-quote-fill quotation-icon"></i>
             </div>
         </div>
