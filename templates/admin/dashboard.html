@@ -8,11 +8,41 @@
 <div class="container">
     <div class="jumbotron mt-5">
         <h1 class="display-4">Welcome to TheDashboard!</h1>
-        <p class="lead">This page will allow you to perform various database operations in a convenient and easy way.</p>
-        <hr class="my-4">
-        <p>What would you like to do for now?</p>
-        <a class="btn btn-success btn-lg" href="/admin/add_data" role="button">Add Data</a>
-        <a href="/admin/view" class="btn btn-primary btn-lg">View Data</a>
+        <p class="lead">This page will allow you to perform various database operations in a convenient and easy way.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-plus dashboard-icon"></i>
+                    <h5 class="card-title">Add Data</h5>
+                    <p class="card-text">Allows you to add data to database.</p>
+                    <a href="/admin/add_data" class="card-link" role="link">Add a product</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-binoculars dashboard-icon"></i>
+                    <h5 class="card-title">Product Inventory</h5>
+                    <p class="card-text">The product inventory allows you to check the product items.</p>
+                    <a href="/admin/view/products" class="card-link" role="link">View Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card text-center">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-bar-graph dashboard-icon"></i>
+                    <h5 class="card-title">Customer Data</h5>
+                    <p class="card-text">Customer records are stored here.</p>
+                    <a href="/admin/view/records" class="card-link" role="link">View Records</a>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 {% endblock %}

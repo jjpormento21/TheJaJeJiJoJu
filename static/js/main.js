@@ -18,3 +18,8 @@ function generateString(length) {
     return result;
 }
 trackNum.innerHTML = generateString(9);
+
+function setPostToDelete(postId) {
+  document.querySelector(".delete-post-btn").setAttribute("href", '/blog_post_delete/' + postId);
+  console.log(postId);
+}

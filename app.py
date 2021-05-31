@@ -69,10 +69,6 @@ def confirmCheckout():
         zipcode = request.form.get('zipcode')
         courier = request.form.get('courier')
         payMethod = request.form.get('paymentMethod')
-        cardName = request.form.get('cardName')
-        cardNum = request.form.get('cardNumber')
-        expiryDate = request.form.get('expiryDate')
-        cvv = request.form.get('cvv')
         customerData.insert_one(
             {
                 'firstName': custFirstName,
@@ -89,10 +85,6 @@ def confirmCheckout():
                 'zipcode': int(zipcode),
                 'courier': courier,
                 'paymentMethod':payMethod,
-                'cardName': cardName,
-                'cardNum': cardNum,
-                'expiryDate': expiryDate,
-                'cvv': cvv
             }
         )
         return render_template('checkout-confirm.html')
@@ -139,19 +131,39 @@ def addData():
         return render_template('admin/add_data.html')
 
 @app.route('/admin/delete_data_all')
-def deleteAll():
+def deleteAllProducts():
     products.delete_many({})
     return redirect(url_for('dashboard'))
 
-@app.route('/admin/view')
-def viewAll():
+@app.route('/admin/delete_records_all')
+def deleteAllRecords():
+    customerData.delete_many({})
+    return redirect(url_for('dashboard'))
+
+@app.route('/admin/view/products')
+def viewAllProducts():
     all_products = products.find()
     return render_template('admin/view.html', products=all_products)
+
+@app.route('/admin/view/records')
+def viewRecords():
+    customer_records = customerData.find()
+    return render_template('/admin/customer-records.html', records = customer_records)
+
+@app.route('/admin/view/records/<oid>')
+def viewSingleRecord(oid):
+    customer_record = customerData.find_one_or_404({'_id': ObjectId(oid)})
+    return render_template('/admin/customer-info.html', record = customer_record)
+
+@app.route('/admin/delete_record/<oid>')
+def deleteRecord(oid):
+    customerData.delete_one({'_id': ObjectId(oid)})
+    return redirect(url_for('viewRecords'))
 
 @app.route('/admin/delete_product/<oid>')
 def deleteProduct(oid):
     products.delete_one({'_id': ObjectId(oid)})
-    return redirect(url_for('viewAll'))
+    return redirect(url_for('viewRecords'))
 
 @app.route('/admin/edit_product/<oid>', methods = ['GET', 'POST'])
 def editProductData(oid):
