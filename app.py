@@ -192,7 +192,7 @@ def editProductData(oid):
             }
         }
         )
-        return redirect(url_for('viewAll'))
+        return redirect(url_for('viewAllProducts'))
     else:
         return render_template('admin/edit_product.html', currentProduct=currentProduct)
 
