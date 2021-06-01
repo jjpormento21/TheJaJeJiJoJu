@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from bson.objectid import ObjectId
 import os
+from datetime import datetime
 app = Flask(__name__)
 
 #database stuff
@@ -14,6 +15,7 @@ products = mongo.db.products
 customerData = mongo.db.customer_data
 customerReviews = mongo.db.customer_reviews
 
+dateToday = datetime.now()
 #routes
 @app.route('/')
 def index():
@@ -41,10 +43,14 @@ def postFeedback():
         username = request.form.get('username')
         productName = request.form.get('productName')
         userFeedback = request.form.get('feedback')
+        productRating = request.form.get('product-rating')
         customerReviews.insert_one(
             {
+                'username': username,
                 'productName': productName,
-                'feedback': userFeedback
+                'feedback': userFeedback,
+                'rating': int(productRating),
+                'datePosted': dateToday
             }
         )
         return redirect(url_for('feedback'))
@@ -58,8 +64,8 @@ def about_us():
 @app.route('/product/<oid>')
 def product_info(oid):
     product = products.find_one_or_404({'_id': ObjectId(oid)})
-    reviews = customerReviews.find_one({'productName': product.productName})
-    return render_template('product_info.html', product = product, review = reviews)
+    reviews = customerReviews.find()
+    return render_template('product_info.html', product = product, reviews = reviews)
 
 @app.route('/checkout')
 def checkoutPage():

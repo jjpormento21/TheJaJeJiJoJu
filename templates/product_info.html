@@ -23,17 +23,18 @@
             </h3>
             <h6>Available Stocks: <span id="stockNumber">{{product.stockNumber}}</span></h6>
             <hr>
-            <h4 class="font2">Feedbacks</h4>
-            {% if 'username' in product.reviews %}
-            <i class="bi bi-person-circle cat-icon"> </i>
-            <h6 class="font1 d-inline">{{product.reviews.username}}</h6>
-            <p class="par1" style="margin-left: 1.9rem;">5/31/21 </p>
-            <p class="par1" style="margin-top:-0.5rem">{{product.reviews.feedback}}</p>
-            <h6 class="font1">Rating: 4.9/5</h6>
-            {% else %}
-            <p>No reviews yet</p>
-            {% endif %}
-
+            <h4 class="font2">Reviews</h4>
+            <div class="feedback-section">
+                {%for review in reviews %}
+                    {% if review.productName == product.productName %}
+                    <h6 class="font1"><i class="bi bi-person-circle cat-icon"></i> {{review.username}}</h6>
+                    <p class="text-secondary"><i class="bi bi-clock"></i> {{review.datePosted}}</p>
+                    <p class="par1" style="margin-top:-0.5rem">{{review.feedback}}</p>
+                    <h6 class="font1">Rating: {{review.rating}}/5</h6>
+                    <hr>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
         <div class="col-md-5">
             <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3">
