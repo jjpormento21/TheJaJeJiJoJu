@@ -12,21 +12,21 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7">
-            <h2 class="font2 mt-3" id="A{{product._id}}">{{product.productName}}</h2>
+            <h2 class="text-primary-pink mt-3" id="A{{product._id}}">{{product.productName}}</h2>
             <h5>Category: {{product.productCategory}}</h5>
-            <p class="par1 mt-4">{{product.productDescription}}</p>
+            <p class="text-small-black mt-4">{{product.productDescription}}</p>
             <hr>
             <p style="white-space: pre-wrap; max-height: 20em; overflow: auto;">{{product.detailedDescription}}</p>
             <hr>
-            <h3 class="font4 card-title font-weight-bold pt-0 mt-3" style="font-size: 1.2rem;">Price:
+            <h3 class="text-light-pink card-title font-weight-bold pt-0 mt-3" style="font-size: 1.2rem;">Price:
                 <span class="card-subtitle text-muted">₱{{product.price}}</span>
             </h3>
             <h6>Available Stocks: <span id="stockNumber">{{product.stockNumber}}</span></h6>
         </div>
         <div class="col-md-5">
-            <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3">
+            <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-info-img img-center mb-3">
             <div class="text-center">
-                <label for="quantity" class="font2">Quantity</label>
+                <label for="quantity" class="text-primary-pink">Quantity</label>
                 <input type='number' name="quantity" value="1" min="1">
                 <hr>
                 <a href="/shop#S{{product.productCategory}}" class="btn btn-sub btn-block">Cancel</a>
