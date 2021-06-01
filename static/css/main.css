@@ -353,3 +353,6 @@ span.text-danger{
 .recent-posts{
     text-align: left;
 }
+.nav-active{
+    color: hsl(352, 73%, 58%) !important;
+}
