@@ -12,6 +12,7 @@ app.config['MONGO_URI'] = os.getenv('DEVELOPER')
 mongo = PyMongo(app)
 products = mongo.db.products
 customerData = mongo.db.customer_data
+customerReviews = mongo.db.customer_reviews
 
 #routes
 @app.route('/')
@@ -31,7 +32,24 @@ def featuredProducts():
 
 @app.route('/feedback_hub')
 def feedback():
-    return render_template('feedbacks.html')
+    all_products = products.find()
+    return render_template('feedbacks.html', products = all_products)
+
+@app.route('/feedback_hub/post', methods=['GET','POST'])
+def postFeedback():
+    if request.method == 'POST':
+        username = request.form.get('username')
+        productName = request.form.get('productName')
+        userFeedback = request.form.get('feedback')
+        customerReviews.insert_one(
+            {
+                'productName': productName,
+                'feedback': userFeedback
+            }
+        )
+        return redirect(url_for('feedback'))
+    else:
+        return redirect(url_for('feedback'))
 
 @app.route('/about_us')
 def about_us():
@@ -40,7 +58,8 @@ def about_us():
 @app.route('/product/<oid>')
 def product_info(oid):
     product = products.find_one_or_404({'_id': ObjectId(oid)})
-    return render_template('product_info.html', product = product)
+    reviews = customerReviews.find_one({'productName': product.productName})
+    return render_template('product_info.html', product = product, review = reviews)
 
 @app.route('/checkout')
 def checkoutPage():
