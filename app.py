@@ -35,7 +35,8 @@ def featuredProducts():
 @app.route('/feedback_hub')
 def feedback():
     all_products = products.find()
-    return render_template('feedbacks.html', products = all_products)
+    all_reviews = customerReviews.find().limit(6)
+    return render_template('feedbacks.html', products = all_products, reviews = all_reviews)
 
 @app.route('/feedback_hub/post', methods=['GET','POST'])
 def postFeedback():

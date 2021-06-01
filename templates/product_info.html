@@ -5,6 +5,9 @@
     body {
         background-color: hsl(210, 17%, 98%);
     }
+    textarea{
+        resize: none;
+    }
 </style>
 {% endblock %}
 
@@ -23,24 +26,26 @@
             </h3>
             <h6>Available Stocks: <span id="stockNumber">{{product.stockNumber}}</span></h6>
             <hr>
-            <h4 class="font2">Reviews</h4>
+            <h4 class="font2">Reviews <span class="badge badge-secondary"></span></h4>
             <div class="feedback-section">
                 {%for review in reviews %}
-                    {% if review.productName == product.productName %}
-                    <h6 class="font1"><i class="bi bi-person-circle cat-icon"></i> {{review.username}}</h6>
-                    <p class="text-secondary"><i class="bi bi-clock"></i> {{review.datePosted}}</p>
-                    <p class="par1" style="margin-top:-0.5rem">{{review.feedback}}</p>
-                    <h6 class="font1">Rating: {{review.rating}}/5</h6>
-                    <hr>
-                    {% endif %}
+                {% if review.productName == product.productName %}
+                <h6 class="font1 username"><i class="bi bi-person-circle cat-icon"></i> {{review.username}}</h6>
+                <p class="text-secondary mb-1"><i class="bi bi-clock"></i> {{review.datePosted}}</p>
+                <p class="par1">{{review.feedback}}</p>
+                <h6 class="font1">Rating: {{review.rating}}/5</h6>
+                <hr>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
         <div class="col-md-5">
             <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3">
             <div class="text-center">
-                <label for="quantity" class="font2">Quantity</label>
-                <input type='number' name="quantity" value="1" min="1">
+                <!-- <label for="quantity" class="font2">Quantity</label>
+                <input type='number' name="quantity" value="1" min="1"> -->
+                <button class="btn btn-secondary text-center" type="button" data-toggle="modal"
+                    data-target="#writeFeedback"><i class="bi bi-chat-left-quote"></i> Write a review</button>
                 <hr>
                 <a href="/shop#S{{product.productCategory}}" class="btn btn-sub btn-block">Cancel</a>
                 <button class="btn btn-main btn-block">Add to cart</button>
@@ -48,4 +53,50 @@
         </div>
     </div>
 </div>
+
+<div class="modal fade" id="writeFeedback" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title font1">Create Review</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="{{url_for('postFeedback')}}" method="POST">
+                    <div class="form-group">
+                        <label for="username" class="col-form-label par1">Username:</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productName" class="col-form-label par1">Select Product:</label>
+                        <br>
+                        <input type="text" name="productName" id="productName" class="form-control" readonly
+                            value="{{product.productName}}">
+                    </div>
+                    <div class="form-group">
+                        <label for="feedback" class="col-form-label par1">Feedback:</label>
+                        <textarea class="form-control" id="feedback" name="feedback" placeholder="Write a review"
+                             rows="5"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="product-rating" class="col-form-label par1">Rating:</label>
+                        <input type="number" value="3" min="1" max="5" class="form-control" id="product-rating"
+                            name="product-rating">
+                    </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-sub" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-main">Post</button>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="{{ url_for('static', filename = 'js/productInfo.js')}}"></script>
 {% endblock %}

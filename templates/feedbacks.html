@@ -7,12 +7,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <h1 class="font1 mt-3">Customers' <br> Reviews</h1>
+            <h1 class="font1 mt-3">Customer <br> Reviews</h1>
         </div>
 
         <div class="col-md-6">
-            <button type="button" class="btn btn-main mt-5" style="margin-left: 22rem;" data-toggle="modal"
-                data-target="#exampleModal" data-whatever="@mdo">Create Feedback</button>
+            <button type="button" class="btn btn-main mt-5 btn-lg" style="margin-left: 22rem;" data-toggle="modal"
+                data-target="#exampleModal">Create Feedback</button>
         </div>
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -28,7 +28,8 @@
                         <form action="{{url_for('postFeedback')}}" method="POST">
                             <div class="form-group">
                                 <label for="username" class="col-form-label par1">Username:</label>
-                                <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                                <input type="text" class="form-control" id="username" name="username"
+                                    placeholder="Username" required>
                             </div>
                             <div class="form-group">
                                 <label for="select-product" class="col-form-label par1">Select Product:</label>
@@ -48,8 +49,8 @@
                             </div>
                             <div class="form-group">
                                 <label for="product-rating" class="col-form-label par1">Rating:</label>
-                                <input type="number" value="1" min="1" max="5" class="form-control"
-                                    id="product-rating" name="product-rating">
+                                <input type="number" value="1" min="1" max="5" class="form-control" id="product-rating"
+                                    name="product-rating">
                             </div>
 
                     </div>
@@ -160,10 +161,6 @@
     </div>
 </div>
 
-<div class="mt-3 mb-3 m-title">
-    <a href="#" class="btn btn-sub mt-3">See all reviews</a>
-</div>
-
 <div class="container">
     <div class="row">
         <div class="col-md-6">
@@ -173,48 +170,21 @@
 </div>
 
 <div class="container">
-    <div class="card-deck">
-        <div class="card mb-3 mt-3" style="border-style: none;">
-            <div class="shadow p-3 card-body pt-0" style="border-radius: 24px;">
-                <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/187146180_291478889287044_314538694655535209_n.jpg"
-                    alt="Jirah" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Jirah Kate Solano</h3>
-                <p class="card-text par1 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-                    similique
-                    provident, ad doloribus dolorum ut adipisci, ex debitis eos ullam qui inventore accusamus,
-                    architecto ducimus deleniti expedita impedit natus iste?</p>
+    <div class="row">
+        {% for review in reviews %}
+        <div class="col-md-4">
+            <div class="card mb-3 mt-3" style="border-style: none;">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 24px;">
+                    <img src="http://www.globalo.com/content/uploads/2015/12/darth-vader.jpg" alt="user-img"
+                        class="img-size1">
+                    <i class="bi bi-envelope-fill review-icon text-right"></i>
+                    <h3 class="card-title font2 mt-3">{{review.username}}</h3>
+                    <h5 class="card-title">{{review.productName}}</h5>
+                    <p class="card-text par1 mb-3">{{review.feedback}}</p>
+                </div>
             </div>
         </div>
-        <div class="card mb-3 mt-3" style="border-style: none;">
-            <div class="shadow p-3 card-body pt-0" style="border-radius: 24px;">
-                <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/189291499_173529744579598_695043480674657752_n.jpg"
-                    alt="Pitta" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Pitta Palmares</h3>
-                <p class="card-text par1 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-                    similique
-                    provident, ad doloribus dolorum ut adipisci, ex debitis eos ullam qui inventore accusamus,
-                    architecto ducimus deleniti expedita impedit natus iste?</p>
-            </div>
-        </div>
-        <div class="card mb-3 mt-3" style="border-style: none;">
-            <div class="shadow p-3 card-body pt-0" style="border-radius: 24px;">
-                <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188863180_1647572295453994_1197976734689615115_n.jpg"
-                    alt="Shaina" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Shaina Laquihon</h3>
-                <p class="card-text par1 mb-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
-                    similique
-                    provident, ad doloribus dolorum ut adipisci, ex debitis eos ullam qui inventore accusamus,
-                    architecto ducimus deleniti expedita impedit natus iste?</p>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </div>
-
-<div class="mt-3 mb-3 m-title">
-    <a href="#" class="btn btn-sub mt-3">View all</a>
-</div>
-
 {% endblock %}

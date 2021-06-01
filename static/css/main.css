@@ -342,5 +342,14 @@ span.text-danger{
 }
 .feedback-section{
     overflow: auto;
-    max-height: 20em;
+    max-height: 21em;
+}
+.recents-img{
+    width: 80px;
+    height: 60px;
+    border-radius: 2em;
+    border: 2px #fff solid;
+}
+.recent-posts{
+    text-align: left;
 }
