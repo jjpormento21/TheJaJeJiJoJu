@@ -34,10 +34,7 @@
         <li class="nav-item">
           <a class="nav-link navbar-font mt-2" href="/about_us">About Us</a>
         </li>
-        <li class="nav-item"><a href="/feedback_hub" class="nav-link navbar-font mt-2"
-            style="color: #FC8495;">Feedback</a></li>
-        <li class="nav-item"><a href="/cart-session" class="nav-link"><i class="bi bi-cart-fill nav-icon"></i>
-          </a></li>
+        <li class="nav-item"><a href="/feedback_hub" class="nav-link navbar-font mt-2">Feedback</a></li>
       </ul>
     </div>
   </nav>
@@ -46,64 +43,20 @@
     <hr style="background-color: #FC8495;">
   </div>
 
-  <div id="cart">
-    <h4 class="font1 pb-2">Recent Items</h4>
+  <div id="cartButton">
+    <i class="bi bi-cart-fill"></i>
+  </div>
+
+  <div id="cart" class="shadow">
+    <h5 class="font1 pb-2">Recent Items</h5>
     <div class="cart-container">
-
-      <div class="row cart-item mb-3">
-        <div class="col-md-3">
-          <img src="https://cdnimg.webstaurantstore.com/images/products/large/60022/1892232.jpg" alt="cart"
-            class="cart-item-img">
-        </div>
-        <div class="col-md-4">
-          <p class="cart-item-name mb-0">Item 1</p>
-          <p class="cart-item-price text-muted mt-0">$1.00</p>
-          <a class="btn btn-link text-danger cart-item-delete p-0">Remove</a>
-        </div>
-        <div class="col-md-5">
-          <label for="cart-item-qty">QTY</label>
-          <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1">
-        </div>
-      </div>
-
-      <div class="row cart-item mb-3">
-        <div class="col-md-3">
-          <img src="https://cdnimg.webstaurantstore.com/images/products/large/60022/1892232.jpg" alt="cart"
-            class="cart-item-img">
-        </div>
-        <div class="col-md-4">
-          <p class="cart-item-name mb-0">Item 2</p>
-          <p class="cart-item-price text-muted mt-0">$1.00</p>
-          <a class="btn btn-link text-danger cart-item-delete p-0">Remove</a>
-        </div>
-        <div class="col-md-5">
-          <label for="cart-item-qty">QTY</label>
-          <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1">
-        </div>
-      </div>
-
-      <div class="row cart-item mb-3">
-        <div class="col-md-3">
-          <img src="https://cdnimg.webstaurantstore.com/images/products/large/60022/1892232.jpg" alt="cart"
-            class="cart-item-img">
-        </div>
-        <div class="col-md-4">
-          <p class="cart-item-name mb-0">Item 3</p>
-          <p class="cart-item-price text-muted mt-0">$1.00</p>
-          <a class="btn btn-link text-danger cart-item-delete p-0">Remove</a>
-        </div>
-        <div class="col-md-5">
-          <label for="cart-item-qty">QTY</label>
-          <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1">
-        </div>
-      </div>
 
     </div>
 
-    <hr>
+    <hr class="mt-2">
     <div class="cart-summary">
       <h5 class="grandTotal font2 d-inline">Grand Total</h5>
-      <h5 class="cart-total font1">$10.00</h5>
+      <h5 class="cart-total font1">₱0.00</h5>
     </div>
     <hr>
     <div class="cart-footer text-right">

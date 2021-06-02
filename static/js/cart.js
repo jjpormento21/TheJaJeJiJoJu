@@ -10,25 +10,74 @@ for (const input of quantityInputs) {
     input.addEventListener('change', updateTotal);
 }
 
+var addToCartButtons = document.getElementsByClassName('addToCart');
+for (const button of addToCartButtons) {
+    button.addEventListener('click', addToCartClicked);
+}
+
+let cartItems = document.querySelectorAll('.cart-item').length;
 updateTotal();
-function deleteItem(event){
+function deleteItem(event) {
     let cartItem = event.target.parentElement.parentElement;
     cartItem.remove();
     updateTotal();
 }
 
-function updateTotal(){
+function addToCartClicked(e){
+    console.log('added to cart');
+    let button = e.target;
+    let productItem = button.parentElement.parentElement;
+    let title = productItem.querySelector('.product-name').innerText;
+    let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
+    price = parseFloat(price);
+    let imgSrc = productItem.querySelector('.product-img').src;
+    addItemToCart(title, price, imgSrc);
+    updateTotal();
+}
+
+function addItemToCart(title, price, imgSrc) {
+    let cartItem = document.createElement('div');
+    cartItem.classList.add('row', 'cart-item', 'mb-3');
+    let cartContainer = document.querySelector('.cart-container');
+    let cartItemNames = document.getElementsByClassName('cart-item-name');
+    for (const itemName of cartItemNames) {
+        if (itemName.innerText == title) {
+            alert('Item already added to cart.')
+            return 0;
+        }
+    }
+    let cartItemContents = `<div class="col-md-3">
+    <img src="${imgSrc}" alt="cart"
+      class="cart-item-img">
+  </div>
+  <div class="col-md-4">
+    <p class="cart-item-name mb-0">${title}</p>
+    <p class="cart-item-price text-muted mt-0">₱${price}</p>
+    <a class="btn btn-link text-danger cart-item-delete p-0"><i class="bi bi-cart-x-fill"></i> Remove</a>
+  </div>
+  <div class="col-md-5">
+    <label for="cart-item-qty">QTY</label>
+    <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1" max="100">
+  </div>`
+    cartItem.innerHTML = cartItemContents;
+    cartContainer.append(cartItem);
+    cartItem.querySelector('.cart-item-delete').addEventListener('click', deleteItem);
+    cartItem.querySelector('.cart-item-qty').value = 1;
+    cartItem.querySelector('.cart-item-qty').addEventListener('change', updateTotal)
+}
+
+function updateTotal() {
     let cartItem = document.getElementsByClassName('cart-item');
     let total = 0;
     for (const item of cartItem) {
         let priceElement = item.getElementsByClassName('cart-item-price')[0];
         let quantityElement = item.getElementsByClassName('cart-item-qty')[0];
-        let price = parseFloat(priceElement.innerText.replace('$', ''));
+        let price = parseFloat(priceElement.innerText.replace('₱', ''));
         let quantity = quantityElement.value;
-        total += (price*quantity);
+        total += (price * quantity);
     }
     let totalPrice = document.querySelector('.cart-total');
     total = Math.round(total * 100) / 100;
-    totalPrice.innerHTML = '$' + total;
+    totalPrice.innerHTML = '₱' + total;
     console.log(total);
 }

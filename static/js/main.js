@@ -3,6 +3,17 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
+let cartButton = document.querySelector('#cartButton');
+cartButton.addEventListener('click', function(){
+  let cart = document.querySelector('#cart');
+  if (cart.style.display === 'none'){
+    cart.style.display = 'block';
+  }
+  else{
+    cart.style.display = 'none';
+  }
+})
+
 let trackNum = document.getElementById('trackNum');
 
 // program to generate random strings
