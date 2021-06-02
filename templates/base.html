@@ -47,30 +47,63 @@
   </div>
 
   <div id="cart">
-    <h5 class="font1">Recent Items</h5>
-    <hr>
+    <h4 class="font1 pb-2">Recent Items</h4>
     <div class="cart-container">
 
-      <div class="row cart-item">
-        <div class="col">
+      <div class="row cart-item mb-3">
+        <div class="col-md-3">
           <img src="https://cdnimg.webstaurantstore.com/images/products/large/60022/1892232.jpg" alt="cart"
             class="cart-item-img">
         </div>
-        <div class="col">
-          <p class="cart-item-name font3 mb-0">Item 1</p>
+        <div class="col-md-4">
+          <p class="cart-item-name mb-0">Item 1</p>
           <p class="cart-item-price text-muted mt-0">$1.00</p>
+          <a class="btn btn-link text-danger cart-item-delete p-0">Remove</a>
         </div>
-        <div class="col">
-          <input type="number" name="" id="" class="cart-item-qty">
-          <button class="btn btn-link text-danger cart-item-delete">Remove</button>
+        <div class="col-md-5">
+          <label for="cart-item-qty">QTY</label>
+          <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1">
         </div>
       </div>
+
+      <div class="row cart-item mb-3">
+        <div class="col-md-3">
+          <img src="https://cdnimg.webstaurantstore.com/images/products/large/60022/1892232.jpg" alt="cart"
+            class="cart-item-img">
+        </div>
+        <div class="col-md-4">
+          <p class="cart-item-name mb-0">Item 1</p>
+          <p class="cart-item-price text-muted mt-0">$1.00</p>
+          <a class="btn btn-link text-danger cart-item-delete p-0">Remove</a>
+        </div>
+        <div class="col-md-5">
+          <label for="cart-item-qty">QTY</label>
+          <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1">
+        </div>
+      </div>
+
+      <div class="row cart-item mb-3">
+        <div class="col-md-3">
+          <img src="https://cdnimg.webstaurantstore.com/images/products/large/60022/1892232.jpg" alt="cart"
+            class="cart-item-img">
+        </div>
+        <div class="col-md-4">
+          <p class="cart-item-name mb-0">Item 1</p>
+          <p class="cart-item-price text-muted mt-0">$1.00</p>
+          <a class="btn btn-link text-danger cart-item-delete p-0">Remove</a>
+        </div>
+        <div class="col-md-5">
+          <label for="cart-item-qty">QTY</label>
+          <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1">
+        </div>
+      </div>
+
     </div>
 
     <hr>
     <div class="cart-summary">
-      <h6 class="grandTotal font2 d-inline">Grand Total</h6>
-      <p class="cart-total font3">$10.00</p>
+      <h5 class="grandTotal font2 d-inline">Grand Total</h5>
+      <h5 class="cart-total font1">$10.00</h5>
     </div>
     <hr>
     <div class="cart-footer text-right">
