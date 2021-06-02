@@ -339,4 +339,23 @@ span.text-danger{
 }
 .icon-container {
     font-size: 2rem;
-  }
+}
+
+/* Cart Design */
+#cart{
+    position: relative;
+    width: 20em;
+    border: #000 .5px solid;
+    border-radius: 1em;
+    height: auto;
+    padding: 1em;
+}
+.cart-item-img{
+    width: 75px;
+    height: 65px;
+    border-radius: .5rem;
+}
+.cart-total{
+    display: inline;
+    margin-left: 7rem;
+}

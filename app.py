@@ -50,6 +50,10 @@ def checkoutPage():
 def checkoutTest():
     return render_template('checkout-confirm.html')
 
+@app.route('/blank')
+def blankPage():
+    return render_template('blank.html')
+
 @app.route('/checkout/confirm', methods=['GET','POST'])
 def confirmCheckout():
     if request.method == 'POST':
