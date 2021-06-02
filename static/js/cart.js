@@ -15,15 +15,26 @@ for (const button of addToCartButtons) {
     button.addEventListener('click', addToCartClicked);
 }
 
-let cartItems = document.querySelectorAll('.cart-item').length;
-updateTotal();
+function updateBadge() {
+    let cartItems = document.querySelectorAll('.cart-item').length;
+    let cartBadge = document.querySelector('#cartBadge');
+    cartBadge.innerHTML = cartItems;
+    if (cartItems < 1) {
+        cartBadge.style.visibility = 'hidden';
+    }
+    else {
+        cartBadge.style.visibility = 'visible';
+    }
+}
+
 function deleteItem(event) {
     let cartItem = event.target.parentElement.parentElement;
     cartItem.remove();
     updateTotal();
+    updateBadge();
 }
 
-function addToCartClicked(e){
+function addToCartClicked(e) {
     console.log('added to cart');
     let button = e.target;
     let productItem = button.parentElement.parentElement;
@@ -33,6 +44,7 @@ function addToCartClicked(e){
     let imgSrc = productItem.querySelector('.product-img').src;
     addItemToCart(title, price, imgSrc);
     updateTotal();
+    updateBadge();
 }
 
 function addItemToCart(title, price, imgSrc) {

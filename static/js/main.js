@@ -6,13 +6,18 @@ $(function () {
 let cartButton = document.querySelector('#cartButton');
 cartButton.addEventListener('click', function(){
   let cart = document.querySelector('#cart');
-  if (cart.style.display === 'none'){
+  if (cart.style.display == 'none'){
     cart.style.display = 'block';
   }
   else{
     cart.style.display = 'none';
   }
 })
+
+function closeCart(){
+  let cart = document.querySelector('#cart');
+  cart.style.display = 'none';
+}
 
 let trackNum = document.getElementById('trackNum');
 

@@ -348,8 +348,8 @@ span.text-danger{
 
 /* Cart Design */
 #cartButton{
-    background-color: hsl(300, 6%, 97%);
-    opacity: 70%;
+    background-color: hsl(300, 4%, 90%);
+    opacity: 60%;
     padding: 2rem;
     font-size: 2rem;
     position: fixed;
@@ -375,7 +375,7 @@ span.text-danger{
     position: fixed;
     z-index: 1;
     background-color: #fff;
-    right: 9rem;
+    right: 8rem;
     width: 25em;
     border: #000 .5px solid;
     border-radius: 1em;
@@ -383,7 +383,6 @@ span.text-danger{
     padding: 1em;
     font-size: 14px !important;
     margin: 0px auto;
-    display: none;
 }
 #cartBadge{
     font-size: 1rem;

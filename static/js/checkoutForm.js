@@ -12,7 +12,7 @@ $(document).ready(function () {
       validator();
       return false;
     }
-    else if ((event.keyCode == 13) && (stepCounter == 3))  {
+    else if ((event.keyCode == 13) && (stepCounter == 3)) {
       document.querySelector('#checkoutForm').submit();
     }
   });
