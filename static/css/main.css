@@ -345,6 +345,11 @@ span.text-danger{
 .icon-container {
     font-size: 2rem;
 }
+.card-button{
+    background-color: transparent;
+    border: none;
+    margin-left: .5em;
+}
 
 /* Cart Design */
 #cartButton{

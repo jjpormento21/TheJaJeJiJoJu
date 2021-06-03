@@ -37,7 +37,8 @@ function deleteItem(event) {
 function addToCartClicked(e) {
     console.log('added to cart');
     let button = e.target;
-    let productItem = button.parentElement.parentElement;
+    let productItem = button.parentElement.parentElement.parentElement;
+    console.log(productItem);
     let title = productItem.querySelector('.product-name').innerText;
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
     price = parseFloat(price);
