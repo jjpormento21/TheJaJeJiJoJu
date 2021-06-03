@@ -2,3 +2,5 @@
 dataTool.py
 env
 env.zip
+.vscode
+__pycache__
