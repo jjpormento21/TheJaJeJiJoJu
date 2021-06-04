@@ -1,3 +1,8 @@
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+
 #dashboard-footer{
     background-color: #000;
     padding: 1em;
@@ -5,10 +10,65 @@
     text-align: center;
 }
 
+.bg-color {
+    background-color: #EACBCB;
+}
+
+.jumbotron {
+    background-color: #BB2734;
+    border-radius: 25px;
+}
+
 .collapse-custom{
     padding: 0 1.25rem 0;
 }
 
 .dashboard-icon{
+    color: #7f7f7f;
     font-size: 3rem;
+}
+
+.center-icon {
+    color: #e0d8d8;
+    text-align: center;
+    width: 65;
+    display: block;
+    margin-top: -1.5cm;
+    font-size: 4rem;
+}
+
+.dashboard-font {
+    font-weight: 800;
+    color: #fff;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+}
+
+.dashboard-par {
+    color: #fff;
+    margin-bottom: -0.5cm;
+}
+
+.dashboard-title {
+    font-weight: 800;
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
+    color: #7f7f7f;
+}
+
+.dashboard-text {
+    margin-top: -0.3cm;
+    color: #7f7f7f;
+}
+
+.catalog {
+    border-radius: 20px;
+}
+
+.dashboard-btn {
+    background-color: #D8765C;
+    padding: .5rem 1.5rem;
+    border-radius: 24px;
+    color: white;
+    font-size: .9rem;
+    letter-spacing: .5px;
+    text-decoration: none;
 }

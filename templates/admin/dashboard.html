@@ -5,54 +5,57 @@
 {% endblock %}
 
 {% block body %}
+<body class="bg-color">
 <div class="container">
     <div class="jumbotron mt-5">
-        <h1 class="display-4" style="text-align: center;">Welcome to TheDashboard!</h1>
-        <p class="lead" style="text-align: center;">This page will allow you to perform various database operations in a convenient and easy way.
+        <i class="bi bi-house-door-fill center-icon"></i>
+        <h1 class="display-4 text-center dashboard-font">Welcome to TheDashboard!</h1>
+        <p class="lead text-center dashboard-par">This page will allow you to perform various database operations in a convenient and easy way.
         </p>
     </div>
 
     <div class="row">
         <div class="col-md-6 mb-5">
-            <div class="card shadow text-center">
+            <div class="card shadow text-center catalog">
                 <div class="card-body">
                     <i class="bi bi-file-earmark-plus dashboard-icon"></i>
-                    <h5 class="card-title">Add Data</h5>
-                    <p class="card-text">Allows you to add data to database.</p>
-                    <a href="/admin/add_data" class="card-link" role="link">Add a product</a>
+                    <h5 class="card-title dashboard-title">Add Data</h5>
+                    <p class="card-text dashboard-text">Allows you to add data to database.</p>
+                    <a href="/admin/add_data" class="card-link dashboard-btn" role="link">Add a product</a>
                 </div>
             </div>
         </div>
         <div class="col-md-6 mb-5">
-            <div class="card shadow text-center">
+            <div class="card shadow text-center catalog">
                 <div class="card-body">
                     <i class="bi bi-binoculars dashboard-icon"></i>
-                    <h5 class="card-title">Product Inventory</h5>
-                    <p class="card-text">The product inventory allows you to check the product items.</p>
-                    <a href="/admin/view/products" class="card-link" role="link">View Products</a>
+                    <h5 class="card-title dashboard-title">Product Inventory</h5>
+                    <p class="card-text dashboard-text">The product inventory allows you to check the product items.</p>
+                    <a href="/admin/view/products" class="card-link dashboard-btn" role="link">View Products</a>
                 </div>
             </div>
         </div>
         <div class="col-md-6 mb-5">
-            <div class="card shadow text-center">
+            <div class="card shadow text-center catalog">
                 <div class="card-body">
                     <i class="bi bi-file-earmark-bar-graph dashboard-icon"></i>
-                    <h5 class="card-title">Customer Data</h5>
-                    <p class="card-text">Customer records are stored here.</p>
-                    <a href="/admin/view/records" class="card-link" role="link">View Records</a>
+                    <h5 class="card-title dashboard-title">Customer Data</h5>
+                    <p class="card-text dashboard-text">Customer records are stored here.</p>
+                    <a href="/admin/view/records" class="card-link dashboard-btn" role="link">View Records</a>
                 </div>
             </div>
         </div>
         <div class="col-md-6 mb-5">
-            <div class="card shadow text-center">
+            <div class="card shadow text-center catalog">
                 <div class="card-body">
                     <i class="bi bi-chat-right-dots dashboard-icon"></i>
-                    <h5 class="card-title">Customer Reviews</h5>
-                    <p class="card-text">Manage and monitor comments and feedbacks from customers.</p>
-                    <a href="/admin/view/records" class="card-link" role="link">See Reviews</a>
+                    <h5 class="card-title dashboard-title">Customer Reviews</h5>
+                    <p class="card-text dashboard-text">Manage and monitor comments and feedbacks from customers.</p>
+                    <a href="/admin/view/records" class="card-link dashboard-btn" role="link">See Reviews</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
+</body>
 {% endblock %}
