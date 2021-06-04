@@ -1,7 +1,7 @@
 console.log('cart js loaded.');
 
-var productItemCounter = 0;
-sessionStorage.setItem('cartCounter', toString(productItemCounter));
+// var productItemCounter = 0;
+// sessionStorage.setItem('cartCounter', toString(productItemCounter));
 
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
 for (const button of deleteButtons) {
@@ -47,7 +47,6 @@ function addToCartClicked(e) {
     price = parseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
     addItemToCart(title, price, imgSrc);
-    storeData(title, 1, price, imgSrc);
     updateTotal();
     updateBadge();
 }
@@ -81,6 +80,7 @@ function addItemToCart(title, price, imgSrc) {
     cartItem.querySelector('.cart-item-delete').addEventListener('click', deleteItem);
     cartItem.querySelector('.cart-item-qty').value = 1;
     cartItem.querySelector('.cart-item-qty').addEventListener('change', updateTotal)
+    storeData(title, 1, price, imgSrc);
 }
 
 function updateTotal() {
@@ -104,4 +104,16 @@ function storeData(title, qty, price, imgSrc){
     let product = title.toString();
     let cartItemString = JSON.stringify(cartItem);
     sessionStorage.setItem(product, cartItemString);
+}
+
+function retrieveCart(){
+    for (i=0; i<sessionStorage.length; i++){
+        let productName = sessionStorage.key(i);
+        let object = sessionStorage.getItem(productName);
+        let objectFinal = JSON.parse(object);
+        let quantity = objectFinal.quantity;
+        let imgSrc = object.imgLink;
+        let price = object.productPrice;
+        console.log(quantity);
+    }
 }
