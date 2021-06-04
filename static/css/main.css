@@ -339,4 +339,20 @@ span.text-danger{
 }
 .icon-container {
     font-size: 2rem;
-  }
+}
+.feedback-section{
+    overflow: auto;
+    max-height: 21em;
+}
+.recents-img{
+    width: 80px;
+    height: 60px;
+    border-radius: 2em;
+    border: 2px #fff solid;
+}
+.recent-posts{
+    text-align: left;
+}
+.nav-active{
+    color: hsl(352, 73%, 58%) !important;
+}
