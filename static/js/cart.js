@@ -111,9 +111,11 @@ function retrieveCart(){
         let productName = sessionStorage.key(i);
         let object = sessionStorage.getItem(productName);
         let objectFinal = JSON.parse(object);
+
+        //Product Info
         let quantity = objectFinal.quantity;
         let imgSrc = object.imgLink;
         let price = object.productPrice;
-        console.log(quantity);
+        
     }
 }

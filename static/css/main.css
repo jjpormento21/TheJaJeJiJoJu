@@ -345,6 +345,7 @@ span.text-danger{
 .icon-container {
     font-size: 2rem;
 }
+<<<<<<< HEAD
 .card-button{
     background-color: transparent;
     border: none;
@@ -435,4 +436,21 @@ span.text-danger{
 }
 .grandTotal{
     font-size: 1.25em;
+=======
+.feedback-section{
+    overflow: auto;
+    max-height: 21em;
+}
+.recents-img{
+    width: 80px;
+    height: 60px;
+    border-radius: 2em;
+    border: 2px #fff solid;
+}
+.recent-posts{
+    text-align: left;
+}
+.nav-active{
+    color: hsl(352, 73%, 58%) !important;
+>>>>>>> main
 }

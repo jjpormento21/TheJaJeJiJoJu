@@ -3,6 +3,7 @@ $(function () {
   $('[data-toggle="tooltip"]').tooltip()
 });
 
+<<<<<<< HEAD
 let cartButton = document.querySelector('#cartButton');
 cartButton.addEventListener('click', function(){
   let cart = document.querySelector('#cart');
@@ -18,6 +19,13 @@ function closeCart(){
   let cart = document.querySelector('#cart');
   cart.style.display = 'none';
 }
+=======
+const navLinks = $(".nav-link");
+const pageData = $("#page-data").data();
+
+console.log(pageData);
+$(navLinks[pageData.pageid]).addClass("nav-active");
+>>>>>>> main
 
 let trackNum = document.getElementById('trackNum');
 
