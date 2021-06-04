@@ -26,7 +26,7 @@
             </h3>
             <h6>Available Stocks: <span id="stockNumber">{{product.stockNumber}}</span></h6>
             <hr>
-            <h4 class="font2">Reviews <span class="badge badge-secondary"></span></h4>
+            <h4 class="font2">Reviews <span class="badge badge-secondary" id="reviewNumbers"></span></h4>
             <div class="feedback-section">
                 {%for review in reviews %}
                 {% if review.productName == product.productName %}
@@ -42,8 +42,6 @@
         <div class="col-md-5">
             <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3 product-img">
             <div class="text-center">
-                <!-- <label for="quantity" class="font2">Quantity</label>
-                <input type='number' name="quantity" value="1" min="1"> -->
                 <button class="btn btn-secondary text-center" type="button" data-toggle="modal"
                     data-target="#writeFeedback"><i class="bi bi-chat-left-quote"></i> Write a review</button>
                 <hr>

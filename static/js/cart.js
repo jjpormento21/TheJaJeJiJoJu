@@ -14,9 +14,8 @@ for (const button of addToCartButtons2) {
 }
 
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
-for (const button of deleteButtons) {
+for (const button of deleteButtons) {;
     button.addEventListener('click', deleteItem);
-    button.addEventListener('click', removeCartData);
 }
 
 var quantityInputs = document.getElementsByClassName('cart-item-qty');
@@ -45,6 +44,7 @@ function updateBadge() {
 function deleteItem(event) {
     let cartItem = event.target.parentElement.parentElement;
     cartItem.remove();
+    removeCartData(event);
     updateTotal();
     updateBadge();
 }
