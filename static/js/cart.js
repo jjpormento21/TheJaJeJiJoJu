@@ -108,6 +108,7 @@ function updateTotal() {
     let totalPrice = document.querySelector('.cart-total');
     total = Math.round(total * 100) / 100;
     totalPrice.innerHTML = '₱' + total;
+    sessionStorage.setItem('total', total.toString());
     console.log(total);
 }
 
@@ -120,6 +121,9 @@ function storeData(title, qty, price, imgSrc) {
 
 function retrieveCart() {
     for (i = 0; i < sessionStorage.length; i++) {
+        if (sessionStorage.key(i) == 'total'){
+            continue;
+        }
         let productName = sessionStorage.key(i);
         let object = sessionStorage.getItem(productName);
         let objectFinal = JSON.parse(object);

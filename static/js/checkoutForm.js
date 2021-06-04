@@ -2,7 +2,7 @@ let mainNavbar = document.getElementById('mainNav');
 mainNavbar.classList.remove('sticky-top');
 
 var stepCounter = 0; //form step counter
-
+getCartData();
 // function to prevent enter key from submitting
 $(document).ready(function () {
   $(window).keydown(function (event) {
@@ -191,4 +191,36 @@ function validator() {
 function scrollToAlert() {
   let ecq_alert = document.querySelector('#alertECQ');
   ecq_alert.scrollIntoView();
+}
+
+function getCartData() {
+  for (i = 0; i < sessionStorage.length; i++) {
+    if (sessionStorage.key(i) == 'total') {
+      continue;
+    }
+    let productName = sessionStorage.key(i);
+    let object = sessionStorage.getItem(productName);
+    let objectFinal = JSON.parse(object);
+
+    //Product Info
+    let price = objectFinal.productPrice;
+    let quantity = objectFinal.quantity;
+
+    let checkoutCart = document.querySelector('#cartPreview');
+    let cartItem = document.createElement('li');
+    cartItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-condensed', 'cart-item');
+    let cartContents = ` <div>
+  <h6 class="my-0">${productName}</h6>
+  <small class="text-muted">QTY: ${quantity}</small>
+</div>
+<span class="text-muted">₱${price}</span>`;
+    cartItem.innerHTML = cartContents;
+    checkoutCart.append(cartItem);
+  }
+  let cartItems = document.querySelectorAll('.cart-item');
+  document.querySelector('#cartSize').innerHTML = cartItems.length;
+  let cartPreviewTotal = document.querySelector('#prevTotal');
+  let total = sessionStorage.getItem('total');
+  console.log(total);
+  cartPreviewTotal.innerHTML = '₱'+total;
 }

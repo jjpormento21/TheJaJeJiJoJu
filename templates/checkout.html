@@ -265,15 +265,9 @@
                                 <tbody>
                                     <tr>
                                         <td class="font2">Product 1</td>
-                                        <td>1</td>
-                                        <td>₱100</td>
-                                        <td>₱100</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font2">Product 2</td>
-                                        <td>2</td>
-                                        <td>₱50</td>
-                                        <td>₱100</td>
+                                        <td class="product-quantity">1</td>
+                                        <td class="product-price">₱100</td>
+                                        <td class="total-price">₱100</td>
                                     </tr>
                                     <tr>
                                         <td class="font2">Shipping Fee</td>
@@ -312,22 +306,22 @@
             </form>
         </div>
         <div class="col-md-4">
-            <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg" class="card-img-top"
-                    alt="..." style="border-radius: 0;">
-                <div class="card-body">
-                    <h5 class="card-title">Cart</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-            </div>
+            <h3 class="text-primary mt-4">Your Cart <span class="badge badge-secondary" id="cartSize"></span></h3>
+            <ul class="list-group mt-3" id="cartPreview">
+                
+            </ul>
+            <ul class="list-group mt-2">
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                    <div><h4>Total:</h4></div>
+                    <span class="font1" id="prevTotal"></span>
+                </li>
+            </ul>
         </div>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/01c223f7e0.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/01c223f7e0.js" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename = 'js/checkoutForm.js')}}"></script>
 {% endblock %}
