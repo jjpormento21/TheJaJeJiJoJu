@@ -5,6 +5,7 @@ retrieveCart();
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
 for (const button of deleteButtons) {
     button.addEventListener('click', deleteItem);
+    button.addEventListener('click', removeCartData);
 }
 
 var quantityInputs = document.getElementsByClassName('cart-item-qty');
@@ -129,4 +130,9 @@ function storeQuantity(e) {
     let productItem = JSON.parse(sessionStorage.getItem(productName));
     productItem.quantity = e.target.value;
     sessionStorage.setItem(productName, JSON.stringify(productItem));
+}
+
+function removeCartData(e){
+    let productName = e.target.parentElement.querySelector('.cart-item-name').innerHTML;
+    sessionStorage.removeItem(productName);
 }
