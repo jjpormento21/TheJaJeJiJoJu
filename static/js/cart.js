@@ -1,7 +1,6 @@
 console.log('cart js loaded.');
 
-// var productItemCounter = 0;
-// sessionStorage.setItem('cartCounter', toString(productItemCounter));
+retrieveCart();
 
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
 for (const button of deleteButtons) {
@@ -11,6 +10,7 @@ for (const button of deleteButtons) {
 var quantityInputs = document.getElementsByClassName('cart-item-qty');
 for (const input of quantityInputs) {
     input.addEventListener('change', updateTotal);
+    input.addEventListener('change', storeQuantity);
 }
 
 var addToCartButtons = document.getElementsByClassName('addToCart');
@@ -46,12 +46,13 @@ function addToCartClicked(e) {
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
     price = parseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
-    addItemToCart(title, price, imgSrc);
+    addItemToCart(title, 1, price, imgSrc);
+    storeData(title, 1, price, imgSrc);
     updateTotal();
     updateBadge();
 }
 
-function addItemToCart(title, price, imgSrc) {
+function addItemToCart(title, qty, price, imgSrc) {
     let cartItem = document.createElement('div');
     cartItem.classList.add('row', 'cart-item', 'mb-3');
     let cartContainer = document.querySelector('.cart-container');
@@ -78,9 +79,8 @@ function addItemToCart(title, price, imgSrc) {
     cartItem.innerHTML = cartItemContents;
     cartContainer.append(cartItem);
     cartItem.querySelector('.cart-item-delete').addEventListener('click', deleteItem);
-    cartItem.querySelector('.cart-item-qty').value = 1;
+    cartItem.querySelector('.cart-item-qty').value = qty;
     cartItem.querySelector('.cart-item-qty').addEventListener('change', updateTotal)
-    storeData(title, 1, price, imgSrc);
 }
 
 function updateTotal() {
@@ -99,23 +99,34 @@ function updateTotal() {
     console.log(total);
 }
 
-function storeData(title, qty, price, imgSrc){
-    let cartItem = {quantity: qty, productPrice: price, imageLink: imgSrc};
+function storeData(title, qty, price, imgSrc) {
+    let cartItem = { quantity: qty, productPrice: price, imageLink: imgSrc };
     let product = title.toString();
     let cartItemString = JSON.stringify(cartItem);
     sessionStorage.setItem(product, cartItemString);
 }
 
-function retrieveCart(){
-    for (i=0; i<sessionStorage.length; i++){
+function retrieveCart() {
+    for (i = 0; i < sessionStorage.length; i++) {
         let productName = sessionStorage.key(i);
         let object = sessionStorage.getItem(productName);
         let objectFinal = JSON.parse(object);
 
         //Product Info
+        let imgSrc = objectFinal.imageLink;
+        let price = objectFinal.productPrice;
         let quantity = objectFinal.quantity;
-        let imgSrc = object.imgLink;
-        let price = object.productPrice;
-        
+
+        addItemToCart(productName, quantity, price, imgSrc);
+        updateTotal();
+        updateBadge();
+        console.log('retrieved data');
     }
+}
+
+function storeQuantity(e) {
+    let productName = e.target.parentElement.parentElement.querySelector('.cart-item-name').innerHTML;
+    let productItem = JSON.parse(sessionStorage.getItem(productName));
+    productItem.quantity = e.target.value;
+    sessionStorage.setItem(productName, JSON.stringify(productItem));
 }

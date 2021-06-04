@@ -435,6 +435,7 @@ span.text-danger{
 }
 .grandTotal{
     font-size: 1.25em;
+}
 .feedback-section{
     overflow: auto;
     max-height: 21em;
