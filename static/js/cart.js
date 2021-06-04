@@ -1,5 +1,8 @@
 console.log('cart js loaded.');
 
+var productItemCounter = 0;
+sessionStorage.setItem('cartCounter', toString(productItemCounter));
+
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
 for (const button of deleteButtons) {
     button.addEventListener('click', deleteItem);
@@ -44,6 +47,7 @@ function addToCartClicked(e) {
     price = parseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
     addItemToCart(title, price, imgSrc);
+    storeData(title, 1, price, imgSrc);
     updateTotal();
     updateBadge();
 }
@@ -93,4 +97,11 @@ function updateTotal() {
     total = Math.round(total * 100) / 100;
     totalPrice.innerHTML = '₱' + total;
     console.log(total);
+}
+
+function storeData(title, qty, price, imgSrc){
+    let cartItem = {quantity: qty, productPrice: price, imageLink: imgSrc};
+    let product = title.toString();
+    let cartItemString = JSON.stringify(cartItem);
+    sessionStorage.setItem(product, cartItemString);
 }
