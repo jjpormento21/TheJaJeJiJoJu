@@ -4,22 +4,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
 #dashboard-footer{
-    background-color: #000;
+    background-color: #10253F;
     padding: 1em;
     color: #fff;
     text-align: center;
 }
 
 .bg-color {
-    background-color: #EACBCB;
-}
+    background-image: linear-gradient(#386194, white);
 
-.nav-color {
-    background-color: #800812;
 }
 
 .jumbotron {
-    background-color: #BB2734;
+    background-color: #10253F;
     border-radius: 25px;
 }
 
@@ -65,14 +62,26 @@
 
 .catalog {
     border-radius: 20px;
+    border: #10253F;
 }
 
 .dashboard-btn {
-    background-color: #D8765C;
+    background-color: #FFC000;
     padding: .5rem 1.5rem;
     border-radius: 24px;
-    color: white;
+    color: #10253F;
     font-size: .9rem;
     letter-spacing: .5px;
     text-decoration: none;
+}
+
+.dashboard-round {
+    display: inline-block;
+    border: 2px solid #10253F;
+    border-radius: 2rem;
+    padding: .5rem 1.25rem;
+    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
+    color:#10253F;
+    font-weight: 800;
+    margin-top: 0.5cm;
 }
