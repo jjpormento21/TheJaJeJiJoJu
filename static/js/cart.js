@@ -10,11 +10,12 @@ for (const button of addToCartButtons3) {
 var addToCartButtons2 = document.getElementsByClassName('addToCart2');
 for (const button of addToCartButtons2) {
     button.addEventListener('click', addToCartClicked);
-    button.addEventListener('click', showCart);   
+    button.addEventListener('click', showCart);
 }
 
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
-for (const button of deleteButtons) {;
+for (const button of deleteButtons) {
+    ;
     button.addEventListener('click', deleteItem);
 }
 
@@ -121,7 +122,7 @@ function storeData(title, qty, price, imgSrc) {
 
 function retrieveCart() {
     for (i = 0; i < sessionStorage.length; i++) {
-        if (sessionStorage.key(i) == 'total'){
+        if (sessionStorage.key(i) == 'total') {
             continue;
         }
         let productName = sessionStorage.key(i);
@@ -147,11 +148,11 @@ function storeQuantity(e) {
     sessionStorage.setItem(productName, JSON.stringify(productItem));
 }
 
-function removeCartData(e){
+function removeCartData(e) {
     let productName = e.target.parentElement.querySelector('.cart-item-name').innerHTML;
     sessionStorage.removeItem(productName);
 }
 
-function showCart(){
+function showCart() {
     document.querySelector('#cart').style.display = 'block';
 }

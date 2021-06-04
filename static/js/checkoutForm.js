@@ -224,3 +224,15 @@ function getCartData() {
   console.log(total);
   cartPreviewTotal.innerHTML = '₱'+total;
 }
+
+function sendToTable(name, price, quantity){
+  let summary = document.querySelector('#cartSummary');
+  let items = document.createElement('tr');
+  let tableContents = `<td class="font2">${name}</td>
+  <td class="product-quantity">${quantity}</td>
+  <td class="product-price">₱${price}</td>
+  <td class="total-price">₱${(price*quantity)}</td>`;
+  items.innerHTML = tableContents;
+  summary.append(items);
+  console.log('table created.');
+}
