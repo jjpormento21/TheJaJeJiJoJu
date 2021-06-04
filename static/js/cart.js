@@ -2,9 +2,6 @@ console.log('cart js loaded.');
 
 retrieveCart();
 
-var newArrivalButton = document.getElementById('newArrival');
-newArrivalButton.addEventListener('click', addToCartClicked);
-
 var addToCartButtons3 = document.getElementsByClassName('addToCart3');
 for (const button of addToCartButtons3) {
     button.addEventListener('click', addToCartClicked);
