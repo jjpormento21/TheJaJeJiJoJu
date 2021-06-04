@@ -2,6 +2,20 @@ console.log('cart js loaded.');
 
 retrieveCart();
 
+var newArrivalButton = document.getElementById('newArrival');
+newArrivalButton.addEventListener('click', addToCartClicked);
+
+var addToCartButtons3 = document.getElementsByClassName('addToCart3');
+for (const button of addToCartButtons3) {
+    button.addEventListener('click', addToCartClicked);
+}
+
+var addToCartButtons2 = document.getElementsByClassName('addToCart2');
+for (const button of addToCartButtons2) {
+    button.addEventListener('click', addToCartClicked);
+    button.addEventListener('click', showCart);   
+}
+
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
 for (const button of deleteButtons) {
     button.addEventListener('click', deleteItem);
@@ -135,4 +149,8 @@ function storeQuantity(e) {
 function removeCartData(e){
     let productName = e.target.parentElement.querySelector('.cart-item-name').innerHTML;
     sessionStorage.removeItem(productName);
+}
+
+function showCart(){
+    document.querySelector('#cart').style.display = 'block';
 }

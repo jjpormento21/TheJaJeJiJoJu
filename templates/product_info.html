@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block head %}
-<title>Shop | Miss Jhaz Cosmetics</title>
+<title>{{product.productName}} | Miss Jhaz Cosmetics</title>
 <style>
     body {
         background-color: hsl(210, 17%, 98%);
@@ -15,14 +15,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7">
-            <h2 class="font2 mt-3" id="A{{product._id}}">{{product.productName}}</h2>
+            <h2 class="font2 mt-3 product-name" id="A{{product._id}}">{{product.productName}}</h2>
             <h5>Category: {{product.productCategory}}</h5>
             <p class="par1 mt-4">{{product.productDescription}}</p>
             <hr>
             <p style="white-space: pre-wrap; max-height: 20em; overflow: auto;">{{product.detailedDescription}}</p>
             <hr>
             <h3 class="font4 card-title font-weight-bold pt-0 mt-3" style="font-size: 1.2rem;">Price:
-                <span class="card-subtitle text-muted">₱{{product.price}}</span>
+                <span class="card-subtitle text-muted product-price">₱{{product.price}}</span>
             </h3>
             <h6>Available Stocks: <span id="stockNumber">{{product.stockNumber}}</span></h6>
             <hr>
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3">
+            <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3 product-img">
             <div class="text-center">
                 <!-- <label for="quantity" class="font2">Quantity</label>
                 <input type='number' name="quantity" value="1" min="1"> -->
@@ -48,7 +48,7 @@
                     data-target="#writeFeedback"><i class="bi bi-chat-left-quote"></i> Write a review</button>
                 <hr>
                 <a href="/shop#S{{product.productCategory}}" class="btn btn-sub btn-block">Cancel</a>
-                <button class="btn btn-main btn-block">Add to cart</button>
+                <button class="btn btn-main btn-block addToCart2">Add to cart</button>
             </div>
         </div>
     </div>

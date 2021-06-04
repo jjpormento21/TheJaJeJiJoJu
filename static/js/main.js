@@ -9,9 +9,9 @@ const pageData = $("#page-data").data();
 console.log(pageData);
 $(navLinks[pageData.pageid]).addClass("nav-active");
 
-let cartButton = document.querySelector('#cartButton');
+var cartButton = document.getElementById('cartButton');
 cartButton.addEventListener('click', function(){
-  let cart = document.querySelector('#cart');
+  let cart = document.getElementById('cart');
   if (cart.style.display == 'none'){
     cart.style.display = 'block';
   }
