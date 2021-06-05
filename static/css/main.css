@@ -452,3 +452,6 @@ span.text-danger{
 .nav-active{
     color: hsl(352, 73%, 58%) !important;
 }
+.btn-icon{
+    margin-right: 0.3125rem;
+}
