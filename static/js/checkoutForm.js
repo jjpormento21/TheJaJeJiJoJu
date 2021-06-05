@@ -86,6 +86,9 @@ function nextPaymentStep() {
   checkoutNavbarList[stepCounter].classList.add('active', 'text-primary', 'font-weight-bold');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter - 1].style.display = 'none';
+  if (stepCounter > 2){
+    document.querySelector('#cartPreviewBox').remove();
+  }  
   setSummaryInfo();
   scrollToAlert();
 }
