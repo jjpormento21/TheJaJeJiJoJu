@@ -1,7 +1,7 @@
 let mainNavbar = document.getElementById('mainNav');
 mainNavbar.classList.remove('sticky-top');
 document.querySelector('#cartButton').remove(); //removes cart button
-document.querySelector('#cart').remove(); //removes cart button
+document.querySelector('#cart').remove(); //removes cart
 
 var stepCounter = 0; //form step counter
 getCartData();
@@ -9,7 +9,6 @@ getCartData();
 $(document).ready(function () {
   $(window).keydown(function (event) {
     if ((event.keyCode == 13) && (stepCounter < 3)) {
-      console.log('enter key pressed. Data not submitted');
       event.preventDefault();
       validator();
       return false;
@@ -228,7 +227,6 @@ function getCartData() {
   document.querySelector('#cartSize').innerHTML = cartItems.length;
   let cartPreviewTotal = document.querySelector('#prevTotal');
   let total = sessionStorage.getItem('total');
-  console.log(total);
   cartPreviewTotal.innerHTML = '₱' + total;
   savePurchases();
 }
@@ -247,10 +245,10 @@ const updateGrandTotal = () => {
   let total = sessionStorage.getItem('total');
   let shipFee = document.querySelector('#shipFeeFinal').innerHTML;
   document.getElementById('grandTotal').innerHTML = '₱' + (parseFloat(total) + parseFloat(shipFee));
-  // purchaseInput.value = (parseFloat(total) + parseFloat(shipFee));
 }
 
 function savePurchases(){
+  // Saves purchases to db
   let purchases = [];
   for (i=0; i<sessionStorage.length; i++){
     if (sessionStorage.key(i) == 'total') {
@@ -261,8 +259,9 @@ function savePurchases(){
     let objectFinal = JSON.parse(object);
 
     let price = objectFinal.productPrice;
+    let id = objectFinal.productID;
     let quantity = objectFinal.quantity;
-    let newObj = {'product': productName,'price': parseFloat(price), 'qty': parseInt(quantity)};
+    let newObj = {'productID': id ,'product': productName,'price': parseFloat(price), 'qty': parseInt(quantity)};
     purchases.push(newObj);
   }
   let purchasesFinal = JSON.stringify(purchases);

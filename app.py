@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 from bson.objectid import ObjectId
 import os
+import json
 from datetime import datetime
 app = Flask(__name__)
 
@@ -114,7 +115,7 @@ def confirmCheckout():
                 'zipcode': int(zipcode),
                 'courier': courier,
                 'paymentMethod':payMethod,
-                'totalPurchases': purchases
+                'purchases': json.loads(purchases)
             }
         )
         return render_template('checkout-confirm.html')

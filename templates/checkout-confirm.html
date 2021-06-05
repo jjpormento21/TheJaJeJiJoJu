@@ -49,20 +49,13 @@
                 <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg" class="card-img-top"
                     alt="..." style="border-radius: 0;">
                 <div class="card-body">
-                    <h5 class="card-title">Cart</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">Advertisement</h5>
+                    <p class="card-text">Ad space available. Contact us to learn more.</p>
+                    <a href="#" class="btn btn-primary">Learn more</a>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    let mainNavbar = document.getElementById('mainNav');
-    mainNavbar.classList.remove('sticky-top');
-    document.querySelector('#cartButton').remove(); //removes cart button
-    document.querySelector('#cart').remove(); //removes cart
-    sessionStorage.clear();
-</script>
+<script src="{{ url_for('static', filename = 'js/checkoutSuccess.js')}}"></script>
 {% endblock %}

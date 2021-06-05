@@ -1,5 +1,3 @@
-console.log('cart js loaded.');
-
 retrieveCart();
 
 var buyNowButtons = document.getElementsByClassName('buyNow');
@@ -51,13 +49,13 @@ function addToCartClicked(e) {
     console.log('added to cart');
     let button = e.target;
     let productItem = button.parentElement.parentElement.parentElement;
-    console.log(productItem);
+    let productID = productItem.querySelector('.product-id').innerText;
     let title = productItem.querySelector('.product-name').innerText;
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
     price = parseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
     addItemToCart(title, 1, price, imgSrc);
-    storeData(title, 1, price, imgSrc);
+    storeData(productID, title, 1, price, imgSrc);
     updateTotal();
     updateBadge();
 }
@@ -107,11 +105,10 @@ function updateTotal() {
     total = Math.round(total * 100) / 100;
     totalPrice.innerHTML = '₱' + total;
     sessionStorage.setItem('total', total.toString());
-    console.log(total);
 }
 
-function storeData(title, qty, price, imgSrc) {
-    let cartItem = { quantity: qty, productPrice: price, imageLink: imgSrc };
+function storeData(id,title, qty, price, imgSrc) {
+    let cartItem = {productID: id ,quantity: qty, productPrice: price, imageLink: imgSrc };
     let product = title.toString();
     let cartItemString = JSON.stringify(cartItem);
     sessionStorage.setItem(product, cartItemString);
@@ -134,7 +131,6 @@ function retrieveCart() {
         addItemToCart(productName, quantity, price, imgSrc);
         updateTotal();
         updateBadge();
-        console.log('retrieved data');
     }
 }
 
