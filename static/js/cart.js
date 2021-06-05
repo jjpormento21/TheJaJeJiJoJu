@@ -68,7 +68,7 @@ function addItemToCart(title, qty, price, imgSrc) {
     for (const itemName of cartItemNames) {
         if (itemName.innerText == title) {
             alert('Item already added to cart.')
-            return 0;
+            return;
         }
     }
     let cartItemContents = `<div class="col-md-3">
@@ -137,7 +137,7 @@ function retrieveCart() {
 function storeQuantity(e) {
     let productName = e.target.parentElement.parentElement.querySelector('.cart-item-name').innerHTML;
     let productItem = JSON.parse(sessionStorage.getItem(productName));
-    productItem.quantity = e.target.value;
+    productItem.quantity = parseInt(e.target.value);
     sessionStorage.setItem(productName, JSON.stringify(productItem));
 }
 

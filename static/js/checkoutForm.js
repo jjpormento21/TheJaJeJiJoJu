@@ -90,6 +90,7 @@ function nextPaymentStep() {
   }  
   setSummaryInfo();
   scrollToAlert();
+  savePurchases();
 }
 
 function prevPaymentStep() {
@@ -263,6 +264,7 @@ function savePurchases(){
     let quantity = objectFinal.quantity;
     let newObj = {'productID': id ,'product': productName,'price': parseFloat(price), 'qty': parseInt(quantity)};
     purchases.push(newObj);
+    console.log(newObj);
   }
   let purchasesFinal = JSON.stringify(purchases);
   document.querySelector('#purchases').value = purchasesFinal;
