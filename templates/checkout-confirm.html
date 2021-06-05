@@ -61,5 +61,8 @@
 <script type="text/javascript">
     let mainNavbar = document.getElementById('mainNav');
     mainNavbar.classList.remove('sticky-top');
+    document.querySelector('#cartButton').remove(); //removes cart button
+    document.querySelector('#cart').remove(); //removes cart
+    sessionStorage.clear();
 </script>
 {% endblock %}

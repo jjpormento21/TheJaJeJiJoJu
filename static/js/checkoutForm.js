@@ -1,5 +1,7 @@
 let mainNavbar = document.getElementById('mainNav');
 mainNavbar.classList.remove('sticky-top');
+document.querySelector('#cartButton').remove(); //removes cart button
+document.querySelector('#cart').remove(); //removes cart button
 
 var stepCounter = 0; //form step counter
 getCartData();
@@ -149,11 +151,12 @@ function setSummaryInfo() {
   document.querySelector('#shipFeeFinal').innerHTML = shipFee;
   document.querySelector('#cityFinal').innerHTML = city;
   document.querySelector('#provinceFinal').innerHTML = province;
+  updateGrandTotal();
 }
 
 function shippingFee() {
-  let regionValue = regionForm.value;
   let shipFeePreview = document.querySelector('#shipFeePreview');
+  let regionValue = regionForm.value;
   function shipFee() {
     return regionValue == 'Visayas' ? 70.00 :
       regionValue == 'Choose Region' ? 0.00 :
@@ -216,23 +219,29 @@ function getCartData() {
 <span class="text-muted">₱${price}</span>`;
     cartItem.innerHTML = cartContents;
     checkoutCart.append(cartItem);
+    sendToTable(productName, price, quantity);
   }
   let cartItems = document.querySelectorAll('.cart-item');
   document.querySelector('#cartSize').innerHTML = cartItems.length;
   let cartPreviewTotal = document.querySelector('#prevTotal');
   let total = sessionStorage.getItem('total');
   console.log(total);
-  cartPreviewTotal.innerHTML = '₱'+total;
+  cartPreviewTotal.innerHTML = '₱' + total;
 }
 
-function sendToTable(name, price, quantity){
+function sendToTable(name, price, quantity) {
   let summary = document.querySelector('#cartSummary');
   let items = document.createElement('tr');
-  let tableContents = `<td class="font2">${name}</td>
-  <td class="product-quantity">${quantity}</td>
-  <td class="product-price">₱${price}</td>
-  <td class="total-price">₱${(price*quantity)}</td>`;
+  let tableContents = `<td>${name}</td>
+  <td class="product-quantity text-center">${quantity}</td>
+  <td class="product-price text-right">₱${price}</td>
+  <td class="total-price text-right">₱${(price * quantity)}</td>`;
   items.innerHTML = tableContents;
   summary.append(items);
-  console.log('table created.');
+}
+const updateGrandTotal = () => {
+  let total = sessionStorage.getItem('total');
+  let shipFee = document.querySelector('#shipFeeFinal').innerHTML;
+  console.log(shipFee);
+  document.getElementById('grandTotal').innerHTML = '₱' + (parseFloat(total) + parseFloat(shipFee));
 }
