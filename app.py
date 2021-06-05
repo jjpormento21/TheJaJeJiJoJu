@@ -97,6 +97,7 @@ def confirmCheckout():
         zipcode = request.form.get('zipcode')
         courier = request.form.get('courier')
         payMethod = request.form.get('paymentMethod')
+        purchases = request.form.get('purchases')
         customerData.insert_one(
             {
                 'firstName': custFirstName,
@@ -112,7 +113,8 @@ def confirmCheckout():
                 'city': custCity,
                 'zipcode': int(zipcode),
                 'courier': courier,
-                'paymentMethod':payMethod
+                'paymentMethod':payMethod,
+                'totalPurchases': purchases
             }
         )
         return render_template('checkout-confirm.html')
