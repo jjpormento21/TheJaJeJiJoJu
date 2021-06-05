@@ -33,9 +33,9 @@
         {% for product in eye_products %}
         <div class="col-md-4">
             <div class="card mb-3 mt-3" style="border-style: none;">
-                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
-                    <h5 class="font1 card-title">{{product.productName}}</h5>
+                    <h5 class="font1 card-title product-name">{{product.productName}}</h5>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
                             <hr>
@@ -44,16 +44,16 @@
                         </div>
                     </div>
                     <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
-                    <h5 class="font1 card-title">₱{{product.price }}</h5>
-                    <a href="/product/{{product._id}}" class="btn btn-main">View</a>
-                    <i class="bi bi-cart-fill cat-icon" style="margin-left: 6rem;" data-toggle="tooltip"
-                        data-placement="top" title="Add to Cart"></i>
-                    <i class="bi bi-suit-heart-fill cat-icon" style="margin-left: 1rem" data-toggle="tooltip"
-                        data-placement="top" title="Upvote"></i>
-                    <a href="#A{{product._id}}" data-toggle="collapse"><i class="bi bi-caret-down-fill cat-icon"
-                            style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top"
-                            title="Quick Info"></i></a>
-
+                    <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
+                    <a href="/product/{{product._id}}" class="btn btn-main" style="margin-right: 8em;">View</a>
+                    <button class="card-button">
+                        <i class="bi bi-suit-heart-fill cat-icon" data-toggle="tooltip" data-placement="top"
+                            title="Upvote"></i>
+                    </button>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi bi-caret-down-fill cat-icon" data-toggle="tooltip" data-placement="top"
+                            title="Quick Info"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -69,7 +69,8 @@
             <h2 class="font1" id="SLips">Lips</h2>
         </div>
         <div class="col-md-6">
-            <p class="par1 mt-3 mb-3" style="text-align: right;">Show those luscious lips with our affordable lips cosmetic
+            <p class="par1 mt-3 mb-3" style="text-align: right;">Show those luscious lips with our affordable lips
+                cosmetic
                 <br> collection. We’ve got plenty of options for you to choose from.
             </p>
         </div>
@@ -81,9 +82,9 @@
         {% for product in lip_products %}
         <div class="col-md-4">
             <div class="card mb-3 mt-3" style="border-style: none;">
-                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
-                    <h5 class="font1 card-title">{{product.productName}}</h5>
+                    <h5 class="font1 card-title product-name">{{product.productName}}</h5>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
                             <hr>
@@ -92,16 +93,16 @@
                         </div>
                     </div>
                     <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
-                    <h5 class="font1 card-title">₱{{product.price }}</h5>
-                    <a href="/product/{{product._id}}" class="btn btn-main">View</a>
-                    <i class="bi bi-cart-fill cat-icon" style="margin-left: 6rem;" data-toggle="tooltip"
-                        data-placement="top" title="Add to Cart"></i>
-                    <i class="bi bi-suit-heart-fill cat-icon" style="margin-left: 1rem" data-toggle="tooltip"
-                        data-placement="top" title="Upvote"></i>
-                    <a href="#A{{product._id}}" data-toggle="collapse"><i class="bi bi-caret-down-fill cat-icon"
-                            style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top"
-                            title="Quick Info"></i></a>
-
+                    <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
+                    <a href="/product/{{product._id}}" class="btn btn-main" style="margin-right: 8em;">View</a>
+                    <button class="card-button">
+                        <i class="bi bi-suit-heart-fill cat-icon" data-toggle="tooltip" data-placement="top"
+                            title="Upvote"></i>
+                    </button>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi bi-caret-down-fill cat-icon" data-toggle="tooltip" data-placement="top"
+                            title="Quick Info"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -117,7 +118,8 @@
             <h2 class="font1" id="SSkin">Skin</h2>
         </div>
         <div class="col-md-6">
-            <p class="par1 mt-3 mb-3" style="text-align: right;">Skin friendly products that will surely prompt the beauty out of you.
+            <p class="par1 mt-3 mb-3" style="text-align: right;">Skin friendly products that will surely prompt the
+                beauty out of you.
                 <br>Love yourself and adore your skin.
             </p>
         </div>
@@ -129,9 +131,9 @@
         {% for product in skin_products %}
         <div class="col-md-4">
             <div class="card mb-3 mt-3" style="border-style: none;">
-                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
-                    <h5 class="font1 card-title">{{product.productName}}</h5>
+                    <h5 class="font1 card-title product-name">{{product.productName}}</h5>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
                             <hr>
@@ -140,16 +142,16 @@
                         </div>
                     </div>
                     <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
-                    <h5 class="font1 card-title">₱{{product.price }}</h5>
-                    <a href="/product/{{product._id}}" class="btn btn-main">View</a>
-                    <i class="bi bi-cart-fill cat-icon" style="margin-left: 6rem;" data-toggle="tooltip"
-                        data-placement="top" title="Add to Cart"></i>
-                    <i class="bi bi-suit-heart-fill cat-icon" style="margin-left: 1rem" data-toggle="tooltip"
-                        data-placement="top" title="Upvote"></i>
-                    <a href="#A{{product._id}}" data-toggle="collapse"><i class="bi bi-caret-down-fill cat-icon"
-                            style="margin-left: 1rem;" data-toggle="tooltip" data-placement="top"
-                            title="Quick Info"></i></a>
-
+                    <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
+                    <a href="/product/{{product._id}}" class="btn btn-main" style="margin-right: 8em;">View</a>
+                    <button class="card-button">
+                        <i class="bi bi-suit-heart-fill cat-icon" data-toggle="tooltip" data-placement="top"
+                            title="Upvote"></i>
+                    </button>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi bi-caret-down-fill cat-icon" data-toggle="tooltip" data-placement="top"
+                            title="Quick Info"></i>
+                    </button>
                 </div>
             </div>
         </div>

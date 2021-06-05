@@ -1,11 +1,12 @@
 {% extends 'base.html' %}
 {% block head %}
-<title>Shop | Miss Jhaz Cosmetics</title>
+<title>{{product.productName}} | Miss Jhaz Cosmetics</title>
 <style>
     body {
         background-color: hsl(210, 17%, 98%);
     }
-    textarea{
+
+    textarea {
         resize: none;
     }
 </style>
@@ -15,19 +16,20 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7">
-            <h2 class="font2 mt-3" id="A{{product._id}}">{{product.productName}}</h2>
+            <p class="product-id" hidden>{{product._id}}</p>
+            <h2 class="font2 mt-3 product-name" id="A{{product._id}}">{{product.productName}}</h2>
             <h5>Category: {{product.productCategory}}</h5>
             <p class="par1 mt-4">{{product.productDescription}}</p>
             <hr>
             <p style="white-space: pre-wrap; max-height: 20em; overflow: auto;">{{product.detailedDescription}}</p>
             <hr>
-            <h3 class="font4 card-title font-weight-bold pt-0 mt-3" style="font-size: 1.2rem;">Price:
-                <span class="card-subtitle text-muted">₱{{product.price}}</span>
-            </h3>
+            <h4 class="font2 pt-0 mt-3">Price:
+                <span class="text-muted product-price">₱{{product.price}}</span>
+            </h4>
             <h6>Available Stocks: <span id="stockNumber">{{product.stockNumber}}</span></h6>
             <hr>
-            <h4 class="font2">Reviews <span class="badge badge-secondary"></span></h4>
-            <div class="feedback-section">
+            <h4 class="font2">Reviews <span class="badge badge-secondary" id="reviewNumbers"></span></h4>
+            <div class="feedback-section" id="feedbackSection">
                 {%for review in reviews %}
                 {% if review.productName == product.productName %}
                 <h6 class="font1 username"><i class="bi bi-person-circle cat-icon"></i> {{review.username}}</h6>
@@ -40,15 +42,15 @@
             </div>
         </div>
         <div class="col-md-5">
-            <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3">
+            <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3 product-img">
             <div class="text-center">
-                <!-- <label for="quantity" class="font2">Quantity</label>
-                <input type='number' name="quantity" value="1" min="1"> -->
                 <button class="btn btn-secondary text-center" type="button" data-toggle="modal"
                     data-target="#writeFeedback"><i class="bi bi-chat-left-quote"></i> Write a review</button>
                 <hr>
-                <a href="/shop#S{{product.productCategory}}" class="btn btn-sub btn-block">Cancel</a>
-                <button class="btn btn-main btn-block">Add to cart</button>
+                <button class="btn btn-sub btn-block addToCart"><i class="bi bi-cart-plus-fill btn-icon"></i>Add to
+                    Cart</button>
+                <a href="/checkout" class="btn btn-main btn-block buyNow"><i class="bi bi-bag-fill btn-icon"></i>Buy
+                    Now</a>
             </div>
         </div>
     </div>
@@ -80,7 +82,7 @@
                     <div class="form-group">
                         <label for="feedback" class="col-form-label par1">Feedback:</label>
                         <textarea class="form-control" id="feedback" name="feedback" placeholder="Write a review"
-                             rows="5"></textarea>
+                            rows="5"></textarea>
                     </div>
                     <div class="form-group">
                         <label for="product-rating" class="col-form-label par1">Rating:</label>
