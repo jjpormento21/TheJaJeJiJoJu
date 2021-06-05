@@ -28,8 +28,8 @@
     <div class="row">
         <div class="col-md-8">
             <div class="alert alert-warning mt-2" id="alertECQ">
-                <strong><i class="bi bi-info-circle-fill"></i></strong>
-                Due to the implementation of community quarantine which limits transportation and mobility, delivery
+                <strong><i class="bi bi-info-circle-fill btn-icon"></i></strong>Due to the implementation of community
+                quarantine which limits transportation and mobility, delivery
                 schedules may get affected. Thank you for your patience and understanding.
                 <hr class="mb-1">
                 <span class="text-danger">*</span>Required
@@ -137,7 +137,7 @@
                 </section>
                 <!-- Step 2 Shipping -->
                 <section class="form-step">
-                    <h4 class="text-secondary roundb mb-3"><i class="bi bi-box-seam"></i> Courier Services</h4>
+                    <h4 class="text-secondary roundb mb-3"><i class="bi bi-box-seam btn-icon"></i>Courier Services</h4>
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title font1">Shipping Options<span class="text-danger">*</span></h6>
@@ -165,7 +165,7 @@
                 </section>
                 <!-- Step 3 Payment -->
                 <section class="form-step">
-                    <h4 class="text-secondary roundb mb-3"><i class="bi bi-credit-card"></i> Payment</h4>
+                    <h4 class="text-secondary roundb mb-3"><i class="bi bi-credit-card btn-icon"></i>Payment</h4>
                     <div class="card">
                         <div class="card-body">
                             <h6 class="card-title font1">Payment Methods<span class="text-danger">*</span></h6>
@@ -232,60 +232,48 @@
                 </section>
                 <!-- Step 4 Summary -->
                 <section class="form-step">
-                    <h4 class="text-secondary roundb mb-3"><i class="bi bi-truck"></i> Delivery Details</h4>
+                    <h4 class="text-secondary roundb mb-3"><i class="bi bi-truck btn-icon"></i>Delivery Details</h4>
                     <div class="card">
                         <div class="card-body">
                             <h4 class="card-title font2">Receiver Information</h4>
-                            <h5 class="text-secondary"><i class="bi bi-person-fill"></i> Name</h5>
+                            <h5 class="text-secondary"><i class="bi bi-person-fill btn-icon"></i>Name</h5>
                             <p class="card-text">Full Name: <span id="fullName"></span></p>
                             <hr>
-                            <h5 class="text-secondary"><i class="bi bi-geo-alt-fill"></i> Address</i></h5>
+                            <h5 class="text-secondary"><i class="bi bi-geo-alt-fill btn-icon"></i>Address</i></h5>
                             <p class="card-text mt-1 mb-1">Billing Address: <span id="billingAddFull"></span></p>
                             <p class="card-text mt-1 mb-1">Shipping Address: <span id="shippingAddFull"></span></p>
                             <p class="card-text mt-1 mb-1">City/Town: <span id="cityFinal"></span></p>
                             <p class="card-text mt-1 mb-1">Province: <span id="provinceFinal"></span></p>
                             <hr>
-                            <h5 class="text-secondary"><i class="bi bi-telephone-fill"></i> Phone</i></h5>
+                            <h5 class="text-secondary"><i class="bi bi-telephone-fill btn-icon"></i>Phone</i></h5>
                             <p class="mt-1 mb-1">Phone 1: <span id="phoneNumber1"></span></p>
                             <p class="mt-1 mb-1">Phone 2: <span id="phoneNumber2"></span></p>
                             <hr>
-                            <h5 class="text-secondary"><i class="bi bi-envelope-fill"></i> Email</i></h5>
+                            <h5 class="text-secondary"><i class="bi bi-envelope-fill btn-icon"></i>Email</i></h5>
                             <p class="card-text"><span id="emailFull"></span></p>
                             <hr>
                             <h5 class="card-title font2">Ordered Products</h5>
                             <table class="table table-sm table-hover">
                                 <thead class="font1">
                                     <tr>
-                                        <th scope="col">Products</th>
-                                        <th scope="col">Quantity</th>
-                                        <th scope="col">Price</th>
-                                        <th scope="col">Total Price</th>
+                                        <th scope="col">Product</th>
+                                        <th scope="col" class="text-center">Quantity</th>
+                                        <th scope="col" class="text-right">Price</th>
+                                        <th scope="col" class="text-right">Total Price</th>
                                     </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="cartSummary">
                                     <tr>
-                                        <td class="font2">Product 1</td>
-                                        <td>1</td>
-                                        <td>₱100</td>
-                                        <td>₱100</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font2">Product 2</td>
-                                        <td>2</td>
-                                        <td>₱50</td>
-                                        <td>₱100</td>
-                                    </tr>
-                                    <tr>
-                                        <td class="font2">Shipping Fee</td>
+                                        <td>Shipping Fee</td>
                                         <td></td>
                                         <td></td>
-                                        <td>₱<span id="shipFeeFinal"></span></td>
+                                        <td class="text-right">₱<span id="shipFeeFinal"></span></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <div class="text-right">
                                 <h6 class="card-title font2">Grand Total: <span id="grandTotal"
-                                        class="text-muted">$100.00</span></h6>
+                                        class="text-muted">₱</span></h6>
                             </div>
                             <hr>
                             <div class="row text-center">
@@ -308,18 +296,44 @@
                             <button class="btn btn-main" type="submit">Place Order</button>
                         </div>
                     </div>
+                    <input type="hidden" name="purchases" id="purchases">
                 </section>
             </form>
         </div>
         <div class="col-md-4">
+            <div id="cartPreviewBox" class="mb-3">
+                <h3 class="text-primary mt-4">Your Cart <span class="badge badge-secondary" id="cartSize"></span></h3>
+                <ul class="list-group mt-3" id="cartPreview">
+
+                </ul>
+                <ul class="list-group mt-2">
+                    <li class="list-group-item d-flex justify-content-between lh-condensed">
+                        <div>
+                            <h4>Total:</h4>
+                        </div>
+                        <span class="font1" id="prevTotal"></span>
+                    </li>
+                </ul>
+            </div>
             <div class="card">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/Supermarkt.jpg" class="card-img-top"
-                    alt="..." style="border-radius: 0;">
+                <img src="https://www.who.int/images/default-source/health-topics/coronavirus/social-media-squares/be-ready-social-2.tmb-1920v.jpg?sfvrsn=28a6f92d_5"
+                    class="card-img-top rounded-0" alt="COVID-19 ADVISORY">
                 <div class="card-body">
-                    <h5 class="card-title">Cart</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
-                        card's content.</p>
-                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                    <h5 class="card-title">HOW TO PROTECT YOURSELF AND OTHERS</h5>
+                    <p class="card-text">
+                        - Wash your hands often.
+                        <br>
+                        - Avoid close contact.
+                        <br>
+                        - Cover your mouth and nose with a cloth face cover.
+                        <br>
+                        - Cover your coughs and sneezes.
+                        <br>
+                        - Clean and disinfect frequently touched surfaces daily.
+                    </p>
+                </div>
+                <div class="card-footer">
+                    A friendly reminder from The World Health Organization
                 </div>
             </div>
         </div>
@@ -328,6 +342,6 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
-    <script src="https://kit.fontawesome.com/01c223f7e0.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/01c223f7e0.js" crossorigin="anonymous"></script>
 <script src="{{ url_for('static', filename = 'js/checkoutForm.js')}}"></script>
 {% endblock %}

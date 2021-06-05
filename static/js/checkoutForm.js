@@ -1,18 +1,19 @@
 let mainNavbar = document.getElementById('mainNav');
 mainNavbar.classList.remove('sticky-top');
+document.querySelector('#cartButton').remove(); //removes cart button
+document.querySelector('#cart').remove(); //removes cart
 
 var stepCounter = 0; //form step counter
-
+getCartData();
 // function to prevent enter key from submitting
 $(document).ready(function () {
   $(window).keydown(function (event) {
     if ((event.keyCode == 13) && (stepCounter < 3)) {
-      console.log('enter key pressed. Data not submitted');
       event.preventDefault();
       validator();
       return false;
     }
-    else if ((event.keyCode == 13) && (stepCounter == 3))  {
+    else if ((event.keyCode == 13) && (stepCounter == 3)) {
       document.querySelector('#checkoutForm').submit();
     }
   });
@@ -84,8 +85,12 @@ function nextPaymentStep() {
   checkoutNavbarList[stepCounter].classList.add('active', 'text-primary', 'font-weight-bold');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter - 1].style.display = 'none';
+  if (stepCounter > 2){
+    document.querySelector('#cartPreviewBox').remove();
+  }  
   setSummaryInfo();
   scrollToAlert();
+  savePurchases();
 }
 
 function prevPaymentStep() {
@@ -149,11 +154,12 @@ function setSummaryInfo() {
   document.querySelector('#shipFeeFinal').innerHTML = shipFee;
   document.querySelector('#cityFinal').innerHTML = city;
   document.querySelector('#provinceFinal').innerHTML = province;
+  updateGrandTotal();
 }
 
 function shippingFee() {
-  let regionValue = regionForm.value;
   let shipFeePreview = document.querySelector('#shipFeePreview');
+  let regionValue = regionForm.value;
   function shipFee() {
     return regionValue == 'Visayas' ? 70.00 :
       regionValue == 'Choose Region' ? 0.00 :
@@ -191,4 +197,75 @@ function validator() {
 function scrollToAlert() {
   let ecq_alert = document.querySelector('#alertECQ');
   ecq_alert.scrollIntoView();
+}
+
+function getCartData() {
+  for (i = 0; i < sessionStorage.length; i++) {
+    if (sessionStorage.key(i) == 'total') {
+      continue;
+    }
+    let productName = sessionStorage.key(i);
+    let object = sessionStorage.getItem(productName);
+    let objectFinal = JSON.parse(object);
+
+    //Product Info
+    let price = objectFinal.productPrice;
+    let quantity = objectFinal.quantity;
+
+    let checkoutCart = document.querySelector('#cartPreview');
+    let cartItem = document.createElement('li');
+    cartItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-condensed', 'cart-item');
+    let cartContents = ` <div>
+  <h6 class="my-0">${productName}</h6>
+  <small class="text-muted">QTY: ${quantity}</small>
+</div>
+<span class="text-muted">₱${price}</span>`;
+    cartItem.innerHTML = cartContents;
+    checkoutCart.append(cartItem);
+    sendToTable(productName, price, quantity);
+  }
+  let cartItems = document.querySelectorAll('.cart-item');
+  document.querySelector('#cartSize').innerHTML = cartItems.length;
+  let cartPreviewTotal = document.querySelector('#prevTotal');
+  let total = sessionStorage.getItem('total');
+  cartPreviewTotal.innerHTML = '₱' + total;
+  savePurchases();
+}
+
+function sendToTable(name, price, quantity) {
+  let summary = document.querySelector('#cartSummary');
+  let items = document.createElement('tr');
+  let tableContents = `<td>${name}</td>
+  <td class="product-quantity text-center">${quantity}</td>
+  <td class="product-price text-right">₱${price}</td>
+  <td class="total-price text-right">₱${(price * quantity)}</td>`;
+  items.innerHTML = tableContents;
+  summary.append(items);
+}
+const updateGrandTotal = () => {
+  let total = sessionStorage.getItem('total');
+  let shipFee = document.querySelector('#shipFeeFinal').innerHTML;
+  document.getElementById('grandTotal').innerHTML = '₱' + (parseFloat(total) + parseFloat(shipFee));
+}
+
+function savePurchases(){
+  // Saves purchases to db
+  let purchases = [];
+  for (i=0; i<sessionStorage.length; i++){
+    if (sessionStorage.key(i) == 'total') {
+      continue;
+    }
+    let productName = sessionStorage.key(i);
+    let object = sessionStorage.getItem(productName);
+    let objectFinal = JSON.parse(object);
+
+    let price = objectFinal.productPrice;
+    let id = objectFinal.productID;
+    let quantity = objectFinal.quantity;
+    let newObj = {'productID': id ,'product': productName,'price': parseFloat(price), 'qty': parseInt(quantity)};
+    purchases.push(newObj);
+    console.log(newObj);
+  }
+  let purchasesFinal = JSON.stringify(purchases);
+  document.querySelector('#purchases').value = purchasesFinal;
 }
