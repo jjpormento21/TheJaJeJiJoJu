@@ -5,7 +5,7 @@ for (const button of buyNowButtons) {
     button.addEventListener('click', addToCartClicked);
     button.addEventListener('click', function(){
         document.location = '/checkout';
-    })
+    });
 }
 
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
