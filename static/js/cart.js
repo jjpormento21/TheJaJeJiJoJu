@@ -2,20 +2,16 @@ console.log('cart js loaded.');
 
 retrieveCart();
 
-var addToCartButtons3 = document.getElementsByClassName('addToCart3');
-for (const button of addToCartButtons3) {
+var buyNowButtons = document.getElementsByClassName('buyNow');
+for (const button of buyNowButtons) {
     button.addEventListener('click', addToCartClicked);
-}
-
-var addToCartButtons2 = document.getElementsByClassName('addToCart2');
-for (const button of addToCartButtons2) {
-    button.addEventListener('click', addToCartClicked);
-    button.addEventListener('click', showCart);
+    button.addEventListener('click', function(){
+        document.location = '/checkout';
+    })
 }
 
 var deleteButtons = document.getElementsByClassName('cart-item-delete');
 for (const button of deleteButtons) {
-    ;
     button.addEventListener('click', deleteItem);
 }
 
@@ -28,6 +24,7 @@ for (const input of quantityInputs) {
 var addToCartButtons = document.getElementsByClassName('addToCart');
 for (const button of addToCartButtons) {
     button.addEventListener('click', addToCartClicked);
+    button.addEventListener('click', showCart);
 }
 
 function updateBadge() {
