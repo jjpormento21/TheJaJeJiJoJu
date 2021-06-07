@@ -1,6 +1,6 @@
 retrieveCart();
 
-var buyNowButtons = document.getElementsByClassName('buyNow');
+var buyNowButtons = document.querySelectorAll('.buyNow');
 for (const button of buyNowButtons) {
     button.addEventListener('click', addToCartClicked);
     button.addEventListener('click', function(){
