@@ -65,6 +65,9 @@
     font-size: .9rem;
     font-weight: 800;
 }
+.btn-view{
+    margin-right: 8em;
+}
 
 /* Typography */
 .text-secondary-custom {
