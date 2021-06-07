@@ -472,7 +472,7 @@ span.text-danger{
     }
 }
 
-
+/* Phones */
 @media screen and (max-width: 576px){
     /* Home Page */
     .hero-img {
