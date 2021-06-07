@@ -464,10 +464,11 @@ span.text-danger{
     /* Cart */
     #cartButton {
         right: 0.25em;
-        bottom: 0;
+        bottom: 1.3em;
     }
     #cart{
         right: 0;
+        z-index: 10;
     }
 }
 
