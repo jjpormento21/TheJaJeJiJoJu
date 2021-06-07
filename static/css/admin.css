@@ -75,6 +75,16 @@
     text-decoration: none;
 }
 
+.dashboard-btn2 {
+    background-color: #10253F;
+    padding: .5rem 1rem;
+    border-radius: 24px;
+    color: #FFC000;
+    font-size: .9rem;
+    letter-spacing: .5px;
+    text-decoration: none;   
+}
+
 .dashboard-round {
     display: inline-block;
     border: 2px solid #10253F;
@@ -85,3 +95,8 @@
     font-weight: 800;
     margin-top: 0.5cm;
 }
+
+.thead-color {
+    background-color: #10253F;
+}
+

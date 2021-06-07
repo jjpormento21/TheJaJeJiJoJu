@@ -7,8 +7,8 @@
 {% block body %}
 <div class="container mt-3 mb-3">
   <div class="dropdown mb-4 text-right">
-    <a href="/admin/dashboard" class="btn btn-primary">Go Back</a>
-    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+    <a href="/admin/dashboard" class="btn btn-light dashboard-btn">Go Back</a>
+    <button class="btn btn-dark dashboard-btn2 dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown"
       aria-haspopup="true" aria-expanded="false">
       More Options
     </button>
@@ -37,12 +37,12 @@
           </div>
         </div>
         <div class="card-footer bg-black-50">
-          <a href="/admin/edit_product/{{product._id}}" class="btn btn-primary">Edit Info</a>
-          <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#deleteOneAlert"
+          <a href="/admin/edit_product/{{product._id}}" class="btn btn-light dashboard-btn">Edit Info</a>
+          <button type="button" class="btn btn-outline-danger" style="border-radius: 18px;" data-toggle="modal" data-target="#deleteOneAlert"
             onclick="setPostToDelete('{{product._id}}')">
             <i class="bi bi-trash"></i>
           </button>
-          <button class="btn btn-info" data-toggle="collapse" data-target="#A{{product._id}}"><i
+          <button class="btn btn-dark dashboard-btn2" data-toggle="collapse" data-target="#A{{product._id}}"><i
               class="bi bi-arrow-down-circle"></i></button>
         </div>
       </div>

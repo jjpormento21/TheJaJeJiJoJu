@@ -6,12 +6,12 @@
 {% block body %}
 
 <div class="container">
-    <h1>Customer Info</h1>
+    <h2 class="dashboard-round font-weight-800 position-absolute">Customer Info</h2>
 
     <div class="row">
         <div class="col">
-            <table class="table table-sm table-striped table-hover">
-                <thead class="thead-dark">
+            <table class="table table-sm table-striped table-hover" style="margin-top: 2.5cm;">
+                <thead class="thead-color dashboard-font">
                     <tr>
                         <th>Type</th>
                         <th>Data</th>
@@ -77,13 +77,13 @@
                 </tbody>
             </table>
         </div>
-        <div class="col">
+        <div class="col" style="margin-top: 2.5cm;">
             <div class="card">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="{{url_for('viewRecords')}}" class="btn btn-primary">Go Back</a>
+                <div class="card-body" style="background-color: #10253F;">
+                  <h5 class="card-title text-white">Card title</h5>
+                  <h6 class="card-subtitle mb-2" style="color: #b8b5b5;">Card subtitle</h6>
+                  <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="{{url_for('viewRecords')}}" class="btn btn-light dashboard-btn">Go Back</a>
                 </div>
               </div>
         </div>
