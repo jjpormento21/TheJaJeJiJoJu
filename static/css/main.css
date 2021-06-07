@@ -66,6 +66,10 @@
     font-weight: 800;
 }
 
+#heroBtn2 {
+    display: none;
+}
+
 /* Typography */
 .text-secondary-custom {
     color: #595959;
@@ -75,7 +79,7 @@
 }
 
 .icon {
-    font-size: 80px;
+    font-size: clamp(20%, 80px, 100px);
     color: #FC8495;
 }
 
@@ -454,4 +458,45 @@ span.text-danger{
 }
 .btn-icon{
     margin-right: 0.3125rem;
+}
+
+@media screen and (max-width: 576px){
+    /* Home Page */
+    .hero-img {
+        max-height: 240px;
+        width: auto;
+        margin: 1em auto;
+    }
+    #heroBtn1 {
+        display: none;
+    }
+    #heroBtn2{
+        display: block;
+    }
+    .icon{
+        font-size: 50px;
+    }
+    .showcase-card{
+        display: block;
+        z-index: 2;
+        top: 17em;
+        left: 2em;
+    }
+    .shop-category{
+        margin-left: 1em;
+        filter: contrast(80%);
+    }
+    #newArrival2{
+        display: none;
+    }
+    .par{
+        text-align: left !important;
+    }
+    /* Footer */
+    #recents{
+        display: none;
+    }
+    #importantLinks{
+        display: none;
+    }
 }
