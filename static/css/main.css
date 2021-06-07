@@ -459,12 +459,24 @@ span.text-danger{
 .btn-icon{
     margin-right: 0.3125rem;
 }
+/* Media query for general components */
+@media screen and (max-width: 1000px) {
+    /* Cart */
+    #cartButton {
+        right: 0.25em;
+        bottom: 0;
+    }
+    #cart{
+        right: 0;
+    }
+}
+
 
 @media screen and (max-width: 576px){
     /* Home Page */
     .hero-img {
-        max-height: 240px;
-        width: auto;
+        max-height: 220px;
+        width: 100%;
         margin: 1em auto;
     }
     #heroBtn1 {
@@ -480,11 +492,12 @@ span.text-danger{
         display: block;
         z-index: 2;
         top: 17em;
-        left: 2em;
+        left: .5em;
     }
     .shop-category{
         margin-left: 1em;
         filter: contrast(80%);
+        max-width: 300px;
     }
     #newArrival2{
         display: none;
