@@ -301,8 +301,8 @@ input[type=number]{
 } 
 
 .nav-logo {
-    max-width: 35%;
-    max-height: 50%;
+    width: 280px;
+    height: 70px;
 }
 
 .nav-icon {
