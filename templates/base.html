@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon"
+    href="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/Cover%20_%20scan%20_%20logo/logo.png">
   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/bootstrap.min.css')}}">
   <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css')}}">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -21,8 +23,8 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item ">
+      <ul class="navbar-nav ml-auto text-center">
+        <li class="nav-item">
           <a class="nav-link navbar-font mt-2" href="/">Home</a>
         </li>
         <li class="nav-item">
@@ -43,10 +45,10 @@
     <hr style="background-color: #FC8495;">
   </div>
 
-  <div id="cartButton">
+  <button id="cartButton">
     <span class="badge badge-pill badge-danger" id="cartBadge" role="button" style="visibility: hidden;"></span>
     <i class="bi bi-cart-fill"></i>
-  </div>
+  </button>
 
   <div id="cart" class="shadow" style="display: none;">
     <h5 class="font1 pb-2">Recent Items</h5>
@@ -71,16 +73,16 @@
   <footer id="mainFooter" class="mt-5">
     <div class="container pb-2 pt-2">
       <div class="row">
-        <section class="col-md-3" id="createFeedback">
+        <section class="col-lg-3" id="createFeedback">
           <h3 class="text-secondary-custom">Looking for a discount?</h3>
           <p>Get up to <strong class="text-danger">20% off</strong> in all products plus <strong>FREE</strong> shipping
             and updates when
             you subscribe to our newsletter. Terms and conditions apply.</p>
           <input class="form-control mb-2" type="email" name="email" id="email" placeholder="E-mail (Optional)">
-          <a href="" class="btn btn-lg btn-main mt-3">Subscribe</a>
+          <a href="" class="btn btn-block btn-main mt-3">Subscribe</a>
         </section>
 
-        <section class="col-md-3 text-center" id="recents">
+        <section class="col-lg-3 text-center" id="recents">
           <h3 class="text-secondary-custom">Recents</h3>
           <div class="row recent-posts mb-3">
             <div class="col-md-4">
@@ -122,7 +124,7 @@
           </div>
         </section>
 
-        <section class="col-md-2" id="importantLinks">
+        <section class="col-lg-2" id="importantLinks">
           <h3 class="text-secondary-custom text-center">Important Links</h3>
           <ul class="list-unstyled ml-2 text-secondary">
             <li><a href="/">Home</a></li>
@@ -133,30 +135,30 @@
           </ul>
         </section>
 
-        <section class="col-md-4" id="contactInfo">
-          <h3 class="text-secondary-custom text-center">Contact Us</h3>
-          <div class="ml-5">
+        <section class="col-lg-4 text-center" id="contactInfo">
+          <h3 class="text-secondary-custom">Contact Us</h3>
+          <div>
             <i class="bi bi-geo-alt-fill footer-icon"></i>
             <p class="d-inline text-secondary footer-info">
               La Paz, Iloilo City
             </p>
           </div>
 
-          <div class="ml-5">
+          <div>
             <i class="bi bi-envelope-fill footer-icon"></i>
             <p class="d-inline text-secondary footer-info">
               jhazcosmetics@gmail.com
             </p>
           </div>
 
-          <div class="ml-5">
+          <div>
             <i class="bi bi-telephone-fill footer-icon"></i>
             <p class="d-inline text-secondary footer-info">
               09123549326 Smart
             </p>
           </div>
 
-          <div class="ml-5">
+          <div>
             <i class="bi bi-telephone-fill footer-icon"></i>
             <p class="d-inline text-secondary footer-info">
               09611482547 Globe
@@ -164,7 +166,7 @@
           </div>
 
           <h6 class="text-secondary-custom text-center">Follow Us!</h6>
-          <div class="text-center">
+          <div>
             <i class="footer-social-icons mr-4 bi bi-facebook" data-toggle="tooltip" data-placement="bottom"
               title="Facebook"></i>
             <i class="footer-social-icons mr-4 bi bi-instagram" data-toggle="tooltip" data-placement="bottom"

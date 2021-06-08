@@ -228,4 +228,4 @@ def editProductData(oid):
         return render_template('admin/edit_product.html', currentProduct=currentProduct)
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, host='0.0.0.0')

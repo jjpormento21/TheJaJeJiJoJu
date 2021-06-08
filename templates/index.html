@@ -8,8 +8,16 @@
 {% block body %}
 <!-- Hero -->
 <div class="container">
-    <div class="row">
-        <div class="col-md-6 mt-5">
+    <div class="alert alert-warning" role="alert">
+        <h4 class="alert-heading">Help make this site better!</h4>
+        <p>This site is currently on beta. Your experience may be affected while we're working on new features and
+            under-the-hood improvements.
+            <br>
+            Found a bug or want to suggest features? <a href="#">Click here.</a>
+        </p>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-6">
             <p class="smallb position-absolute"> Grab yours now! </p>
             <h1 class="font1 mt-4">Enjoy Great
                 <br>Deals of Beauty
@@ -18,32 +26,37 @@
             <p class="par">Discover cosmetics that fits your budget
                 <br> and will surely spice up your glam.
             </p>
-            <a href="/shop" class="btn btn-main">Shop now</a>
+            <a href="/shop" class="btn btn-main" id="heroBtn1">Shop now</a>
         </div>
-        <div class="col-md-6 mt-3">
+        <div class="col-md-6">
             <img class="hero-img"
                 src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/Collage.png"
                 alt="">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <a href="/shop" class="btn btn-main mt-3" id="heroBtn2">Shop now</a>
         </div>
     </div>
 </div>
 
 <!-- Facts -->
 <div class="container shadow p-3 mb-5 mt-5 bg-white" style="border-radius: 32px;">
-    <div class="row">
-        <div class="col-md-4 text-center">
+    <div class="row text-center">
+        <div class="col-md-4">
             <i class="bi bi-truck icon"></i>
             <h6 class="font1">FAST DELIVERY</h6>
             <p class="par">With our same-day delivery you can enjoy fast and reliable service for every purchase in our
                 store. No more counting days because we got you covered.</p>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4">
             <i class="bi bi-emoji-laughing-fill icon"></i>
             <h6 class="font1">100% SATISFACTION</h6>
             <p class="par">We want you to be completely satisfied with every purchase you make so feel free to message
                 us with your suggestions.</p>
         </div>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4">
             <i class="bi bi-bag icon"></i>
             <h6 class="font1">EASY RETURN</h6>
             <p class="par">If you are unsatisfied with the item you ordered or have any other problems with your
@@ -57,17 +70,16 @@
 <div class="container">
     <div class="row">
         <div class="col-md-6">
-            <p class="roundb font-weight-800 position-absolute">Shop</p>
-            <h4 class="font1 mt-5">Products by
-                <br>Category
+            <p class="roundb">Shop</p>
+            <h4 class="font1">Products by <br> Category
             </h4>
         </div>
     </div>
 </div>
 
-<div class="container">
+<div class="container mt-4">
     <div class="row">
-        <div class="col-md-4 mt-4 showcase">
+        <div class="col-lg-4 col-md-6">
             <!-- Lips -->
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Powdery%20Lipmatte/169339897_718375038928116_7214806097751423152_n.jpg?token=AOJEMRVRBZ3UGM6WDQ3HDOTAR6PXW"
                 alt="Lips" class="shop-category">
@@ -82,7 +94,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-lg-4 col-md-6">
             <!-- Eyes -->
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/EYES/Eyeshadow/169832880_794308634801284_3173780341732447407_n.jpg?token=AOJEMRUAIA7GFDERXE5G5WLAR6PT6"
                 alt="Eyes" class="shop-category">
@@ -96,7 +108,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-lg-4 col-md-6">
             <!-- Skin -->
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/SKIN/Velvet%20Clay%20Blush/168987770_534550111068060_75524008658346085_n.jpg?token=AOJEMRSQE75T6DR5I53OJ3DAR6PPS"
                 alt="Skin" class="shop-category">
@@ -115,29 +127,33 @@
 </div>
 
 <!-- New Arrivals -->
-<div class="container mt-5">
+<div class="container">
     <div class="row">
-        <div class="col-md-6">
-            <p class="roundb font-weight-800 position-absolute">Featured</p>
-            <h4 class="font1 mt-5">New
+        <div class="col">
+            <p class="roundb">Featured</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h4 class="font1">New
                 <br>Arrivals
             </h4>
         </div>
-        <div class="col-md-6 text-right mt-5">
-            <p class="par">Thinking about trying something new? Explore our new arrived products and you’ll never run
+        <div class="col-lg-6 text-right">
+            <p class="par">Thinking about trying something new? Explore our newly arrived products and you’ll never run
                 out of options. Grab yours now!</p>
         </div>
     </div>
 </div>
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-4 mt-4">
+    <div class="row mt-4">
+        <div class="col-lg-4 col-md-6 order-1 order-sm-1">
             <a href="/product/60a2135229b736765c387ec8"><img
                     src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Velvet%20lipcream%20and%20magic%20lipgloss/dual%20combi.png"
-                    alt="Velvet Lip-gloss" class="shop-category product-img"></a>
+                    alt="Velvet Lip-gloss" class="shop-category"></a>
         </div>
-        <div class="col-md-4 mt-5">
+        <div class="col-lg-4 col-md-6 order-2 order-sm-2">
             <h3 class="font1 mb-3 product-name">Velvet Lip Cream Magic Lip-gloss 2n1</h3>
             <h5 class="font1">Price: <span class="product-price">170.00</span> PHP</h5>
             <p class="par mb-5">Say yes to velvety goodness. Nourish your kissers with our extra hydrating velvet lip
@@ -145,15 +161,11 @@
                 full, creaseless coverage-you get a beautiful solid hue with a smooth satin finish every single time.
             </p>
             <hr>
-            <div>
-                <h4 class="font1">Order Now!</h3>
-            </div>
-            <div class="mt-3">
-                <!-- <div class="d-inline"><button class="btn btn-main mr-2 buyNow">Buy Now</button></div> -->
-                <a href="/product/60a2135229b736765c387ec8" class="btn btn-sub">See more</a>
-            </div>
+            <h4 class="font1 mb-3">Order Now!</h3>
+            <button class="btn btn-main mr-2 buyNow">Buy Now</button>
+            <a href="/product/60a2135229b736765c387ec8" class="btn btn-sub">See more</a>
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-lg-4 col-md-6 order-3" id="newArrival2">
             <a href="/product/60a2135229b736765c387ec8"><img
                     src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/Collage1.png"
                     alt="Velvet Lip-gloss" class="shop-category"></a>
