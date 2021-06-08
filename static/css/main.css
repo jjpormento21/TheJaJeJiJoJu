@@ -5,10 +5,15 @@
 
 :root{
     scroll-padding-top: 7rem;
+    --primary-color: #FC8495;
+    --secondary-color: #595959;
+    --muted-gray: #7f7f7f;
+    --dirty-white: #d9d7d7;
+    --picture-border-color: #b3afaf;
 }
 /* Footer Properties */
 #mainFooter{
-    background-color: #d9d7d7;
+    background-color: var(--dirty-white);
 }
 
 .footer-icon{
@@ -25,20 +30,16 @@
 }
 
 #footerCopyright{
-    background-color: #FC8495;
+    background-color: var(--primary-color);
     color: black;
     padding: .5em 2em .5em 2em;
     text-align: center;
     font-size: 16px;
 }
 
-#error_msg{
-    font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-}
-
 /* Buttons */
 .btn-main{
-    background-color: #FC8495;
+    background-color: var(--primary-color);
     padding: .5rem 1.5rem;
     border-radius: 24px;
     color: white;
@@ -57,10 +58,10 @@
 
 .btn-sub {
     background-color: transparent;
-    border: 2px solid #7f7f7f;
+    border: 2px solid var(--muted-gray);
     padding: .5rem 1.5rem;
     border-radius: 24px;
-    color: #7f7f7f;
+    color: var(--muted-gray);
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     font-size: .9rem;
     font-weight: 800;
@@ -75,7 +76,7 @@
 
 /* Typography */
 .text-secondary-custom {
-    color: #595959;
+    color: var(--secondary-color);
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     padding-top: 1rem;
     font-weight: 800;
@@ -83,12 +84,12 @@
 
 .icon {
     font-size: clamp(20%, 80px, 100px);
-    color: #FC8495;
+    color: var(--primary-color);
 }
 
 .par {
     font-size: 16px;
-    color: #595959;
+    color: var(--secondary-color);
 }
 
 .par1{
@@ -100,7 +101,8 @@
     height: 500px;
     width: 350px;
     border-radius: 5%;
-    background-color: #d9d7d7;
+    background-color: var(--dirty-white);
+    margin-bottom: 2.5em;
 }
 
 .shop-category:hover + .showcase-card{
@@ -109,13 +111,13 @@
 
 .font1 {
     font-weight: 800;
-    color: #595959;
+    color: var(--secondary-color);
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
 
 .font2 {
     font-weight: 800;
-    color: #FC8495;
+    color: var(--primary-color);
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
 
@@ -128,23 +130,22 @@
 .font4{
     font-weight: 400;
     font-size: 0.9rem;
-    color: #FC8495;
+    color: var(--primary-color);
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
 .roundb {
     display: inline-block;
-    border: 2px solid #7f7f7f;
+    border: 2px solid var(--muted-gray);
     border-radius: 2rem;
     padding: .5rem 1.25rem;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    color:#7f7f7f;
+    color: var(--muted-gray);
     font-weight: 800;
 }
 
 .hero-img {
-    height: 350px;
     width: 100%;
-    background-color: #d9d7d7;
+    background-color: var(--dirty-white);
     margin: auto;
 }
 
@@ -161,21 +162,21 @@
 }
 
 .boxb {
-    border: 3px solid #595959;
+    border: 3px solid var(--secondary-color);
     border-radius: 24px;
 }
 
 .feat-icon {
     font-size: 20px;
-    color: #FC8495;
+    color: var(--primary-color);
 }
 
 .smallb {
-    border: 2px solid #7f7f7f;
+    border: 2px solid var(--muted-gray);
     border-radius: 16px;
     padding: 1px 4px 1px 4px;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    color:#7f7f7f;
+    color:var(--muted-gray);
     font-weight: 400;
     font-size: 12px;
 }
@@ -219,7 +220,7 @@
 
 .cat-icon {
     font-size: 1.5rem;
-    color: #7f7f7f;
+    color: var(--muted-gray);
 }
 
 .cat-icon:hover{
@@ -229,15 +230,6 @@
 
 .br-custom{
     border-radius: 2em;
-}
-
-
-/* Admin Styles */
-#dashboard-footer{
-    background-color: #000;
-    padding: 1em;
-    color: #fff;
-    text-align: center;
 }
 
 .collapse-custom{
@@ -254,7 +246,7 @@
     max-width: 50%;
     max-height: 100%;
     border-radius: 50%;
-    border: 3px solid #b3afaf;
+    border: 3px solid var(--picture-border-color);
     display: block; 
     margin-left: 10rem;
     padding: 2%;
@@ -264,12 +256,12 @@
     max-width: 90%;
     max-height: 90%;
     border-radius: 50%;
-    border: 3px solid #b3afaf;
+    border: 3px solid var(--picture-border-color);
     padding: 2%;
 }
 
 .comment {
-    box-shadow: 5px 5px 5px #b3afaf;
+    box-shadow: 5px 5px 5px var(--picture-border-color);
     border-radius: 24px;
 }
 
@@ -289,13 +281,13 @@
 
 .review-icon {
     font-size: 40px;
-    color: #595959;
+    color: var(--secondary-color);
     margin-left: 12rem;
 }
 
 .quotation-icon {
     font-size: 60px;
-    color: #595959;
+    color: var(--secondary-color);
     margin-left: 16rem;
 }
 
@@ -305,7 +297,7 @@ input[type=number]{
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
     border-radius: 10px;
     font-weight: 800;
-    color: #595959;
+    color: var(--secondary-color);
 } 
 
 .nav-logo {
@@ -315,12 +307,12 @@ input[type=number]{
 
 .nav-icon {
     font-size: 24px;
-    color: #595959;
+    color: var(--secondary-color);
 }
 
 .navbar-font{
     font-weight: 800;
-    color:#FC8495 !important;
+    color:var(--primary-color) !important;
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
     font-size: 16px;
 }
@@ -372,6 +364,7 @@ span.text-danger{
     right: 3.5rem;
     margin: 0px auto;
     z-index: 10;
+    border: none;
 }
 
 #cartButton:hover{
@@ -392,7 +385,7 @@ span.text-danger{
     width: 25em;
     border: #000 .5px solid;
     border-radius: 1em;
-    max-height: 65vh;
+    max-height: 80%;
     padding: 1em;
     font-size: 14px !important;
     margin: 0px auto;
@@ -418,7 +411,7 @@ span.text-danger{
 }
 .cart-item-name{
     font-weight: 700;
-    color: #FC8495;
+    color: var(--primary-color);
     width: 6em;
     overflow: hidden;
     white-space: nowrap;
@@ -476,11 +469,12 @@ span.text-danger{
     /* Cart */
     #cartButton {
         right: 0.25em;
-        bottom: 1.3em;
+        bottom: 0.5em;
     }
     #cart{
         right: 0;
         z-index: 10;
+        bottom: 6em;
     }
     /* Footer */
     #recents{
@@ -499,19 +493,14 @@ span.text-danger{
     #heroBtn2{
         display: block;
     }
+    .icon{
+        font-size: 50px;
+    }
 }
 
 /* Phones */
 @media screen and (max-width: 476px){
     /* Home Page */
-    .hero-img {
-        max-height: 220px;
-        width: 100%;
-        margin: auto;
-    }
-    .icon{
-        font-size: 50px;
-    }
     .shop-category{
         margin-left: 1em;
         filter: contrast(80%);
@@ -525,11 +514,11 @@ span.text-danger{
 @media screen and (min-width:477px) and (max-width:800px) {
     /* Home Page */
     .shop-category{
-        margin-left: 4em;
+        margin-left: 5em;
         filter: contrast(80%);
         max-width: 500px;
     }
     .showcase-card{
-        left: 5em;
+        left: 6em;
     }
 }

@@ -87,16 +87,16 @@ function addItemToCart(title, qty, price, imgSrc) {
             return;
         }
     }
-    let cartItemContents = `<div class="col-md-3">
+    let cartItemContents = `<div class="col-3">
     <img src="${imgSrc}" alt="cart"
       class="cart-item-img">
   </div>
-  <div class="col-md-4">
+  <div class="col-4">
     <p class="cart-item-name mb-0">${title}</p>
     <p class="cart-item-price text-muted mt-0">₱${price}</p>
     <a class="btn btn-link text-danger cart-item-delete p-0"><i class="bi bi-cart-x-fill"></i> Remove</a>
   </div>
-  <div class="col-md-5">
+  <div class="col-5">
     <label for="cart-item-qty">QTY</label>
     <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1" max="100">
   </div>`

@@ -15,7 +15,7 @@
 {% block body %}
 <div class="container">
     <div class="row">
-        <div class="col-md-7 order-2 order-sm-1">
+        <div class="col-md-7 order-2 order-md-1">
             <p class="product-id" hidden>{{product._id}}</p>
             <h2 class="font2 mt-3 product-name" id="A{{product._id}}">{{product.productName}}</h2>
             <h5>Category: {{product.productCategory}}</h5>
@@ -41,7 +41,7 @@
                 {% endfor %}
             </div>
         </div>
-        <div class="col-md-5 order-1 order-sm-2">
+        <div class="col-md-5 order-1 order-md-2">
             <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-size center mb-3 product-img">
             <div class="text-center">
                 <button class="btn btn-secondary text-center" type="button" data-toggle="modal"
