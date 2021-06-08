@@ -1,9 +1,25 @@
 retrieveCart();
 
+var cartButton = document.getElementById('cartButton');
+cartButton.addEventListener('click', function () {
+    let cart = document.getElementById('cart');
+    if (cart.style.display == 'none') {
+        cart.style.display = 'block';
+    }
+    else {
+        cart.style.display = 'none';
+    }
+})
+
+function closeCart() {
+    let cart = document.querySelector('#cart');
+    cart.style.display = 'none';
+}
+
 var buyNowButtons = document.querySelectorAll('.buyNow');
 for (const button of buyNowButtons) {
     button.addEventListener('click', addToCartClicked);
-    button.addEventListener('click', function(){
+    button.addEventListener('click', function () {
         document.location = '/checkout';
     });
 }
@@ -107,8 +123,8 @@ function updateTotal() {
     sessionStorage.setItem('total', total.toString());
 }
 
-function storeData(id,title, qty, price, imgSrc) {
-    let cartItem = {productID: id ,quantity: qty, productPrice: price, imageLink: imgSrc };
+function storeData(id, title, qty, price, imgSrc) {
+    let cartItem = { productID: id, quantity: qty, productPrice: price, imageLink: imgSrc };
     let product = title.toString();
     let cartItemString = JSON.stringify(cartItem);
     sessionStorage.setItem(product, cartItemString);

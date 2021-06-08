@@ -143,7 +143,7 @@
 
 .hero-img {
     height: 350px;
-    width: 550px;
+    width: 100%;
     background-color: #d9d7d7;
     margin: auto;
 }
@@ -470,6 +470,9 @@ span.text-danger{
         z-index: 2;
         top: 17em;
     }
+    .par{
+        text-align: left !important;
+    }
     /* Cart */
     #cartButton {
         right: 0.25em;
@@ -478,9 +481,6 @@ span.text-danger{
     #cart{
         right: 0;
         z-index: 10;
-    }
-    .par{
-        text-align: left !important;
     }
     /* Footer */
     #recents{
@@ -492,6 +492,13 @@ span.text-danger{
     #newArrival2{
         display: none;
     }
+    /* Others */
+    #heroBtn1 {
+        display: none;
+    }
+    #heroBtn2{
+        display: block;
+    }
 }
 
 /* Phones */
@@ -501,12 +508,6 @@ span.text-danger{
         max-height: 220px;
         width: 100%;
         margin: auto;
-    }
-    #heroBtn1 {
-        display: none;
-    }
-    #heroBtn2{
-        display: block;
     }
     .icon{
         font-size: 50px;
@@ -524,11 +525,11 @@ span.text-danger{
 @media screen and (min-width:477px) and (max-width:800px) {
     /* Home Page */
     .shop-category{
-        margin-left: 3em;
+        margin-left: 4em;
         filter: contrast(80%);
         max-width: 500px;
     }
     .showcase-card{
-        left: 4em;
+        left: 5em;
     }
 }
