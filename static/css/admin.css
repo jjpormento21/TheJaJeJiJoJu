@@ -3,6 +3,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
 
+:root{
+    --dashboard-blue: #10253F;
+    --dashboard-yellow: #FFC000;
+    --dashboard-secondary: #7f7f7f;
+}
+
 #dashboard-footer{
     background-color: #10253F;
     padding: 1em;
@@ -16,7 +22,7 @@
 }
 
 .jumbotron {
-    background-color: #10253F;
+    background-color: var(--dashboard-blue);
     border-radius: 25px;
 }
 
@@ -25,7 +31,7 @@
 }
 
 .dashboard-icon{
-    color: #7f7f7f;
+    color: var(--dashboard-secondary);
     font-size: 3rem;
 }
 
@@ -52,21 +58,21 @@
 .dashboard-title {
     font-weight: 800;
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
-    color: #7f7f7f;
+    color: var(--dashboard-secondary);
 }
 
 .dashboard-text {
     margin-top: -0.3cm;
-    color: #7f7f7f;
+    color: var(--dashboard-secondary);
 }
 
 .catalog {
     border-radius: 20px;
-    border: #10253F;
+    border: var(--dashboard-blue);
 }
 
 .dashboard-btn {
-    background-color: #FFC000;
+    background-color: var(--dashboard-yellow);
     padding: .5rem 1.5rem;
     border-radius: 24px;
     color: #10253F;
@@ -76,10 +82,10 @@
 }
 
 .dashboard-btn2 {
-    background-color: #10253F;
+    background-color: var(--dashboard-blue);
     padding: .5rem 1rem;
     border-radius: 24px;
-    color: #FFC000;
+    color: var(--dashboard-yellow);
     font-size: .9rem;
     letter-spacing: .5px;
     text-decoration: none;   
@@ -87,16 +93,16 @@
 
 .dashboard-round {
     display: inline-block;
-    border: 2px solid #10253F;
+    border: 2px solid var(--dashboard-blue);
     border-radius: 2rem;
     padding: .5rem 1.25rem;
     font-family: 'Open Sans', 'Helvetica', 'Tahoma', sans-serif;
-    color:#10253F;
+    color:var(--dashboard-blue);
     font-weight: 800;
     margin-top: 0.5cm;
 }
 
 .thead-color {
-    background-color: #10253F;
+    background-color: var(--dashboard-blue);
 }
 
