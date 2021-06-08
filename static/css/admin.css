@@ -10,7 +10,7 @@
 }
 
 #dashboard-footer{
-    background-color: #10253F;
+    background-color: var(--dashboard-blue);
     padding: 1em;
     color: #fff;
     text-align: center;
