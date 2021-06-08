@@ -457,7 +457,7 @@ span.text-danger{
     margin-right: 0.3125rem;
 }
 /* Media query for general components */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     .showcase-card{
         display: block;
         z-index: 2;
@@ -487,6 +487,10 @@ span.text-danger{
         display: none;
     }
     /* Others */
+    .nav-logo {
+        width: 230px;
+        height: 60px;
+    }
     #heroBtn1 {
         display: none;
     }
@@ -510,7 +514,7 @@ span.text-danger{
         left: .5em;
     }
 }
-/* Tablet */
+/* Tablet (portrait) */
 @media screen and (min-width:477px) and (max-width:800px) {
     /* Home Page */
     .shop-category{
@@ -521,4 +525,9 @@ span.text-danger{
     .showcase-card{
         left: 6em;
     }
+}
+
+/* Tablet (landscape) */
+@media screen and (min-width: 801px) and (max-width: 1024px) {
+    /* your code for landscape here */
 }
