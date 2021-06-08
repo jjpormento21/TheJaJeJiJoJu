@@ -2,9 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@600;700&display=swap');
 
 :root{
-    scroll-padding-top: 7rem;
+    scroll-padding-top: 5.75rem;
     --primary-color: #FC8495;
     --secondary-color: #595959;
     --muted-gray: #7f7f7f;
@@ -311,10 +312,10 @@ input[type=number]{
 }
 
 .navbar-font{
-    font-weight: 800;
     color:var(--primary-color) !important;
-    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
-    font-size: 16px;
+    font-size: 1.2rem;
+    font-family: 'Open Sans', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;
 }
 
 .navbar-font:hover{
