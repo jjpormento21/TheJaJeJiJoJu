@@ -333,10 +333,7 @@ input[type=number]{
 .navbar-font:hover{
     color: hsl(352, 73%, 58%) !important;
 }
-#payCard{
-    display: none;
-}
-.form-step{
+#payCard, .form-step{
     display: none;
 }
 #orderCompleteImg{
@@ -471,7 +468,7 @@ span.text-danger{
 }
 /* Media query for general components */
 @media screen and (max-width: 1024px) {
-    .showcase-card{
+    .showcase-card, #heroBtn2{
         display: block;
     }
     .par{
@@ -487,25 +484,13 @@ span.text-danger{
         bottom: 6em;
     }
     /* Footer */
-    #recents{
-        display: none;
-    }
-    #importantLinks{
-        display: none;
-    }
-    #newArrival2{
+    #importantLinks, #recents, #newArrival2, #heroBtn1{
         display: none;
     }
     /* Others */
     .nav-logo {
         width: 230px;
         height: 60px;
-    }
-    #heroBtn1 {
-        display: none;
-    }
-    #heroBtn2{
-        display: block;
     }
 }
 
@@ -530,4 +515,12 @@ span.text-danger{
         display: block;
         text-align: center;
     }
+}
+/* For touch screen devices */
+@media screen and (min-width: 995px)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #importantLinks, #recents, .showcase-card, #newArrival2, #heroBtn1 {
+        display: block;
+    }
+    #heroBtn2{ display: none;}
 }
