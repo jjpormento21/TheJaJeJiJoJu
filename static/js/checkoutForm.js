@@ -3,6 +3,14 @@ mainNavbar.classList.remove('sticky-top');
 document.querySelector('#cartButton').remove(); //removes cart button
 document.querySelector('#cart').remove(); //removes cart
 
+let subNavbar = document.querySelector('#checkout-tab');
+var screenSize = window.matchMedia('(max-width: 700px)');
+screenSize.addEventListener('change', removeStickyNav);
+// Media query
+function removeStickyNav() {
+  (screenSize.matches) ? subNavbar.classList.remove('sticky-top') : subNavbar.classList.add('sticky-top');
+}
+
 var stepCounter = 0; //form step counter
 getCartData();
 // function to prevent enter key from submitting
@@ -85,9 +93,9 @@ function nextPaymentStep() {
   checkoutNavbarList[stepCounter].classList.add('active', 'text-primary', 'font-weight-bold');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter - 1].style.display = 'none';
-  if (stepCounter > 2){
+  if (stepCounter > 2) {
     document.querySelector('#cartPreviewBox').remove();
-  }  
+  }
   setSummaryInfo();
   scrollToAlert();
   savePurchases();
@@ -248,10 +256,10 @@ const updateGrandTotal = () => {
   document.getElementById('grandTotal').innerHTML = '₱' + (parseFloat(total) + parseFloat(shipFee));
 }
 
-function savePurchases(){
+function savePurchases() {
   // Saves purchases to db
   let purchases = [];
-  for (i=0; i<sessionStorage.length; i++){
+  for (i = 0; i < sessionStorage.length; i++) {
     if (sessionStorage.key(i) == 'total') {
       continue;
     }
@@ -262,7 +270,7 @@ function savePurchases(){
     let price = objectFinal.productPrice;
     let id = objectFinal.productID;
     let quantity = objectFinal.quantity;
-    let newObj = {'productID': id ,'product': productName,'price': parseFloat(price), 'qty': parseInt(quantity)};
+    let newObj = { 'productID': id, 'product': productName, 'price': parseFloat(price), 'qty': parseInt(quantity) };
     purchases.push(newObj);
     console.log(newObj);
   }
