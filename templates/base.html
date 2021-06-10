@@ -52,7 +52,8 @@
     <div id="cart" class="shadow" style="display: none;">
       <h5 class="font1 pb-2">Recent Items</h5>
       <div class="cart-container">
-  
+        <p id="cart-message" style="display: block;">Your cart is empty. 
+          Items added to cart will be shown here.</p>
       </div>
   
       <hr class="mt-2">
@@ -63,7 +64,7 @@
       <hr>
       <div class="cart-footer text-right">
         <button class="btn btn-link" onclick="closeCart()" role="button">Close</button>
-        <a href="/checkout" class="btn btn-main">Checkout</a>
+        <a href="/checkout" class="btn btn-main" id="checkoutBtn" role="button">Checkout</a>
       </div>
     </div>
   </div>

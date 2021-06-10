@@ -31,7 +31,8 @@ def shop():
 
 @app.route('/featured')
 def featuredProducts():
-    return render_template('featured.html')
+    featured_products = products.find({'featured':'True'}).limit(6)
+    return render_template('featured.html', products=featured_products)
 
 @app.route('/feedback_hub')
 def feedback():
