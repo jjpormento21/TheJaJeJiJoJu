@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect, session, g, abort
+from flask import Flask, render_template, url_for, request, redirect, session, g, flash
 from flask_pymongo import PyMongo
 from dotenv import load_dotenv
 load_dotenv()
@@ -10,16 +10,13 @@ app = Flask(__name__)
 
 #database stuff
 app.config['MONGO_URI'] = os.getenv('DEVELOPER')
+# for login page
 app.secret_key = os.getenv('SECRET_KEY')
-
-class User:
-    def __init__(self, id, username, password):
-        self.id = id
-        self.username = username
-        self.password = password
-
-users = []
-users.append(User(id=1, username=os.getenv('ADMIN_USER'), password=os.getenv('ADMIN_PASSWORD')))
+user = {
+    "id": 1,
+    "username": os.getenv('ADMIN_USER'),
+    "password":os.getenv('ADMIN_PASSWORD')
+}
 
 mongo = PyMongo(app)
 products = mongo.db.products
@@ -31,8 +28,8 @@ dateToday = datetime.now()
 def before_request():
     g.user = None
     if 'user_id' in session:
-        user = [x for x in users if x.id == session['user_id']][0]
-        g.user = user
+        currentUser = user['username']
+        g.user = currentUser
 
 #routes
 @app.route('/')
@@ -146,17 +143,22 @@ def notFound(e):
     return render_template('404.html')
 
 #Admin Page Routes
+@app.route('/admin')
+def admin():
+    return redirect(url_for('dashboard'))
+
 @app.route('/admin/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
         session.pop('user_id', None)
         username = request.form.get('username')
         password = request.form.get('password')
-        user = [x for x in users if x.username == username][0]
-        if user and user.password == password:
-            session['user_id'] = user.id
+        currentUser = user['username']
+        if currentUser and user['password'] == password:
+            session['user_id'] = user['id']
             return redirect(url_for('dashboard'))
 
+        flash('Failed to login. Please try again.')
         return redirect(url_for('login'))
     return render_template('admin/login.html')
 

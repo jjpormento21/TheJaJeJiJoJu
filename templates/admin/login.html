@@ -6,24 +6,40 @@
     body {
         background-color: hsl(0, 0%, 96%);
     }
+    #signOut{
+        display: none;
+    }
 </style>
 {% endblock %}
 
 {% block body %}
 <div class="container">
-    <h1 class="display-4 text-center mt-5">Admin Login</h1>
+
+    <h1 class="display-4 text-center mt-5">Sign in to TheDashboard</h1>
     <div class="custom-container">
-        <div class="login-card shadow">
+        <div class="login-card mt-3 shadow">
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        {{message}}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <form action="/admin/login" method="POST">
                 <label for="username">Username</label>
                 <input type="text" name="username" id="username" class="form-control mb-3">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" class="form-control mb-3">
                 <input type="submit" value="Sign in" class="btn btn-primary btn-block">
-    
+
             </form>
         </div>
     </div>
 </div>
-<div style="margin-bottom: 170px;"></div>
+<div style="margin-bottom: 100px;"></div>
 {% endblock %}
