@@ -12,7 +12,7 @@
     --muted-gray: #7f7f7f;
     --dirty-white: #d9d7d7;
     --picture-border-color: #b3afaf;
-    --main-font: 'Open Sans', 'Tahoma', 'Helvetica', sans-serif;
+    --main-font: 'Open Sans', Tahoma, Verdana, sans-serif;
     --main-font-weight: 800;
 }
 /* Footer Properties */
@@ -392,13 +392,13 @@ span.text-danger{
     z-index: 3;
     background-color: #fff;
     right: 8rem;
-    width: 25em;
+    width: min(25em, 85%);
     border: #000 .5px solid;
     border-radius: 1em;
     max-height: 80%;
     padding: 1em;
     font-size: 14px !important;
-    margin: 0px auto;
+    margin: 0px .5rem;
 }
 #cartBadge{
     font-size: 1rem;
@@ -474,15 +474,6 @@ span.text-danger{
     .par{
         text-align: left !important;
     }
-    /* Cart */
-    #cartButton {
-        right: 0.25em;
-        bottom: 0.5em;
-    }
-    #cart{
-        right: 0;
-        bottom: 6em;
-    }
     /* Footer */
     #importantLinks, #recents, #newArrival2, #heroBtn1{
         display: none;
@@ -495,13 +486,22 @@ span.text-danger{
 }
 
 /* Phones */
-@media screen and (max-width: 476px) and (orientation:portrait){
+@media screen and (max-width: 800px) {
     :root{
         font-size: 14px;
     }
     /* Home Page */
     .icon{
         font-size: calc(5rem - 20px);
+    }
+    /* Cart */
+    #cartButton {
+        right: 0.5em;
+        bottom: 0.5em;
+    }
+    #cart{
+        right: 0;
+        bottom: 6em;
     }
 }
 /* Tablet (portrait) */
@@ -523,4 +523,6 @@ and (-webkit-min-device-pixel-ratio: 2) {
         display: block;
     }
     #heroBtn2{ display: none;}
+    #cartButton{ right: 0.5em;}
+    #cart{ right: 5rem;}
 }

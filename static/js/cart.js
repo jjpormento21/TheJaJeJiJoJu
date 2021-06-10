@@ -1,4 +1,5 @@
 retrieveCart();
+updateBadge();
 
 var cartButton = document.getElementById('cartButton');
 cartButton.addEventListener('click', function () {
@@ -44,12 +45,17 @@ for (const button of addToCartButtons) {
 function updateBadge() {
     let cartItems = document.querySelectorAll('.cart-item').length;
     let cartBadge = document.querySelector('#cartBadge');
+    let checkoutBtn = document.querySelector('#checkoutBtn');
     cartBadge.innerHTML = cartItems;
     if (cartItems < 1) {
         cartBadge.style.visibility = 'hidden';
+        checkoutBtn.classList.add('disabled');
+        document.querySelector('#cart-message').style.display = 'block';
     }
     else {
         cartBadge.style.visibility = 'visible';
+        checkoutBtn.classList.remove('disabled');
+        document.querySelector('#cart-message').style.display = 'none';
     }
 }
 
