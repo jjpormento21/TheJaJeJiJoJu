@@ -1,0 +1,29 @@
+{% extends 'admin/dashboard_template.html' %}
+
+{% block head %}
+<title>TheDashboard</title>
+<style>
+    body {
+        background-color: hsl(0, 0%, 96%);
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h1 class="display-4 text-center mt-5">Admin Login</h1>
+    <div class="custom-container">
+        <div class="login-card shadow">
+            <form action="/admin/login" method="POST">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" class="form-control mb-3">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class="form-control mb-3">
+                <input type="submit" value="Sign in" class="btn btn-primary btn-block">
+    
+            </form>
+        </div>
+    </div>
+</div>
+<div style="margin-bottom: 170px;"></div>
+{% endblock %}

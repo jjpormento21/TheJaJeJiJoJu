@@ -1,4 +1,4 @@
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, session, g, abort
 from flask_pymongo import PyMongo
 from dotenv import load_dotenv
 load_dotenv()
@@ -10,6 +10,16 @@ app = Flask(__name__)
 
 #database stuff
 app.config['MONGO_URI'] = os.getenv('DEVELOPER')
+app.secret_key = os.getenv('SECRET_KEY')
+
+class User:
+    def __init__(self, id, username, password):
+        self.id = id
+        self.username = username
+        self.password = password
+
+users = []
+users.append(User(id=1, username=os.getenv('ADMIN_USER'), password=os.getenv('ADMIN_PASSWORD')))
 
 mongo = PyMongo(app)
 products = mongo.db.products
@@ -17,6 +27,13 @@ customerData = mongo.db.customer_data
 customerReviews = mongo.db.customer_reviews
 
 dateToday = datetime.now()
+@app.before_request
+def before_request():
+    g.user = None
+    if 'user_id' in session:
+        user = [x for x in users if x.id == session['user_id']][0]
+        g.user = user
+
 #routes
 @app.route('/')
 def index():
@@ -129,12 +146,35 @@ def notFound(e):
     return render_template('404.html')
 
 #Admin Page Routes
+@app.route('/admin/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        session.pop('user_id', None)
+        username = request.form.get('username')
+        password = request.form.get('password')
+        user = [x for x in users if x.username == username][0]
+        if user and user.password == password:
+            session['user_id'] = user.id
+            return redirect(url_for('dashboard'))
+
+        return redirect(url_for('login'))
+    return render_template('admin/login.html')
+
+@app.route('/admin/logout')
+def logout():
+   session.pop('user_id', None)
+   return redirect(url_for('login'))
+
 @app.route('/admin/dashboard')
 def dashboard():
+    if not g.user:
+        return redirect(url_for('login'))
     return render_template('admin/dashboard.html')
 
 @app.route('/admin/add_data', methods=['GET', 'POST'])
 def addData():
+    if not g.user:
+        return redirect(url_for('login'))
     all_products = products.find()
     if request.method == 'POST':
         productName = request.form.get('productTitle')
@@ -164,41 +204,57 @@ def addData():
 
 @app.route('/admin/delete_data_all')
 def deleteAllProducts():
+    if not g.user:
+        return redirect(url_for('login'))
     products.delete_many({})
     return redirect(url_for('dashboard'))
 
 @app.route('/admin/delete_records_all')
 def deleteAllRecords():
+    if not g.user:
+        return redirect(url_for('login'))
     customerData.delete_many({})
     return redirect(url_for('dashboard'))
 
 @app.route('/admin/view/products')
 def viewAllProducts():
+    if not g.user:
+        return redirect(url_for('login'))
     all_products = products.find()
     return render_template('admin/view.html', products=all_products)
 
 @app.route('/admin/view/records')
 def viewRecords():
+    if not g.user:
+        return redirect(url_for('login'))
     customer_records = customerData.find()
     return render_template('/admin/customer-records.html', records = customer_records)
 
 @app.route('/admin/view/records/<oid>')
 def viewSingleRecord(oid):
+    if not g.user:
+        return redirect(url_for('login'))
     customer_record = customerData.find_one_or_404({'_id': ObjectId(oid)})
     return render_template('/admin/customer-info.html', record = customer_record)
 
 @app.route('/admin/delete_record/<oid>')
 def deleteRecord(oid):
+    if not g.user:
+        return redirect(url_for('login'))
     customerData.delete_one({'_id': ObjectId(oid)})
     return redirect(url_for('viewRecords'))
 
 @app.route('/admin/delete_product/<oid>')
 def deleteProduct(oid):
+    if not g.user:
+        return redirect(url_for('login'))
     products.delete_one({'_id': ObjectId(oid)})
     return redirect(url_for('viewRecords'))
 
 @app.route('/admin/edit_product/<oid>', methods = ['GET', 'POST'])
 def editProductData(oid):
+    if not g.user:
+        return redirect(url_for('login'))
     currentProduct = products.find_one_or_404({'_id': ObjectId(oid)})
     if request.method == 'POST':
         productName = request.form.get('productTitle')

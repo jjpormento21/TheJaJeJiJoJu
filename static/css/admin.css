@@ -16,11 +16,6 @@
     text-align: center;
 }
 
-.bg-color {
-    background-image: linear-gradient(#386194, white);
-
-}
-
 .jumbotron {
     background-color: var(--dashboard-blue);
     border-radius: 25px;
@@ -106,3 +101,14 @@
     background-color: var(--dashboard-blue);
 }
 
+.login-card{
+    width: min(500px, 100%);
+    padding: 3rem;
+    background-color: white;
+    border-radius: 3em;
+}
+.custom-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
