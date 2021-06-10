@@ -152,13 +152,56 @@
     font-family: var(--main-font);
 }
 
-.font4{
+/*This is the previous font4*/
+.text-light-pink{
     font-weight: 400;
     font-size: 0.9rem;
     color: var(--primary-color);
     font-family: var(--main-font);
 }
-.roundb {
+
+/*This is the previous par*/
+.text-small-gray {
+    font-size: 16px;
+    color: #595959;
+}
+
+/*This is the previous par1*/
+.text-small-black{
+    font-size: 16px;
+    color: #000;
+}
+
+/* Icons */
+.homepage-icon {
+    font-size: 80px;
+    color: #FC8495;
+}
+
+.heart-icon {
+    font-size: 20px;
+    color: #FC8495;
+}
+
+.catalog-icon {
+    font-size: 23px;
+    color: #7f7f7f;
+}
+
+.message-icon {
+    font-size: 40px;
+    color: #595959;
+    margin-left: 12rem;
+}
+
+.quotation-icon {
+    font-size: 60px;
+    color: #595959;
+    margin-left: 16rem;
+}
+
+/* Custom Containers*/
+.section-title-rounded {
     display: inline-block;
     border: 2px solid var(--muted-gray);
     border-radius: 2rem;
@@ -194,7 +237,18 @@
     font-size: 12px;
 }
 
-.img-size {
+/*still unchanged*/
+.rectangleb{
+    border-radius:24px ;
+}
+
+.comment {
+    box-shadow: 5px 5px 5px #b3afaf;
+    border-radius: 24px;
+}
+
+/*Custom Image Sizes*/
+.featured-img-size {
     border-radius: 36px;
     padding: 1rem;
     height: 340px;
@@ -203,19 +257,19 @@
     margin-right: auto;
 }
 
-.img-size1 {
+.user-img-small {
     height: 70px;
     border-radius: 100%;
     width: 75px;
 }
 
-.img-size2 {
+.user-img-large {
     height: 100px;
     border-radius: 100%;
     width: 105px;
 }
 
-.prod-size {
+.prod-info-img {
     border-radius: 36px;
     padding: 1rem;
     height: 340px;
@@ -255,7 +309,7 @@
     display: block; 
 }
 
-.pic-logo {
+.brand-logo-img {
     max-width: 50%;
     max-height: 100%;
     border-radius: 50%;
@@ -265,7 +319,7 @@
     padding: 2%;
 }
 
-.CEO {
+.owner-img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 50%;
@@ -278,11 +332,12 @@
     border-radius: 1.5rem;
 }
 
-.m-title {
+/* Custom Alignment*/
+.text-center {
     text-align: center;
 }
 
-.center {
+.img-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
