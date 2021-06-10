@@ -4,7 +4,7 @@ document.querySelector('#cartButton').remove(); //removes cart button
 document.querySelector('#cart').remove(); //removes cart
 
 let subNavbar = document.querySelector('#checkout-tab');
-var screenSize = window.matchMedia('(max-width: 700px)');
+var screenSize = window.matchMedia('(max-width: 800px)');
 screenSize.addEventListener('change', removeStickyNav);
 // Media query
 function removeStickyNav() {
@@ -35,10 +35,10 @@ checkbox1.addEventListener('click', sameAddress);
 let codInput = document.getElementById('COD');
 codInput.addEventListener('click', hideCardPaymentMethod);
 
-let creditInput = document.getElementById('creditCard')
+let creditInput = document.getElementById('creditCard');
 creditInput.addEventListener('click', showCardPaymentMethod);
 
-let debitInput = document.getElementById('debitCard')
+let debitInput = document.getElementById('debitCard');
 debitInput.addEventListener('click', showCardPaymentMethod);
 
 // Dynamic form steps
@@ -224,7 +224,7 @@ function getCartData() {
     let cartItem = document.createElement('li');
     cartItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-condensed', 'cart-item');
     let cartContents = ` <div>
-  <h6 class="my-0">${productName}</h6>
+  <h6 class="my-0" style="word-wrap: break-word;">${productName}</h6>
   <small class="text-muted">QTY: ${quantity}</small>
 </div>
 <span class="text-muted">₱${price}</span>`;
