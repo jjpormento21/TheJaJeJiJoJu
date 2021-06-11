@@ -4,7 +4,7 @@
 <title>My Wishlist | Miss Jhaz Cosmetics</title>
 <meta id="page-data" data-pageid="4" />
 <style>
-    body{
+    body {
         background-color: hsl(0, 0%, 99%);
     }
 </style>
@@ -30,5 +30,17 @@
         <tbody id="wishlist">
         </tbody>
     </table>
+
+    <form action="/" class="alert alert-primary mt-3">
+        <div class="form-row">
+            <p>You can also save your wishlist for later by entering your e-mail.</p>
+            <div class="col-8">
+                <input type="email" class="form-control" placeholder="someone@example.com">
+            </div>
+            <div class="col-4">
+                <input type="submit" value="Send my wishlist" class="btn btn-success btn-block">
+            </div>
+        </div>
+    </form>
 </div>
 {% endblock %}

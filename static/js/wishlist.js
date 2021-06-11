@@ -39,6 +39,7 @@ function storeToLocalStorage(id, title, price, imgSrc) {
 
 function deleteItem(event) {
     let wishlistItem = event.target.parentElement.parentElement;
+    removeWishlistItem(event);
     wishlistItem.remove();
 }
 
@@ -54,7 +55,7 @@ function addItemToWishlist(id, title, price, imgSrc) {
     <td class="product-name"> <a href="/product/${id}"> ${title}</a> </td>
     <td class="product-price">₱${price}</td>
     <td>In Stock</td>
-    <td class="text-muted">${date}</td>
+    <td>${date}</td>
     <td class="text-center">
         <button class="btn btn-main addToCartWishlist">Add to Cart</button>
         <button class="btn btn-link text-secondary remove-item">Remove</button>
@@ -78,4 +79,9 @@ function retrieveData() {
         let price = objectFinal.productPrice;
         addItemToWishlist(id, productName, price, imgSrc);
     }
+}
+
+function removeWishlistItem(e) {
+    let productName = e.target.parentElement.parentElement.querySelector('.product-name').innerText;
+    localStorage.removeItem(productName);
 }
