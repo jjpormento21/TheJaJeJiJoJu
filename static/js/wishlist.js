@@ -56,7 +56,7 @@ function addItemToWishlist(id, title, price, imgSrc) {
     <td>In Stock</td>
     <td class="text-muted">${date}</td>
     <td class="text-center">
-        <button class="btn btn-main addToCart">Add to Cart</button>
+        <button class="btn btn-main addToCartWishlist">Add to Cart</button>
         <button class="btn btn-link text-secondary remove-item">Remove</button>
     </td>`;
     wishlistItem.innerHTML = itemContents;
@@ -65,10 +65,9 @@ function addItemToWishlist(id, title, price, imgSrc) {
 }
 
 function retrieveData() {
-    for (i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) == 'total') {
-            continue;
-        }
+    const pageData = $("#page-data").data();
+    if (pageData.pageid != 4) return;
+    for (let i = 0; i < localStorage.length; i++) {
         let productName = localStorage.key(i);
         let object = localStorage.getItem(productName);
         let objectFinal = JSON.parse(object);

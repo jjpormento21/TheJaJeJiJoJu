@@ -42,6 +42,12 @@ for (const button of addToCartButtons) {
     button.addEventListener('click', showCart);
 }
 
+var addToCartButtonsWishlist = document.getElementsByClassName('addToCartWishlist');
+for (const button of addToCartButtonsWishlist) {
+    button.addEventListener('click', addToCartClickedWishlist);
+    button.addEventListener('click', showCart);
+}
+
 function updateBadge() {
     let cartItems = document.querySelectorAll('.cart-item').length;
     let cartBadge = document.querySelector('#cartBadge');
@@ -71,6 +77,21 @@ function addToCartClicked(e) {
     console.log('added to cart');
     let button = e.target;
     let productItem = button.parentElement.parentElement.parentElement;
+    let productID = productItem.querySelector('.product-id').innerText;
+    let title = productItem.querySelector('.product-name').innerText;
+    let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
+    price = parseFloat(price);
+    let imgSrc = productItem.querySelector('.product-img').src;
+    addItemToCart(title, 1, price, imgSrc);
+    storeData(productID, title, 1, price, imgSrc);
+    updateTotal();
+    updateBadge();
+}
+
+function addToCartClickedWishlist(e) {
+    console.log('added to cart');
+    let button = e.target;
+    let productItem = button.parentElement.parentElement;
     let productID = productItem.querySelector('.product-id').innerText;
     let title = productItem.querySelector('.product-name').innerText;
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
