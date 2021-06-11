@@ -1,9 +1,26 @@
 retrieveCart();
+updateBadge();
+
+var cartButton = document.getElementById('cartButton');
+cartButton.addEventListener('click', function () {
+    let cart = document.getElementById('cart');
+    if (cart.style.display == 'none') {
+        cart.style.display = 'block';
+    }
+    else {
+        cart.style.display = 'none';
+    }
+})
+
+function closeCart() {
+    let cart = document.querySelector('#cart');
+    cart.style.display = 'none';
+}
 
 var buyNowButtons = document.querySelectorAll('.buyNow');
 for (const button of buyNowButtons) {
     button.addEventListener('click', addToCartClicked);
-    button.addEventListener('click', function(){
+    button.addEventListener('click', function () {
         document.location = '/checkout';
     });
 }
@@ -28,12 +45,17 @@ for (const button of addToCartButtons) {
 function updateBadge() {
     let cartItems = document.querySelectorAll('.cart-item').length;
     let cartBadge = document.querySelector('#cartBadge');
+    let checkoutBtn = document.querySelector('#checkoutBtn');
     cartBadge.innerHTML = cartItems;
     if (cartItems < 1) {
         cartBadge.style.visibility = 'hidden';
+        checkoutBtn.classList.add('disabled');
+        document.querySelector('#cart-message').style.display = 'block';
     }
     else {
         cartBadge.style.visibility = 'visible';
+        checkoutBtn.classList.remove('disabled');
+        document.querySelector('#cart-message').style.display = 'none';
     }
 }
 
@@ -71,16 +93,16 @@ function addItemToCart(title, qty, price, imgSrc) {
             return;
         }
     }
-    let cartItemContents = `<div class="col-md-3">
+    let cartItemContents = `<div class="col-3">
     <img src="${imgSrc}" alt="cart"
       class="cart-item-img">
   </div>
-  <div class="col-md-4">
+  <div class="col-4">
     <p class="cart-item-name mb-0">${title}</p>
     <p class="cart-item-price text-muted mt-0">₱${price}</p>
     <a class="btn btn-link text-danger cart-item-delete p-0"><i class="bi bi-cart-x-fill"></i> Remove</a>
   </div>
-  <div class="col-md-5">
+  <div class="col-5">
     <label for="cart-item-qty">QTY</label>
     <input type="number" name="cart-item-qty" class="cart-item-qty form-control" value="1" min="1" max="100">
   </div>`
@@ -107,8 +129,8 @@ function updateTotal() {
     sessionStorage.setItem('total', total.toString());
 }
 
-function storeData(id,title, qty, price, imgSrc) {
-    let cartItem = {productID: id ,quantity: qty, productPrice: price, imageLink: imgSrc };
+function storeData(id, title, qty, price, imgSrc) {
+    let cartItem = { productID: id, quantity: qty, productPrice: price, imageLink: imgSrc };
     let product = title.toString();
     let cartItemString = JSON.stringify(cartItem);
     sessionStorage.setItem(product, cartItemString);
