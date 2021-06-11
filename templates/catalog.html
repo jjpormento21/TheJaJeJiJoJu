@@ -31,10 +31,10 @@
 <div class="container">
     <div class="row">
         {% for product in eye_products %}
-        <div class="col-md-4">
+        <div class="col-lg-4 col-sm-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
-                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
                     <h5 class="font1 card-title product-name">{{product.productName}}</h5>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
@@ -79,7 +79,7 @@
 <div class="container">
     <div class="row">
         {% for product in lip_products %}
-        <div class="col-md-4">
+        <div class="col-lg-4 col-sm-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
@@ -127,7 +127,7 @@
 <div class="container">
     <div class="row">
         {% for product in skin_products %}
-        <div class="col-md-4">
+        <div class="col-lg-4 col-sm-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
