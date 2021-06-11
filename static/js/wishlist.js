@@ -1,12 +1,15 @@
 var addToWishlistButtons = document.querySelectorAll('.addToWishlist');
 var deleteButtons = document.querySelectorAll('.remove-item');
-
 var today = new Date();
 var date = `${(today.getMonth() + 1)}/${today.getDate()}/${today.getFullYear()}`;
 retrieveData();
 
+
 for (const button of addToWishlistButtons) {
     button.addEventListener('click', addToWishlistClicked);
+    button.addEventListener('click', function () {
+        $('.toast').toast('show')
+    })
 }
 
 for (const button of deleteButtons) {
@@ -79,6 +82,7 @@ function retrieveData() {
         let price = objectFinal.productPrice;
         addItemToWishlist(id, productName, price, imgSrc);
     }
+
 }
 
 function removeWishlistItem(e) {
