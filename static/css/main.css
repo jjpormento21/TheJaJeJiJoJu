@@ -104,6 +104,11 @@
 .par-pos{
     text-align:right;
 }
+
+.par-center{
+    text-align: left;
+}
+
 /* Components */
 .shop-category {
     position: relative;
@@ -518,6 +523,14 @@ span.text-danger{
     .par-pos{
         text-align: left;
     }
+    .par-center{
+        text-align: center;
+    }
+    /*Featured*/
+    .img-size1{
+        display: block;
+        margin: 0 auto;
+    }
     /* Cart */
     #cartButton {
         right: 0.5em;
@@ -539,6 +552,14 @@ span.text-danger{
     }
     .btn-view{
         margin-right: 25em;
+    }
+    /*Featured*/
+    .img-size1{
+        display: block;
+        margin: 0 auto;
+    }
+    .par-center{
+        text-align: center;
     }
 }
 
