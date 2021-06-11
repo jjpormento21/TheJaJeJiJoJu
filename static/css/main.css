@@ -449,8 +449,8 @@ span.text-danger{
 }
 /* Wishlist */
 .wishlist-item-img{
-    width: auto;
-    height: 65px;
+    width: 100px;
+    height: 85px;
     border-radius: .5em;
 }
 

@@ -110,7 +110,7 @@ function addItemToCart(title, qty, price, imgSrc) {
     cartContainer.append(cartItem);
     cartItem.querySelector('.cart-item-delete').addEventListener('click', deleteItem);
     cartItem.querySelector('.cart-item-qty').value = qty;
-    cartItem.querySelector('.cart-item-qty').addEventListener('change', updateTotal)
+    cartItem.querySelector('.cart-item-qty').addEventListener('change', updateTotal);
 }
 
 function updateTotal() {
@@ -137,7 +137,7 @@ function storeData(id, title, qty, price, imgSrc) {
 }
 
 function retrieveCart() {
-    for (i = 0; i < sessionStorage.length; i++) {
+    for (let i = 0; i < sessionStorage.length; i++) {
         if (sessionStorage.key(i) == 'total') {
             continue;
         }
