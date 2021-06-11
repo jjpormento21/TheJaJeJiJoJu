@@ -100,6 +100,10 @@
     font-size: 1rem;
     color: #000;
 }
+
+.par-pos{
+    text-align:right;
+}
 /* Components */
 .shop-category {
     position: relative;
@@ -509,7 +513,10 @@ span.text-danger{
         height: auto;
     }
     .btn-view{
-        margin-right: 6em;
+        margin-right: 9em;
+    }
+    .par-pos{
+        text-align: left;
     }
     /* Cart */
     #cartButton {
