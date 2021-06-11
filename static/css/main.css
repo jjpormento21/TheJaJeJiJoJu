@@ -229,6 +229,7 @@
     border-style: none;
     width: 100%;
     height: 18vw;
+    background-color: var(--dirty-white);
 }
 
 .cat-icon {
@@ -500,6 +501,16 @@ span.text-danger{
     .btn-view{
         margin-right: 9em;
     }
+    /*Shop*/
+    .card-img-top {
+        border-radius: 2em 2em 0 0;
+        border-style: none;
+        width: 100%;
+        height: auto;
+    }
+    .btn-view{
+        margin-right: 6em;
+    }
     /* Cart */
     #cartButton {
         right: 0.5em;
@@ -537,6 +548,3 @@ span.text-danger{
         margin-right: 5em;
     }
 }
-
-
-
