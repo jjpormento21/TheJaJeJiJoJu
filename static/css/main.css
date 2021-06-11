@@ -215,6 +215,14 @@
     width: 105px;
 }
 
+.img-size3 {
+    height: 175px;
+    border-radius: 100%;
+    width: 175px;
+    border: 3px solid var(--primary-color);
+    padding: 1%;
+}
+
 .prod-size {
     border-radius: 36px;
     padding: 1rem;
@@ -296,6 +304,12 @@
     font-size: 40px;
     color: var(--secondary-color);
     margin-left: 12rem;
+}
+
+.message-icon-about{
+        font-size: 40px;
+        color: var(--secondary-color);
+        margin-left:15rem;
 }
 
 .quotation-icon {
