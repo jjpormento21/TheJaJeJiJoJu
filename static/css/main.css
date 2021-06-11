@@ -457,6 +457,14 @@ span.text-danger{
 .grandTotal{
     font-size: 1.25em;
 }
+/* Wishlist */
+.wishlist-item-img{
+    width: 100px;
+    height: 85px;
+    border-radius: .5em;
+}
+
+
 .feedback-section{
     overflow: auto;
     max-height: 21em;
