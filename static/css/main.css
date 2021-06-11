@@ -490,9 +490,15 @@ span.text-danger{
     :root{
         font-size: 14px;
     }
-    /* Home Page */
-    .icon{
-        font-size: calc(5rem - 20px);
+    /* Shop*/
+    .card-img-top {
+        border-radius: 2em 2em 0 0;
+        border-style: none;
+        width: 100%;
+        height: auto;
+    }
+    .btn-view{
+        margin-right: 9em;
     }
     /* Cart */
     #cartButton {
@@ -506,23 +512,31 @@ span.text-danger{
 }
 /* Tablet (portrait) */
 @media screen and (min-width:477px) and (max-width:800px) and (orientation:portrait) {
+    /* Shop*/
+    .card-img-top {
+        border-radius: 2em 2em 0 0;
+        border-style: none;
+        width: 100%;
+        height: auto;
+    }
+    .btn-view{
+        margin-right: 25em;
+    }
 }
 
 /* Tablet (landscape) */
 @media screen and (min-width: 576px) and (max-width: 1024px) and (orientation:landscape) {
-    /* Home Page */
-    #importantLinks{
-        display: block;
-        text-align: center;
+    /* Shop*/
+    .card-img-top {
+        border-radius: 2em 2em 0 0;
+        border-style: none;
+        width: auto;
+        height: auto;
+    }
+    .btn-view{
+        margin-right: 5em;
     }
 }
-/* For touch screen devices */
-@media screen and (min-width: 995px)
-and (-webkit-min-device-pixel-ratio: 2) {
-    #importantLinks, #recents, .showcase-card, #newArrival2, #heroBtn1 {
-        display: block;
-    }
-    #heroBtn2{ display: none;}
-    #cartButton{ right: 0.5em;}
-    #cart{ right: 5rem;}
-}
+
+
+
