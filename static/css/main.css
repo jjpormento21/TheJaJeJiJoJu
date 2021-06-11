@@ -236,8 +236,8 @@
 .card-img-top {
     border-radius: 2em 2em 0 0;
     border-style: none;
-    width: min(350px, 100%);
-    height: 280px;
+    width: min(auto, 90%);
+    height: 270px;
     background-color: var(--dirty-white);
 }
 
