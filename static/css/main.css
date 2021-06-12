@@ -101,16 +101,8 @@
     color: #000;
 }
 
-.par-pos{
-    text-align:right;
-}
-
-.par-center{
-    text-align: left;
-}
-
 /* Components */
-.shop-category {
+.center-div {
     position: relative;
     display: flex;
     justify-content: center;
@@ -512,7 +504,7 @@ span.text-danger{
 }
 
 /* Phones */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 600px) {
     :root{
         font-size: 14px;
     }
@@ -520,8 +512,8 @@ span.text-danger{
     .btn-view{
         margin-right: 9rem;
     }
-    .par-pos{
-        text-align: left;
+    .par1{
+        text-align: left !important;
     }
     /* Cart */
     #cartButton {
