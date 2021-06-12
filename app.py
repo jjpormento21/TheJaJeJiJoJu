@@ -78,6 +78,10 @@ def postFeedback():
 def about_us():
     return render_template('about_us.html')
 
+@app.route('/wishlist')
+def wishlist():
+    return render_template('wishlist.html')
+
 @app.route('/product/<oid>')
 def product_info(oid):
     product = products.find_one_or_404({'_id': ObjectId(oid)})

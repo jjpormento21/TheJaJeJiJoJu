@@ -23,20 +23,23 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto text-center">
+      <ul class="navbar-nav ml-auto text-center mt-2">
         <li class="nav-item">
-          <a class="nav-link navbar-font mt-2" href="/">Home</a>
+          <a class="nav-link navbar-font" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-font mt-2" href="/shop">Shop</a>
+          <a class="nav-link navbar-font" href="/shop">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-font mt-2" href="/featured">Featured</a>
+          <a class="nav-link navbar-font" href="/featured">Featured</a>
+        </li>
+        <li class="nav-item"><a href="/feedback_hub" class="nav-link navbar-font">Feedback</a></li>
+        <li class="nav-item">
+          <a class="nav-link navbar-font" href="/wishlist">Wishlist</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-font mt-2" href="/about_us">About Us</a>
+          <a class="nav-link navbar-font" href="/about_us">About Us</a>
         </li>
-        <li class="nav-item"><a href="/feedback_hub" class="nav-link navbar-font mt-2">Feedback</a></li>
       </ul>
     </div>
   </nav>
@@ -48,14 +51,14 @@
       <span class="badge badge-pill badge-danger" id="cartBadge" role="button" style="visibility: hidden;"></span>
       <i class="bi bi-cart-fill"></i>
     </button>
-  
+
     <div id="cart" class="shadow" style="display: none;">
       <h5 class="font1 pb-2">Recent Items</h5>
       <div class="cart-container">
-        <p id="cart-message" style="display: block;">Your cart is empty. 
+        <p id="cart-message" style="display: block;">Your cart is empty.
           Items added to cart will be shown here.</p>
       </div>
-  
+
       <hr class="mt-2">
       <div class="cart-summary">
         <h5 class="grandTotal font2 d-inline">Grand Total</h5>
@@ -70,6 +73,22 @@
   </div>
 
   {% block body %} {% endblock %}
+
+  <div class="position-fixed bottom-0 right-0 p-3" style="z-index: 5; right: 0; bottom: 0;">
+    <div id="liveToast" class="toast hide" role="alert" aria-live="assertive" aria-atomic="true" data-delay="3500">
+      <div class="toast-header">
+        <div class="mr-2">✅ </div>
+        <strong class="mr-5">Notification</strong>
+        <small>Just now</small>
+        <button type="button" class="ml-2 mb-1 close" data-dismiss="toast" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="toast-body">
+        Added to wishlist!
+      </div>
+    </div>
+  </div>
 
   <footer id="mainFooter" class="mt-5">
     <div class="container pb-4 pt-2">
@@ -186,6 +205,7 @@
     crossorigin="anonymous"></script>
   <script src="{{ url_for('static', filename = 'js/bootstrap.min.js')}}"></script>
   <script src="{{ url_for('static', filename = 'js/main.js')}}"></script>
+  <script src="{{ url_for('static', filename = 'js/wishlist.js')}}"></script>
   <script src="{{ url_for('static', filename = 'js/cart.js')}}"></script>
 </body>
 
