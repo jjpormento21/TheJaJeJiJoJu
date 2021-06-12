@@ -7,16 +7,15 @@
 
 {% block body %}
 <div class="container">
-    <p class="roundb mb-5">Featured Products</p>
-    <div class="row">
+    <p class="roundb">Featured Products</p>
+    <div class="row mt-4">
         {% for product in products %}
-        <div class="col-md-4 mb-4">
+        <div class="col-xl-4 col-md-6 mb-4">
             <div class="boxb card">
                 <h3 class="font1 card-title mt-3 mb-1 m-title product-name">{{product.productName}}</h3>
                 <p class="product-price" hidden>₱{{product.price}}</p>
                 <p class="product-id" hidden>{{product._id}}</p>
-                <img src="{{product.imageURL}}"
-                    alt="Gelly Tattoo" class="card-img img-size product-img">
+                <img src="{{product.imageURL}}" alt="Gelly Tattoo" class="card-img img-size product-img">
                 <div class="card-body pt-0">
                     <p class="card-text" style="margin-bottom: 1em;">{{product.productDescription}}</p>
                     <button class="btn btn-main buyNow">
@@ -29,22 +28,19 @@
         </div>
         {% endfor %}
     </div>
-</div>
 
-<div class="container">
-    <h1 class="font3 mt-5">Early Favorites
-        <br>of 2021
-    </h1>
-    <p class="par1 mt-4">Check out our most rated and most wanted
-        <br>products from these past few months in the
-        <br>year 2021!
+    <h1 class="font3 mt-4">Early Favorites of 2021</h1>
+    <p class="par1">Check out our most rated and most wanted
+        products from these past few months in the year 2021!
     </p>
-    <div class="row">
-        <div class="col-md-4 mt-4">
+
+    <!-- Powdery Lip Matte -->
+    <div class="row mt-4">
+        <div class="col-md-4 center-div">
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Powdery%20Lipmatte/169758735_1882384098596481_428297514699445289_n.jpg"
                 alt="Powdery Lip Matte" class="shop-category-img">
         </div>
-        <div class=" boxb col-md-4 mt-4">
+        <div class="boxb col-md-4">
             <h2 class="font2 mt-3 mb-3 m-title">Powdery <br> Lip Matte</h2>
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/187146180_291478889287044_314538694655535209_n.jpg"
                 alt="Jai" class="img-size2 mb-4 mt-3 center">
@@ -61,16 +57,15 @@
                 <a href="/product/60a211fc29b736765c387ec5" class="btn btn-sub mt-4">See more</a>
             </div>
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-md-4 center-div">
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Powdery%20Lipmatte/169426881_1142445402847753_7607819891225119035_n.jpg"
                 alt="Powdery Lip Matte" class="shop-category-img">
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class=" boxb col-md-4 mt-4">
+    <!-- Gelly Tattoo -->
+    <div class="row mt-4">
+        <div class="boxb col-md-4">
             <h2 class="font2 mt-3 mb-3 m-title">Gelly Tattoo</h2>
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188815777_978372612929586_1399970486282708918_n.jpg"
                 alt="Joshreen" class="img-size2 mb-4 mt-3 center">
@@ -88,28 +83,27 @@
                 <a href="/product/60a20e2b29b736765c387ec0" class="btn btn-sub mt-5">See more</a>
             </div>
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-md-4 center-div">
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Gelly%20tatoo/170026885_539916146980562_7436735733079330346_n.jpg"
                 class="shop-category-img">
         </div>
-        <div class="col-md-4 mt-3">
+        <div class="col-md-4 center-div">
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Gelly%20tatoo/170147983_460538138517258_3712361724686415028_n.jpg"
                 alt="Powdery Lip Matte" class="shop-category-img">
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 mt-4">
+    <!-- Velvet Clay Blush -->
+    <div class="row mt-4">
+        <div class="col-md-4 center-div">
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/SKIN/Velvet%20Clay%20Blush/169478635_1544049159124087_3447920516195568323_n.jpg"
                 class="shop-category-img">
         </div>
-        <div class="col-md-4 mt-4">
+        <div class="col-md-4 center-div">
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/SKIN/Velvet%20Clay%20Blush/168987770_534550111068060_75524008658346085_n.jpg"
                 alt="Powdery Lip Matte" class="shop-category-img">
         </div>
-        <div class=" boxb col-md-4 mt-4">
+        <div class="boxb col-md-4">
             <h2 class="font2 mt-3 mb-3 m-title">Velvet Clay <br> Blush</h2>
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188870245_4254213638004082_5868078760534254236_n.jpg"
                 alt="Jessa" class="img-size2 mb-4 mt-3 center">
@@ -129,11 +123,9 @@
             </div>
         </div>
     </div>
-</div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-md-4 mt-5">
+    <div class="row mt-5">
+        <div class="col-md-4">
             <div class="mb-3 mt-5">
                 <h2 class="font3 m-title">Best of 2020</h2>
                 <p class="card-text m-title">Most wanted products of the year 2020 you might
@@ -142,7 +134,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card boxb mt-5">
+            <div class="card boxb">
                 <h2 class="card-title m-title font2 mt-3">HD Matte Lipstick</h2>
                 <div class="card-body mb-5 mt-3">
                     <div class="card p-2 comment">
@@ -152,7 +144,7 @@
                                     alt="Julia" class="img-size1 mt-3 mb-2">
                             </div>
                             <div class="col-md-8">
-                                <p class="card-text par1 mb-2">
+                                <p class="card-text par1 mb-2 text-center">
                                     “It feels great on my lips and
                                     the shade of Tutti Fruity suits me very well. I love it!”
                                 </p>
@@ -163,7 +155,7 @@
             </div>
         </div>
         <div class="col-md-4">
-            <div class="card boxb mt-5">
+            <div class="card boxb">
                 <h2 class="card-title m-title font2 mt-3">Gluta Milk Lotion</h2>
 
                 <div class="card-body mb-4">
@@ -174,7 +166,7 @@
                                     alt="Pitta" class="img-size1 mt-4">
                             </div>
                             <div class="col-md-8">
-                                <p class="card-text par1">
+                                <p class="card-text par1 text-center">
                                     “Gluta Milk Lotion made my skin soft
                                     and smooth. It’s not sticky and really
                                     whitened my skin. It’s 100% effective.
