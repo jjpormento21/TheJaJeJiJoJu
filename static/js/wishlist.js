@@ -25,15 +25,17 @@ function addToWishlistClicked(e) {
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
     price = parseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
-    storeToLocalStorage(productID, title, price, imgSrc);
+    let datePosted = date;
+    storeToLocalStorage(productID, title, price, imgSrc, datePosted);
     e.target.setAttribute('data-original-title', '✅ Added to wishlist');
 }
 
-function storeToLocalStorage(id, title, price, imgSrc) {
+function storeToLocalStorage(id, title, price, imgSrc, datePosted) {
     let wishlistItem = {
         productID: id,
         productPrice: price,
-        productImg: imgSrc
+        productImg: imgSrc,
+        datePosted: datePosted
     }
     let product = title.toString();
     wishlistItem = JSON.stringify(wishlistItem);
@@ -46,7 +48,7 @@ function deleteItem(event) {
     wishlistItem.remove();
 }
 
-function addItemToWishlist(id, title, price, imgSrc) {
+function addItemToWishlist(id, title, price, imgSrc, datePosted) {
     let wishlist = document.querySelector('#wishlist');
     let wishlistItem = document.createElement('tr');
     let itemContents = `<td>
@@ -58,7 +60,7 @@ function addItemToWishlist(id, title, price, imgSrc) {
     <td class="product-name"> <a href="/product/${id}"> ${title}</a> </td>
     <td class="product-price">₱${price}</td>
     <td>In Stock</td>
-    <td>${date}</td>
+    <td>${datePosted}</td>
     <td class="text-center">
         <button class="btn btn-main addToCartWishlist">Add to Cart</button>
         <button class="btn btn-link text-secondary remove-item">Remove</button>
@@ -80,7 +82,8 @@ function retrieveData() {
         let id = objectFinal.productID;
         let imgSrc = objectFinal.productImg;
         let price = objectFinal.productPrice;
-        addItemToWishlist(id, productName, price, imgSrc);
+        let datePosted = objectFinal.datePosted;
+        addItemToWishlist(id, productName, price, imgSrc, datePosted);
     }
 
 }
