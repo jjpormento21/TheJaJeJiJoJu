@@ -6,9 +6,11 @@ document.querySelector('#cart').remove(); //removes cart
 let subNavbar = document.querySelector('#checkout-tab');
 var screenSize = window.matchMedia('(max-width: 800px)');
 screenSize.addEventListener('change', removeStickyNav);
+removeStickyNav();
 // Media query
 function removeStickyNav() {
-  (screenSize.matches) ? subNavbar.classList.remove('sticky-top') : subNavbar.classList.add('sticky-top');
+  if (!screenSize.matches) return;
+  subNavbar.classList.remove('sticky-top');
 }
 
 var stepCounter = 0; //form step counter
@@ -93,9 +95,7 @@ function nextPaymentStep() {
   checkoutNavbarList[stepCounter].classList.add('active', 'text-primary', 'font-weight-bold');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter - 1].style.display = 'none';
-  if (stepCounter > 2) {
-    document.querySelector('#cartPreviewBox').remove();
-  }
+  if (stepCounter > 2) document.querySelector('#cartPreviewBox').remove();
   setSummaryInfo();
   scrollToAlert();
   savePurchases();
@@ -105,8 +105,7 @@ function prevPaymentStep() {
   stepCounter -= 1;
   checkoutNavbarList[stepCounter].classList.remove('text-success');
   checkoutNavbarList[stepCounter].classList.add('text-primary', 'active', 'font-weight-bold');
-  checkoutNavbarList[stepCounter + 1].classList.remove('active', 'font-weight-bold');
-  checkoutNavbarList[stepCounter + 1].classList.remove('text-success');
+  checkoutNavbarList[stepCounter + 1].classList.remove('active', 'font-weight-bold','text-success');
   checkoutNavbarList[stepCounter + 1].classList.add('disabled', 'text-primary');
   formSections[stepCounter].style.display = 'block';
   formSections[stepCounter + 1].style.display = 'none';
@@ -208,10 +207,8 @@ function scrollToAlert() {
 }
 
 function getCartData() {
-  for (i = 0; i < sessionStorage.length; i++) {
-    if (sessionStorage.key(i) == 'total') {
-      continue;
-    }
+  for (let i = 0; i < sessionStorage.length; i++) {
+    if (sessionStorage.key(i) == 'total') continue;
     let productName = sessionStorage.key(i);
     let object = sessionStorage.getItem(productName);
     let objectFinal = JSON.parse(object);
@@ -224,10 +221,10 @@ function getCartData() {
     let cartItem = document.createElement('li');
     cartItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-condensed', 'cart-item');
     let cartContents = ` <div>
-  <h6 class="my-0" style="word-wrap: break-word;">${productName}</h6>
-  <small class="text-muted">QTY: ${quantity}</small>
-</div>
-<span class="text-muted">₱${price}</span>`;
+      <h6 class="my-0" style="word-wrap: break-word;">${productName}</h6>
+      <small class="text-muted">QTY: ${quantity}</small>
+    </div>
+    <span class="text-muted">₱${price}</span>`;
     cartItem.innerHTML = cartContents;
     checkoutCart.append(cartItem);
     sendToTable(productName, price, quantity);
@@ -236,7 +233,7 @@ function getCartData() {
   document.querySelector('#cartSize').innerHTML = cartItems.length;
   let cartPreviewTotal = document.querySelector('#prevTotal');
   let total = sessionStorage.getItem('total');
-  cartPreviewTotal.innerHTML = '₱' + total;
+  cartPreviewTotal.innerHTML = `₱${total}`;
   savePurchases();
 }
 
@@ -253,16 +250,14 @@ function sendToTable(name, price, quantity) {
 const updateGrandTotal = () => {
   let total = sessionStorage.getItem('total');
   let shipFee = document.querySelector('#shipFeeFinal').innerHTML;
-  document.getElementById('grandTotal').innerHTML = '₱' + (parseFloat(total) + parseFloat(shipFee));
+  document.getElementById('grandTotal').innerHTML = `₱${(parseFloat(total) + parseFloat(shipFee))}`;
 }
 
 function savePurchases() {
   // Saves purchases to db
   let purchases = [];
-  for (i = 0; i < sessionStorage.length; i++) {
-    if (sessionStorage.key(i) == 'total') {
-      continue;
-    }
+  for (let i = 0; i < sessionStorage.length; i++) {
+    if (sessionStorage.key(i) == 'total') continue;
     let productName = sessionStorage.key(i);
     let object = sessionStorage.getItem(productName);
     let objectFinal = JSON.parse(object);

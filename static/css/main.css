@@ -71,7 +71,7 @@
     font-weight: var(--main-font-weight);
 }
 .btn-view{
-    margin-right: 8em;
+    margin-right: clamp(3rem, 5rem, 8rem);
 }
 
 #heroBtn2 {
@@ -100,8 +100,9 @@
     font-size: 1rem;
     color: #000;
 }
+
 /* Components */
-.shop-category {
+.center-div {
     position: relative;
     display: flex;
     justify-content: center;
@@ -235,8 +236,9 @@
 .card-img-top {
     border-radius: 2em 2em 0 0;
     border-style: none;
-    width: 100%;
-    height: 18vw;
+    width: min(auto, 90%);
+    height: 270px;
+    background-color: var(--dirty-white);
 }
 
 .cat-icon {
@@ -370,9 +372,10 @@ span.text-danger{
     font-size: 2rem;
 }
 .card-button{
+    float: right;
     background-color: transparent;
     border: none;
-    margin-left: .5em;
+    margin-right: .5em;
 }
 
 /* Cart Design */
@@ -461,6 +464,14 @@ span.text-danger{
 .grandTotal{
     font-size: 1.25em;
 }
+/* Wishlist */
+.wishlist-item-img{
+    width: 100px;
+    height: 85px;
+    border-radius: .5em;
+}
+
+
 .feedback-section{
     overflow: auto;
     max-height: 21em;
@@ -481,7 +492,7 @@ span.text-danger{
     margin-right: 0.3125rem;
 }
 /* Media query for general components */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
@@ -497,16 +508,21 @@ span.text-danger{
         width: 230px;
         height: 60px;
     }
+    /*Featured*/
+    .img-size1{
+        display: block;
+        margin: 0 auto;
+    }
 }
 
 /* Phones */
-@media screen and (max-width: 800px) {
+@media screen and (max-device-width: 600px) {
     :root{
         font-size: 14px;
     }
-    /* Home Page */
-    .icon{
-        font-size: calc(5rem - 20px);
+    /* Shop*/
+    .par1{
+        text-align: left !important;
     }
     /* Cart */
     #cartButton {
@@ -520,23 +536,9 @@ span.text-danger{
 }
 /* Tablet (portrait) */
 @media screen and (min-width:477px) and (max-width:800px) and (orientation:portrait) {
+    
 }
 
 /* Tablet (landscape) */
 @media screen and (min-width: 576px) and (max-width: 1024px) and (orientation:landscape) {
-    /* Home Page */
-    #importantLinks{
-        display: block;
-        text-align: center;
-    }
-}
-/* For touch screen devices */
-@media screen and (min-width: 995px)
-and (-webkit-min-device-pixel-ratio: 2) {
-    #importantLinks, #recents, .showcase-card, #newArrival2, #heroBtn1 {
-        display: block;
-    }
-    #heroBtn2{ display: none;}
-    #cartButton{ right: 0.5em;}
-    #cart{ right: 5rem;}
 }
