@@ -260,9 +260,8 @@
 }
 
 .title-logo {
-    max-width: 30%;
-    max-height: 100%;
-    display: block; 
+    width: min(300px, 100%);
+    height: auto;
 }
 
 .pic-logo {
@@ -271,7 +270,7 @@
     border-radius: 50%;
     border: 3px solid var(--picture-border-color);
     display: block; 
-    margin-left: 10rem;
+    margin: 0 auto;
     padding: 2%;
 }
 
@@ -311,7 +310,8 @@
 .message-icon-about{
     font-size: 40px;
     color: var(--secondary-color);
-    margin-left:15rem;
+    display: grid;
+    justify-content: center;
 }
 
 .quotation-icon {
@@ -513,6 +513,10 @@ span.text-danger{
         display: block;
         margin: 0 auto;
     }
+    /*Feedbacks*/
+    .review-icon, .quotation-icon {
+        display: none;
+    }
 }
 
 /* Phones */
@@ -533,95 +537,11 @@ span.text-danger{
         right: 0;
         bottom: 6em;
     }
-    /*About-Us*/
-    .pic-logo {
-        max-width: 50%;
-        max-height: 100%;
-        border-radius: 50%;
-        border: 3px solid var(--picture-border-color);
-        display: block; 
-        margin: 0 auto;
-        padding: 2%;
-    }
-    .title-logo {
-        max-width: 75%;
-        max-height: 100%;
-        display: block; 
-        margin: 0 auto;
-    }
-    .message-icon-about{
-        font-size: 40px;
-        color: var(--secondary-color);
-        margin-left:9rem;
-    }
-    /*Feedbacks*/
-    .review-icon {
-        display: none;
-    }
-    .quotation-icon {
-        display: none;
-    }
 }
 /* Tablet (portrait) */
 @media screen and (min-width:477px) and (max-width:800px) and (orientation:portrait) {
-    /*About-Us*/
-    .pic-logo {
-        max-width: 50%;
-        max-height: 100%;
-        border-radius: 50%;
-        border: 3px solid var(--picture-border-color);
-        display: block; 
-        margin: 0 auto;
-        padding: 2%;
-    }
-    .title-logo {
-        max-width: 75%;
-        max-height: 100%;
-        display: block; 
-        margin: 0 auto;
-    }
-    .message-icon-about{
-        font-size: 40px;
-        color: var(--secondary-color);
-        margin-left:14rem;
-    }
-    /*Feedbacks*/
-    .review-icon {
-        display: none;
-    }
-    .quotation-icon {
-        display: none;
-    }
 }
 
 /* Tablet (landscape) */
 @media screen and (min-width: 576px) and (max-width: 1024px) and (orientation:landscape) {
-    /*About-Us*/
-    .pic-logo {
-        max-width: 50%;
-        max-height: 100%;
-        border-radius: 50%;
-        border: 3px solid var(--picture-border-color);
-        display: block; 
-        margin: 0 auto;
-        padding: 2%;
-    }
-    .title-logo {
-        max-width: 75%;
-        max-height: 100%;
-        display: block; 
-        margin: 0 auto;
-    }
-    .message-icon-about{
-        font-size: 40px;
-        color: var(--secondary-color);
-        margin-left:14rem;
-    }
-    /*Feedbacks*/
-    .review-icon {
-        display: none;
-    }
-    .quotation-icon {
-        display: none;
-    }
 }
