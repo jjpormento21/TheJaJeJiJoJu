@@ -533,6 +533,27 @@ span.text-danger{
         right: 0;
         bottom: 6em;
     }
+    /*About-Us*/
+    .pic-logo {
+        max-width: 50%;
+        max-height: 100%;
+        border-radius: 50%;
+        border: 3px solid var(--picture-border-color);
+        display: block; 
+        margin: 0 auto;
+        padding: 2%;
+    }
+    .title-logo {
+        max-width: 75%;
+        max-height: 100%;
+        display: block; 
+        margin: 0 auto;
+    }
+    .message-icon-about{
+        font-size: 40px;
+        color: var(--secondary-color);
+        margin-left:9rem;
+}
 }
 /* Tablet (portrait) */
 @media screen and (min-width:477px) and (max-width:800px) and (orientation:portrait) {
