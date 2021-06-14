@@ -222,6 +222,10 @@ def deleteAllRecords():
     customerData.delete_many({})
     return redirect(url_for('dashboard'))
 
+@app.route('/admin/reviews')
+def reviews():
+    return render_template('admin/product_reviews.html')
+    
 @app.route('/admin/view/products')
 def viewAllProducts():
     if not g.user:

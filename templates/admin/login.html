@@ -15,7 +15,7 @@
 {% block body %}
 <div class="container">
 
-    <h1 class="display-4 text-center mt-5">Sign in to TheDashboard</h1>
+    <h1 class="display-4 text-center mt-5 login-font">Sign in to TheDashboard</h1>
     <div class="custom-container">
         <div class="login-card mt-3 shadow">
             {% with messages = get_flashed_messages() %}
@@ -31,11 +31,11 @@
                 {% endif %}
             {% endwith %}
             <form action="/admin/login" method="POST">
-                <label for="username">Username</label>
+                <label for="username" class="dashboard-par">Username</label>
                 <input type="text" name="username" id="username" class="form-control mb-3">
-                <label for="password">Password</label>
+                <label for="password" class="dashboard-par">Password</label>
                 <input type="password" name="password" id="password" class="form-control mb-3">
-                <input type="submit" value="Sign in" class="btn btn-primary btn-block">
+                <input type="submit" value="Sign in" class="btn btn-light btn-block dashboard-btn">
 
             </form>
         </div>

@@ -104,11 +104,17 @@
 .login-card{
     width: min(500px, 100%);
     padding: 3rem;
-    background-color: white;
+    background-color: var(--dashboard-blue);
     border-radius: 3em;
 }
 .custom-container{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.login-font {
+    font-weight: 800;
+    color: var(--dashboard-blue);
+    font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
