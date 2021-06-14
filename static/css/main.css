@@ -203,8 +203,7 @@
     padding: 1rem;
     height: 340px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .img-size1 {
@@ -494,12 +493,12 @@ span.text-danger{
 .btn-icon{
     margin-right: 0.3125rem;
 }
-/* Media query for general components */
+/* Media query for both phone and tablets */
 @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
-    .par{
+    .par {
         text-align: left !important;
     }
     /* Footer */
@@ -510,11 +509,6 @@ span.text-danger{
     .nav-logo {
         width: 230px;
         height: 60px;
-    }
-    /*Featured*/
-    .img-size1{
-        display: block;
-        margin: 0 auto;
     }
     /*Feedbacks*/
     .review-icon, .quotation-icon {
