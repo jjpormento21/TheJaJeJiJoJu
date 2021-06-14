@@ -101,16 +101,8 @@
     color: #000;
 }
 
-.par-pos{
-    text-align:right;
-}
-
-.par-center{
-    text-align: left;
-}
-
 /* Components */
-.shop-category {
+.center-div {
     position: relative;
     display: flex;
     justify-content: center;
@@ -366,9 +358,10 @@ span.text-danger{
     font-size: 2rem;
 }
 .card-button{
+    float: right;
     background-color: transparent;
     border: none;
-    margin-left: .5em;
+    margin-right: .5em;
 }
 
 /* Cart Design */
@@ -485,15 +478,12 @@ span.text-danger{
     margin-right: 0.3125rem;
 }
 /* Media query for general components */
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
     .par{
         text-align: left !important;
-    }
-    .btn-view{
-        margin-right: 6rem;
     }
     /* Footer */
     #importantLinks, #recents, #newArrival2, #heroBtn1{
@@ -512,16 +502,13 @@ span.text-danger{
 }
 
 /* Phones */
-@media screen and (max-width: 700px) {
+@media screen and (max-device-width: 600px) {
     :root{
         font-size: 14px;
     }
     /* Shop*/
-    .btn-view{
-        margin-right: 9rem;
-    }
-    .par-pos{
-        text-align: left;
+    .par1{
+        text-align: left !important;
     }
     /* Cart */
     #cartButton {
