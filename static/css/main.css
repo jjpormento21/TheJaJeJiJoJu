@@ -203,8 +203,7 @@
     padding: 1rem;
     height: 340px;
     width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
 }
 
 .img-size1 {
@@ -217,6 +216,14 @@
     height: 100px;
     border-radius: 100%;
     width: 105px;
+}
+
+.img-size3 {
+    height: 175px;
+    border-radius: 100%;
+    width: 175px;
+    border: 3px solid var(--primary-color);
+    padding: 1%;
 }
 
 .prod-size {
@@ -255,9 +262,8 @@
 }
 
 .title-logo {
-    max-width: 30%;
-    max-height: 100%;
-    display: block; 
+    width: min(300px, 100%);
+    height: auto;
 }
 
 .pic-logo {
@@ -266,7 +272,7 @@
     border-radius: 50%;
     border: 3px solid var(--picture-border-color);
     display: block; 
-    margin-left: 10rem;
+    margin: 0 auto;
     padding: 2%;
 }
 
@@ -301,6 +307,13 @@
     font-size: 40px;
     color: var(--secondary-color);
     margin-left: 12rem;
+}
+
+.message-icon-about{
+    font-size: 40px;
+    color: var(--secondary-color);
+    display: grid;
+    justify-content: center;
 }
 
 .quotation-icon {
@@ -480,12 +493,12 @@ span.text-danger{
 .btn-icon{
     margin-right: 0.3125rem;
 }
-/* Media query for general components */
+/* Media query for both phone and tablets */
 @media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
-    .par{
+    .par {
         text-align: left !important;
     }
     /* Footer */
@@ -497,10 +510,9 @@ span.text-danger{
         width: 230px;
         height: 60px;
     }
-    /*Featured*/
-    .img-size1{
-        display: block;
-        margin: 0 auto;
+    /*Feedbacks*/
+    .review-icon, .quotation-icon {
+        display: none;
     }
 }
 
@@ -525,7 +537,6 @@ span.text-danger{
 }
 /* Tablet (portrait) */
 @media screen and (min-width:477px) and (max-width:800px) and (orientation:portrait) {
-    
 }
 
 /* Tablet (landscape) */
