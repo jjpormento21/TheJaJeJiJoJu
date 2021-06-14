@@ -1,8 +1,28 @@
-# Welcome to our project in CIT 214
+# 👋 Welcome to our project in CIT 214 (Software Engineering 1)
 Project Title: Miss Jhaz Beauty Cosmetics
 
-If you are reading this, kindly watch the tutorial on how to use GIT and GITHUB in order to be familiar with the platform and to collaborate seamlessly with others.
+Group Name: TheJaJeJiJoJu
 
-Please refer to the drive link for the tutorial: https://drive.google.com/file/d/1KW7pzE11dAboXyyD9YCyr_i_ckKpJ-Bs/view?usp=sharing
+## ℹ About this project
+This project is an online store based on the company of the same name, Miss Jhaz Beauty Cosmetics.
 
-P.S. During collaboration, <strong> PLEASE DO NOT commit directly to the main branch.</strong> Always make separate branches in your local machines in order for you to create pull requests
+## 🛠 Technical Specifications
+**Frontend:** HTML, CSS, JavaScript, Bootstrap
+
+**Backend:** Python, Flask
+
+**Database:** MongoDB
+<hr>
+Hosted on Heroku
+
+## Group Members
+#### 🎨 Design Team
+- Theodore Walter Galve (UI)
+- Jessa Mae Nopueto (UX)
+- Jirah Kate Solano (Data Specialist)
+#### ⚙ Development Team
+- Julia Carabaño (Secondary Developer/Documentation)
+- Jonah James Pormento (Lead Developer)
+- Joshreen Reyes (Frontend Developer)
+<hr>
+This site is hosted on https://jhazcosmetics.herokuapp.com
