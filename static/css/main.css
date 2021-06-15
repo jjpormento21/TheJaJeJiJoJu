@@ -493,7 +493,7 @@ span.text-danger{
     margin-right: 0.3125rem;
 }
 /* Media query for both phone and tablets */
-@media screen and (max-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
@@ -516,7 +516,7 @@ span.text-danger{
 }
 
 /* Phones */
-@media screen and (max-device-width: 600px) {
+@media screen and (max-device-width: 740px) {
     :root{
         font-size: 14px;
     }
