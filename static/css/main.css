@@ -495,7 +495,8 @@ span.text-danger{
     margin-right: 0.3125rem;
 }
 /* Media query for both phone and tablets */
-@media screen and (max-width: 800px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (max-width: 1100px)
+and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
@@ -513,6 +514,16 @@ span.text-danger{
     }
     /*Feedbacks*/
     .review-icon, .quotation-icon {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1000px) and (orientation: landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+    #importantLinks, #recents, #newArrival2, #heroBtn1, .showcase-card {
+        display: block;
+    }
+    #heroBtn2{
         display: none;
     }
 }
