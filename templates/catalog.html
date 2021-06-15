@@ -21,7 +21,7 @@
 
     <div class="row">
         {% for product in eye_products %}
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-md-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
@@ -36,14 +36,12 @@
                     </div>
                     <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
                     <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
-                    <a href="/product/{{product._id}}" class="btn btn-main btn-view">View</a>
-                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
-                        <i class="bi bi bi-caret-down-fill cat-icon" data-toggle="tooltip" data-placement="top"
-                            title="Quick Info"></i>
+                    <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
+                    <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
+                        <i class="bi bi-suit-heart-fill"></i> Add to wishlist
                     </button>
-                    <button class="card-button addToWishlist">
-                        <i class="bi bi-suit-heart-fill cat-icon" data-toggle="tooltip" data-placement="top"
-                            title="Add to wishlist"></i>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi-chevron-down cat-icon"></i>
                     </button>
                 </div>
             </div>
@@ -67,10 +65,10 @@
 
     <div class="row">
         {% for product in lip_products %}
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-md-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
-                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
                     <h5 class="font1 card-title product-name">{{product.productName}}</h5>
                     <p class="product-id" hidden>{{product._id}}</p>
                     <div class="collapse" id="A{{product._id}}">
@@ -82,14 +80,12 @@
                     </div>
                     <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
                     <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
-                    <a href="/product/{{product._id}}" class="btn btn-main btn-view">View</a>
-                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
-                        <i class="bi bi bi-caret-down-fill cat-icon" data-toggle="tooltip" data-placement="top"
-                            title="Quick Info"></i>
+                    <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
+                    <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
+                        <i class="bi bi-suit-heart-fill"></i> Add to wishlist
                     </button>
-                    <button class="card-button addToWishlist">
-                        <i class="bi bi-suit-heart-fill cat-icon" data-toggle="tooltip" data-placement="top"
-                            title="Add to wishlist"></i>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi-chevron-down cat-icon"></i>
                     </button>
                 </div>
             </div>
@@ -112,10 +108,10 @@
 
     <div class="row">
         {% for product in skin_products %}
-        <div class="col-lg-4 col-sm-6">
+        <div class="col-lg-4 col-md-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
-                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top">
-                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2em 2em;">
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
                     <h5 class="font1 card-title product-name">{{product.productName}}</h5>
                     <p class="product-id" hidden>{{product._id}}</p>
                     <div class="collapse" id="A{{product._id}}">
@@ -127,14 +123,12 @@
                     </div>
                     <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
                     <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
-                    <a href="/product/{{product._id}}" class="btn btn-main btn-view">View</a>
-                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
-                        <i class="bi bi bi-caret-down-fill cat-icon" data-toggle="tooltip" data-placement="top"
-                            title="Quick Info"></i>
+                    <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
+                    <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
+                        <i class="bi bi-suit-heart-fill"></i> Add to wishlist
                     </button>
-                    <button class="card-button addToWishlist">
-                        <i class="bi bi-suit-heart-fill cat-icon" data-toggle="tooltip" data-placement="top"
-                            title="Add to wishlist"></i>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi-chevron-down cat-icon"></i>
                     </button>
                 </div>
             </div>
