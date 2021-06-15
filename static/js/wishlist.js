@@ -27,7 +27,7 @@ function addToWishlistClicked(e) {
     let imgSrc = productItem.querySelector('.product-img').src;
     let datePosted = date;
     storeToLocalStorage(productID, title, price, imgSrc, datePosted);
-    e.target.setAttribute('data-original-title', '✅ Added to wishlist');
+    button.innerHTML = `<i class="bi bi-check-lg"></i> Added to wishlist`;
 }
 
 function storeToLocalStorage(id, title, price, imgSrc, datePosted) {
