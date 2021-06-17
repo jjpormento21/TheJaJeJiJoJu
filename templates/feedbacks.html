@@ -6,7 +6,7 @@
 
 {% block body %}
 <div class="container">
-    <h1 class="font1 mt-3">Customer Reviews</h1>
+    <h1 class="text-primary-gray mt-3">Customer Reviews</h1>
     <button type="button" class="btn btn-main btn-lg mt-2" data-toggle="modal" data-target="#exampleModal">Create
         Feedback</button>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -14,7 +14,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title font1" id="exampleModalLabel">New Post</h5>
+                    <h5 class="modal-title text-primary-gray" id="exampleModalLabel">New Post</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -22,12 +22,12 @@
                 <div class="modal-body">
                     <form action="{{url_for('postFeedback')}}" method="POST">
                         <div class="form-group">
-                            <label for="username" class="col-form-label par1">Username:</label>
+                            <label for="username" class="col-form-label text-small-black">Username:</label>
                             <input type="text" class="form-control" id="username" name="username" placeholder="Username"
                                 required>
                         </div>
                         <div class="form-group">
-                            <label for="select-product" class="col-form-label par1">Select Product:</label>
+                            <label for="select-product" class="col-form-label text-small-black">Select Product:</label>
                             <br>
                             <select class="form-select form-control" aria-label="Default select example"
                                 name="productName" required>
@@ -38,12 +38,12 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="feedback" class="col-form-label par1">Feedback:</label>
+                            <label for="feedback" class="col-form-label text-small-black">Feedback:</label>
                             <textarea class="form-control" id="feedback" name="feedback" placeholder="Write a review"
                                 required></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="product-rating" class="col-form-label par1">Rating:</label>
+                            <label for="product-rating" class="col-form-label text-small-black">Rating:</label>
                             <input type="number" value="1" min="1" max="5" class="form-control" id="product-rating"
                                 name="product-rating">
                         </div>
@@ -63,10 +63,10 @@
         <div class="card col-lg-4 col-sm-6 mb-3" style="border-style: none;">
             <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188870245_4254213638004082_5868078760534254236_n.jpg"
-                    alt="Jessa" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Jessa Mae Nopueto</h3>
-                <p class="card-text par1" style="margin-bottom: 3.9rem;">“This
+                    alt="Jessa" class="user-img-small">
+                <i class="bi bi-envelope-fill message-icon"></i>
+                <h3 class="card-title text-primary-pink mt-3">Jessa Mae Nopueto</h3>
+                <p class="card-text text-small-black" style="margin-bottom: 3.9rem;">“This
                     shop is my go to shop for budget
                     friendly yet high quality products.
                     Though I wish they had more
@@ -77,10 +77,10 @@
         <div class="card col-lg-4 col-sm-6 mb-3" style="border-style: none;">
             <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188815777_978372612929586_1399970486282708918_n.jpg"
-                    alt="Jessa" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Joshreen Reyes</h3>
-                <p class="card-text par1" style="margin-bottom: 2.5rem;">“I
+                    alt="Jessa" class="user-img-small">
+                <i class="bi bi-envelope-fill message-icon"></i>
+                <h3 class="card-title text-primary-pink mt-3">Joshreen Reyes</h3>
+                <p class="card-text text-small-black" style="margin-bottom: 2.5rem;">“I
                     ordered different types of
                     lipsticks and lip glosses here for me
                     to try and was happy with how fast
@@ -93,10 +93,10 @@
         <div class="card col-lg-4 col-sm-6 mb-3" style="border-style: none;">
             <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/189139810_483506729583217_6626520472824708206_n.jpg"
-                    alt="Jessa" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Julia Carabano</h3>
-                <p class="card-text par1">“It’s
+                    alt="Jessa" class="user-img-small">
+                <i class="bi bi-envelope-fill message-icon"></i>
+                <h3 class="card-title text-primary-pink mt-3">Julia Carabano</h3>
+                <p class="card-text text-small-black">“It’s
                     my first time purchasing here and
                     the products are all good. However,
                     there’s an item where I received a
@@ -110,10 +110,10 @@
         <div class="card col-lg-4 col-sm-6 mb-3" style="border-style: none;">
             <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/187146180_291478889287044_314538694655535209_n.jpg"
-                    alt="Jirah" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Jirah Kate Solano</h3>
-                <p class="card-text par1" style="margin-bottom: 2.5rem;">“The
+                    alt="Jirah" class="user-img-small">
+                <i class="bi bi-envelope-fill message-icon"></i>
+                <h3 class="card-title text-primary-pink mt-3">Jirah Kate Solano</h3>
+                <p class="card-text text-small-black" style="margin-bottom: 2.5rem;">“The
                     products are well packaged and
                     the delivery is quite fast. Definitely
                     ordering again!”</p>
@@ -123,10 +123,10 @@
         <div class="card col-lg-4 col-sm-6 mb-3" style="border-style: none;">
             <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/189291499_173529744579598_695043480674657752_n.jpg"
-                    alt="Pitta" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Pitta Palmares</h3>
-                <p class="card-text par1" style="margin-bottom: 4rem;">“I
+                    alt="Pitta" class="user-img-small">
+                <i class="bi bi-envelope-fill message-icon"></i>
+                <h3 class="card-title text-primary-pink mt-3">Pitta Palmares</h3>
+                <p class="card-text text-small-black" style="margin-bottom: 4rem;">“I
                     just love your velvet clay blush. It’s
                     not sticky at all and it stays on my face
                     all day.”</p>
@@ -136,10 +136,10 @@
         <div class="card col-lg-4 col-sm-6 mb-3" style="border-style: none;">
             <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188863180_1647572295453994_1197976734689615115_n.jpg"
-                    alt="Shaina" class="img-size1">
-                <i class="bi bi-envelope-fill review-icon"></i>
-                <h3 class="card-title font2 mt-3">Shaina Laquihon</h3>
-                <p class="card-text par1">“I’ve
+                    alt="Shaina" class="user-img-small">
+                <i class="bi bi-envelope-fill message-icon"></i>
+                <h3 class="card-title text-primary-pink mt-3">Shaina Laquihon</h3>
+                <p class="card-text text-small-black">“I’ve
                     been purchasing here for a while
                     now and it’s so worth it. The price is
                     cheap and the products are not
@@ -150,15 +150,15 @@
     </div>
 
     <!-- Public Reviews -->
-    <h1 class="font1 mt-3">Public Reviews</h1>
+    <h1 class="text-primary-gray mt-3">Public Reviews</h1>
     <div class="row">
         {% for review in reviews %}
         <div class="col-lg-4 col-sm-6">
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 1.5rem;">
-                    <i class="bi bi-person-circle font1 person-icon"></i>
-                    <i class="bi bi-envelope-fill review-icon text-right"></i>
-                    <h3 class="card-title font2 mt-3">{{review.username}}</h3>
+                    <i class="bi bi-person-circle text-primary-gray person-icon"></i>
+                    <i class="bi bi-envelope-fill message-icon text-right"></i>
+                    <h3 class="card-title text-primary-pink mt-3">{{review.username}}</h3>
                     <h5 class="card-title">{{review.productName}}</h5>
                     <p class="card-text mb-3">{{review.feedback}}</p>
                 </div>

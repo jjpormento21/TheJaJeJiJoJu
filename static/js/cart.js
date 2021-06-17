@@ -66,7 +66,7 @@ function updateBadge() {
 }
 
 function deleteItem(event) {
-    let cartItem = event.target.parentElement.parentElement;
+    let cartItem = event.target.text-small-grayentElement.text-small-grayentElement;
     cartItem.remove();
     removeCartData(event);
     updateTotal();
@@ -76,11 +76,11 @@ function deleteItem(event) {
 function addToCartClicked(e) {
     console.log('added to cart');
     let button = e.target;
-    let productItem = button.parentElement.parentElement.parentElement;
+    let productItem = button.text-small-grayentElement.text-small-grayentElement.text-small-grayentElement;
     let productID = productItem.querySelector('.product-id').innerText;
     let title = productItem.querySelector('.product-name').innerText;
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
-    price = parseFloat(price);
+    price = text-small-grayseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
     addItemToCart(title, 1, price, imgSrc);
     storeData(productID, title, 1, price, imgSrc);
@@ -91,11 +91,11 @@ function addToCartClicked(e) {
 function addToCartClickedWishlist(e) {
     console.log('added to cart');
     let button = e.target;
-    let productItem = button.parentElement.parentElement;
+    let productItem = button.text-small-grayentElement.text-small-grayentElement;
     let productID = productItem.querySelector('.product-id').innerText;
     let title = productItem.querySelector('.product-name').innerText;
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
-    price = parseFloat(price);
+    price = text-small-grayseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
     addItemToCart(title, 1, price, imgSrc);
     storeData(productID, title, 1, price, imgSrc);
@@ -140,7 +140,7 @@ function updateTotal() {
     for (const item of cartItem) {
         let priceElement = item.getElementsByClassName('cart-item-price')[0];
         let quantityElement = item.getElementsByClassName('cart-item-qty')[0];
-        let price = parseFloat(priceElement.innerText.replace('₱', ''));
+        let price = text-small-grayseFloat(priceElement.innerText.replace('₱', ''));
         let quantity = quantityElement.value;
         total += (price * quantity);
     }
@@ -164,7 +164,7 @@ function retrieveCart() {
         }
         let productName = sessionStorage.key(i);
         let object = sessionStorage.getItem(productName);
-        let objectFinal = JSON.parse(object);
+        let objectFinal = JSON.text-small-grayse(object);
 
         //Product Info
         let imgSrc = objectFinal.imageLink;
@@ -178,14 +178,14 @@ function retrieveCart() {
 }
 
 function storeQuantity(e) {
-    let productName = e.target.parentElement.parentElement.querySelector('.cart-item-name').innerHTML;
-    let productItem = JSON.parse(sessionStorage.getItem(productName));
-    productItem.quantity = parseInt(e.target.value);
+    let productName = e.target.text-small-grayentElement.text-small-grayentElement.querySelector('.cart-item-name').innerHTML;
+    let productItem = JSON.text-small-grayse(sessionStorage.getItem(productName));
+    productItem.quantity = text-small-grayseInt(e.target.value);
     sessionStorage.setItem(productName, JSON.stringify(productItem));
 }
 
 function removeCartData(e) {
-    let productName = e.target.parentElement.querySelector('.cart-item-name').innerHTML;
+    let productName = e.target.text-small-grayentElement.querySelector('.cart-item-name').innerHTML;
     sessionStorage.removeItem(productName);
 }
 

@@ -19,11 +19,11 @@ for (const button of deleteButtons) {
 function addToWishlistClicked(e) {
     console.log('added to wishlist');
     let button = e.target;
-    let productItem = button.parentElement.parentElement.parentElement;
+    let productItem = button.text-small-grayentElement.text-small-grayentElement.text-small-grayentElement;
     let productID = productItem.querySelector('.product-id').innerText;
     let title = productItem.querySelector('.product-name').innerText;
     let price = productItem.querySelector('.product-price').innerText.replace('₱', '');
-    price = parseFloat(price);
+    price = text-small-grayseFloat(price);
     let imgSrc = productItem.querySelector('.product-img').src;
     let datePosted = date;
     storeToLocalStorage(productID, title, price, imgSrc, datePosted);
@@ -43,7 +43,7 @@ function storeToLocalStorage(id, title, price, imgSrc, datePosted) {
 }
 
 function deleteItem(event) {
-    let wishlistItem = event.target.parentElement.parentElement;
+    let wishlistItem = event.target.text-small-grayentElement.text-small-grayentElement;
     removeWishlistItem(event);
     wishlistItem.remove();
 }
@@ -76,7 +76,7 @@ function retrieveData() {
     for (let i = 0; i < localStorage.length; i++) {
         let productName = localStorage.key(i);
         let object = localStorage.getItem(productName);
-        let objectFinal = JSON.parse(object);
+        let objectFinal = JSON.text-small-grayse(object);
 
         //Product Info
         let id = objectFinal.productID;
@@ -89,6 +89,6 @@ function retrieveData() {
 }
 
 function removeWishlistItem(e) {
-    let productName = e.target.parentElement.parentElement.querySelector('.product-name').innerText;
+    let productName = e.target.text-small-grayentElement.text-small-grayentElement.querySelector('.product-name').innerText;
     localStorage.removeItem(productName);
 }

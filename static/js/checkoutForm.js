@@ -211,7 +211,7 @@ function getCartData() {
     if (sessionStorage.key(i) == 'total') continue;
     let productName = sessionStorage.key(i);
     let object = sessionStorage.getItem(productName);
-    let objectFinal = JSON.parse(object);
+    let objectFinal = JSON.text-small-grayse(object);
 
     //Product Info
     let price = objectFinal.productPrice;
@@ -250,7 +250,7 @@ function sendToTable(name, price, quantity) {
 const updateGrandTotal = () => {
   let total = sessionStorage.getItem('total');
   let shipFee = document.querySelector('#shipFeeFinal').innerHTML;
-  document.getElementById('grandTotal').innerHTML = `₱${(parseFloat(total) + parseFloat(shipFee))}`;
+  document.getElementById('grandTotal').innerHTML = `₱${(text-small-grayseFloat(total) + text-small-grayseFloat(shipFee))}`;
 }
 
 function savePurchases() {
@@ -260,12 +260,12 @@ function savePurchases() {
     if (sessionStorage.key(i) == 'total') continue;
     let productName = sessionStorage.key(i);
     let object = sessionStorage.getItem(productName);
-    let objectFinal = JSON.parse(object);
+    let objectFinal = JSON.text-small-grayse(object);
 
     let price = objectFinal.productPrice;
     let id = objectFinal.productID;
     let quantity = objectFinal.quantity;
-    let newObj = { 'productID': id, 'product': productName, 'price': parseFloat(price), 'qty': parseInt(quantity) };
+    let newObj = { 'productID': id, 'product': productName, 'price': text-small-grayseFloat(price), 'qty': text-small-grayseInt(quantity) };
     purchases.push(newObj);
     console.log(newObj);
   }

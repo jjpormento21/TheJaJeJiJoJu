@@ -8,14 +8,14 @@
 
 <!-- Eyes -->
 <div class="container">
-    <p class="roundb">Products by Categories</p>
+    <p class="section-title-rounded">Products by Categories</p>
 
     <div class="row mt-3 mb-3">
         <div class="col-md-6">
-            <h2 class="font1" id="SEyes">Eyes</h2>
+            <h2 class="text-primary-gray" id="SEyes">Eyes</h2>
         </div>
         <div class="col-md-6">
-            <p class="par1 text-right">Your beauty shows in your eyes so let’s get that glam. Try this out and you will love the way you look!</p>
+            <p class="text-small-black text-right">Your beauty shows in your eyes so let’s get that glam. Try this out and you will love the way you look!</p>
         </div>
     </div>
 
@@ -25,7 +25,7 @@
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
-                    <h5 class="font1 card-title product-name">{{product.productName}}</h5>
+                    <h5 class="text-primary-gray card-title product-name">{{product.productName}}</h5>
                     <p class="product-id" hidden>{{product._id}}</p>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
@@ -34,14 +34,14 @@
                             <hr>
                         </div>
                     </div>
-                    <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
-                    <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
+                    <h6 class="text-light-pink card-title font-weight-bold pt-0">PRICE:</h6>
+                    <h5 class="text-primary-gray card-title product-price">₱{{product.price }}</h5>
                     <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
                     <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
                         <i class="bi bi-suit-heart-fill"></i> Add to wishlist
                     </button>
                     <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
-                        <i class="bi bi-chevron-down cat-icon"></i>
+                        <i class="bi bi-chevron-down chevron-down-icon"></i>
                     </button>
                 </div>
             </div>
@@ -54,10 +54,10 @@
 
     <div class="row mt-3 mb-3">
         <div class="col-md-6">
-            <h2 class="font1" id="SLips">Lips</h2>
+            <h2 class="text-primary-gray" id="SLips">Lips</h2>
         </div>
         <div class="col-md-6">
-            <p class="par1 text-right">Show those luscious lips with our affordable lips
+            <p class="text-small-black text-right">Show those luscious lips with our affordable lips
                 cosmetic collection. We’ve got plenty of options for you to choose from.
             </p>
         </div>
@@ -69,7 +69,7 @@
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
-                    <h5 class="font1 card-title product-name">{{product.productName}}</h5>
+                    <h5 class="text-primary-gray card-title product-name">{{product.productName}}</h5>
                     <p class="product-id" hidden>{{product._id}}</p>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
@@ -78,14 +78,14 @@
                             <hr>
                         </div>
                     </div>
-                    <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
-                    <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
+                    <h6 class="text-light-pink card-title font-weight-bold pt-0">PRICE:</h6>
+                    <h5 class="text-primary-gray card-title product-price">₱{{product.price }}</h5>
                     <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
                     <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
                         <i class="bi bi-suit-heart-fill"></i> Add to wishlist
                     </button>
                     <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
-                        <i class="bi bi-chevron-down cat-icon"></i>
+                        <i class="bi bi-chevron-down chevron-down-icon"></i>
                     </button>
                 </div>
             </div>
@@ -97,10 +97,10 @@
 
     <div class="row mt-3 mb-3">
         <div class="col-md-6">
-            <h2 class="font1" id="SSkin">Skin</h2>
+            <h2 class="text-primary-gray" id="SSkin">Skin</h2>
         </div>
         <div class="col-md-6">
-            <p class="par1 text-right">Skin friendly products that will surely prompt the
+            <p class="text-small-black text-right">Skin friendly products that will surely prompt the
                 beauty out of you. Love yourself and adore your skin.
             </p>
         </div>
@@ -112,7 +112,7 @@
             <div class="card mb-3 mt-3" style="border-style: none;">
                 <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
                 <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
-                    <h5 class="font1 card-title product-name">{{product.productName}}</h5>
+                    <h5 class="text-primary-gray card-title product-name">{{product.productName}}</h5>
                     <p class="product-id" hidden>{{product._id}}</p>
                     <div class="collapse" id="A{{product._id}}">
                         <div class="card-body collapse-custom p-0 pt-1 pb-1">
@@ -121,14 +121,14 @@
                             <hr>
                         </div>
                     </div>
-                    <h6 class="font4 card-title font-weight-bold pt-0">PRICE:</h6>
-                    <h5 class="font1 card-title product-price">₱{{product.price }}</h5>
+                    <h6 class="text-light-pink card-title font-weight-bold pt-0">PRICE:</h6>
+                    <h5 class="text-primary-gray card-title product-price">₱{{product.price }}</h5>
                     <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
                     <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
                         <i class="bi bi-suit-heart-fill"></i> Add to wishlist
                     </button>
                     <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
-                        <i class="bi bi-chevron-down cat-icon"></i>
+                        <i class="bi bi-chevron-down chevron-down-icon"></i>
                     </button>
                 </div>
             </div>
