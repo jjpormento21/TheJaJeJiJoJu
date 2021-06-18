@@ -23,7 +23,7 @@ products = mongo.db.products
 customerData = mongo.db.customer_data
 customerReviews = mongo.db.customer_reviews
 
-dateToday = datetime.now()
+dateToday = datetime.utcnow()
 @app.before_request
 def before_request():
     g.user = None
@@ -134,6 +134,7 @@ def confirmCheckout():
                 'zipcode': int(zipcode),
                 'courier': courier,
                 'paymentMethod':payMethod,
+                'orderDate': dateToday,
                 'purchases': json.loads(purchases)
             }
         )
