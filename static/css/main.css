@@ -40,6 +40,10 @@
     text-align: center;
     font-size: 1rem;
 }
+#footerFont{
+    font-family: var(--main-font);
+    font-size: 1.125rem;
+}
 
 /* Buttons */
 .btn-main{
@@ -86,40 +90,35 @@
     font-weight: var(--main-font-weight);
 }
 
-.icon {
-    font-size: 5rem;
-    color: var(--primary-color);
-}
-
-.par {
+.text-small-gray {
     font-size: 1rem;
     color: var(--secondary-color);
 }
 
-.par1{
+.text-small-black{
     font-size: 1rem;
     color: #000;
 }
 
-.font1 {
+.text-primary-gray {
     font-weight: var(--main-font-weight);
     color: var(--secondary-color);
     font-family: var(--main-font);
 }
 
-.font2 {
+.text-primary-pink {
     font-weight: var(--main-font-weight);
     color: var(--primary-color);
     font-family: var(--main-font);
 }
 
-.font3 {
+.text-primary-black {
     font-weight: var(--main-font-weight);
     color: #000;
     font-family: var(--main-font);
 }
 
-.font4{
+.text-light-pink{
     font-weight: 400;
     font-size: 0.9rem;
     color: var(--primary-color);
@@ -171,7 +170,7 @@
     display: block;
 }
 
-.center {
+.img-center {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -185,21 +184,12 @@
     padding: 0 1.25rem 0;
 }
 
-/* Icons */
-.boxb {
+.featured-section-border {
     border: 3px solid var(--secondary-color);
     border-radius: 1.5rem;
 }
 
-.feat-icon {
-    font-size: 20px;
-    color: var(--primary-color);
-}
-
-.person-icon{
-    font-size: 65px ;
-}
-.smallb {
+.small-section-title {
     border: 2px solid var(--muted-gray);
     border-radius: 1rem;
     padding: 1px 4px;
@@ -208,7 +198,7 @@
     font-weight: 400;
     font-size: 12px;
 }
-.roundb {
+.section-title-rounded {
     display: inline-block;
     border: 2px solid var(--muted-gray);
     border-radius: 2rem;
@@ -218,18 +208,32 @@
     font-weight: var(--main-font-weight);
 }
 
-.cat-icon {
+.featured-nested-card {
+    box-shadow: 5px 5px 5px var(--picture-border-color);
+    border-radius: 1.5rem;
+}
+
+/* Icons */
+.homepage-icon {
+    font-size: 5rem;
+    color: var(--primary-color);
+}
+
+.person-icon{
+    font-size: 65px ;
+}
+
+.chevron-down-icon {
     font-size: 1.5rem;
     color: var(--muted-gray);
 }
 
-.cat-icon:hover{
+.chevron-down-icon:hover{
     color: #414141;
     cursor: pointer;
 }
 
-
-.review-icon {
+.message-icon {
     font-size: 40px;
     color: var(--secondary-color);
     margin-left: 12rem;
@@ -253,15 +257,6 @@
     color: var(--secondary-color);
 }
 
-.comment {
-    box-shadow: 5px 5px 5px var(--picture-border-color);
-    border-radius: 1.5rem;
-}
-
-.rectangleb{
-    border-radius:1.5rem ;
-}
-
 /* Images */
 .hero-img {
     width: 100%;
@@ -269,7 +264,7 @@
     margin: auto;
 }
 
-.img-size {
+.featured-img {
     border-radius: 36px;
     padding: 1rem;
     height: 340px;
@@ -277,19 +272,19 @@
     margin: 0 auto;
 }
 
-.img-size1 {
+.user-img-small {
     height: 70px;
     border-radius: 100%;
     width: 75px;
 }
 
-.img-size2 {
+.user-img-large {
     height: 100px;
     border-radius: 100%;
     width: 105px;
 }
 
-.img-size3 {
+.developers-img {
     height: 175px;
     border-radius: 100%;
     width: 175px;
@@ -297,7 +292,7 @@
     padding: 1%;
 }
 
-.prod-size {
+.prod-info-img {
     border-radius: 36px;
     padding: 1rem;
     height: 340px;
@@ -314,12 +309,12 @@
     background-color: var(--dirty-white);
 }
 
-.title-logo {
+.brand-name-img {
     width: min(300px, 100%);
     height: auto;
 }
 
-.pic-logo {
+.brand-logo-img {
     max-width: 50%;
     max-height: 100%;
     border-radius: 50%;
@@ -329,7 +324,7 @@
     padding: 2%;
 }
 
-.CEO {
+.owner-img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 50%;
@@ -500,7 +495,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
     .showcase-card, #heroBtn2{
         display: block;
     }
-    .par {
+    .text-small-gray {
         text-align: left !important;
     }
     /* Footer */
@@ -513,7 +508,7 @@ and (-webkit-min-device-pixel-ratio: 1) {
         height: 60px;
     }
     /*Feedbacks*/
-    .review-icon, .quotation-icon {
+    .message-icon, .quotation-icon {
         display: none;
     }
 }
@@ -534,7 +529,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
         font-size: 14px;
     }
     /* Shop*/
-    .par1{
+    .text-small-black{
         text-align: left !important;
     }
     /* Cart */
