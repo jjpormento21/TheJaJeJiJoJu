@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+
+{% block head %}
+<title>My Wishlist | Miss Jhaz Cosmetics</title>
+<meta id="page-data" data-pageid="4" />
+<style>
+    body {
+        background-color: hsl(0, 0%, 99%);
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="text-center mb-5">
+        <i class="bi bi-heart" style="font-size: 5rem;"></i>
+        <h1 class="display-4">My Wishlist</h1>
+    </div>
+    <div class="table-responsive-sm">
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col">Product Name</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Stock Status</th>
+                    <th scope="col">Date Added</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody id="wishlist">
+            </tbody>
+        </table>
+    </div>
+
+    <form action="/" class="alert alert-primary mt-3 pb-3">
+        <div class="form-row">
+            <p>You can also save your wishlist for later by entering your e-mail.</p>
+            <div class="col-md-8 mb-3">
+                <input type="email" class="form-control" placeholder="Enter your e-mail">
+            </div>
+            <div class="col-md-4">
+                <input type="submit" value="Send my wishlist" class="btn btn-success btn-block">
+            </div>
+        </div>
+    </form>
+</div>
+{% endblock %}
