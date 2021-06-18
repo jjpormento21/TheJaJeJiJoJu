@@ -7,11 +7,11 @@
 
 {% block body %}
 <div class="container">
-    <p class="roundb">Featured Products</p>
+    <p class="section-title-rounded">Featured Products</p>
     <div class="row mt-4">
         {% for product in products %}
         <div class="col-xl-4 col-md-6 mb-4">
-            <div class="boxb card">
+            <div class="featured-section-border card">
                 <h3 class="text-primary-gray card-title mt-3 mb-1 text-center product-name">{{product.productName}}</h3>
                 <p class="product-price" hidden>₱{{product.price}}</p>
                 <p class="product-id" hidden>{{product._id}}</p>
@@ -39,11 +39,11 @@
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/LIPS/Powdery%20Lipmatte/169758735_1882384098596481_428297514699445289_n.jpg"
                 alt="Powdery Lip Matte" class="shop-category-img">
         </div>
-        <div class="boxb col-lg-4 col-md-6 mb-3">
+        <div class="featured-section-border col-lg-4 col-md-6 mb-3">
             <h2 class="text-primary-pink mt-3 mb-3 text-center">Powdery <br> Lip Matte</h2>
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/187146180_291478889287044_314538694655535209_n.jpg"
-                alt="Jai" class="img-size2 mb-4 mt-3 center">
-            <div class="card comment">
+                alt="Jai" class="img-size2 mb-4 mt-3 img-center">
+            <div class="card featured-nested-card">
                 <div class="card-body">
                     <p class="text-small-black text-center mb-1">“It’s
                         an amazing lipstick that has a
@@ -62,11 +62,11 @@
         </div>
 
         <!-- Gelly Tattoo -->
-        <div class="boxb col-lg-4 col-md-6 mb-3">
+        <div class="featured-section-border col-lg-4 col-md-6 mb-3">
             <h2 class="text-primary-pink mt-3 mb-3 text-center">Gelly Tattoo</h2>
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188815777_978372612929586_1399970486282708918_n.jpg"
-                alt="Joshreen" class="img-size2 mb-4 mt-3 center">
-            <div class="card comment">
+                alt="Joshreen" class="img-size2 mb-4 mt-3 img-center">
+            <div class="card featured-nested-card">
                 <div class="card-body">
                     <p class="text-small-black text-center mb-1">“I
                         want to say 'wow!' to your tint
@@ -98,11 +98,11 @@
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/SKIN/Velvet%20Clay%20Blush/168987770_534550111068060_75524008658346085_n.jpg"
                 alt="Powdery Lip Matte" class="shop-category-img">
         </div>
-        <div class="boxb col-lg-4 col-md-6 mb-3">
+        <div class="featured-section-border col-lg-4 col-md-6 mb-3">
             <h2 class="text-primary-pink mt-3 mb-3 text-center">Velvet Clay <br> Blush</h2>
             <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/188870245_4254213638004082_5868078760534254236_n.jpg"
-                alt="Jessa" class="img-size2 mb-4 mt-3 center">
-            <div class="card comment">
+                alt="Jessa" class="img-size2 mb-4 mt-3 img-center">
+            <div class="card featured-nested-card">
                 <div class="card-body">
                     <p class="text-small-black text-center mb-1">“It
                         has a creamy texture but when
@@ -129,10 +129,10 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card boxb">
+            <div class="card featured-section-border">
                 <h2 class="card-title text-center text-primary-pink mt-3">HD Matte Lipstick</h2>
                 <div class="card-body mb-5 mt-3">
-                    <div class="card p-2 comment">
+                    <div class="card p-2 featured-nested-card">
                         <div class="row no-gutters">
                             <div class="col-lg-4 col-md-6 mb-3 center-div">
                                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/189139810_483506729583217_6626520472824708206_n.jpg"
@@ -150,11 +150,11 @@
             </div>
         </div>
         <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card boxb">
+            <div class="card featured-section-border">
                 <h2 class="card-title text-center text-primary-pink mt-3">Gluta Milk Lotion</h2>
 
                 <div class="card-body mb-4">
-                    <div class="card p-2 comment">
+                    <div class="card p-2 featured-nested-card">
                         <div class="row no-gutters">
                             <div class="col-lg-4 col-md-6 mb-3 center-div">
                                 <img src="https://raw.githubusercontent.com/jjpormento21/project-photos-webdev/main/Miss%20Jhaz%20Beauty%20Cosmetics/189291499_173529744579598_695043480674657752_n.jpg"
