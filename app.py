@@ -225,6 +225,10 @@ def deleteAllRecords():
 @app.route('/admin/reviews')
 def reviews():
     return render_template('admin/product_reviews.html')
+
+@app.route('/admin/reviews/product') 
+def product_review():
+    return render_template('admin/review_record.html')   
     
 @app.route('/admin/view/products')
 def viewAllProducts():

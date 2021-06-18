@@ -5,4 +5,39 @@
 {% endblock %}
 
 {% block body %}
+<div class="container">
+    <h2 class="dashboard-round font-weight-800 position-absolute">Product Reviews</h2>
+    <a href="/admin/dashboard" class="btn btn-light dashboard-btn" style="margin-top: 5.5rem;">Go Back</a>
+    <label for="search" class="d-block">Search Records</label>
+    <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
+</div>
+<div class="container">
+    <table class="table table-sm table-hover table-bordered mt-3">
+        <thead class="thead-color dashboard-font">
+            <tr>
+                <th>Created</th>
+                <th>Product Name</th>
+                <th>Number of Reviews</th>
+                <th>Product Image</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+          
+            <tr>
+                <td>6/18/21</td>
+                <td>Lip Tint</td>
+                <td>3</td>
+                <td></td>
+                <td>
+                    <a href="" class="btn btn-light dashboard-btn">See Details</a>
+                    <a href="" class="btn btn-link text-danger">Delete</a>
+                </td>
+            </tr>
+          
+        </tbody>
+    </table>
+</div>
+<div style="margin-bottom: 25em;"></div>
+
 {% endblock %}
