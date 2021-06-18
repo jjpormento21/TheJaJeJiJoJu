@@ -225,11 +225,14 @@ def deleteAllRecords():
 
 @app.route('/admin/reviews')
 def reviews():
-    return render_template('admin/product_reviews.html')
+    all_products = products.find()
+    return render_template('admin/product_reviews.html', products=all_products)
 
-@app.route('/admin/reviews/product') 
-def product_review():
-    return render_template('admin/review_record.html')   
+@app.route('/admin/reviews/product/<oid>') 
+def product_review(oid):
+    product = products.find_one_or_404({'_id': ObjectId(oid)})
+    reviews = customerReviews.find()
+    return render_template('admin/review_record.html', product = product, reviews = reviews)   
     
 @app.route('/admin/view/products')
 def viewAllProducts():

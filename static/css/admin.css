@@ -123,3 +123,9 @@
     color: var(--dashboard-blue);
     font-family: 'Open Sans', 'Tahoma', 'Verdana', sans-serif;
 }
+
+.table-img{
+    height: 85px;
+    width: 100px;
+    border-radius: 1.25rem;
+}
