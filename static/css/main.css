@@ -40,6 +40,10 @@
     text-align: center;
     font-size: 1rem;
 }
+#footerFont{
+    font-family: var(--main-font);
+    font-size: 1.125rem;
+}
 
 /* Buttons */
 .btn-main{
