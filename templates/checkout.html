@@ -6,7 +6,7 @@
 {% block body %}
 <div class="container">
     <nav class="bg-white mt-2 pt-2 pb-2 sticky-top" id="checkout-tab">
-        <h2 class="font1">Check out your products!</h2>
+        <h2 class="text-primary-gray">Check out your products!</h2>
         <ul class="nav nav-tabs">
             <li class="nav-item ">
                 <a class="nav-link tab-checkout" href="#">Information</a>
@@ -140,7 +140,7 @@
                     <h4 class="text-secondary roundb mb-3"><i class="bi bi-box-seam btn-icon"></i>Courier Services</h4>
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title font1">Shipping Options<span class="text-danger">*</span></h6>
+                            <h6 class="card-title text-primary-gray">Shipping Options<span class="text-danger">*</span></h6>
                             <select class="custom-select" name="courier" id="courier">
                                 <option selected>Select Courier</option>
                                 <option value="LBC">LBC</option>
@@ -168,7 +168,7 @@
                     <h4 class="text-secondary roundb mb-3"><i class="bi bi-credit-card btn-icon"></i>Payment</h4>
                     <div class="card">
                         <div class="card-body">
-                            <h6 class="card-title font1">Payment Methods<span class="text-danger">*</span></h6>
+                            <h6 class="card-title text-primary-gray">Payment Methods<span class="text-danger">*</span></h6>
                             <div class="custom-control custom-radio">
                                 <input type="radio" id="creditCard" value="Credit Card" name="paymentMethod"
                                     class="custom-control-input">
@@ -235,7 +235,7 @@
                     <h4 class="text-secondary roundb mb-3"><i class="bi bi-truck btn-icon"></i>Delivery Details</h4>
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title font2">Receiver Information</h4>
+                            <h4 class="card-title text-primary-pink">Receiver Information</h4>
                             <h5 class="text-secondary"><i class="bi bi-person-fill btn-icon"></i>Name</h5>
                             <p class="card-text">Full Name: <span id="fullName"></span></p>
                             <hr>
@@ -252,9 +252,9 @@
                             <h5 class="text-secondary"><i class="bi bi-envelope-fill btn-icon"></i>Email</i></h5>
                             <p class="card-text"><span id="emailFull"></span></p>
                             <hr>
-                            <h5 class="card-title font2">Ordered Products</h5>
+                            <h5 class="card-title text-primary-pink">Ordered Products</h5>
                             <table class="table table-sm table-hover">
-                                <thead class="font1">
+                                <thead class="text-primary-gray">
                                     <tr>
                                         <th scope="col">Product</th>
                                         <th scope="col" class="text-center">Quantity</th>
@@ -272,21 +272,21 @@
                                 </tbody>
                             </table>
                             <div class="text-right">
-                                <h6 class="card-title font2">Grand Total: <span id="grandTotal"
+                                <h6 class="card-title text-primary-pink">Grand Total: <span id="grandTotal"
                                         class="text-muted">₱</span></h6>
                             </div>
                             <hr>
                             <div class="row text-center">
                                 <div class="col">
-                                    <h5 class="card-title font2">Payment Method</h5>
+                                    <h5 class="card-title text-primary-pink">Payment Method</h5>
                                     <h6 class="card-subtitle"><span id="paymethodFinal"></span></h6>
                                 </div>
                                 <div class="col">
-                                    <h5 class="card-title font2">Courier</h5>
+                                    <h5 class="card-title text-primary-pink">Courier</h5>
                                     <h6 class="card-subtitle"><span id="courierFinal"></span></h6>
                                 </div>
                                 <div class="col">
-                                    <h5 class="card-title font2">Shipping to</h5>
+                                    <h5 class="card-title text-primary-pink">Shipping to</h5>
                                     <h6 class="card-subtitle"><span id="regionFinal"></span></h6>
                                 </div>
                             </div>
@@ -311,7 +311,7 @@
                         <div>
                             <h4>Total:</h4>
                         </div>
-                        <span class="font1" id="prevTotal"></span>
+                        <span class="text-primary-gray" id="prevTotal"></span>
                     </li>
                 </ul>
             </div>
