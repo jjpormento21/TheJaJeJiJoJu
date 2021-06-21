@@ -6,16 +6,18 @@
 
 {% block body %}
 <div class="container">
-    <h2 class="dashboard-round font-weight-800 position-absolute">Customer Records</h2>
-    <a href="/admin/dashboard" class="btn btn-light dashboard-btn" style="margin-top: 5.5rem;">Go Back</a>
-    <label for="search" class="d-block">Search Records</label>
-    <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
+    <h2 class="dashboard-round">Customer Records</h2>
+    <div>
+        <a href="/admin/dashboard" class="btn btn-light dashboard-btn">Go Back</a>
+        <a href="{{url_for('deleteAllRecords')}}" class="btn btn-outline-danger">Delete All</a>
+        <label for="search" class="d-block">Search Records</label>
+        <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
+    </div>
 </div>
 <div class="container">
     <table class="table table-sm table-hover table-bordered mt-3">
         <thead class="thead-color dashboard-font">
             <tr>
-                <th>ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Phone1</th>
@@ -30,7 +32,6 @@
         <tbody>
             {% for record in records %}
             <tr>
-                <td>{{record._id}}</td>
                 <td>{{record.firstName}}</td>
                 <td>{{record.lastName}}</td>
                 <td>{{record.phone1}}</td>
@@ -39,7 +40,7 @@
                 <td>{{record.region}}</td>
                 <td>{{record.city}}</td>
                 <td>{{record.zipcode}}</td>
-                <td>
+                <td class="text-center">
                     <a href="/admin/view/records/{{record._id}}" class="btn btn-light dashboard-btn">More details</a>
                     <a href="/admin/delete_record/{{record._id}}" class="btn btn-link text-danger">Delete</a>
                 </td>

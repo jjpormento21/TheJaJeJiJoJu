@@ -264,17 +264,19 @@
                                 </thead>
                                 <tbody id="cartSummary">
                                     <tr>
-                                        <td>Shipping Fee</td>
-                                        <td></td>
-                                        <td></td>
+                                        <td colspan="3">Shipping Fee</td>
                                         <td class="text-right">₱<span id="shipFeeFinal"></span></td>
                                     </tr>
                                 </tbody>
+                                <tfoot class="text-right">
+                                    <tr>
+                                        <td colspan="3" class="text-primary-pink">Grand Total:</td>
+                                        <td id="grandTotal">₱</td>
+                                    </tr>
+                                </tfoot>
                             </table>
-                            <div class="text-right">
-                                <h6 class="card-title text-primary-pink">Grand Total: <span id="grandTotal"
-                                        class="text-muted">₱</span></h6>
-                            </div>
+                            <input type="hidden" name="shipFee" id="shipFee">
+                            <input type="hidden" name="totalPurchased" id="totalPurchased">
                             <hr>
                             <div class="row text-center">
                                 <div class="col">

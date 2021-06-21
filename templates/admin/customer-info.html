@@ -6,11 +6,14 @@
 {% block body %}
 
 <div class="container">
-    <h2 class="dashboard-round font-weight-800 position-absolute">Customer Info</h2>
+    <h2 class="dashboard-round">Customer Info</h2>
+    <div>
+        <a href="{{url_for('viewRecords')}}" class="btn btn-light dashboard-btn">Go Back</a>
+    </div>
 
-    <div class="row">
-        <div class="col">
-            <table class="table table-sm table-striped table-hover" style="margin-top: 2.5cm;">
+    <div class="row mt-2">
+        <div class="col-md-6">
+            <table class="table table-sm table-striped table-hover">
                 <thead class="thead-color dashboard-font">
                     <tr>
                         <th>Type</th>
@@ -77,15 +80,43 @@
                 </tbody>
             </table>
         </div>
-        <div class="col" style="margin-top: 2.5cm;">
-            <div class="card">
-                <div class="card-body" style="background-color: #10253F;">
-                  <h5 class="card-title text-white">Card title</h5>
-                  <h6 class="card-subtitle mb-2" style="color: #b8b5b5;">Card subtitle</h6>
-                  <p class="card-text text-white">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="{{url_for('viewRecords')}}" class="btn btn-light dashboard-btn">Go Back</a>
-                </div>
-              </div>
+        <div class="col-md-6">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="3"><i class="bi bi-cart-check"></i> Purchases</th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col" class="text-center">Quantity</th>
+                        <th scope="col" class="text-center">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for purchases in record.purchases %}
+                    <tr>
+                        <td>{{purchases.product}}</td>
+                        <td class="text-center">{{purchases.qty}}</td>
+                        <td class="text-center">₱{{purchases.price}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="2">Shipping Fee:</td>
+                        <td class="text-center">{{record.shipFee}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2"><strong>Total Purchased:</strong></td>
+                        <td class="text-center">{{record.totalPurchased}}</td>
+                    </tr>
+                    <tr class="thead-color text-light">
+                        <td colspan="3"><i class="bi bi-calendar-date"></i> {{record.orderDate}}</td>
+                    </tr>
+                </tfoot>
+            </table>
         </div>
     </div>
 </div>

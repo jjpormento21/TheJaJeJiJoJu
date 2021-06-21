@@ -116,8 +116,10 @@ def confirmCheckout():
         custCity = request.form.get('city')
         zipcode = request.form.get('zipcode')
         courier = request.form.get('courier')
+        shipFee = request.form.get('shipFee')
         payMethod = request.form.get('paymentMethod')
         purchases = request.form.get('purchases')
+        totalPurchases = request.form.get('totalPurchased')
         customerData.insert_one(
             {
                 'firstName': custFirstName,
@@ -133,9 +135,11 @@ def confirmCheckout():
                 'city': custCity,
                 'zipcode': int(zipcode),
                 'courier': courier,
+                'shipFee': shipFee,
                 'paymentMethod':payMethod,
                 'orderDate': dateToday,
-                'purchases': json.loads(purchases)
+                'purchases': json.loads(purchases),
+                'totalPurchased': totalPurchases
             }
         )
         return render_template('checkout-confirm.html')
@@ -214,14 +218,14 @@ def deleteAllProducts():
     if not g.user:
         return redirect(url_for('login'))
     products.delete_many({})
-    return redirect(url_for('dashboard'))
+    return redirect(url_for('viewAllProducts'))
 
 @app.route('/admin/delete_records_all')
 def deleteAllRecords():
     if not g.user:
         return redirect(url_for('login'))
     customerData.delete_many({})
-    return redirect(url_for('dashboard'))
+    return redirect(url_for('viewRecords'))
 
 @app.route('/admin/reviews')
 def reviews():
