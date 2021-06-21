@@ -7,16 +7,16 @@
 {% block body %}
 
 <div class="container mt-2 pt-2 mb-5">
-    <h2 class="dashboard-round font-weight-800 position-absolute">Add a product</h2>
-    <hr style="margin-top: 2.5cm;"> 
+    <h2 class="dashboard-round"><i class="bi bi-bag-plus"></i> Add a product</h2>
+    <hr> 
     <form action="/admin/add_data" method="POST" autocomplete="off">
         <div class="form-group">
             <label for="productTitle">Product Title</label>
-            <input class="form-control" type="text" name="productTitle" id="productTitle" placeholder="Product Name">
+            <input required class="form-control" type="text" name="productTitle" id="productTitle" placeholder="Product Name">
         </div>
         <div class="form-group">
             <label for="productDescription">Brief Description</label>
-            <textarea class="form-control" cols="30" rows="5" type="text" name="productDescription"
+            <textarea required class="form-control" cols="30" rows="5" type="text" name="productDescription"
                 id="productDescription" placeholder="Brief Description of product"></textarea>
         </div>
         <div class="form-group">
@@ -37,7 +37,7 @@
                 </div>
                 <div class="col">
                     <label for="price">Price</label>
-                    <input type="number" name="price" id="price" class="form-control" placeholder="₱0.00" step="0.01">
+                    <input required type="number" name="price" id="price" class="form-control" placeholder="₱0.00" step="0.01">
                 </div>
             </div>
         </div>
@@ -45,12 +45,12 @@
             <div class="form-row">
                 <div class="col-md-4">
                     <label for="imgURL">Image URL</label>
-                    <input type="url" name="imgURL" id="imgURL" 
+                    <input required type="url" name="imgURL" id="imgURL" 
                     class="form-control" placeholder="https://www.yoururl.com.ph">
                 </div>
                 <div class="col-md-4">
                     <label>Number of Stocks</label>
-                    <input type="number" name="stockNumber" id="stockNumber" class="form-control" value="100">
+                    <input required type="number" name="stockNumber" id="stockNumber" class="form-control" value="100">
                 </div>
                 <div class="col-md-4">
                     <label>Featured Product?</label>
