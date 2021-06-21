@@ -6,7 +6,7 @@
 
 {% block body %}
 <div class="container">
-    <h2 class="dashboard-round">Customer Records</h2>
+    <h2 class="dashboard-round"><i class="bi bi-file-bar-graph"></i> Customer Records</h2>
     <div>
         <a href="/admin/dashboard" class="btn btn-light dashboard-btn">Go Back</a>
         <a href="{{url_for('deleteAllRecords')}}" class="btn btn-outline-danger">Delete All</a>
@@ -15,18 +15,18 @@
     </div>
 </div>
 <div class="container">
-    <table class="table table-sm table-hover table-bordered mt-3">
+    <table class="table table-sm table-hover table-bordered table-responsive mt-3">
         <thead class="thead-color dashboard-font">
             <tr>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Phone1</th>
-                <th>Billing Address</th>
-                <th>Shipping Address</th>
-                <th>Region</th>
-                <th>City</th>
-                <th>ZIP</th>
-                <th></th>
+                <th scope="col">First Name</th>
+                <th scope="col">Last Name</th>
+                <th scope="col">Billing Address</th>
+                <th scope="col">Shipping Address</th>
+                <th scope="col">Region</th>
+                <th scope="col">City</th>
+                <th scope="col">ZIP</th>
+                <th scope="col">Date</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -34,12 +34,12 @@
             <tr>
                 <td>{{record.firstName}}</td>
                 <td>{{record.lastName}}</td>
-                <td>{{record.phone1}}</td>
                 <td>{{record.billingAddress}}</td>
                 <td>{{record.shippingAddress}}</td>
                 <td>{{record.region}}</td>
                 <td>{{record.city}}</td>
                 <td>{{record.zipcode}}</td>
+                <td>{{record.orderDate}}</td>
                 <td class="text-center">
                     <a href="/admin/view/records/{{record._id}}" class="btn btn-light dashboard-btn">More details</a>
                     <a href="/admin/delete_record/{{record._id}}" class="btn btn-link text-danger">Delete</a>

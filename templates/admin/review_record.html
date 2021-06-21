@@ -6,16 +6,17 @@
 
 {% block body %}
 <div class="container">
-    <h2 class="dashboard-round">Reviews</h2>
-    <br>
-    <a href="/admin/reviews" class="btn btn-light dashboard-btn">Go Back</a>
+    <h3 class="dashboard-round"><i class="bi bi-chat-square-text"></i> Reviews for {{product.productName}}</h3>
+    <div>
+        <a href="/admin/reviews" class="btn btn-light dashboard-btn">Go Back</a>
+    </div>
 </div>
 
 <div class="container mt-3">
     <div class="row">
         {% for review in reviews %}
         {% if review.productName == product.productName %}
-        <div class="col-md-6">
+        <div class="col-md-6 mb-3">
             <div class="card">
                 <h5 class="card-header"><i class="bi bi-person-circle "></i> {{review.username}}</h5>
                 <div class="card-body">
@@ -24,7 +25,7 @@
                 </div>
                 <div class="card-footer">
                     <h6 class="d-inline">Rating: {{review.rating}}</h6>
-                    <a href="#" class="btn btn-danger float-right">Delete</a>
+                    <a href="/admin/delete_review/{{review._id}}" class="btn btn-danger float-right">Delete</a>
                 </div>
             </div>
         </div>

@@ -6,10 +6,12 @@
 
 {% block body %}
 <div class="container">
-    <h2 class="dashboard-round font-weight-800 position-absolute">Product Reviews</h2>
-    <a href="/admin/dashboard" class="btn btn-light dashboard-btn" style="margin-top: 5.5rem;">Go Back</a>
-    <label for="search" class="d-block">Search Records</label>
-    <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
+    <h2 class="dashboard-round"><i class="bi bi-chat-square-dots"></i> Product Reviews</h2>
+    <div>
+        <a href="/admin/dashboard" class="btn btn-light dashboard-btn">Go Back</a>
+        <label for="search" class="d-block">Search Records</label>
+        <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
+    </div>
 </div>
 <div class="container">
     <table class="table table-striped table-light mt-3">
@@ -18,7 +20,6 @@
                 <th scope="col"></th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Date Posted</th>
-                <th scope="col">Number of Reviews</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -30,7 +31,6 @@
                 </td>
                 <td>{{product.productName}}</td>
                 <td>{{product.datePosted}}</td>
-                <td>3</td>
                 <td>
                     <a href="/admin/reviews/product/{{product._id}}" class="btn dashboard-btn">See Details</a>
                 </td>

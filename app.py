@@ -54,25 +54,22 @@ def feedback():
     all_reviews = customerReviews.find().limit(6)
     return render_template('feedbacks.html', products = all_products, reviews = all_reviews)
 
-@app.route('/feedback_hub/post', methods=['GET','POST'])
+@app.route('/feedback_hub/post', methods=['POST'])
 def postFeedback():
-    if request.method == 'POST':
-        username = request.form.get('username')
-        productName = request.form.get('productName')
-        userFeedback = request.form.get('feedback')
-        productRating = request.form.get('product-rating')
-        customerReviews.insert_one(
-            {
-                'username': username,
-                'productName': productName,
-                'feedback': userFeedback,
-                'rating': int(productRating),
-                'datePosted': dateToday
-            }
-        )
-        return redirect(url_for('feedback'))
-    else:
-        return redirect(url_for('feedback'))
+    username = request.form.get('username')
+    productName = request.form.get('productName')
+    userFeedback = request.form.get('feedback')
+    productRating = request.form.get('product-rating')
+    customerReviews.insert_one(
+        {
+            'username': username,
+            'productName': productName,
+            'feedback': userFeedback,
+            'rating': int(productRating),
+            'datePosted': dateToday
+        }
+    )
+    return redirect(url_for('shop'))
 
 @app.route('/about_us')
 def about_us():
@@ -100,51 +97,48 @@ def checkoutTest():
 def blankPage():
     return render_template('blank.html')
 
-@app.route('/checkout/confirm', methods=['GET','POST'])
+@app.route('/checkout/confirm', methods=['POST'])
 def confirmCheckout():
-    if request.method == 'POST':
-        custFirstName = request.form.get('firstName')
-        custLastName = request.form.get('lastName')
-        custEmail = request.form.get('email')
-        custUsrname = request.form.get('username')
-        custPhone1 = request.form.get('phone1')
-        custPhone2 = request.form.get('phone2')
-        billingAdd = request.form.get('billingAdd')
-        shipAdd = request.form.get('shipAdd')
-        region = request.form.get('region')
-        custProvince = request.form.get('province')
-        custCity = request.form.get('city')
-        zipcode = request.form.get('zipcode')
-        courier = request.form.get('courier')
-        shipFee = request.form.get('shipFee')
-        payMethod = request.form.get('paymentMethod')
-        purchases = request.form.get('purchases')
-        totalPurchases = request.form.get('totalPurchased')
-        customerData.insert_one(
-            {
-                'firstName': custFirstName,
-                'lastName': custLastName,
-                'email': custEmail,
-                'username': custUsrname,
-                'phone1': custPhone1,
-                'phone2': custPhone2,
-                'billingAddress': billingAdd,
-                'shippingAddress': shipAdd,
-                'region': region,
-                'province': custProvince,
-                'city': custCity,
-                'zipcode': int(zipcode),
-                'courier': courier,
-                'shipFee': shipFee,
-                'paymentMethod':payMethod,
-                'orderDate': dateToday,
-                'purchases': json.loads(purchases),
-                'totalPurchased': totalPurchases
-            }
-        )
-        return render_template('checkout-confirm.html')
-    else:
-        return redirect(url_for('checkoutPage'))
+    custFirstName = request.form.get('firstName')
+    custLastName = request.form.get('lastName')
+    custEmail = request.form.get('email')
+    custUsrname = request.form.get('username')
+    custPhone1 = request.form.get('phone1')
+    custPhone2 = request.form.get('phone2')
+    billingAdd = request.form.get('billingAdd')
+    shipAdd = request.form.get('shipAdd')
+    region = request.form.get('region')
+    custProvince = request.form.get('province')
+    custCity = request.form.get('city')
+    zipcode = request.form.get('zipcode')
+    courier = request.form.get('courier')
+    shipFee = request.form.get('shipFee')
+    payMethod = request.form.get('paymentMethod')
+    purchases = request.form.get('purchases')
+    totalPurchases = request.form.get('totalPurchased')
+    customerData.insert_one(
+        {
+            'firstName': custFirstName,
+            'lastName': custLastName,
+            'email': custEmail,
+            'username': custUsrname,
+            'phone1': custPhone1,
+            'phone2': custPhone2,
+            'billingAddress': billingAdd,
+            'shippingAddress': shipAdd,
+            'region': region,
+            'province': custProvince,
+            'city': custCity,
+            'zipcode': int(zipcode),
+            'courier': courier,
+            'shipFee': shipFee,
+            'paymentMethod':payMethod,
+            'orderDate': dateToday,
+            'purchases': json.loads(purchases),
+            'totalPurchased': totalPurchases
+        }
+    )
+    return render_template('checkout-confirm.html')
 
 
 @app.errorhandler(404)
@@ -213,20 +207,6 @@ def addData():
     else:
         return render_template('admin/add_data.html')
 
-@app.route('/admin/delete_data_all')
-def deleteAllProducts():
-    if not g.user:
-        return redirect(url_for('login'))
-    products.delete_many({})
-    return redirect(url_for('viewAllProducts'))
-
-@app.route('/admin/delete_records_all')
-def deleteAllRecords():
-    if not g.user:
-        return redirect(url_for('login'))
-    customerData.delete_many({})
-    return redirect(url_for('viewRecords'))
-
 @app.route('/admin/reviews')
 def reviews():
     if not g.user:
@@ -263,6 +243,21 @@ def viewSingleRecord(oid):
     customer_record = customerData.find_one_or_404({'_id': ObjectId(oid)})
     return render_template('/admin/customer-info.html', record = customer_record)
 
+#Deleting stuff
+@app.route('/admin/delete_data_all')
+def deleteAllProducts():
+    if not g.user:
+        return redirect(url_for('login'))
+    products.delete_many({})
+    return redirect(url_for('viewAllProducts'))
+
+@app.route('/admin/delete_records_all')
+def deleteAllRecords():
+    if not g.user:
+        return redirect(url_for('login'))
+    customerData.delete_many({})
+    return redirect(url_for('viewRecords'))
+
 @app.route('/admin/delete_record/<oid>')
 def deleteRecord(oid):
     if not g.user:
@@ -276,6 +271,11 @@ def deleteProduct(oid):
         return redirect(url_for('login'))
     products.delete_one({'_id': ObjectId(oid)})
     return redirect(url_for('viewRecords'))
+
+@app.route('/admin/delete_review/<oid>')
+def deleteReview(oid):
+    review = customerReviews.delete_one({'_id': ObjectId(oid)})
+    return redirect(url_for('reviews'))
 
 @app.route('/admin/edit_product/<oid>', methods = ['GET', 'POST'])
 def editProductData(oid):
