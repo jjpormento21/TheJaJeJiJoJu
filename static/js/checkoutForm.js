@@ -142,25 +142,25 @@ function setSummaryInfo() {
   let phone2 = document.querySelector('#phone2').value;
   let email = document.querySelector('#email').value;
   let region = document.querySelector('#region').value;
-  let shipFee = document.querySelector('#shipFeePreview').innerHTML;
+  let shipFee = document.querySelector('#shipFeePreview').innerText;
   let courier = document.querySelector('#courier').value;
   let city = document.querySelector('#city').value;
   let province = document.querySelector('#province').value;
   //set values
-  document.querySelector('#fullName').innerHTML = firstName + ' ' + lastName;
-  document.querySelector('#billingAddFull').innerHTML = billingAdd;
-  document.querySelector('#shippingAddFull').innerHTML = shippingAdd;
-  document.querySelector('#phoneNumber1').innerHTML = phone1;
+  document.querySelector('#fullName').innerText = firstName + ' ' + lastName;
+  document.querySelector('#billingAddFull').innerText = billingAdd;
+  document.querySelector('#shippingAddFull').innerText = shippingAdd;
+  document.querySelector('#phoneNumber1').innerText = phone1;
   let phone2Final = (phone2 == '') ? 'N/A' : phone2;
-  document.querySelector('#phoneNumber2').innerHTML = phone2Final;
-  document.querySelector('#emailFull').innerHTML = email;
-  document.querySelector('#regionPreview').innerHTML = region;
-  document.querySelector('#regionFinal').innerHTML = region;
-  document.querySelector('#courierFinal').innerHTML = courier;
-  document.querySelector('#paymethodFinal').innerHTML = paymentMethod;
-  document.querySelector('#shipFeeFinal').innerHTML = shipFee;
-  document.querySelector('#cityFinal').innerHTML = city;
-  document.querySelector('#provinceFinal').innerHTML = province;
+  document.querySelector('#phoneNumber2').innerText = phone2Final;
+  document.querySelector('#emailFull').innerText = email;
+  document.querySelector('#regionPreview').innerText = region;
+  document.querySelector('#regionFinal').innerText = region;
+  document.querySelector('#courierFinal').innerText = courier;
+  document.querySelector('#paymethodFinal').innerText = paymentMethod;
+  document.querySelector('#shipFeeFinal').innerText = shipFee;
+  document.querySelector('#cityFinal').innerText = city;
+  document.querySelector('#provinceFinal').innerText = province;
   updateGrandTotal();
 }
 
@@ -173,7 +173,7 @@ function shippingFee() {
         regionValue == null ? 0.00 :
           150.00;
   }
-  shipFeePreview.innerHTML = shipFee();
+  shipFeePreview.innerText = shipFee();
 }
 
 function validate() {
@@ -220,37 +220,51 @@ function getCartData() {
     let checkoutCart = document.querySelector('#cartPreview');
     let cartItem = document.createElement('li');
     cartItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'lh-condensed', 'cart-item');
-    let cartContents = ` <div>
-      <h6 class="my-0" style="word-wrap: break-word;">${productName}</h6>
-      <small class="text-muted">QTY: ${quantity}</small>
-    </div>
-    <span class="text-muted">₱${price}</span>`;
-    cartItem.innerHTML = cartContents;
+    let div = document.createElement('div');
+    let cartItemName = document.createElement('h6');
+    let cartItemQty = document.createElement('small');
+    let cartItemPrice = document.createElement('span');
+    cartItemName.classList.add('my-0');
+    cartItemName.innerText = productName;
+    cartItemQty.classList.add('text-muted');
+    cartItemQty.innerText = `QTY: ${quantity}`;
+    div.append(cartItemName, cartItemQty);
+    cartItemPrice.classList.add('text-muted');
+    cartItemPrice.innerText = `₱${price}`;
+    cartItem.append(div, cartItemPrice);
     checkoutCart.append(cartItem);
     sendToTable(productName, price, quantity);
   }
   let cartItems = document.querySelectorAll('.cart-item');
-  document.querySelector('#cartSize').innerHTML = cartItems.length;
+  document.querySelector('#cartSize').innerText = cartItems.length;
   let cartPreviewTotal = document.querySelector('#prevTotal');
   let total = sessionStorage.getItem('total');
-  cartPreviewTotal.innerHTML = `₱${total}`;
+  cartPreviewTotal.innerText = `₱${total}`;
   savePurchases();
 }
 
 function sendToTable(name, price, quantity) {
   let summary = document.querySelector('#cartSummary');
   let items = document.createElement('tr');
-  let tableContents = `<td>${name}</td>
-  <td class="product-quantity text-center">${quantity}</td>
-  <td class="product-price text-right">₱${price}</td>
-  <td class="total-price text-right">₱${(price * quantity)}</td>`;
-  items.innerHTML = tableContents;
+  // Table contents
+  let productName = document.createElement('td');
+  let productQty = document.createElement('td');
+  let productPrice = document.createElement('td');
+  let totalPrice = document.createElement('td');
+  productQty.classList.add('text-center');
+  productPrice.classList.add('text-right');
+  totalPrice.classList.add('text-right');
+  productName.innerText = name;
+  productQty.innerText = quantity;
+  productPrice.innerText = `₱${price}`;
+  totalPrice.innerText = `₱${(price * quantity)}`;
+  items.append(productName, productQty, productPrice, totalPrice);
   summary.append(items);
 }
 const updateGrandTotal = () => {
   let total = sessionStorage.getItem('total');
-  let shipFee = document.querySelector('#shipFeeFinal').innerHTML;
-  document.getElementById('grandTotal').innerHTML = `₱${(parseFloat(total) + parseFloat(shipFee))}`;
+  let shipFee = document.querySelector('#shipFeeFinal').innerText;
+  document.getElementById('grandTotal').innerText = `₱${(parseFloat(total) + parseFloat(shipFee))}`;
 }
 
 function savePurchases() {
