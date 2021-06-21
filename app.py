@@ -135,7 +135,7 @@ def confirmCheckout():
             'paymentMethod':payMethod,
             'orderDate': dateToday,
             'purchases': json.loads(purchases),
-            'totalPurchased': totalPurchases
+            'totalPurchased': float(totalPurchases)
         }
     )
     return render_template('checkout-confirm.html')
