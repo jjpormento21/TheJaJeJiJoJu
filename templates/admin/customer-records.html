@@ -14,8 +14,8 @@
         <input type="search" name="search" id="search" class="form-control" placeholder="Type to search">
     </div>
 </div>
-<div class="container">
-    <table class="table table-sm table-hover table-bordered table-responsive mt-3">
+<div class="container table-responsive-sm">
+    <table class="table table-sm table-hover table-bordered mt-3">
         <thead class="thead-color dashboard-font">
             <tr>
                 <th scope="col">First Name</th>
@@ -24,7 +24,6 @@
                 <th scope="col">Shipping Address</th>
                 <th scope="col">Region</th>
                 <th scope="col">City</th>
-                <th scope="col">ZIP</th>
                 <th scope="col">Date</th>
                 <th scope="col"></th>
             </tr>
@@ -38,16 +37,36 @@
                 <td>{{record.shippingAddress}}</td>
                 <td>{{record.region}}</td>
                 <td>{{record.city}}</td>
-                <td>{{record.zipcode}}</td>
                 <td>{{record.orderDate}}</td>
                 <td class="text-center">
                     <a href="/admin/view/records/{{record._id}}" class="btn btn-light dashboard-btn">More details</a>
-                    <a href="/admin/delete_record/{{record._id}}" class="btn btn-link text-danger">Delete</a>
+                    <button class="btn btn-link text-danger" data-toggle="modal"
+                    data-target="#deleteOneAlert" onclick="setRecordToDelete('{{record._id}}')">Delete</button>
                 </td>
             </tr>
             {% endfor %}
         </tbody>
     </table>
+    <!-- Alert Modal -->
+    <div class="modal fade" id="deleteOneAlert" tabindex="-1" aria-labelledby="deleteOneAlert" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Delete Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Do you want to delete this item?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-link text-secondary" data-dismiss="modal">Close</button>
+                    <a href="" class="btn btn-danger delete-post-btn">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <div style="margin-top: 100px;"></div>
 
