@@ -7,9 +7,6 @@
 
 <div class="container">
     <h2 class="dashboard-round">Customer Info</h2>
-    <div>
-        <a href="{{url_for('viewRecords')}}" class="btn btn-light dashboard-btn">Go Back</a>
-    </div>
 
     <div class="row mt-2">
         <div class="col-md-6">
@@ -110,13 +107,15 @@
                 <tfoot>
                     <tr>
                         <td colspan="2"><strong>Total Purchased:</strong></td>
-                        <td class="text-center">{{record.totalPurchased}}</td>
+                        <td class="text-center"><strong>{{record.totalPurchased}}</strong></td>
                     </tr>
                     <tr class="thead-color text-light">
                         <td colspan="3"><i class="bi bi-calendar-date"></i> {{record.orderDate}}</td>
                     </tr>
                 </tfoot>
             </table>
+            <a href="{{url_for('viewRecords')}}" class="btn btn-block btn-light dashboard-btn">Go Back</a>
+            <a href="/admin/delete_record/{{record._id}}" class="btn btn-block btn-link text-danger mt-2">Delete Record</a>
         </div>
     </div>
 </div>

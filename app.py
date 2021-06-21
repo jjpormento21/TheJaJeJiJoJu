@@ -229,11 +229,15 @@ def deleteAllRecords():
 
 @app.route('/admin/reviews')
 def reviews():
+    if not g.user:
+        return redirect(url_for('login'))
     all_products = products.find()
     return render_template('admin/product_reviews.html', products=all_products)
 
 @app.route('/admin/reviews/product/<oid>') 
 def product_review(oid):
+    if not g.user:
+        return redirect(url_for('login'))
     product = products.find_one_or_404({'_id': ObjectId(oid)})
     reviews = customerReviews.find()
     return render_template('admin/review_record.html', product = product, reviews = reviews)   
