@@ -17,4 +17,4 @@ function generateString(length) {
 
     return result;
 }
-trackNum.innerHTML = generateString(9);
+trackNum.innerText = generateString(9);

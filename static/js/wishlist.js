@@ -17,7 +17,6 @@ for (const button of deleteButtons) {
 }
 
 function addToWishlistClicked(e) {
-    console.log('added to wishlist');
     let button = e.target;
     let productItem = button.parentElement.parentElement.parentElement;
     let productID = productItem.querySelector('.product-id').innerText;
