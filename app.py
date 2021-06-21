@@ -131,7 +131,7 @@ def confirmCheckout():
             'city': custCity,
             'zipcode': int(zipcode),
             'courier': courier,
-            'shipFee': shipFee,
+            'shipFee': float(shipFee),
             'paymentMethod':payMethod,
             'orderDate': dateToday,
             'purchases': json.loads(purchases),

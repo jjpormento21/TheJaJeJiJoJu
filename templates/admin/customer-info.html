@@ -88,7 +88,7 @@
                     <tr>
                         <th scope="col">Item</th>
                         <th scope="col" class="text-center">Quantity</th>
-                        <th scope="col" class="text-center">Price</th>
+                        <th scope="col" class="text-right">Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -96,12 +96,12 @@
                     <tr>
                         <td>{{purchases.product}}</td>
                         <td class="text-center">{{purchases.qty}}</td>
-                        <td class="text-center">₱{{purchases.price}}</td>
+                        <td class="text-right">₱{{purchases.price}}</td>
                     </tr>
                     {% endfor %}
                     <tr>
                         <td colspan="2">Shipping Fee:</td>
-                        <td class="text-center">{{record.shipFee}}</td>
+                        <td class="text-right">₱{{record.shipFee}}</td>
                     </tr>
                 </tbody>
                 <tfoot>

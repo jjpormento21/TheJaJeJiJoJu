@@ -266,7 +266,7 @@ const updateGrandTotal = () => {
   let shipFee = document.querySelector('#shipFeeFinal').innerText;
   document.getElementById('grandTotal').innerText = `₱${(parseFloat(total) + parseFloat(shipFee))}`;
   document.querySelector('#totalPurchased').value = (parseFloat(total) + parseFloat(shipFee));
-  document.querySelector('#shipFee').value = `₱${parseFloat(shipFee)}`;
+  document.querySelector('#shipFee').value = parseFloat(shipFee);
 }
 
 function savePurchases() {
