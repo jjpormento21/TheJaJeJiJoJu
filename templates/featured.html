@@ -11,13 +11,13 @@
     <div class="row mt-4">
         {% for product in products %}
         <div class="col-xl-4 col-md-6 mb-4">
-            <div class="featured-section-border card">
-                <h3 class="text-primary-gray card-title mt-3 mb-1 text-center product-name">{{product.productName}}</h3>
+            <div class="featured-section-border card p-2">
+                <h3 class="text-primary-gray product-name text-center mt-2">{{product.productName}}</h3>
                 <p class="product-price" hidden>₱{{product.price}}</p>
                 <p class="product-id" hidden>{{product._id}}</p>
                 <img src="{{product.imageURL}}" alt="Gelly Tattoo" class="card-img featured-img product-img">
                 <div class="card-body pt-0">
-                    <p class="card-text" style="margin-bottom: 1em;">{{product.productDescription}}</p>
+                    <p class="card-text mb-3">{{product.productDescription}}</p>
                     <button class="btn btn-main buyNow">
                         <i class="bi bi-bag-fill btn-icon"></i>Buy
                         Now</button>
