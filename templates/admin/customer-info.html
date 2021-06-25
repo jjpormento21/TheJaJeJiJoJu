@@ -1,0 +1,124 @@
+{% extends 'admin/dashboard_template.html' %}
+{% block head %}
+<title>Customer Info - TheDashboard</title>
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <h2 class="dashboard-round"><i class="bi bi-file-earmark-person"></i> Customer Information</h2>
+
+    <div class="row mt-2 mb-3">
+        <div class="col-md-6">
+            <table class="table table-sm table-striped table-hover">
+                <thead class="thead-color dashboard-font">
+                    <tr>
+                        <th>Type</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">First Name</th>
+                        <td>{{record.firstName}}</td>
+                    </tr>
+                    <tr>
+                        <th>Last Name</th>
+                        <td>{{record.lastName}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Email</th>
+                        <td>{{record.email}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Username</th>
+                        <td>{{record.username}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Phone 1</th>
+                        <td>{{record.phone1}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Phone 2</th>
+                        <td>{{record.phone2}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Billing Address</th>
+                        <td>{{record.billingAddress}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Shipping Address</th>
+                        <td>{{record.shippingAddress}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Region</th>
+                        <td>{{record.region}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Province</th>
+                        <td>{{record.province}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">City/Town</th>
+                        <td>{{record.city}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">ZIP Code</th>
+                        <td>{{record.zipcode}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Courier</th>
+                        <td>{{record.courier}}</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Payment Method</th>
+                        <td>{{record.paymentMethod}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-6">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th colspan="4"><i class="bi bi-cart-check"></i> Purchases</th>
+                    </tr>
+                </thead>
+                <thead>
+                    <tr>
+                        <th scope="col">Item</th>
+                        <th scope="col" class="text-center">Quantity</th>
+                        <th scope="col" class="text-right">Price</th>
+                        <th scope="col" class="text-right">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for purchases in record.purchases %}
+                    <tr>
+                        <td>{{purchases.product}}</td>
+                        <td class="text-center">{{purchases.qty}}</td>
+                        <td class="text-right">₱{{purchases.price}}</td>
+                        <td class="text-right">₱{{(purchases.price * purchases.qty)}}</td>
+                    </tr>
+                    {% endfor %}
+                    <tr>
+                        <td colspan="3">Shipping Fee:</td>
+                        <td class="text-right">₱{{record.shipFee}}</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3"><strong>Total Purchased:</strong></td>
+                        <td class="text-center"><strong>₱{{record.totalPurchased}}</strong></td>
+                    </tr>
+                    <tr class="thead-color text-light">
+                        <td colspan="4"><i class="bi bi-calendar-date"></i> <strong>Transaction date:</strong>
+                            {{record.orderDate}}</td>
+                    </tr>
+                </tfoot>
+            </table>
+            <a href="{{url_for('viewRecords')}}" class="btn btn-block btn-light dashboard-btn">Go Back</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

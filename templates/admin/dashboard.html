@@ -1,0 +1,66 @@
+{% extends 'admin/dashboard_template.html' %}
+
+{% block head %}
+<title>Welcome - TheDashboard</title>
+<style>
+    body {
+        background: linear-gradient(#386194, white);
+        background-attachment: fixed;
+    }
+</style>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <div class="jumbotron mt-5">
+        <i class="bi bi-house-door-fill center-icon"></i>
+        <h1 class="text-center dashboard-font">Welcome to TheDashboard!</h1>
+        <p class="lead text-center dashboard-par">This page will allow you to perform various database operations in a
+            convenient and easy way.
+        </p>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6 mb-5">
+            <div class="card shadow text-center catalog">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-plus dashboard-icon"></i>
+                    <h5 class="card-title dashboard-title">Add Data</h5>
+                    <p class="card-text dashboard-text">Allows you to add data to database.</p>
+                    <a href="/admin/add_data" class="card-link dashboard-btn" role="link">Add a product</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5">
+            <div class="card shadow text-center catalog">
+                <div class="card-body">
+                    <i class="bi bi-binoculars dashboard-icon"></i>
+                    <h5 class="card-title dashboard-title">Product Inventory</h5>
+                    <p class="card-text dashboard-text">The product inventory allows you to check the product items.</p>
+                    <a href="/admin/view/products" class="card-link dashboard-btn" role="link">View Products</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5">
+            <div class="card shadow text-center catalog">
+                <div class="card-body">
+                    <i class="bi bi-file-earmark-bar-graph dashboard-icon"></i>
+                    <h5 class="card-title dashboard-title">Customer Data</h5>
+                    <p class="card-text dashboard-text">Customer records are stored here.</p>
+                    <a href="/admin/view/records" class="card-link dashboard-btn" role="link">View Records</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 mb-5">
+            <div class="card shadow text-center catalog">
+                <div class="card-body">
+                    <i class="bi bi-chat-right-dots dashboard-icon"></i>
+                    <h5 class="card-title dashboard-title">Customer Reviews</h5>
+                    <p class="card-text dashboard-text">Manage and monitor comments and feedbacks from customers.</p>
+                    <a href="/admin/reviews" class="card-link dashboard-btn" role="link">See Reviews</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

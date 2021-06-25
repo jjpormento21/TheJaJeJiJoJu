@@ -6,7 +6,8 @@ $(function () {
 const navLinks = $(".nav-link");
 const pageData = $("#page-data").data();
 
-console.log(pageData);
+const searchBar = document.querySelector('#search');
+
 $(navLinks[pageData.pageid]).addClass("nav-active");
 
 const changeIcon = (e) => {
@@ -18,7 +19,6 @@ const changeIcon = (e) => {
   else if (button.classList.contains('bi-chevron-up')){
     button.classList.remove('bi-chevron-up');
     button.classList.add('bi-chevron-down');
-    console.log(e.target);
   }
 }
 

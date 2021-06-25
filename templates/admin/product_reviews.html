@@ -1,0 +1,43 @@
+{% extends 'admin/dashboard_template.html' %}
+
+{% block head %}
+<title>Product Reviews - TheDashboard</title>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <h2 class="dashboard-round"><i class="bi bi-chat-square-dots"></i> Product Reviews</h2>
+    <div>
+        <a href="/admin/dashboard" class="btn btn-light dashboard-btn">Go Back</a>
+        <a href="/admin/reviews/all" class="btn btn-primary">See all reviews</a>
+    </div>
+</div>
+<div class="container table-responsive">
+    <table class="table table-striped table-light mt-3">
+        <thead class="thead-dark dashboard-font">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Date Posted</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for product in products %}
+            <tr>
+                <td class="text-center">
+                    <img class="table-img" src="{{product.imageURL}}" alt="{{product.productName}}">
+                </td>
+                <td class="product">{{product.productName}}</td>
+                <td>{{product.datePosted}}</td>
+                <td>
+                    <a href="/admin/reviews/product/{{product._id}}" class="btn dashboard-btn">See Details</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div style="margin-bottom: 25em;"></div>
+
+{% endblock %}

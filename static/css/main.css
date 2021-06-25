@@ -95,11 +95,6 @@
     color: var(--secondary-color);
 }
 
-.text-small-black{
-    font-size: 1rem;
-    color: #000;
-}
-
 .text-primary-gray {
     font-weight: var(--main-font-weight);
     color: var(--secondary-color);
