@@ -265,6 +265,7 @@
     height: 340px;
     width: 100%;
     margin: 0 auto;
+    background-color: var(--dirty-white);
 }
 
 .user-img-small {
