@@ -6,8 +6,6 @@ $(function () {
 const navLinks = $(".nav-link");
 const pageData = $("#page-data").data();
 
-const searchBar = document.querySelector('#search');
-
 $(navLinks[pageData.pageid]).addClass("nav-active");
 
 const changeIcon = (e) => {
