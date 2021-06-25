@@ -23,7 +23,7 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ml-auto text-center mt-2">
+      <ul class="navbar-nav ml-auto text-center">
         <li class="nav-item">
           <a class="nav-link navbar-font" href="/">Home</a>
         </li>
@@ -39,6 +39,14 @@
         </li>
         <li class="nav-item">
           <a class="nav-link navbar-font" href="/about_us">About Us</a>
+        </li>
+        <li class="nav-item ml-2">
+          <form action="/shop/search/" method="GET" class="input-group mt-1">
+            <input type="search" class="form-control" placeholder="Search products" name="searchProducts" id="search">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" type="submit"><i class="bi bi-search"></i> Search</button>
+            </div>
+          </form>
         </li>
       </ul>
     </div>
@@ -124,7 +132,8 @@
                 class="recents-img" alt="Velvet Clay Blush">
             </div>
             <div class="col">
-              <h5 class="d-inline"><a href="/product/60a2147e29b736765c387eca" class="text-reset">Velvet Clay Blush</a></h5>
+              <h5 class="d-inline"><a href="/product/60a2147e29b736765c387eca" class="text-reset">Velvet Clay Blush</a>
+              </h5>
               <br>
               <h6 class="text-muted d-inline">₱100.00</h6>
             </div>

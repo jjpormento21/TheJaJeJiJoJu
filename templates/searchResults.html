@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% block head %}
+<title>Shop | Miss Jhaz Cosmetics</title>
+<meta id="page-data" data-pageid="1" />
+{% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <p class="section-title-rounded"><i class="bi bi-search"></i> Search Results</p>
+    <div class="alert alert-info" role="alert">
+        Found {{resultCount}} 
+        {% if resultCount == 1%}result
+        {% else %} results
+        {% endif %}
+        for "{{searchQuery}}"
+    </div>
+
+    {% if resultCount < 1 %} 
+    <p>Your search did not match any documents.</p>
+    {% endif %}
+    <div class="row">
+        {% for product in products %}
+        <div class="col-lg-4 col-md-6">
+            <div class="card mb-3 mt-3" style="border-style: none;">
+                <img src="{{product.imageURL}}" alt="{{product.productName}}" class="card-img-top product-img">
+                <div class="shadow p-3 card-body pt-0" style="border-radius: 0 0 2rem 2rem;">
+                    <h5 class="text-primary-gray card-title product-name">{{product.productName}}</h5>
+                    <p class="product-id" hidden>{{product._id}}</p>
+                    <div class="collapse" id="A{{product._id}}">
+                        <div class="card-body collapse-custom p-0 pt-1 pb-1">
+                            <hr>
+                            {{product.productDescription}}
+                            <hr>
+                        </div>
+                    </div>
+                    <h6>Category: {{product.productCategory}}</h6>
+                    <h6 class="text-light-pink card-title font-weight-bold pt-0">PRICE:</h6>
+                    <h5 class="text-primary-gray card-title product-price">₱{{product.price }}</h5>
+                    <a href="/product/{{product._id}}" class="btn btn-main mb-2">View</a>
+                    <button class="btn btn-sub pl-3 pr-3 mb-2 addToWishlist">
+                        <i class="bi bi-suit-heart-fill"></i> Add to wishlist
+                    </button>
+                    <button class="card-button" data-target="#A{{product._id}}" data-toggle="collapse">
+                        <i class="bi bi-chevron-down chevron-down-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

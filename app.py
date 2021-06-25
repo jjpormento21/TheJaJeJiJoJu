@@ -36,6 +36,14 @@ def before_request():
 def index():
     return render_template('index.html')
 
+@app.route('/shop/search/', methods=['GET'])
+def searchProducts():
+    searchQuery = request.args.get('searchProducts')
+    # results = searchQuery
+    productResults = products.find({ '$text': { '$search': searchQuery} })
+    resultCount = productResults.count()
+    return render_template('searchResults.html', products=productResults, resultCount=resultCount, searchQuery=searchQuery)
+
 @app.route('/shop', methods=['GET'])
 def shop():
     eye_products = products.find({'productCategory':'Eyes'})
