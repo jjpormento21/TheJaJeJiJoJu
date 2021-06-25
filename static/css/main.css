@@ -260,12 +260,11 @@
 }
 
 .featured-img {
-    border-radius: 36px;
-    padding: 1rem;
+    border-radius: 1.7rem;
     height: 340px;
-    width: 100%;
-    margin: 0 auto;
+    width: 90%;
     background-color: var(--dirty-white);
+    margin: .5rem auto;
 }
 
 .user-img-small {
