@@ -524,7 +524,7 @@ and (-webkit-min-device-pixel-ratio: 2) {
         font-size: 14px;
     }
     /* Shop*/
-    .text-small-black{
+    p{
         text-align: left !important;
     }
     /* Cart */
