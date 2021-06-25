@@ -222,6 +222,14 @@ def reviews():
     all_products = products.find()
     return render_template('admin/product_reviews.html', products=all_products)
 
+@app.route('/admin/reviews/all')
+def allReviews():
+    if not g.user:
+        return redirect(url_for('login'))
+    reviews = customerReviews.find()
+    reviewCount = reviews.count()
+    return render_template('admin/all_reviews.html', reviews=reviews, reviewCount=reviewCount)
+
 @app.route('/admin/reviews/product/<oid>') 
 def product_review(oid):
     if not g.user:
@@ -266,6 +274,13 @@ def deleteAllRecords():
     customerData.delete_many({})
     return redirect(url_for('viewRecords'))
 
+@app.route('/admin/delete_reviews_all')
+def deleteAllReviews():
+    if not g.user:
+        return redirect(url_for('login'))
+    customerReviews.delete_many({})
+    return redirect(url_for('reviews'))
+
 @app.route('/admin/delete_record/<oid>')
 def deleteRecord(oid):
     if not g.user:
@@ -282,6 +297,8 @@ def deleteProduct(oid):
 
 @app.route('/admin/delete_review/<oid>')
 def deleteReview(oid):
+    if not g.user:
+        return redirect(url_for('login'))
     review = customerReviews.delete_one({'_id': ObjectId(oid)})
     return redirect(url_for('reviews'))
 
