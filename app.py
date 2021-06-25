@@ -9,7 +9,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 #database stuff
-app.config['MONGO_URI'] = os.getenv('DEVELOPER')
+app.config['MONGO_URI'] = os.getenv('MONGO_URI')
 # for login page
 app.secret_key = os.getenv('SECRET_KEY')
 user = {
@@ -293,7 +293,7 @@ def deleteProduct(oid):
     if not g.user:
         return redirect(url_for('login'))
     products.delete_one({'_id': ObjectId(oid)})
-    return redirect(url_for('viewRecords'))
+    return redirect(url_for('viewAllProducts'))
 
 @app.route('/admin/delete_review/<oid>')
 def deleteReview(oid):
