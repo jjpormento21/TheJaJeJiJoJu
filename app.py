@@ -43,7 +43,7 @@ def index():
 def homepage():
     return render_template('index.html')
 
-@app.route('/shop/', methods=['GET'])
+@app.route('/shop/search', methods=['GET'])
 def searchProducts():
     searchQuery = request.args.get('searchProducts')
     productResults = products.find({ '$text': { '$search': searchQuery} })
