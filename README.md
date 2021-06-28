@@ -26,3 +26,12 @@ Hosted on Heroku
 - Joshreen Reyes (Frontend Developer)
 <hr>
 This site is hosted on https://jhazcosmetics.herokuapp.com
+<hr>
+### ❓ How to run?
+#### Make sure your Python environment is set up
+- To enter the environment, type:
+- `source env/scripts/activate` (windows)
+- `source env/Bin/activate` (Linux or macOS)
+#### To start app
+- `flask run`
+- `python app.py`

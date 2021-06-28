@@ -257,7 +257,7 @@ def viewSingleRecord(oid):
     return render_template('/admin/customer-info.html', record = customer_record)
 
 #Deleting stuff
-@app.route('/admin/delete_data_all')
+@app.route('/admin/delete_products_all')
 def deleteAllProducts():
     if not g.user:
         return redirect(url_for('login'))
