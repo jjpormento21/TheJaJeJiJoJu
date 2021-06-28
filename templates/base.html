@@ -41,7 +41,7 @@
           <a class="nav-link navbar-font" href="/about_us">About Us</a>
         </li>
         <li class="nav-item ml-2">
-          <form action="/shop/search/" method="GET" class="input-group mt-1">
+          <form action="{{url_for('searchProducts')}}" method="GET" class="input-group mt-1">
             <input type="search" class="form-control" placeholder="Search products" name="searchProducts" id="search"
               required>
             <div class="input-group-append">
