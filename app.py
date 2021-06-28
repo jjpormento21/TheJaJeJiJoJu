@@ -37,10 +37,6 @@ def before_request():
 #routes
 @app.route('/')
 def index():
-    return redirect(url_for('homepage'))
-
-@app.route('/home')
-def homepage():
     return render_template('index.html')
 
 @app.route('/shop/search', methods=['GET'])
@@ -50,7 +46,7 @@ def searchProducts():
     resultCount = productResults.count()
     return render_template('searchResults.html', products=productResults, resultCount=resultCount, searchQuery=searchQuery)
 
-@app.route('/shop', methods=['GET'])
+@app.route('/shop/', methods=['GET'])
 def shop():
     eye_products = products.find({'productCategory':'Eyes'})
     lip_products = products.find({'productCategory':'Lips'})
