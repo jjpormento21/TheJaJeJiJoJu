@@ -13,7 +13,6 @@ This project is an online store based on the company of the same name, Miss Jhaz
 
 **Database:** MongoDB
 <hr>
-Hosted on Heroku
 
 ## Group Members
 #### 🎨 Design Team
@@ -27,11 +26,16 @@ Hosted on Heroku
 <hr>
 This site is hosted on https://jhazcosmetics.herokuapp.com
 <hr>
+
 ### ❓ How to run?
-#### Make sure your Python environment is set up
-- To enter the environment, type:
-- `source env/scripts/activate` (windows)
+
+#### Make sure your Python environment is set up. To enter the environment, type:
+
+- `source env/scripts/activate` (Windows)
 - `source env/Bin/activate` (Linux or macOS)
-#### To start app
-- `flask run`
+
+
+#### To start app:
+- `flask run` or
 - `python app.py`
+- To install requirements, type `pip install -r requirements.txt`.
