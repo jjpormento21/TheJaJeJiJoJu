@@ -25,20 +25,20 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ml-auto text-center">
         <li class="nav-item">
-          <a class="nav-link navbar-font" href="/">Home</a>
+          <a class="nav-link navbar-font" href="{{url_for('homepage')}}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-font" href="/shop">Shop</a>
+          <a class="nav-link navbar-font" href="{{url_for('shop')}}">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-font" href="/featured">Featured</a>
+          <a class="nav-link navbar-font" href="{{url_for('featuredProducts')}}">Featured</a>
         </li>
-        <li class="nav-item"><a href="/feedback_hub" class="nav-link navbar-font">Feedback</a></li>
+        <li class="nav-item"><a href="" class="nav-link navbar-font">Feedback</a></li>
         <li class="nav-item">
-          <a class="nav-link navbar-font" href="/wishlist">Wishlist</a>
+          <a class="nav-link navbar-font" href="{{url_for('wishlist')}}">Wishlist</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link navbar-font" href="/about_us">About Us</a>
+          <a class="nav-link navbar-font" href="{{url_for('about_us')}}">About Us</a>
         </li>
         <li class="nav-item ml-2">
           <form action="{{url_for('searchProducts')}}" method="GET" class="input-group mt-1">
@@ -157,12 +157,12 @@
         <section class="col-lg-2" id="importantLinks">
           <h3 class="text-secondary-custom text-center">Important Links</h3>
           <ul class="list-unstyled ml-2">
-            <li><a href="/">Home</a></li>
-            <li><a href="/shop">Shop</a></li>
-            <li><a href="/featured">Featured Products</a></li>
-            <li><a href="/feedback_hub">Feedback</a></li>
-            <li><a href="/wishlist">Wishlist</a></li>
-            <li><a href="/about_us">About Us</a></li>
+            <li><a href="{{url_for('homepage')}}">Home</a></li>
+            <li><a href="{{url_for('shop')}}">Shop</a></li>
+            <li><a href="{{url_for('featuredProducts')}}">Featured Products</a></li>
+            <li><a href="{{url_for('feedback')}}">Feedback</a></li>
+            <li><a href="{{url_for('wishlist')}}">Wishlist</a></li>
+            <li><a href="{{url_for('about_us')}}">About Us</a></li>
           </ul>
         </section>
 
