@@ -1,15 +1,21 @@
 from flask import Flask, render_template, url_for, request, redirect, session, g, flash
 from flask_pymongo import PyMongo
 from dotenv import load_dotenv
-load_dotenv()
 from bson.objectid import ObjectId
 import os
 import json
 from datetime import datetime
+
+load_dotenv()
 app = Flask(__name__)
 
 #database stuff
 app.config['MONGO_URI'] = os.getenv('MONGO_URI')
+mongo = PyMongo(app)
+products = mongo.db.products
+customerData = mongo.db.customer_data
+customerReviews = mongo.db.customer_reviews
+
 # for login page
 app.secret_key = os.getenv('SECRET_KEY')
 user = {
@@ -17,13 +23,10 @@ user = {
     "username": os.getenv('ADMIN_USER'),
     "password":os.getenv('ADMIN_PASSWORD')
 }
-
-mongo = PyMongo(app)
-products = mongo.db.products
-customerData = mongo.db.customer_data
-customerReviews = mongo.db.customer_reviews
-
+# date and time
 dateToday = datetime.utcnow()
+
+
 @app.before_request
 def before_request():
     g.user = None
@@ -34,12 +37,15 @@ def before_request():
 #routes
 @app.route('/')
 def index():
+    return redirect(url_for('homepage'))
+
+@app.route('/home')
+def homepage():
     return render_template('index.html')
 
 @app.route('/shop/search/', methods=['GET'])
 def searchProducts():
     searchQuery = request.args.get('searchProducts')
-    # results = searchQuery
     productResults = products.find({ '$text': { '$search': searchQuery} })
     resultCount = productResults.count()
     return render_template('searchResults.html', products=productResults, resultCount=resultCount, searchQuery=searchQuery)
@@ -97,14 +103,6 @@ def product_info(oid):
 def checkoutPage():
     return render_template('checkout.html')
 
-@app.route('/checkout-test')
-def checkoutTest():
-    return render_template('checkout-confirm.html')
-
-@app.route('/blank')
-def blankPage():
-    return render_template('blank.html')
-
 @app.route('/checkout/confirm', methods=['POST'])
 def confirmCheckout():
     custFirstName = request.form.get('firstName')
@@ -147,7 +145,6 @@ def confirmCheckout():
         }
     )
     return render_template('checkout-confirm.html')
-
 
 @app.errorhandler(404)
 def notFound(e):
@@ -238,6 +235,10 @@ def product_review(oid):
     reviews = customerReviews.find()
     return render_template('admin/review_record.html', product = product, reviews = reviews)   
     
+@app.route('/admin/view')
+def redirectViews():
+    return redirect(url_for('viewRecords'))
+
 @app.route('/admin/view/products')
 def viewAllProducts():
     if not g.user:

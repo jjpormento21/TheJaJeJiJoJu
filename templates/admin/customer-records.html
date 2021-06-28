@@ -8,7 +8,7 @@
 <div class="container">
     <h2 class="dashboard-round"><i class="bi bi-file-bar-graph"></i> Customer Records</h2>
     <div>
-        <a href="/admin/dashboard" class="btn btn-light dashboard-btn">Go Back</a>
+        <a href="{{url_for('dashboard')}}" class="btn btn-light dashboard-btn">Go Back</a>
         <button data-target="#deleteAlert" data-toggle="modal" class="btn btn-outline-danger">Delete All</button>
         <label for="search" class="d-block">Search Records</label>
         <input type="search" name="search" class="form-control searchBar" placeholder="Type to search">
