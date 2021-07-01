@@ -215,11 +215,12 @@ def reviews():
     all_products = products.find()
     return render_template('admin/product_reviews.html', products=all_products)
 
-@app.route('/admin/reviews/all')
-def allReviews():
+@app.route('/admin/reviews/all/')
+@app.route('/admin/reviews/all<order>') #sort to latest
+def allReviews(order=1):
     if not g.user:
         return redirect(url_for('login'))
-    reviews = customerReviews.find()
+    reviews = customerReviews.find().sort('datePosted', int(order))
     reviewCount = reviews.count()
     return render_template('admin/all_reviews.html', reviews=reviews, reviewCount=reviewCount)
 
@@ -243,7 +244,7 @@ def viewAllProducts():
     return render_template('admin/view.html', products=all_products)
 
 @app.route('/admin/view/records')
-def viewRecords():
+def viewRecords(order=1):
     if not g.user:
         return redirect(url_for('login'))
     customer_records = customerData.find()
