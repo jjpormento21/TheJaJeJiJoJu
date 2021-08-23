@@ -45,7 +45,7 @@
             <img src="{{product.imageURL}}" alt="Eyebrow Pomade 2N1" class="prod-info-img img-center mb-3 product-img">
             <div class="text-center">
                 <button class="btn btn-secondary text-center" type="button" data-toggle="modal"
-                    data-target="#writeFeedback"><i class="bi bi-chat-left-quote"></i> Write a review</button>
+                    data-target="#writeFeedback" disabled aria-disabled="true"><i class="bi bi-chat-left-quote"></i> Write a review</button>
                 <hr>
                 <button class="btn btn-sub btn-block addToCart"><i class="bi bi-cart-plus-fill btn-icon"></i>Add to
                     Cart</button>
@@ -67,7 +67,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{{url_for('postFeedback')}}" method="POST">
+                <form action="#" method="GET">
                     <div class="form-group">
                         <label for="username" class="col-form-label">Username:</label>
                         <input type="text" class="form-control" id="username" name="username" placeholder="Username"
