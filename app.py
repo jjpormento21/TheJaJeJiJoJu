@@ -277,7 +277,7 @@ def deleteAllReviews():
     if not g.user:
         return redirect(url_for('login'))
     customerReviews.delete_many({})
-    return redirect(url_for('reviews'))
+    return redirect(url_for('allReviews'))
 
 @app.route('/admin/delete_record/<oid>')
 def deleteRecord(oid):
@@ -298,7 +298,7 @@ def deleteReview(oid):
     if not g.user:
         return redirect(url_for('login'))
     review = customerReviews.delete_one({'_id': ObjectId(oid)})
-    return redirect(url_for('reviews'))
+    return redirect(url_for('allReviews'))
 
 @app.route('/admin/edit_product/<oid>', methods = ['GET', 'POST'])
 def editProductData(oid):
