@@ -4,3 +4,4 @@ env
 env.zip
 .vscode
 __pycache__
+.vercel
