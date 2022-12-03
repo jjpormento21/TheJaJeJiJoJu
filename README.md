@@ -24,7 +24,7 @@ This project is an online store based on the company of the same name, Miss Jhaz
 - Jonah James Pormento (Lead Developer)
 - Joshreen Reyes (Frontend Developer)
 <hr>
-This site is hosted on https://jhazcosmetics.herokuapp.com
+This site is hosted on https://jhazcosmetics.vercel.app
 <hr>
 
 ### ❓ How to run?
